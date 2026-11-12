@@ -3,6 +3,13 @@
 A small macOS app that signs an `.ipa` with your Apple Developer account and
 installs it on an iPhone or iPad connected by USB, with a progress bar.
 
+<p align="center">
+  <img src="docs/screenshot.png" width="720" alt="IPA Courier window showing a connected iPhone with its free storage, and an empty install queue ready for IPA files">
+</p>
+
+**Download:** the latest signed and notarized build is on the
+[Releases page](https://github.com/nickgudauskas/ipa-courier/releases/latest).
+
 ## What it does
 
 1. **Device**: detects iPhones and iPads plugged in over USB (through Apple's

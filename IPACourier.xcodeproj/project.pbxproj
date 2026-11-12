@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04319944E17DA65E509262B1 /* Provisioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762C861FA71533645E9FBA35 /* Provisioning.swift */; };
+		25A12DF05F42FA0F838AC478 /* QueueItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076FE85DDF2F956FC7127965 /* QueueItem.swift */; };
 		378284BB944ACBBE823D747F /* IPACourierApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52745A00C2DFC44C9A658D19 /* IPACourierApp.swift */; };
 		78BA42905E9555341B5C0EA9 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B57583C42F041BEF2F7E9 /* Shell.swift */; };
 		A8398ADA40E832E923C589B1 /* ProvisioningStub in Resources */ = {isa = PBXBuildFile; fileRef = A338798156ECC58E4DDEFDBA /* ProvisioningStub */; };
@@ -16,12 +17,15 @@
 		C85860A3B0CB82BA2A5739A0 /* Signer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857869B3BE3F7B4EAE87B990 /* Signer.swift */; };
 		CC027423712A4D93B64BAAD2 /* CourierModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55017AB7BDF4F4FFAACDFF93 /* CourierModel.swift */; };
 		E5A8E458E3B4D324E20C1D55 /* MobileDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180204612A16618FC8339050 /* MobileDevice.swift */; };
+		F960D2EF45E44D41B541D3F4 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DFD5B62959AF04AA971FB /* Library.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		01314A8B28C8335999FE0CCE /* IPACourier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IPACourier.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		076FE85DDF2F956FC7127965 /* QueueItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueItem.swift; sourceTree = "<group>"; };
 		0BC1160E438A7327B84BD475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		180204612A16618FC8339050 /* MobileDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDevice.swift; sourceTree = "<group>"; };
+		524DFD5B62959AF04AA971FB /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		52745A00C2DFC44C9A658D19 /* IPACourierApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPACourierApp.swift; sourceTree = "<group>"; };
 		55017AB7BDF4F4FFAACDFF93 /* CourierModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourierModel.swift; sourceTree = "<group>"; };
 		762C861FA71533645E9FBA35 /* Provisioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provisioning.swift; sourceTree = "<group>"; };
@@ -58,8 +62,10 @@
 				0BC1160E438A7327B84BD475 /* Info.plist */,
 				D914BFC9448EF364822FE7A6 /* Installer.swift */,
 				52745A00C2DFC44C9A658D19 /* IPACourierApp.swift */,
+				524DFD5B62959AF04AA971FB /* Library.swift */,
 				180204612A16618FC8339050 /* MobileDevice.swift */,
 				762C861FA71533645E9FBA35 /* Provisioning.swift */,
+				076FE85DDF2F956FC7127965 /* QueueItem.swift */,
 				7D6B57583C42F041BEF2F7E9 /* Shell.swift */,
 				857869B3BE3F7B4EAE87B990 /* Signer.swift */,
 			);
@@ -141,8 +147,10 @@
 				CC027423712A4D93B64BAAD2 /* CourierModel.swift in Sources */,
 				378284BB944ACBBE823D747F /* IPACourierApp.swift in Sources */,
 				BFB1C1C90A5DBE5D95A0395A /* Installer.swift in Sources */,
+				F960D2EF45E44D41B541D3F4 /* Library.swift in Sources */,
 				E5A8E458E3B4D324E20C1D55 /* MobileDevice.swift in Sources */,
 				04319944E17DA65E509262B1 /* Provisioning.swift in Sources */,
+				25A12DF05F42FA0F838AC478 /* QueueItem.swift in Sources */,
 				78BA42905E9555341B5C0EA9 /* Shell.swift in Sources */,
 				C85860A3B0CB82BA2A5739A0 /* Signer.swift in Sources */,
 			);

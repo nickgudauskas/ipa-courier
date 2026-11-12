@@ -24,6 +24,31 @@ struct DeviceInfo: Identifiable, Equatable {
     }
 }
 
+/// A provisioning profile installed on the device. iOS refuses to launch an
+/// app once every profile that covers it has expired.
+struct DeviceProfile: Equatable {
+    let uuid: String
+    let name: String
+    let teamID: String
+    let appIDPattern: String
+    let expiration: Date
+    let capabilities: Set<Capability>
+
+    var isWildcard: Bool { appIDPattern.hasSuffix("*") }
+
+    func matches(bundleID: String) -> Bool {
+        if isWildcard { return bundleID.hasPrefix(String(appIDPattern.dropLast())) }
+        return appIDPattern == bundleID
+    }
+
+    /// The profile governing an app: the newest exact match, else the newest wildcard.
+    static func governing(_ bundleID: String, in profiles: [DeviceProfile]) -> DeviceProfile? {
+        let matching = profiles.filter { $0.matches(bundleID: bundleID) }
+        let exact = matching.filter { !$0.isWildcard }
+        return (exact.isEmpty ? matching : exact).max { $0.expiration < $1.expiration }
+    }
+}
+
 /// Thin wrapper over Apple's private MobileDevice.framework (the same
 /// framework Finder and Xcode use) for device discovery and lockdown values.
 final class MobileDevice: @unchecked Sendable {
@@ -46,6 +71,10 @@ final class MobileDevice: @unchecked Sendable {
     private let interfaceTypeFn: DeviceFn?
     private let copyValueFn: CopyValueFn?
     private let copyIdentifierFn: CopyStringFn?
+    private typealias CopyProfilesFn = @convention(c) (UnsafeMutableRawPointer) -> Unmanaged<CFArray>?
+    private typealias ProfilePayloadFn = @convention(c) (UnsafeRawPointer) -> Unmanaged<CFDictionary>?
+    private let copyProfilesFn: CopyProfilesFn?
+    private let profilePayloadFn: ProfilePayloadFn?
 
     var isAvailable: Bool {
         subscribeFn != nil && connectFn != nil && copyValueFn != nil && copyIdentifierFn != nil
@@ -65,6 +94,38 @@ final class MobileDevice: @unchecked Sendable {
         interfaceTypeFn = symbol("AMDeviceGetInterfaceType", DeviceFn.self)
         copyValueFn = symbol("AMDeviceCopyValue", CopyValueFn.self)
         copyIdentifierFn = symbol("AMDeviceCopyDeviceIdentifier", CopyStringFn.self)
+        copyProfilesFn = symbol("AMDeviceCopyProvisioningProfiles", CopyProfilesFn.self)
+        profilePayloadFn = symbol("MISProfileCopyPayload", ProfilePayloadFn.self)
+    }
+
+    /// Reads the provisioning profiles installed on the device. Blocking.
+    func readProfiles(_ device: UnsafeMutableRawPointer) -> [DeviceProfile] {
+        guard let connectFn, let disconnectFn, let startSessionFn, let stopSessionFn,
+              let copyProfilesFn, let profilePayloadFn,
+              connectFn(device) == 0 else { return [] }
+        defer { _ = disconnectFn(device) }
+        guard startSessionFn(device) == 0 else { return [] }
+        defer { _ = stopSessionFn(device) }
+        guard let list = copyProfilesFn(device)?.takeRetainedValue() as? [AnyObject] else { return [] }
+
+        return list.compactMap { object in
+            let pointer = UnsafeRawPointer(Unmanaged.passUnretained(object).toOpaque())
+            guard let payload = profilePayloadFn(pointer)?.takeRetainedValue() as? [String: Any],
+                  let entitlements = payload["Entitlements"] as? [String: Any],
+                  let appID = entitlements["application-identifier"] as? String,
+                  let expiration = payload["ExpirationDate"] as? Date
+            else { return nil }
+            let team = (payload["TeamIdentifier"] as? [String])?.first
+                ?? String(appID.split(separator: ".").first ?? "")
+            return DeviceProfile(
+                uuid: payload["UUID"] as? String ?? UUID().uuidString,
+                name: payload["Name"] as? String ?? appID,
+                teamID: team,
+                appIDPattern: appID.hasPrefix(team + ".") ? String(appID.dropFirst(team.count + 1)) : appID,
+                expiration: expiration,
+                capabilities: Capability.present(in: entitlements)
+            )
+        }
     }
 
     func subscribe(_ callback: NotifyCallback) -> Bool {
@@ -216,6 +277,22 @@ final class DeviceMonitor: ObservableObject {
             devices[index] = info
         }
         return info
+    }
+
+    /// Provisioning profiles installed on the device.
+    func profiles(_ udid: String) async -> [DeviceProfile] {
+        guard let bits = references[udid], let device = UnsafeMutableRawPointer(bitPattern: bits) else {
+            return []
+        }
+        _ = Unmanaged<AnyObject>.fromOpaque(device).retain()
+        return await withCheckedContinuation { continuation in
+            queue.async {
+                let pointer = UnsafeMutableRawPointer(bitPattern: bits)!
+                let result = MobileDevice.shared.readProfiles(pointer)
+                Unmanaged<AnyObject>.fromOpaque(pointer).release()
+                continuation.resume(returning: result)
+            }
+        }
     }
 
     func refreshAll() async {

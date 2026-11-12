@@ -6,12 +6,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     /// IPAs opened from Finder ("Open With → IPA Courier").
     func application(_ application: NSApplication, open urls: [URL]) {
-        guard let url = urls.first(where: { $0.pathExtension.lowercased() == "ipa" }) else { return }
-        Task { @MainActor in self.model?.choose(url) }
+        let ipas = urls.filter { $0.pathExtension.lowercased() == "ipa" }
+        guard !ipas.isEmpty else { return }
+        Task { @MainActor in self.model?.add(ipas) }
     }
 
     func applicationWillTerminate(_ notification: Notification) {
-        MainActor.assumeIsolated { model?.cleanupSigned() }
+        MainActor.assumeIsolated { model?.cleanupAll() }
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { true }

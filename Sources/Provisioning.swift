@@ -26,6 +26,45 @@ enum AppPaths {
     }
 }
 
+/// App ID capabilities that big game ports and emulators commonly need.
+/// They can't be granted by a wildcard profile, only by one made for the
+/// app's exact bundle ID with the capability turned on.
+enum Capability: String, CaseIterable, Identifiable, Codable, Hashable {
+    case increasedMemoryLimit = "com.apple.developer.kernel.increased-memory-limit"
+    case extendedVirtualAddressing = "com.apple.developer.kernel.extended-virtual-addressing"
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .increasedMemoryLimit: return "Increased Memory Limit"
+        case .extendedVirtualAddressing: return "Extended Virtual Addressing"
+        }
+    }
+
+    var shortTitle: String {
+        switch self {
+        case .increasedMemoryLimit: return "More RAM"
+        case .extendedVirtualAddressing: return "Extended VA"
+        }
+    }
+
+    var explanation: String {
+        switch self {
+        case .increasedMemoryLimit: return "Lets the app use more memory before iOS terminates it."
+        case .extendedVirtualAddressing: return "Gives the app a larger address space (used by some emulators and JITs)."
+        }
+    }
+
+    static func present(in entitlements: [String: Any]) -> Set<Capability> {
+        Set(allCases.filter { (entitlements[$0.rawValue] as? Bool) == true })
+    }
+
+    static func summary(_ set: Set<Capability>) -> String {
+        allCases.filter(set.contains).map(\.title).joined(separator: " + ")
+    }
+}
+
 struct SigningIdentity: Identifiable, Hashable {
     let sha1: String
     let name: String
@@ -54,6 +93,7 @@ struct ProvisioningProfile: Identifiable {
 
     var id: String { uuid }
     var isWildcard: Bool { appIDPattern.hasSuffix("*") }
+    var capabilities: Set<Capability> { Capability.present(in: entitlements) }
 
     func matches(bundleID: String) -> Bool {
         if isWildcard { return bundleID.hasPrefix(String(appIDPattern.dropLast())) }
@@ -203,6 +243,7 @@ enum Provisioning {
         bundleID: String,
         udid: String,
         team: String?,
+        capabilities: Set<Capability> = [],
         profiles: [ProvisioningProfile],
         identities: [SigningIdentity]
     ) -> SigningPlan? {
@@ -213,6 +254,7 @@ enum Provisioning {
                   profile.includes(udid: udid),
                   profile.matches(bundleID: bundleID),
                   team == nil || profile.teamID == team,
+                  capabilities.isSubset(of: profile.capabilities),
                   let identity = profile.certificateSHA1s.compactMap({ byHash[$0] }).first
             else { return nil }
             return SigningPlan(profile: profile, identity: identity)
@@ -227,10 +269,13 @@ enum Provisioning {
     /// Builds (never installs) a tiny placeholder app for the device with
     /// automatic signing, which makes Xcode create a development certificate
     /// if needed, register the device, and download a matching profile.
+    /// With `capabilities`, Xcode registers (or updates) an explicit App ID
+    /// for `bundleID` with those capabilities and makes a profile for it.
     static func refreshWithXcode(
         teamID: String,
         udid: String,
         bundleID: String,
+        capabilities: Set<Capability> = [],
         log: @escaping @Sendable (String) -> Void
     ) async throws {
         guard let stub = Bundle.main.url(forResource: "ProvisioningStub", withExtension: nil) else {
@@ -242,7 +287,17 @@ enum Provisioning {
         defer { try? FileManager.default.removeItem(at: work) }
 
         let derived = work.appendingPathComponent("DerivedData")
-        log("Asking Xcode to register the device and fetch a profile for team \(teamID)…")
+        var extraSettings: [String] = []
+        if capabilities.isEmpty {
+            log("Asking Xcode to register the device and fetch a profile for team \(teamID)…")
+        } else {
+            let entitlementsURL = work.appendingPathComponent("Stub.entitlements")
+            let entitlements = Dictionary(uniqueKeysWithValues: capabilities.map { ($0.rawValue, true) })
+            try PropertyListSerialization.data(fromPropertyList: entitlements, format: .xml, options: 0)
+                .write(to: entitlementsURL)
+            extraSettings.append("CODE_SIGN_ENTITLEMENTS=\(entitlementsURL.path)")
+            log("Asking Xcode for a \(bundleID) profile with \(Capability.summary(capabilities)) (team \(teamID))…")
+        }
         let interesting = ["error", "warning:", "Signing Identity", "Provisioning Profile", "BUILD"]
         try await Shell.run("/usr/bin/xcrun", [
             "xcodebuild",
@@ -256,8 +311,7 @@ enum Provisioning {
             "DEVELOPMENT_TEAM=\(teamID)",
             "PRODUCT_BUNDLE_IDENTIFIER=\(bundleID)",
             "CODE_SIGN_STYLE=Automatic",
-            "build",
-        ], onOutput: { chunk in
+        ] + extraSettings + ["build"], onOutput: { chunk in
             for line in chunk.split(whereSeparator: \.isNewline)
             where interesting.contains(where: { line.contains($0) }) {
                 log(String(line).trimmingCharacters(in: .whitespaces))

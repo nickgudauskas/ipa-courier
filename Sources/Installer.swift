@@ -14,6 +14,8 @@ struct InstalledApp: Equatable {
     let bundleID: String
     let name: String
     let version: String
+    /// Signed with a development certificate (sideloaded), not from the App Store.
+    var builtByDeveloper = false
 }
 
 /// How an IPA relates to what's already on the device.
@@ -58,7 +60,8 @@ enum Installer {
             guard let id = app["bundleIdentifier"] as? String else { return nil }
             return InstalledApp(bundleID: id,
                                 name: app["name"] as? String ?? id,
-                                version: app["version"] as? String ?? "")
+                                version: app["version"] as? String ?? "",
+                                builtByDeveloper: app["builtByDeveloper"] as? Bool ?? false)
         }
     }
 

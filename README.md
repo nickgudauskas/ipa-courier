@@ -84,3 +84,15 @@ IPA Courier fetches are kept in `~/Library/Application Support/IPA Courier/Profi
 
 `Resources/ProvisioningStub` is the placeholder iOS project used to ask Xcode
 for profiles.
+
+## License
+
+IPA Courier is released under the [MIT License](LICENSE). You're free to use,
+fork, modify and redistribute it.
+
+The license covers this project's code only. IPA Courier calls Apple software
+already on the Mac at runtime, none of which is included or redistributed here:
+the private MobileDevice framework (loaded from
+`/System/Library/PrivateFrameworks`), plus `codesign`, `xcodebuild`, `devicectl`
+and `notarytool` from Xcode. Their use is governed by Apple's own terms. Apple
+doesn't document MobileDevice, so a future macOS update could change it.

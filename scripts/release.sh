@@ -11,7 +11,7 @@
 #   3. xcrun notarytool store-credentials ipa-courier-notary --apple-id <you@example.com> --team-id <TEAMID>
 #      (it asks for the app-specific password and saves it in your keychain)
 #
-# Output: dist/IPA Courier.app and dist/IPA Courier.zip
+# Output: dist/IPA Courier.app, dist/IPA Courier.zip and dist/IPA-Courier-<version>.dmg
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
@@ -70,4 +70,19 @@ if [[ "$MODE" != "--local" ]]; then
 fi
 
 ditto -c -k --sequesterRsrc --keepParent "$APP" "$DIST/$APP_NAME.zip"
-echo "==> Done: $APP and $DIST/$APP_NAME.zip"
+
+echo "==> Making disk image"
+VERSION=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" "$APP/Contents/Info.plist")
+DMG="$DIST/IPA-Courier-$VERSION.dmg"
+STAGE=$(mktemp -d)
+ditto "$APP" "$STAGE/$APP_NAME.app"
+ln -s /Applications "$STAGE/Applications"
+hdiutil create -quiet -volname "$APP_NAME" -srcfolder "$STAGE" -fs HFS+ -format UDZO -ov "$DMG"
+rm -rf "$STAGE"
+codesign --force --sign "$IDENTITY" --timestamp "$DMG"
+if [[ "$MODE" != "--local" ]]; then
+    xcrun notarytool submit "$DMG" --keychain-profile "$NOTARY_PROFILE" --wait
+    xcrun stapler staple "$DMG"
+fi
+
+echo "==> Done: $APP, $DIST/$APP_NAME.zip and $DMG"

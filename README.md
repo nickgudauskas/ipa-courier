@@ -1,7 +1,7 @@
 # IPA Courier
 
 A small macOS app that signs an `.ipa` with your Apple Developer account and
-installs it on an iPhone or iPad connected by USB, with a progress bar.
+installs it on an iPhone or iPad over USB or Wi-Fi, with a progress bar.
 
 <p align="center">
   <img src="docs/screenshot.png" width="720" alt="IPA Courier window showing a connected iPhone with its free storage, and an empty install queue ready for IPA files">
@@ -12,9 +12,10 @@ installs it on an iPhone or iPad connected by USB, with a progress bar.
 
 ## What it does
 
-1. **Device**: detects iPhones and iPads plugged in over USB (through Apple's
+1. **Device**: detects iPhones and iPads over USB or Wi-Fi (through Apple's
    MobileDevice framework, the same one Finder and Xcode use) and shows the
-   name, iOS version, Developer Mode state and free storage.
+   connection, name, iOS version, Developer Mode state and free storage. USB is
+   used whenever the cable is plugged in.
 2. **App**: drop an `.ipa` on the window, click to choose one, or use
    Finder's *Open With → IPA Courier*.
 3. **Signing**: picks a development certificate from your keychain and a
@@ -61,6 +62,10 @@ signed app as an `.ipa`.
 
 - Xcode, signed in to your Apple Developer account (Xcode → Settings → Accounts)
 - Developer Mode on the device (Settings → Privacy & Security)
+- For Wi-Fi: connect the device by USB once, then turn on *Show this iPhone
+  when on Wi-Fi* in Finder and *Connect via network* in Xcode → Window →
+  Devices and Simulators. Keep the device unlocked and on the same network.
+  Large apps install noticeably slower over Wi-Fi.
 - Not sandboxed: it runs `codesign`, `xcodebuild`, `devicectl` and `unzip`
 
 ## Build

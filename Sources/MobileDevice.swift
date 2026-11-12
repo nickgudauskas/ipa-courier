@@ -1,9 +1,22 @@
 import Foundation
 
-/// What we know about a USB-connected iPhone or iPad.
+/// How the Mac currently reaches a device.
+enum DeviceConnection: Int32, Comparable {
+    case usb = 1
+    case wifi = 2
+
+    var label: String { self == .usb ? "USB" : "Wi-Fi" }
+    var systemImage: String { self == .usb ? "cable.connector" : "wifi" }
+
+    static func < (a: DeviceConnection, b: DeviceConnection) -> Bool { a.rawValue < b.rawValue }
+}
+
+/// What we know about an iPhone or iPad reachable over USB or Wi-Fi.
 struct DeviceInfo: Identifiable, Equatable {
     let udid: String
     var id: String { udid }
+    /// The connection in use: USB whenever it's plugged in, else Wi-Fi.
+    var connection: DeviceConnection = .usb
     var name = "Connecting…"
     var productType = ""
     var deviceClass = ""
@@ -211,8 +224,17 @@ final class DeviceMonitor: ObservableObject {
     @Published private(set) var devices: [DeviceInfo] = []
     @Published private(set) var startupError: String?
 
-    private var references: [String: UInt] = [:]
+    /// Device objects per UDID, one per interface (a device can be on USB and Wi-Fi at once).
+    private var references: [String: [DeviceConnection: UInt]] = [:]
     private let queue = DispatchQueue(label: "local.ipacourier.mobiledevice")
+
+    /// The device object to talk through: USB if plugged in, else Wi-Fi.
+    private func preferred(_ udid: String) -> (bits: UInt, connection: DeviceConnection)? {
+        guard let refs = references[udid], let best = refs.keys.min(), let bits = refs[best] else { return nil }
+        return (bits, best)
+    }
+
+    func connection(of udid: String) -> DeviceConnection? { preferred(udid)?.connection }
     private var started = false
 
     func start() {
@@ -223,7 +245,7 @@ final class DeviceMonitor: ObservableObject {
             return
         }
         if !MobileDevice.shared.subscribe(deviceNotificationCallback) {
-            startupError = "Couldn't listen for USB devices."
+            startupError = "Couldn't listen for devices."
         }
     }
 
@@ -231,25 +253,32 @@ final class DeviceMonitor: ObservableObject {
         guard let device = UnsafeMutableRawPointer(bitPattern: deviceBits) else { return }
         defer { Unmanaged<AnyObject>.fromOpaque(device).release() }
         let api = MobileDevice.shared
-        guard api.interfaceType(device) == 1, let udid = api.identifier(device) else { return }
+        guard let connection = DeviceConnection(rawValue: api.interfaceType(device)),
+              let udid = api.identifier(device) else { return }
 
         switch message {
-        case 1: // connected
-            if let old = references[udid], let pointer = UnsafeMutableRawPointer(bitPattern: old) {
+        case 1: // connected on this interface
+            if let old = references[udid]?[connection], let pointer = UnsafeMutableRawPointer(bitPattern: old) {
                 Unmanaged<AnyObject>.fromOpaque(pointer).release()
             }
             _ = Unmanaged<AnyObject>.fromOpaque(device).retain()
-            references[udid] = deviceBits
+            references[udid, default: [:]][connection] = deviceBits
             if !devices.contains(where: { $0.udid == udid }) {
-                devices.append(DeviceInfo(udid: udid))
+                devices.append(DeviceInfo(udid: udid, connection: connection))
             }
             Task { await refresh(udid) }
-        case 2: // disconnected
-            if let old = references.removeValue(forKey: udid),
+        case 2: // gone from this interface
+            if let old = references[udid]?.removeValue(forKey: connection),
                let pointer = UnsafeMutableRawPointer(bitPattern: old) {
                 Unmanaged<AnyObject>.fromOpaque(pointer).release()
             }
-            devices.removeAll { $0.udid == udid }
+            if references[udid]?.isEmpty ?? true {
+                references.removeValue(forKey: udid)
+                devices.removeAll { $0.udid == udid }
+            } else {
+                // Still reachable another way (e.g. unplugged but on Wi-Fi).
+                Task { await refresh(udid) }
+            }
         default:
             break
         }
@@ -257,14 +286,15 @@ final class DeviceMonitor: ObservableObject {
 
     func isConnected(_ udid: String) -> Bool { references[udid] != nil }
 
-    /// Re-reads name, trust state and free space.
+    /// Re-reads name, trust state and free space over the preferred connection.
     @discardableResult
     func refresh(_ udid: String) async -> DeviceInfo? {
-        guard let bits = references[udid], let device = UnsafeMutableRawPointer(bitPattern: bits) else {
-            return nil
-        }
+        guard let preferred = preferred(udid),
+              let device = UnsafeMutableRawPointer(bitPattern: preferred.bits) else { return nil }
+        let bits = preferred.bits
+        let connection = preferred.connection
         _ = Unmanaged<AnyObject>.fromOpaque(device).retain()
-        let info: DeviceInfo = await withCheckedContinuation { continuation in
+        var info: DeviceInfo = await withCheckedContinuation { continuation in
             queue.async {
                 let pointer = UnsafeMutableRawPointer(bitPattern: bits)!
                 let result = MobileDevice.shared.readInfo(pointer, udid: udid)
@@ -273,7 +303,18 @@ final class DeviceMonitor: ObservableObject {
             }
         }
         guard references[udid] != nil else { return nil }
+        info.connection = connection
+        if connection == .wifi, info.problem != nil {
+            info.problem = "Couldn't reach the device over Wi-Fi. Wake and unlock it, keep it on the same network, then click Refresh."
+        }
         if let index = devices.firstIndex(where: { $0.udid == udid }) {
+            // If a Wi-Fi read fails while the device sleeps, keep showing the last
+            // good details, but hand the caller the failed read so nothing relies on stale numbers.
+            if !info.trusted, connection == .wifi, devices[index].trusted {
+                devices[index].problem = info.problem
+                devices[index].connection = connection
+                return info
+            }
             devices[index] = info
         }
         return info
@@ -281,7 +322,7 @@ final class DeviceMonitor: ObservableObject {
 
     /// Provisioning profiles installed on the device.
     func profiles(_ udid: String) async -> [DeviceProfile] {
-        guard let bits = references[udid], let device = UnsafeMutableRawPointer(bitPattern: bits) else {
+        guard let bits = preferred(udid)?.bits, let device = UnsafeMutableRawPointer(bitPattern: bits) else {
             return []
         }
         _ = Unmanaged<AnyObject>.fromOpaque(device).retain()

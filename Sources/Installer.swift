@@ -70,6 +70,7 @@ enum Installer {
     static func install(
         app: URL,
         udid: String,
+        connection: DeviceConnection = .usb,
         progress: @escaping @Sendable (Double?, String) -> Void,
         log: @escaping @Sendable (String) -> Void
     ) async throws {
@@ -87,7 +88,11 @@ enum Installer {
 
         let output = ProgressParser.clean(result.text)
         if result.status != 0 || output.contains("ERROR:") || !output.contains("App installed") {
-            throw InstallError.failed(friendlyError(from: output, status: result.status))
+            var message = friendlyError(from: output, status: result.status)
+            if connection == .wifi && !message.localizedCaseInsensitiveContains("storage") {
+                message += "\n\nInstalling over Wi-Fi needs Xcode to reach the device on your network. Connect it by USB once, open Xcode → Window → Devices and Simulators, select it and turn on “Connect via network”. Keep the device unlocked and on the same Wi-Fi as this Mac."
+            }
+            throw InstallError.failed(message)
         }
         progress(1, "Installed")
     }

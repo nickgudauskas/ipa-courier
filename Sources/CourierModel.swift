@@ -389,8 +389,13 @@ final class CourierModel: ObservableObject {
             }
             item.set(.space, .done, "\(ByteFormat.string(free)) free · app needs \(ByteFormat.string(app.size))")
 
-            item.set(.install, .running, "Connecting…")
-            try await Installer.install(app: app.appURL, udid: udid, progress: { [weak item] fraction, status in
+            let overWiFi = info.connection == .wifi
+            item.set(.install, .running, overWiFi
+                ? "Connecting over Wi-Fi… (slower than USB for large apps)"
+                : "Connecting…")
+            if overWiFi { log("Installing \(item.name) over Wi-Fi (\(ByteFormat.string(app.size))).") }
+            try await Installer.install(app: app.appURL, udid: udid, connection: info.connection,
+                                        progress: { [weak item] fraction, status in
                 Task { @MainActor in item?.update(.install, fraction: fraction, detail: status) }
             }, log: { [weak self] line in
                 Task { @MainActor in self?.log(line) }

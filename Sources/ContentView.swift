@@ -58,8 +58,12 @@ struct ContentView: View {
                         .font(.system(size: 26))
                         .foregroundStyle(.secondary)
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("Connect an iPhone or iPad with a USB cable").font(.headline)
+                        Text("Connect an iPhone or iPad with a USB cable or over Wi-Fi").font(.headline)
                         Text("Unlock it and tap “Trust” if asked.").foregroundStyle(.secondary)
+                        Text("For Wi-Fi, connect by USB once, then turn on “Show this iPhone when on Wi-Fi” in Finder and “Connect via network” in Xcode → Window → Devices and Simulators.")
+                            .font(.callout)
+                            .foregroundStyle(.secondary)
+                            .fixedSize(horizontal: false, vertical: true)
                     }
                 }
                 .padding(.vertical, 6)
@@ -619,7 +623,17 @@ private struct DeviceRow: View {
             HStack(alignment: .firstTextBaseline) {
                 Image(systemName: device.deviceClass == "iPad" ? "ipad" : "iphone")
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(device.name).font(.title3.weight(.semibold))
+                    HStack(spacing: 8) {
+                        Text(device.name).font(.title3.weight(.semibold))
+                        Label(device.connection.label, systemImage: device.connection.systemImage)
+                            .font(.caption.weight(.semibold))
+                            .padding(.horizontal, 7)
+                            .padding(.vertical, 2)
+                            .background(Capsule().fill(Color.secondary.opacity(0.18)))
+                            .help(device.connection == .usb
+                                  ? "Connected by USB cable."
+                                  : "Connected over Wi-Fi. Large apps install more slowly than over USB.")
+                    }
                     if !device.summary.isEmpty {
                         Text(device.summary).foregroundStyle(.secondary).font(.callout)
                     }

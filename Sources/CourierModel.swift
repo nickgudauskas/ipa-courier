@@ -276,7 +276,11 @@ final class CourierModel: ObservableObject {
             if item.capabilities.isEmpty {
                 item.preview = "No profile covers this device yet. Xcode will register the device and create one for \(team.label)."
             } else {
-                item.preview = "Xcode will create a profile for \(id) with \(Capability.summary(item.capabilities)) (\(team.label))."
+                var text = "Xcode will create a profile for \(id) with \(Capability.summary(item.capabilities)) (\(team.label))."
+                if !id.hasSuffix(".\(team.id)") {
+                    text += " If another developer owns this ID, IPA Courier uses \(id).\(team.id) instead, which installs as a separate app."
+                }
+                item.preview = text
             }
             item.previewReady = true
         }
@@ -402,9 +406,9 @@ final class CourierModel: ObservableObject {
             })
             item.set(.install, .done, "Installed on \(info.name)")
             item.status = .done
-            Library.recordInstall(bundleID: wantedID, ipa: ipa.url)
+            Library.recordInstall(bundleID: app.bundleID, ipa: ipa.url)
             ledger = Library.loadLedger()
-            log("\(ipa.displayName) is installed on \(info.name) as \(wantedID).")
+            log("\(ipa.displayName) is installed on \(info.name) as \(app.bundleID).")
         } catch is CancellationError {
             item.failRunningStep("Cancelled")
             item.status = .cancelled
@@ -418,11 +422,19 @@ final class CourierModel: ObservableObject {
         }
     }
 
-    private func signFresh(_ item: QueueItem, ipa: IPAInspection, udid: String, bundleID: String) async throws -> SignedApp {
+    private func signFresh(_ item: QueueItem, ipa: IPAInspection, udid: String, bundleID requestedID: String) async throws -> SignedApp {
         let capabilities = item.capabilities
         item.set(.provision, .running, "Looking in your keychain and provisioning profiles…")
-        let plan = try await resolvePlan(item, bundleID: bundleID, udid: udid, capabilities: capabilities)
-        item.set(.provision, .done, "\(plan.identity.name) · \(plan.profile.name)")
+        let (plan, bundleID) = try await resolvePlan(item, bundleID: requestedID, udid: udid, capabilities: capabilities)
+        if bundleID != requestedID {
+            if item.pinnedBundleID != nil { item.pinnedBundleID = bundleID }
+            item.autoBundleID = bundleID
+            item.bundleID = bundleID
+            item.existing = ExistingInstall.find(for: bundleID, in: installedApps, preferredTeams: [plan.profile.teamID])
+            item.set(.provision, .done, "Using \(bundleID): the original ID belongs to another developer, so this installs as a separate app · \(plan.profile.name)")
+        } else {
+            item.set(.provision, .done, "\(plan.identity.name) · \(plan.profile.name)")
+        }
 
         let job = AppPaths.jobs.appendingPathComponent(UUID().uuidString, isDirectory: true)
         try FileManager.default.createDirectory(at: job, withIntermediateDirectories: true)
@@ -463,17 +475,38 @@ final class CourierModel: ObservableObject {
         }
     }
 
+    /// Finds or creates a profile. Returns the plan and the bundle ID to sign
+    /// with, which gains a `.TEAMID` suffix when capabilities are needed but
+    /// the original ID belongs to another developer.
     private func resolvePlan(_ item: QueueItem, bundleID: String, udid: String,
-                             capabilities: Set<Capability>) async throws -> SigningPlan {
+                             capabilities: Set<Capability>) async throws -> (SigningPlan, String) {
         await reloadSigningAssets()
         if let plan = Provisioning.plan(bundleID: bundleID, udid: udid, team: selectedTeam, capabilities: capabilities,
                                         profiles: profiles, identities: identities) {
-            return plan
+            return (plan, bundleID)
         }
         guard let team = selectedTeam ?? teams.first?.id else { throw ProvisioningError.noTeam }
+        do {
+            return (try await requestProfile(item, bundleID: bundleID, team: team, udid: udid,
+                                             capabilities: capabilities), bundleID)
+        } catch ProvisioningError.bundleIDUnavailable where !capabilities.isEmpty && !bundleID.hasSuffix(".\(team)") {
+            // Same convention Sideloadly uses: append the team ID to get an ID this team can own.
+            let ownID = "\(bundleID).\(team)"
+            log("\(bundleID) belongs to another developer; using \(ownID) so \(Capability.summary(capabilities)) can be enabled. It installs as a separate app.")
+            if let plan = Provisioning.plan(bundleID: ownID, udid: udid, team: team, capabilities: capabilities,
+                                            profiles: profiles, identities: identities) {
+                return (plan, ownID)
+            }
+            return (try await requestProfile(item, bundleID: ownID, team: team, udid: udid,
+                                             capabilities: capabilities), ownID)
+        }
+    }
+
+    private func requestProfile(_ item: QueueItem, bundleID: String, team: String, udid: String,
+                                capabilities: Set<Capability>) async throws -> SigningPlan {
         item.update(.provision, fraction: nil, detail: capabilities.isEmpty
             ? "Asking Xcode to register the device and create a profile…"
-            : "Asking Xcode for a profile with \(Capability.summary(capabilities))…")
+            : "Asking Xcode for a \(bundleID) profile with \(Capability.summary(capabilities))…")
         try await Provisioning.refreshWithXcode(teamID: team, udid: udid, bundleID: bundleID,
                                                 capabilities: capabilities) { [weak self] line in
             Task { @MainActor in self?.log(line) }

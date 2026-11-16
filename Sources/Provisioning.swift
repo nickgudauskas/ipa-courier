@@ -117,6 +117,10 @@ enum ProvisioningError: LocalizedError {
     case noTeam
     case stubMissing
     case stillNoProfile(String)
+    /// Xcode refused; `errors` are its own error lines.
+    case xcode(errors: [String])
+    /// The bundle ID is registered to another developer's team.
+    case bundleIDUnavailable(String)
 
     var errorDescription: String? {
         switch self {
@@ -126,6 +130,22 @@ enum ProvisioningError: LocalizedError {
             return "The provisioning helper project is missing from the app bundle."
         case .stillNoProfile(let detail):
             return "Xcode couldn't produce a usable provisioning profile. \(detail)"
+        case .xcode(let errors):
+            return "Xcode couldn't create a provisioning profile:\n" + errors.map { "• \($0)" }.joined(separator: "\n")
+        case .bundleIDUnavailable(let id):
+            return "The bundle ID \(id) is registered to another developer, so your team can't add capabilities to it."
+        }
+    }
+
+    /// Xcode's "error:" lines, without project paths and target suffixes.
+    static func xcodeErrors(from output: String) -> [String] {
+        var seen = Set<String>()
+        return output.split(whereSeparator: \.isNewline).compactMap { line -> String? in
+            guard let range = line.range(of: "error: ") else { return nil }
+            var message = String(line[range.upperBound...])
+            if let target = message.range(of: " (in target ") { message = String(message[..<target.lowerBound]) }
+            message = message.trimmingCharacters(in: .whitespaces)
+            return message.isEmpty || !seen.insert(message).inserted ? nil : message
         }
     }
 }
@@ -299,6 +319,7 @@ enum Provisioning {
             log("Asking Xcode for a \(bundleID) profile with \(Capability.summary(capabilities)) (team \(teamID))…")
         }
         let interesting = ["error", "warning:", "Signing Identity", "Provisioning Profile", "BUILD"]
+        do {
         try await Shell.run("/usr/bin/xcrun", [
             "xcodebuild",
             "-project", work.appendingPathComponent("Stub.xcodeproj").path,
@@ -317,6 +338,13 @@ enum Provisioning {
                 log(String(line).trimmingCharacters(in: .whitespaces))
             }
         })
+        } catch let error as CommandError {
+            let errors = ProvisioningError.xcodeErrors(from: error.output)
+            if errors.contains(where: { $0.contains("cannot be registered to your development team") }) {
+                throw ProvisioningError.bundleIDUnavailable(bundleID)
+            }
+            throw errors.isEmpty ? error : ProvisioningError.xcode(errors: errors)
+        }
 
         let embedded = derived.appendingPathComponent("Build/Products/Debug-iphoneos/Stub.app/embedded.mobileprovision")
         guard let profile = parseProfile(at: embedded) else {

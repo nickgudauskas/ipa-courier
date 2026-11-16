@@ -84,9 +84,7 @@ private struct ProjectCard: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            ProjectImage(project: project)
-                .frame(height: 110)
-                .clipped()
+            ProjectImage(project: project, height: 110)
             VStack(alignment: .leading, spacing: 5) {
                 Text(project.name).font(.headline).lineLimit(1)
                 Text("\(project.game) · \(project.console)")
@@ -134,23 +132,41 @@ private struct ProjectCard: View {
     }
 }
 
+/// The project's GitHub preview image, filling a fixed-height box at the column's width.
+/// The box sets the size and the image is overlaid and clipped, so wide images can't
+/// widen their card.
 private struct ProjectImage: View {
     let project: CatalogProject
+    let height: CGFloat
+    @State private var image: NSImage?
+    @State private var loading = true
 
     var body: some View {
-        AsyncImage(url: project.imageURL) { phase in
-            switch phase {
-            case .success(let image):
-                image.resizable().aspectRatio(contentMode: .fill)
-            default:
-                ZStack {
-                    LinearGradient(colors: [Color.accentColor.opacity(0.35), Color.accentColor.opacity(0.1)],
-                                   startPoint: .topLeading, endPoint: .bottomTrailing)
-                    Image(systemName: "gamecontroller").font(.system(size: 30)).foregroundStyle(.secondary)
+        Color.clear
+            .frame(maxWidth: .infinity)
+            .frame(height: height)
+            .overlay {
+                if let image {
+                    Image(nsImage: image).resizable().aspectRatio(contentMode: .fill)
+                } else {
+                    ZStack {
+                        LinearGradient(colors: [Color.accentColor.opacity(0.35), Color.accentColor.opacity(0.1)],
+                                       startPoint: .topLeading, endPoint: .bottomTrailing)
+                        if loading {
+                            ProgressView().controlSize(.small)
+                        } else {
+                            Image(systemName: "gamecontroller").font(.system(size: 30)).foregroundStyle(.secondary)
+                        }
+                    }
                 }
             }
-        }
-        .accessibilityHidden(true)
+            .clipped()
+            .task(id: project.id) {
+                loading = true
+                image = await RemoteImageCache.shared.image(for: project.imageURLs)
+                loading = false
+            }
+            .accessibilityHidden(true)
     }
 }
 
@@ -177,9 +193,7 @@ private struct ProjectDetailView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            ProjectImage(project: project)
-                .frame(height: 170)
-                .clipped()
+            ProjectImage(project: project, height: 170)
 
             ScrollView {
                 VStack(alignment: .leading, spacing: 14) {

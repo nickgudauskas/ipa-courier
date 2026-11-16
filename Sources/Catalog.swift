@@ -39,6 +39,14 @@ struct CatalogProject: Codable, Identifiable, Hashable {
     /// GitHub's generated social preview card; works for every public repo without a key.
     var imageURL: URL { URL(string: "https://opengraph.githubassets.com/1/\(repo)")! }
 
+    /// The copy of that card published with the release index (served by GitHub's file CDN),
+    /// then the card itself, whose service allows only about 100 requests per IP at a time.
+    var imageURLs: [URL] {
+        let published = "https://raw.githubusercontent.com/nickgudauskas/ipa-courier/release-index/images/"
+            + repo.replacingOccurrences(of: "/", with: "__") + ".png"
+        return [URL(string: published)!, imageURL]
+    }
+
     func matches(_ query: String) -> Bool {
         let q = query.trimmingCharacters(in: .whitespaces)
         guard !q.isEmpty else { return true }

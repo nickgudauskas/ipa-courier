@@ -1,8 +1,9 @@
 name: Update release index
 
-# Publishes releases.json (the latest release of every catalog project) to the
-# release-index branch, so IPA Courier needs one download instead of one GitHub
-# API call per project.
+# Publishes releases.json (the latest release of every catalog project) and
+# each project's preview image to the release-index branch, so IPA Courier needs
+# a few CDN downloads instead of one GitHub API call and one rate-limited image
+# request per project.
 
 on:
   schedule:
@@ -17,20 +18,28 @@ permissions:
 
 concurrency:
   group: release-index
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   index:
     runs-on: ubuntu-latest
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build releases.json
+      - name: Reuse images already published
+        run: |
+          mkdir -p out/images
+          if git fetch -q --depth=1 origin release-index; then
+            git --work-tree=out checkout FETCH_HEAD -- images 2>/dev/null || true
+            git reset -q
+          fi
+          echo "$(ls out/images | wc -l) images reused"
+
+      - name: Build releases.json and fetch new images
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          mkdir -p out
-          python3 scripts/build-release-index.py > out/releases.json
+        run: python3 scripts/build-release-index.py --images out/images > out/releases.json
 
       - name: Publish to the release-index branch
         env:
@@ -40,6 +49,6 @@ jobs:
           git init -q -b release-index
           git config user.name "github-actions[bot]"
           git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
-          git add releases.json
+          git add releases.json images
           git commit -q -m "Update release index"
           git push -q -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" release-index

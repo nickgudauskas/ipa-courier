@@ -80,6 +80,10 @@ the original game.
 
 **Android tab:** sideload Android apps over USB with Google's adb.
 
+<p align="center">
+  <img src="docs/android.png" width="720" alt="Android tab with instructions for connecting a device, Ghostship 3.0.0 waiting in the install queue with its package, size, minimum Android version and CPU types, and the same APK listed under APKs on This Mac">
+</p>
+
 - **Device:** shows the connected phone or tablet's model, Android version,
   CPU type and free storage. If USB debugging still needs allowing, it says how.
 - **Finding APKs:** searches your IPA folder, Downloads and any folders you add

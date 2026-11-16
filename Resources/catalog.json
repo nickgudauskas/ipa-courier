@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": 2,
+  "revision": 3,
   "notice": "IPA Courier doesn't provide game files. Every project here needs your own legally obtained copy of the original game.",
   "projects": [
     {
@@ -520,7 +520,7 @@
       "game": "Perfect Dark",
       "console": "Nintendo 64",
       "kind": "Decompilation port",
-      "repo": "fgsfdsfgs/perfect_dark",
+      "repo": "perfect-dark-pc-port/perfect_dark",
       "summary": "Native port of Perfect Dark built from its decompilation.",
       "requires": "Your own Perfect Dark ROM.",
       "mac": {

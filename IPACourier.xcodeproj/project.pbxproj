@@ -12,6 +12,7 @@
 		1B20ACF4C6B30A4021CFE6C7 /* catalog.json in Resources */ = {isa = PBXBuildFile; fileRef = CD1CA5DC6BCDCDB445F80EFA /* catalog.json */; };
 		25A12DF05F42FA0F838AC478 /* QueueItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076FE85DDF2F956FC7127965 /* QueueItem.swift */; };
 		378284BB944ACBBE823D747F /* IPACourierApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52745A00C2DFC44C9A658D19 /* IPACourierApp.swift */; };
+		3D095FBA51219581D9D6CCED /* UpdateChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97194BC9C431B866596DCD09 /* UpdateChecker.swift */; };
 		438CC9FFB2F4B9CB1C40423F /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60F3D3B8AA509FB621131E /* DiscoverView.swift */; };
 		62BD60DFA6CD5387AC940CE6 /* APKInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0605141A1846371AE103D0E8 /* APKInfo.swift */; };
 		6685817BBA1E043F3A82194E /* RemoteImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D37F87A1891CEA60F577BC /* RemoteImageCache.swift */; };
@@ -47,6 +48,7 @@
 		7C0758CBBB7FB6B0B45F1433 /* AndroidModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndroidModel.swift; sourceTree = "<group>"; };
 		7D6B57583C42F041BEF2F7E9 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
 		857869B3BE3F7B4EAE87B990 /* Signer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signer.swift; sourceTree = "<group>"; };
+		97194BC9C431B866596DCD09 /* UpdateChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateChecker.swift; sourceTree = "<group>"; };
 		A338798156ECC58E4DDEFDBA /* ProvisioningStub */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ProvisioningStub; path = Resources/ProvisioningStub; sourceTree = SOURCE_ROOT; };
 		AA8A997BA7C0FAC2351B1509 /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
 		CD1CA5DC6BCDCDB445F80EFA /* catalog.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = catalog.json; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				D4D37F87A1891CEA60F577BC /* RemoteImageCache.swift */,
 				7D6B57583C42F041BEF2F7E9 /* Shell.swift */,
 				857869B3BE3F7B4EAE87B990 /* Signer.swift */,
+				97194BC9C431B866596DCD09 /* UpdateChecker.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				6685817BBA1E043F3A82194E /* RemoteImageCache.swift in Sources */,
 				78BA42905E9555341B5C0EA9 /* Shell.swift in Sources */,
 				C85860A3B0CB82BA2A5739A0 /* Signer.swift in Sources */,
+				3D095FBA51219581D9D6CCED /* UpdateChecker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +346,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = local.ipacourier.app;
 				PRODUCT_NAME = "IPA Courier";
 				SDKROOT = macosx;
@@ -366,7 +370,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = local.ipacourier.app;
 				PRODUCT_NAME = "IPA Courier";
 				SDKROOT = macosx;

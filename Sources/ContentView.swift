@@ -6,6 +6,7 @@ private let ipaType = UTType(filenameExtension: "ipa") ?? .data
 struct ContentView: View {
     @EnvironmentObject private var model: CourierModel
     @EnvironmentObject private var android: AndroidModel
+    @EnvironmentObject private var updater: UpdateChecker
     @ObservedObject private var monitor = DeviceMonitor.shared
     @State private var importing = false
     @State private var dropTargeted = false
@@ -14,6 +15,7 @@ struct ContentView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 14) {
+                if let update = updater.available { updateBanner(update) }
                 if model.tab != .android { deviceSection }
                 Picker("", selection: $model.tab) {
                     Text("Install").tag(MainTab.install)
@@ -56,6 +58,38 @@ struct ContentView: View {
             }
             return !providers.isEmpty
         }
+    }
+
+    // MARK: Update banner
+
+    private func updateBanner(_ update: AppUpdate) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(spacing: 10) {
+                Image(systemName: "arrow.down.circle.fill").font(.title2).foregroundStyle(Color.accentColor)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("IPA Courier \(update.version) is available").font(.headline)
+                    Text("You have \(updater.currentVersion).").font(.callout).foregroundStyle(.secondary)
+                }
+                Spacer()
+                Button("Skip This Version") { updater.skip() }
+                Button("What's New") { updater.showReleaseNotes() }
+                Button(update.dmg != nil ? "Download" : "Open Release Page") { updater.download() }
+                    .buttonStyle(.borderedProminent)
+                    .disabled(updater.job?.running == true)
+            }
+            if let job = updater.job {
+                if job.running {
+                    if let fraction = job.fraction { ProgressView(value: fraction) } else { ProgressView().progressViewStyle(.linear) }
+                }
+                Label(job.error ?? job.status, systemImage: job.error != nil ? "xmark.octagon.fill" : job.running ? "arrow.down.circle" : "checkmark.circle.fill")
+                    .font(.callout)
+                    .foregroundStyle(job.error != nil ? Color.red : Color.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        }
+        .padding(12)
+        .background(RoundedRectangle(cornerRadius: 10).fill(Color.accentColor.opacity(0.12)))
+        .overlay(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.accentColor.opacity(0.35)))
     }
 
     // MARK: Device

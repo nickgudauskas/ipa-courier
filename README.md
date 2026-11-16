@@ -104,6 +104,10 @@ If adb isn't already installed (Android Studio or Homebrew), the Android tab
 offers to download Google's official Platform Tools (about 16 MB) into IPA
 Courier's own folder.
 
+**Updates:** IPA Courier checks this repository's releases once a day. When a
+newer version is out, a banner offers to download its DMG (or skip that
+version). **IPA Courier → Check for Updates…** checks right away.
+
 If there isn't enough space, the signed copy is kept. Free up space, then
 click **Re-check & Install** to skip signing. **Export Signed IPA…** saves the
 signed app as an `.ipa`.
@@ -174,17 +178,23 @@ the right file from the latest release:
 
 When several files match, Apple silicon builds (`arm64`, `aarch64`,
 `universal`) are preferred. Check a new rule with
-`GITHUB_TOKEN=$(gh auth token) python3 scripts/build-release-index.py`.
+`GITHUB_TOKEN=$(gh auth token) python3 scripts/build-release-index.py --health report.md`.
+Use `"padmint": true` instead of `"ios"` for projects that PadMint builds.
+Only list projects whose releases are meant to be redistributed and contain no
+game files.
 
 Release details and card images come from the `release-index` branch. The
 [Update release index](.github/workflows/release-index.yml) workflow rebuilds it
-every 3 hours and whenever the catalog changes. It publishes `releases.json` and a copy of each
-project's GitHub preview image. The app then makes a few CDN downloads instead
-of one rate-limited API call and one image request per project. GitHub's image
-service allows only about 100 images per IP at a time. Anything missing from
-the index falls back to GitHub directly. Use `"padmint": true` instead of `"ios"` for
-projects that PadMint builds. Only list projects whose releases are meant to be
-redistributed and contain no game files.
+every 3 hours and whenever the catalog changes. It publishes `releases.json`
+and a copy of each project's GitHub preview image. The app then makes a few CDN
+downloads instead of one rate-limited API call and one image request per
+project. GitHub's image service allows only about 100 images per IP at a time.
+Anything missing from the index falls back to GitHub directly.
+
+The same workflow checks every entry. Repos that moved or disappeared, repos
+with no releases, and rules that no longer match a file are listed in a
+**Catalog health check** issue. The issue updates when the list changes and
+closes itself once everything resolves.
 
 ## License
 

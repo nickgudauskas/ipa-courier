@@ -3,7 +3,8 @@ name: Update release index
 # Publishes releases.json (the latest release of every catalog project) and
 # each project's preview image to the release-index branch, so IPA Courier needs
 # a few CDN downloads instead of one GitHub API call and one rate-limited image
-# request per project.
+# request per project. Also checks every catalog entry and keeps a
+# "Catalog health check" issue open while any project has a problem.
 
 on:
   schedule:
@@ -15,6 +16,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: release-index
@@ -39,7 +41,7 @@ jobs:
       - name: Build releases.json and fetch new images
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python3 scripts/build-release-index.py --images out/images > out/releases.json
+        run: python3 scripts/build-release-index.py --images out/images --health health.md > out/releases.json
 
       - name: Publish to the release-index branch
         env:
@@ -52,3 +54,25 @@ jobs:
           git add releases.json images
           git commit -q -m "Update release index"
           git push -q -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" release-index
+
+      - name: Report catalog problems
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          title="Catalog health check"
+          number=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search "\"$title\" in:title" \
+            --json number,title --jq "map(select(.title == \"$title\")) | .[0].number // empty")
+          if [ -s health.md ]; then
+            if [ -z "$number" ]; then
+              gh issue create --repo "$GITHUB_REPOSITORY" --title "$title" --body-file health.md
+            else
+              # Only edit when the problem list changed (ignore the timestamp line).
+              old=$(gh issue view "$number" --repo "$GITHUB_REPOSITORY" --json body --jq .body | grep '^- ' || true)
+              new=$(grep '^- ' health.md || true)
+              if [ "$old" != "$new" ]; then
+                gh issue edit "$number" --repo "$GITHUB_REPOSITORY" --body-file health.md
+              fi
+            fi
+          elif [ -n "$number" ]; then
+            gh issue close "$number" --repo "$GITHUB_REPOSITORY" --comment "Every catalog project resolves again."
+          fi

@@ -28,6 +28,7 @@ struct IPACourierApp: App {
     @StateObject private var model = CourierModel()
     @StateObject private var discover = DiscoverModel()
     @StateObject private var android = AndroidModel()
+    @StateObject private var updater = UpdateChecker()
 
     var body: some Scene {
         Window("IPA Courier", id: "main") {
@@ -35,7 +36,9 @@ struct IPACourierApp: App {
                 .environmentObject(model)
                 .environmentObject(discover)
                 .environmentObject(android)
+                .environmentObject(updater)
                 .onAppear {
+                    updater.checkIfDue()
                     delegate.model = model
                     delegate.android = android
                     discover.courier = model
@@ -44,5 +47,11 @@ struct IPACourierApp: App {
                 }
         }
         .windowResizability(.contentMinSize)
+        .commands {
+            CommandGroup(after: .appInfo) {
+                Button("Check for Updates…") { Task { await updater.check(manual: true) } }
+                    .disabled(updater.checking)
+            }
+        }
     }
 }

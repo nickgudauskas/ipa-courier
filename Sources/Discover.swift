@@ -5,12 +5,13 @@ enum DiscoverFilter: String, CaseIterable, Identifiable {
     case all = "All"
     case mac = "Mac"
     case ios = "iPhone & iPad"
+    case android = "Android"
     case padmint = "PadMint"
     var id: String { rawValue }
 }
 
 enum GamePlatform: String {
-    case mac, ios
+    case mac, ios, android
 }
 
 struct GameJob: Equatable {
@@ -49,6 +50,7 @@ private enum InstalledGames {
 @MainActor
 final class DiscoverModel: ObservableObject {
     weak var courier: CourierModel?
+    weak var android: AndroidModel?
 
     @Published private(set) var catalog: Catalog?
     @Published private(set) var catalogSource = ""
@@ -147,6 +149,7 @@ final class DiscoverModel: ObservableObject {
             case .all: return true
             case .mac: return project.mac != nil
             case .ios: return project.ios != nil || project.usesPadMint
+            case .android: return project.android != nil
             case .padmint: return project.usesPadMint
             }
         }
@@ -155,6 +158,7 @@ final class DiscoverModel: ObservableObject {
     func release(_ project: CatalogProject) -> Release? { releases[project.repo] }
     func macAsset(_ project: CatalogProject) -> ReleaseAsset? { release(project)?.asset(for: project.mac) }
     func iosAsset(_ project: CatalogProject) -> ReleaseAsset? { release(project)?.asset(for: project.ios) }
+    func androidAsset(_ project: CatalogProject) -> ReleaseAsset? { release(project)?.asset(for: project.android) }
     func installedGame(_ project: CatalogProject) -> InstalledGame? { installed[project.id] }
 
     func hasUpdate(_ project: CatalogProject) -> Bool {
@@ -257,6 +261,47 @@ final class DiscoverModel: ObservableObject {
                 courier?.log("\(project.name): \(error.localizedDescription)")
             }
         }
+    }
+
+    /// Downloads the Android build (unpacking it from a zip if needed) and adds it to the Android queue.
+    func addToAndroidQueue(_ project: CatalogProject) {
+        guard let asset = androidAsset(project), let release = release(project), let android else { return }
+        let key = "\(project.id)-android"
+        guard jobs[key]?.running != true else { return }
+        jobs[key] = GameJob(status: "Starting download…", fraction: 0)
+        courier?.log("Downloading \(project.name) \(release.tag) for Android (\(asset.name)).")
+        Task {
+            let work = GameInstaller.workFolder.appendingPathComponent(UUID().uuidString, isDirectory: true)
+            defer { try? FileManager.default.removeItem(at: work) }
+            do {
+                let file = try await GameInstaller.download(asset, into: work) { [weak self] fraction, text in
+                    Task { @MainActor in self?.update(key, fraction: fraction, status: "Downloading · \(text)") }
+                }
+                var apk = file
+                if APKKind(url: file) == nil {
+                    let unpacked = work.appendingPathComponent("unpacked", isDirectory: true)
+                    guard let found = try await GameInstaller.unpack(file, lookingFor: "apk", into: unpacked).first else {
+                        throw GameInstallError.nothingFound("\(asset.name) doesn't contain an .apk file.")
+                    }
+                    apk = found
+                }
+                let destination = android.downloadsFolder.appendingPathComponent(apk.lastPathComponent)
+                try? FileManager.default.removeItem(at: destination)
+                try FileManager.default.moveItem(at: apk, to: destination)
+                android.add([destination])
+                courier?.tab = .discover
+                jobs[key] = GameJob(status: "Added \(destination.lastPathComponent) to the Android queue.", fraction: 1,
+                                    running: false, ipa: destination)
+            } catch {
+                jobs[key] = GameJob(status: "Couldn't download", error: error.localizedDescription, running: false)
+                courier?.log("\(project.name): \(error.localizedDescription)")
+            }
+        }
+    }
+
+    func goToAndroid() {
+        selected = nil
+        courier?.tab = .android
     }
 
     func goToQueue() {

@@ -30,6 +30,7 @@ struct CatalogProject: Codable, Identifiable, Hashable {
     let requires: String
     let mac: AssetRule?
     let ios: AssetRule?
+    let android: AssetRule?
     /// Built into a playable app with PadMint from the user's own game file.
     let padmint: Bool?
 
@@ -79,6 +80,7 @@ struct Release: Codable, Hashable {
         }
         func score(_ name: String) -> Int {
             let lower = name.lowercased()
+            if lower.contains("armeabi") || lower.contains("v7a") { return 1 }
             if ["arm64", "aarch64", "_arm", "-arm", "universal", "apple-silicon"].contains(where: lower.contains) { return 2 }
             if ["x86_64", "x64", "intel", "amd64"].contains(where: lower.contains) { return 0 }
             return 1

@@ -5,6 +5,7 @@ private let ipaType = UTType(filenameExtension: "ipa") ?? .data
 
 struct ContentView: View {
     @EnvironmentObject private var model: CourierModel
+    @EnvironmentObject private var android: AndroidModel
     @ObservedObject private var monitor = DeviceMonitor.shared
     @State private var importing = false
     @State private var dropTargeted = false
@@ -13,12 +14,13 @@ struct ContentView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 14) {
-                deviceSection
+                if model.tab != .android { deviceSection }
                 Picker("", selection: $model.tab) {
                     Text("Install").tag(MainTab.install)
                     Text(model.expiringSoonCount > 0 ? "On Device (\(model.expiringSoonCount) expiring)" : "On Device")
                         .tag(MainTab.onDevice)
                     Text("Discover").tag(MainTab.discover)
+                    Text("Android").tag(MainTab.android)
                 }
                 .pickerStyle(.segmented)
                 .labelsHidden()
@@ -27,6 +29,7 @@ struct ContentView: View {
                 case .install: installTab
                 case .onDevice: OnDeviceView()
                 case .discover: DiscoverView()
+                case .android: AndroidView()
                 }
                 logSection
             }
@@ -41,7 +44,14 @@ struct ContentView: View {
             for provider in providers {
                 _ = provider.loadObject(ofClass: URL.self) { url, _ in
                     guard let url else { return }
-                    Task { @MainActor in model.add([url]) }
+                    Task { @MainActor in
+                        // APKs (and folders dropped on the Android tab) go to the Android queue.
+                        if APKKind(url: url) != nil || (model.tab == .android && url.hasDirectoryPath) {
+                            android.add([url])
+                        } else {
+                            model.add([url])
+                        }
+                    }
                 }
             }
             return !providers.isEmpty

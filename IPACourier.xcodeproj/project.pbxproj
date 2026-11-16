@@ -13,21 +13,26 @@
 		25A12DF05F42FA0F838AC478 /* QueueItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076FE85DDF2F956FC7127965 /* QueueItem.swift */; };
 		378284BB944ACBBE823D747F /* IPACourierApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52745A00C2DFC44C9A658D19 /* IPACourierApp.swift */; };
 		438CC9FFB2F4B9CB1C40423F /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60F3D3B8AA509FB621131E /* DiscoverView.swift */; };
+		62BD60DFA6CD5387AC940CE6 /* APKInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0605141A1846371AE103D0E8 /* APKInfo.swift */; };
 		6685817BBA1E043F3A82194E /* RemoteImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D37F87A1891CEA60F577BC /* RemoteImageCache.swift */; };
 		78BA42905E9555341B5C0EA9 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B57583C42F041BEF2F7E9 /* Shell.swift */; };
+		92F272F8185C3908A5F8993F /* AndroidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC372EC34444D15F59F04FD6 /* AndroidView.swift */; };
 		A8398ADA40E832E923C589B1 /* ProvisioningStub in Resources */ = {isa = PBXBuildFile; fileRef = A338798156ECC58E4DDEFDBA /* ProvisioningStub */; };
 		BCC6411F592BFD638B45030A /* GameInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290D661ED804C946EF7C7FE0 /* GameInstaller.swift */; };
 		BFB1C1C90A5DBE5D95A0395A /* Installer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D914BFC9448EF364822FE7A6 /* Installer.swift */; };
 		C1360042C5AD488B31CB98AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE89B219B47C9B95E787B129 /* ContentView.swift */; };
+		C4AF6EF72A5AF098A7E5AF98 /* AndroidModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0758CBBB7FB6B0B45F1433 /* AndroidModel.swift */; };
 		C85860A3B0CB82BA2A5739A0 /* Signer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857869B3BE3F7B4EAE87B990 /* Signer.swift */; };
 		CC027423712A4D93B64BAAD2 /* CourierModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55017AB7BDF4F4FFAACDFF93 /* CourierModel.swift */; };
 		E5A8E458E3B4D324E20C1D55 /* MobileDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180204612A16618FC8339050 /* MobileDevice.swift */; };
 		EC868648D155523C93E2852A /* Discover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177B1CAAB8D75953040771C /* Discover.swift */; };
 		F960D2EF45E44D41B541D3F4 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DFD5B62959AF04AA971FB /* Library.swift */; };
+		FDB4905F176A6682ECCCA5F2 /* AndroidTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D34A18DA2AB685377E3927 /* AndroidTools.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		01314A8B28C8335999FE0CCE /* IPACourier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IPACourier.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0605141A1846371AE103D0E8 /* APKInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APKInfo.swift; sourceTree = "<group>"; };
 		076FE85DDF2F956FC7127965 /* QueueItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueItem.swift; sourceTree = "<group>"; };
 		0BC1160E438A7327B84BD475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		180204612A16618FC8339050 /* MobileDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDevice.swift; sourceTree = "<group>"; };
@@ -38,6 +43,8 @@
 		52745A00C2DFC44C9A658D19 /* IPACourierApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPACourierApp.swift; sourceTree = "<group>"; };
 		55017AB7BDF4F4FFAACDFF93 /* CourierModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourierModel.swift; sourceTree = "<group>"; };
 		762C861FA71533645E9FBA35 /* Provisioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provisioning.swift; sourceTree = "<group>"; };
+		76D34A18DA2AB685377E3927 /* AndroidTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndroidTools.swift; sourceTree = "<group>"; };
+		7C0758CBBB7FB6B0B45F1433 /* AndroidModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndroidModel.swift; sourceTree = "<group>"; };
 		7D6B57583C42F041BEF2F7E9 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
 		857869B3BE3F7B4EAE87B990 /* Signer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signer.swift; sourceTree = "<group>"; };
 		A338798156ECC58E4DDEFDBA /* ProvisioningStub */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ProvisioningStub; path = Resources/ProvisioningStub; sourceTree = SOURCE_ROOT; };
@@ -45,6 +52,7 @@
 		CD1CA5DC6BCDCDB445F80EFA /* catalog.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = catalog.json; sourceTree = "<group>"; };
 		D4D37F87A1891CEA60F577BC /* RemoteImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageCache.swift; sourceTree = "<group>"; };
 		D914BFC9448EF364822FE7A6 /* Installer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Installer.swift; sourceTree = "<group>"; };
+		DC372EC34444D15F59F04FD6 /* AndroidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndroidView.swift; sourceTree = "<group>"; };
 		FE89B219B47C9B95E787B129 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +78,10 @@
 		DE1264813DC0C8AB81393A11 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				7C0758CBBB7FB6B0B45F1433 /* AndroidModel.swift */,
+				76D34A18DA2AB685377E3927 /* AndroidTools.swift */,
+				DC372EC34444D15F59F04FD6 /* AndroidView.swift */,
+				0605141A1846371AE103D0E8 /* APKInfo.swift */,
 				AA8A997BA7C0FAC2351B1509 /* Catalog.swift */,
 				FE89B219B47C9B95E787B129 /* ContentView.swift */,
 				55017AB7BDF4F4FFAACDFF93 /* CourierModel.swift */,
@@ -170,6 +182,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62BD60DFA6CD5387AC940CE6 /* APKInfo.swift in Sources */,
+				C4AF6EF72A5AF098A7E5AF98 /* AndroidModel.swift in Sources */,
+				FDB4905F176A6682ECCCA5F2 /* AndroidTools.swift in Sources */,
+				92F272F8185C3908A5F8993F /* AndroidView.swift in Sources */,
 				10DC11D917C718A8F67D9836 /* Catalog.swift in Sources */,
 				C1360042C5AD488B31CB98AE /* ContentView.swift in Sources */,
 				CC027423712A4D93B64BAAD2 /* CourierModel.swift in Sources */,
@@ -326,7 +342,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.3.1;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = local.ipacourier.app;
 				PRODUCT_NAME = "IPA Courier";
 				SDKROOT = macosx;
@@ -350,7 +366,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.3.1;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = local.ipacourier.app;
 				PRODUCT_NAME = "IPA Courier";
 				SDKROOT = macosx;

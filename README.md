@@ -1,7 +1,8 @@
 # IPA Courier
 
 A small macOS app that signs an `.ipa` with your Apple Developer account and
-installs it on an iPhone or iPad over USB or Wi-Fi, with a progress bar.
+installs it on an iPhone or iPad over USB or Wi-Fi, with a progress bar. It
+also sideloads Android apps (`.apk`, `.xapk`, `.apks`) over USB.
 
 <p align="center">
   <img src="docs/screenshot.png" width="720" alt="IPA Courier window showing a connected iPhone with its free storage, and an empty install queue ready for IPA files">
@@ -77,6 +78,28 @@ GitHub release.
 IPA Courier never provides game files: every project needs your own copy of
 the original game.
 
+**Android tab:** sideload Android apps over USB with Google's adb.
+
+- **Device:** shows the connected phone or tablet's model, Android version,
+  CPU type and free storage. If USB debugging still needs allowing, it says how.
+- **Finding APKs:** searches your IPA folder, Downloads and any folders you add
+  for `.apk`, `.xapk` and `.apks` files. It reads each app's real name,
+  package, version, minimum Android version and native architectures, and
+  marks ones already installed or with an update. You can also drop APKs on
+  the window or use Finder's *Open With*.
+- **Installing:** IPA Courier checks Android version, CPU type and free space
+  first, copies the APK with a progress bar and installs it. Split-APK
+  bundles get the right CPU split and their OBB game data copied. Common
+  failures get a specific fix. Examples: a copy signed by someone else
+  (Uninstall & Install, after a data-loss warning), a newer version installed
+  (Install Older Version), or USB installs blocked by the phone's settings.
+- **Discover:** 31 catalog projects have Android builds and an **Install on
+  Android** button.
+
+If adb isn't already installed (Android Studio or Homebrew), the Android tab
+offers to download Google's official Platform Tools (about 16 MB) into IPA
+Courier's own folder.
+
 If there isn't enough space, the signed copy is kept. Free up space, then
 click **Re-check & Install** to skip signing. **Export Signed IPA…** saves the
 signed app as an `.ipa`.
@@ -89,6 +112,8 @@ signed app as an `.ipa`.
   when on Wi-Fi* in Finder and *Connect via network* in Xcode → Window →
   Devices and Simulators. Keep the device unlocked and on the same network.
   Large apps install noticeably slower over Wi-Fi.
+- For Android: USB debugging on the device (Settings → About phone → tap
+  Build number 7 times, then Developer options → USB debugging)
 - Not sandboxed: it runs `codesign`, `xcodebuild`, `devicectl` and `unzip`
 
 ## Build

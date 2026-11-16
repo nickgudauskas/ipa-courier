@@ -3,7 +3,7 @@ import Combine
 import Foundation
 
 enum MainTab: Hashable {
-    case install, onDevice, discover
+    case install, onDevice, discover, android
 }
 
 @MainActor

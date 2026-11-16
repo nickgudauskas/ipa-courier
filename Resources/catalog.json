@@ -16,6 +16,9 @@
       },
       "ios": {
         "asset": "ios-arm64\\.ipa$"
+      },
+      "android": {
+        "asset": "android-arm64\\.apk$"
       }
     },
     {
@@ -32,6 +35,9 @@
       },
       "ios": {
         "asset": "-iOS\\.zip$"
+      },
+      "android": {
+        "asset": "-Android\\.zip$"
       }
     },
     {
@@ -48,6 +54,9 @@
       },
       "ios": {
         "asset": "iOS-arm64\\.ipa$"
+      },
+      "android": {
+        "asset": "^app-release\\.apk$"
       }
     },
     {
@@ -136,7 +145,10 @@
       "repo": "chrissotraidis/kartpad",
       "summary": "Mario Kart Wii (with optional Retro Rewind) natively on iPhone and iPad.",
       "requires": "Your own Mario Kart Wii disc image. PadMint builds the playable app from it on your Mac.",
-      "padmint": true
+      "padmint": true,
+      "android": {
+        "asset": "-android\\.apk$"
+      }
     },
     {
       "id": "shipwright",
@@ -266,6 +278,9 @@
       "requires": "Your own Data.rsdk from a purchased copy of Sonic CD (2011).",
       "mac": {
         "asset": "v3-mac\\.zip$"
+      },
+      "android": {
+        "asset": "v3-android\\.zip$"
       }
     },
     {
@@ -279,6 +294,9 @@
       "requires": "Your own Tomb Raider game data (PC or PlayStation).",
       "mac": {
         "asset": "OpenLara_osx\\.zip$"
+      },
+      "android": {
+        "asset": "OpenLara_android\\.zip$"
       }
     },
     {
@@ -295,6 +313,9 @@
       },
       "ios": {
         "asset": "Melee-iOS-arm64\\.ipa$"
+      },
+      "android": {
+        "asset": "Melee-Android-arm64\\.apk$"
       }
     },
     {
@@ -311,6 +332,9 @@
       },
       "ios": {
         "asset": "ios-arm64\\.ipa$"
+      },
+      "android": {
+        "asset": "android-arm64\\.apk$"
       }
     },
     {
@@ -335,6 +359,9 @@
       "requires": "Your own Wind Waker HD (Wii U) game files.",
       "mac": {
         "asset": "macos-arm64\\.zip$"
+      },
+      "android": {
+        "asset": "android-(arm64|x86_64)\\.apk$"
       }
     },
     {
@@ -348,6 +375,9 @@
       "requires": "Your own The Minish Cap ROM.",
       "mac": {
         "asset": "tmc-multi-macos-(arm64|x86_64)-.*\\.tar\\.gz$"
+      },
+      "android": {
+        "asset": "android-.*\\.apk$"
       }
     },
     {
@@ -400,6 +430,9 @@
       "requires": "Your own Super Smash Bros. (N64) ROM.",
       "mac": {
         "asset": "^BattleShip\\.dmg$"
+      },
+      "android": {
+        "asset": "^BattleShip-android\\.apk$"
       }
     },
     {
@@ -517,6 +550,9 @@
       "requires": "Your own Symphony of the Night (XBLA) game files.",
       "mac": {
         "asset": "mac-(arm64|amd64)\\.dmg$"
+      },
+      "android": {
+        "asset": "android-arm64\\.apk$"
       }
     },
     {
@@ -546,6 +582,9 @@
       },
       "ios": {
         "asset": "^SHiOS_\\d+\\.ipa$"
+      },
+      "android": {
+        "asset": "^SHAndroid_\\d+b?\\.apk$"
       }
     },
     {
@@ -611,6 +650,9 @@
       "requires": "Your own Burnout 3: Takedown disc image.",
       "mac": {
         "asset": "macos-arm64\\.dmg$"
+      },
+      "android": {
+        "asset": "android-arm64\\.apk$"
       }
     },
     {
@@ -679,6 +721,9 @@
       "requires": "Your own Lost Odyssey (Xbox 360) game files.",
       "mac": {
         "asset": "macos-arm64.*\\.dmg$"
+      },
+      "android": {
+        "asset": "android-arm64.*\\.apk$"
       }
     },
     {
@@ -718,6 +763,9 @@
       "requires": "Your own Sonic 3 & Knuckles ROM (from the Steam Sega Classics release).",
       "mac": {
         "asset": "sonic3air_mac_.*\\.dmg$"
+      },
+      "android": {
+        "asset": "sonic3air_game\\.apk$"
       }
     },
     {
@@ -734,6 +782,9 @@
       },
       "ios": {
         "asset": "iOS\\.ipa$"
+      },
+      "android": {
+        "asset": "devilutionx-android\\.apk$"
       }
     },
     {
@@ -750,6 +801,9 @@
       },
       "ios": {
         "asset": "VCMI-iOS\\.ipa$"
+      },
+      "android": {
+        "asset": "VCMI-Android-(arm64-v8a|armeabi-v7a|x86_64)\\.apk$"
       }
     },
     {
@@ -763,6 +817,9 @@
       "requires": "Your own Heroes of Might and Magic II game files.",
       "mac": {
         "asset": "_macos_.*\\.zip$"
+      },
+      "android": {
+        "asset": "fheroes2_android\\.zip$"
       }
     },
     {
@@ -779,6 +836,9 @@
       },
       "ios": {
         "asset": "fallout-ce-ios\\.ipa$"
+      },
+      "android": {
+        "asset": "fallout-ce-android\\.apk$"
       }
     },
     {
@@ -795,6 +855,9 @@
       },
       "ios": {
         "asset": "fallout2-ce-ios\\.ipa$"
+      },
+      "android": {
+        "asset": "fallout2-ce-android\\.apk$"
       }
     },
     {
@@ -847,6 +910,9 @@
       "requires": "Your own RollerCoaster Tycoon 2 game files.",
       "mac": {
         "asset": "macos-universal\\.zip$"
+      },
+      "android": {
+        "asset": "-android\\.apk$"
       }
     },
     {
@@ -886,6 +952,9 @@
       "requires": "Your own Caesar III game files.",
       "mac": {
         "asset": "julius-.*-mac\\.dmg$"
+      },
+      "android": {
+        "asset": "-android\\.apk$"
       }
     },
     {
@@ -899,6 +968,9 @@
       "requires": "Your own Caesar III game files.",
       "mac": {
         "asset": "augustus-.*-mac\\.dmg$"
+      },
+      "android": {
+        "asset": "-android\\.apk$"
       }
     },
     {
@@ -925,6 +997,9 @@
       "requires": "Your own Jagged Alliance 2 game files.",
       "mac": {
         "asset": "_macos\\.dmg$"
+      },
+      "android": {
+        "asset": "_android\\.apk$"
       }
     },
     {
@@ -1081,6 +1156,9 @@
       "requires": "Your own Jazz Jackrabbit 2 game files.",
       "mac": {
         "asset": "MacOS\\.zip$"
+      },
+      "android": {
+        "asset": "_Android\\.zip$"
       }
     },
     {
@@ -1097,6 +1175,9 @@
       },
       "ios": {
         "asset": "ios-arm64\\.ipa$"
+      },
+      "android": {
+        "asset": "android-arm64-v8a\\.apk$"
       }
     },
     {
@@ -1113,6 +1194,9 @@
       },
       "ios": {
         "asset": "sdlpal-unsigned\\.ipa$"
+      },
+      "android": {
+        "asset": "^sdlpal\\.apk$"
       }
     },
     {
@@ -1126,6 +1210,9 @@
       "requires": "Cave Story freeware data, or your own Cave Story+ files.",
       "mac": {
         "asset": "macos_.*\\.(arm64|x86_64)\\.zip$"
+      },
+      "android": {
+        "asset": "android.*universal\\.apk$"
       }
     },
     {
@@ -1165,6 +1252,9 @@
       "requires": "Ambermoon data (released as freeware).",
       "mac": {
         "asset": "Ambermoon\\.net-Mac(-ARM)?\\.zip$"
+      },
+      "android": {
+        "asset": "Android.*\\.apk$"
       }
     },
     {
@@ -1191,6 +1281,9 @@
       "requires": "Your own ICO (PS2) disc image.",
       "mac": {
         "asset": "macos-arm64\\.zip$"
+      },
+      "android": {
+        "asset": "-android\\.apk$"
       }
     }
   ],

@@ -94,6 +94,7 @@ private struct ProjectCard: View {
                 HStack(spacing: 5) {
                     if project.mac != nil { PlatformBadge("Mac", systemImage: "laptopcomputer") }
                     if project.ios != nil { PlatformBadge("iPhone & iPad", systemImage: "iphone") }
+                    if project.android != nil { PlatformBadge("Android", systemImage: "candybarphone") }
                     if project.usesPadMint { PlatformBadge("PadMint", systemImage: "hammer") }
                     Spacer(minLength: 0)
                 }
@@ -214,6 +215,7 @@ private struct ProjectDetailView: View {
 
                     if project.mac != nil { macSection }
                     if project.ios != nil { iosSection }
+                    if project.android != nil { androidSection }
                     if project.usesPadMint { padMintSection }
                 }
                 .padding(20)
@@ -294,6 +296,32 @@ private struct ProjectDetailView: View {
                 }
                 Spacer()
                 Button("Download & Add to Queue") { discover.addToQueue(project) }
+                    .buttonStyle(.borderedProminent)
+                    .disabled(asset == nil || job?.running == true)
+            }
+        }
+    }
+
+    // Android
+
+    private var androidSection: some View {
+        ActionSection(title: "Android", systemImage: "candybarphone") {
+            let asset = discover.androidAsset(project)
+            if let asset {
+                Text("\(asset.name) · \(ByteFormat.string(asset.size))").font(.caption).foregroundStyle(.secondary)
+            } else if discover.release(project) != nil {
+                Text("This release has no Android build.").font(.callout).foregroundStyle(.secondary)
+            }
+            Text("Downloads the APK and adds it to the Android tab's queue, where it's installed over USB.")
+                .font(.callout).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
+            let job = discover.job(project, .android)
+            JobView(job: job)
+            HStack {
+                if job?.ipa != nil {
+                    Button("Go to Android Queue") { discover.goToAndroid() }
+                }
+                Spacer()
+                Button("Download & Add to Android Queue") { discover.addToAndroidQueue(project) }
                     .buttonStyle(.borderedProminent)
                     .disabled(asset == nil || job?.running == true)
             }

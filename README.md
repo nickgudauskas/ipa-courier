@@ -54,10 +54,12 @@ capability and create a profile for it. When updating an app whose current
 profile has these capabilities (for example ones Sideloadly enabled), they're
 turned on automatically so re-signing doesn't drop them.
 
-**Discover tab:** a catalog of community recompilations, decompilation ports
-and source ports with macOS or iOS builds. That includes Ship of Harkinian,
-Zelda 64: Recompiled, Dusk, Ghostship, sm64coopdx, OpenGOAL and more. Each
-card shows the project's latest GitHub release.
+**Discover tab:** a catalog of 90 community recompilations, decompilation
+ports and source ports with macOS or iOS builds. It ranges from N64, GameCube
+and PlayStation recomps (Zelda 64: Recompiled, Melee PC, Symphony Recomp, Silent
+Hill PC) to classic PC source ports (DevilutionX, OpenMW, Fallout CE, VCMI,
+GZDoom). Filter by console or platform. Each card shows the project's latest
+GitHub release.
 
 - **Mac builds** download, unpack (zip, dmg or tar) and install to
   `~/Applications/Games`. If a build isn't notarized by Apple, IPA Courier asks
@@ -138,7 +140,14 @@ the right file from the latest release:
 ```
 
 When several files match, Apple silicon builds (`arm64`, `aarch64`,
-`universal`) are preferred. Use `"padmint": true` instead of `"ios"` for
+`universal`) are preferred. Check a new rule with
+`GITHUB_TOKEN=$(gh auth token) python3 scripts/build-release-index.py`.
+
+Release details come from `releases.json` on the `release-index` branch. The
+[Update release index](.github/workflows/release-index.yml) workflow rebuilds it
+every 3 hours and whenever the catalog changes. With one download instead of
+one GitHub API call per project, the catalog stays under GitHub's anonymous
+rate limit. Projects missing from the index fall back to the API. Use `"padmint": true` instead of `"ios"` for
 projects that PadMint builds. Only list projects whose releases are meant to be
 redistributed and contain no game files.
 

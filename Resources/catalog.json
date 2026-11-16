@@ -4,11 +4,11 @@
   "projects": [
     {
       "id": "dusk",
-      "name": "Dusk",
+      "name": "Dusklight",
       "game": "The Legend of Zelda: Twilight Princess",
       "console": "GameCube",
       "kind": "Decompilation port",
-      "repo": "twilitrealm/dusk",
+      "repo": "TwilitRealm/dusklight",
       "summary": "Native port of Twilight Princess built from its decompilation, with modern rendering and controls.",
       "requires": "Your own Twilight Princess (GameCube, USA) disc image.",
       "mac": {
@@ -157,7 +157,7 @@
       "game": "The Legend of Zelda: Majora's Mask",
       "console": "Nintendo 64",
       "kind": "Decompilation port",
-      "repo": "HarbourMasters/2ship2harkinian",
+      "repo": "2ship2harkinian/2ship2harkinian",
       "summary": "Harbour Masters' Majora's Mask port, sibling to Ship of Harkinian.",
       "requires": "Your own Majora's Mask (USA) ROM.",
       "mac": {
@@ -261,7 +261,7 @@
       "game": "Sonic CD",
       "console": "Sega CD",
       "kind": "Decompilation port",
-      "repo": "Rubberduckycooly/Sonic-CD-11-Decompilation",
+      "repo": "RSDKModding/RSDKv3-Decompilation",
       "summary": "Decompilation of the 2011 Sonic CD remaster (Retro Engine v3).",
       "requires": "Your own Data.rsdk from a purchased copy of Sonic CD (2011).",
       "mac": {
@@ -279,6 +279,918 @@
       "requires": "Your own Tomb Raider game data (PC or PlayStation).",
       "mac": {
         "asset": "OpenLara_osx\\.zip$"
+      }
+    },
+    {
+      "id": "melee-pc",
+      "name": "Melee PC",
+      "game": "Super Smash Bros. Melee",
+      "console": "GameCube",
+      "kind": "Decompilation port",
+      "repo": "999sian/melee-pc",
+      "summary": "Native port of Melee (NTSC-U 1.02) built from the doldecomp decompilation.",
+      "requires": "Your own Super Smash Bros. Melee (NTSC-U 1.02) disc image.",
+      "mac": {
+        "asset": "Melee-macOS-(arm64|x86_64)\\.zip$"
+      },
+      "ios": {
+        "asset": "Melee-iOS-arm64\\.ipa$"
+      }
+    },
+    {
+      "id": "nookery",
+      "name": "Nookery",
+      "game": "Animal Crossing",
+      "console": "GameCube",
+      "kind": "Decompilation port",
+      "repo": "flyngmt/Nookery",
+      "summary": "Unofficial native port of Animal Crossing for GameCube.",
+      "requires": "Your own Animal Crossing (GameCube) disc image.",
+      "mac": {
+        "asset": "macos-(arm64|x86_64)\\.zip$"
+      },
+      "ios": {
+        "asset": "ios-arm64\\.ipa$"
+      }
+    },
+    {
+      "id": "bluewake",
+      "name": "BlueWake",
+      "game": "The Legend of Zelda: The Wind Waker",
+      "console": "GameCube",
+      "kind": "Recompilation",
+      "repo": "chrissotraidis/bluewake",
+      "summary": "Wind Waker recompiled to run natively, with widescreen cutscenes and Dolphin save import.",
+      "requires": "Your own Wind Waker disc image. PadMint builds the playable app from it on your Mac.",
+      "padmint": true
+    },
+    {
+      "id": "windwakerhd",
+      "name": "Wind Waker HD Recomp",
+      "game": "The Legend of Zelda: The Wind Waker HD",
+      "console": "Wii U",
+      "kind": "Recompilation",
+      "repo": "ZeldaWWHDRecomp/ZeldaWWHDRecomp",
+      "summary": "Static recompilation of the Wii U remaster of The Wind Waker.",
+      "requires": "Your own Wind Waker HD (Wii U) game files.",
+      "mac": {
+        "asset": "macos-arm64\\.zip$"
+      }
+    },
+    {
+      "id": "tmc",
+      "name": "Project Picori",
+      "game": "The Legend of Zelda: The Minish Cap",
+      "console": "Game Boy Advance",
+      "kind": "Decompilation port",
+      "repo": "999sian/tmc",
+      "summary": "Native port of The Minish Cap built from its decompilation.",
+      "requires": "Your own The Minish Cap ROM.",
+      "mac": {
+        "asset": "tmc-multi-macos-(arm64|x86_64)-.*\\.tar\\.gz$"
+      }
+    },
+    {
+      "id": "dskart",
+      "name": "DS Kart Recompiled",
+      "game": "Mario Kart DS",
+      "console": "Nintendo DS",
+      "kind": "Recompilation",
+      "repo": "AlonsoTlol/DS-Kart-Recompiled",
+      "summary": "Static recompilation of Mario Kart DS for desktop.",
+      "requires": "Your own Mario Kart DS ROM.",
+      "mac": {
+        "asset": "-Mac-.*\\.zip$"
+      }
+    },
+    {
+      "id": "paperboat",
+      "name": "PaperBoat",
+      "game": "Paper Mario",
+      "console": "Nintendo 64",
+      "kind": "Decompilation port",
+      "repo": "HarbourMasters/PaperBoat",
+      "summary": "Harbour Masters' Paper Mario port, based on the Paper Mario DX decompilation.",
+      "requires": "Your own Paper Mario (N64) ROM.",
+      "mac": {
+        "asset": "-Mac\\.zip$"
+      }
+    },
+    {
+      "id": "lighthouse",
+      "name": "Lighthouse",
+      "game": "Banjo-Kazooie",
+      "console": "Nintendo 64",
+      "kind": "Decompilation port",
+      "repo": "HarbourMasters/Lighthouse",
+      "summary": "Harbour Masters' Banjo-Kazooie port with online multiplayer and romhack support.",
+      "requires": "Your own Banjo-Kazooie ROM.",
+      "mac": {
+        "asset": "-Mac\\.zip$"
+      }
+    },
+    {
+      "id": "battleship",
+      "name": "BattleShip",
+      "game": "Super Smash Bros.",
+      "console": "Nintendo 64",
+      "kind": "Decompilation port",
+      "repo": "JRickey/BattleShip",
+      "summary": "PC and Mac port of the original Super Smash Bros. from its decompilation.",
+      "requires": "Your own Super Smash Bros. (N64) ROM.",
+      "mac": {
+        "asset": "^BattleShip\\.dmg$"
+      }
+    },
+    {
+      "id": "strikers",
+      "name": "Strikers",
+      "game": "Super Mario Strikers",
+      "console": "GameCube",
+      "kind": "Decompilation port",
+      "repo": "new-coke/strikers",
+      "summary": "Super Mario Strikers ported from decompiled code.",
+      "requires": "Your own Super Mario Strikers disc image.",
+      "mac": {
+        "asset": "strikers-macos-arm64\\.tar\\.gz$"
+      }
+    },
+    {
+      "id": "dk64recomp",
+      "name": "Donkey Kong 64: Recompiled",
+      "game": "Donkey Kong 64",
+      "console": "Nintendo 64",
+      "kind": "Recompilation",
+      "repo": "Rainchus/Donkey-Kong-64-Recompiled",
+      "summary": "Static recompilation of Donkey Kong 64 using N64Recomp.",
+      "requires": "Your own Donkey Kong 64 ROM.",
+      "mac": {
+        "asset": "macOS-ARM64.*\\.zip$"
+      }
+    },
+    {
+      "id": "conkerrecomp",
+      "name": "Conker: Recompiled",
+      "game": "Conker's Bad Fur Day",
+      "console": "Nintendo 64",
+      "kind": "Recompilation",
+      "repo": "sciaschi/CBFD-Recompiled",
+      "summary": "Static recompilation of Conker's Bad Fur Day.",
+      "requires": "Your own Conker's Bad Fur Day ROM.",
+      "mac": {
+        "asset": "macOS\\.zip$"
+      }
+    },
+    {
+      "id": "mm64recomp",
+      "name": "Mega Man 64: Recompiled",
+      "game": "Mega Man 64",
+      "console": "Nintendo 64",
+      "kind": "Recompilation",
+      "repo": "MegaMan64Recomp/MegaMan64Recompiled",
+      "summary": "Static recompilation of Mega Man 64.",
+      "requires": "Your own Mega Man 64 ROM.",
+      "mac": {
+        "asset": "macOS\\.zip$"
+      }
+    },
+    {
+      "id": "luigisrecomp",
+      "name": "Luigi's Mansion Recompiled",
+      "game": "Luigi's Mansion",
+      "console": "GameCube",
+      "kind": "Recompilation",
+      "repo": "rob646464/luigis-mansion-recompiled",
+      "summary": "Static recompilation of Luigi's Mansion.",
+      "requires": "Your own Luigi's Mansion disc image.",
+      "mac": {
+        "asset": "macos-arm64\\.tar\\.gz$"
+      }
+    },
+    {
+      "id": "doomsnes",
+      "name": "Doom SNES Recomp",
+      "game": "Doom (SNES)",
+      "console": "Super Nintendo",
+      "kind": "Recompilation",
+      "repo": "Cacodemontube/DoomSNESRecomp",
+      "summary": "Static recompilation of the Super Nintendo version of Doom.",
+      "requires": "Your own Doom (SNES) ROM.",
+      "mac": {
+        "asset": "macOS-(arm64|x64)\\.zip$"
+      }
+    },
+    {
+      "id": "perfectdark",
+      "name": "Perfect Dark",
+      "game": "Perfect Dark",
+      "console": "Nintendo 64",
+      "kind": "Decompilation port",
+      "repo": "fgsfdsfgs/perfect_dark",
+      "summary": "Native port of Perfect Dark built from its decompilation.",
+      "requires": "Your own Perfect Dark ROM.",
+      "mac": {
+        "asset": "pd-(arm64|x86_64)-osx\\.tar\\.xz$"
+      }
+    },
+    {
+      "id": "symphony",
+      "name": "Symphony Recomp",
+      "game": "Castlevania: Symphony of the Night",
+      "console": "PlayStation",
+      "kind": "Recompilation",
+      "repo": "BlackLabelHQ/SymphonyRecomp",
+      "summary": "Recompilation of Castlevania: Symphony of the Night.",
+      "requires": "Your own Symphony of the Night (PlayStation) disc image.",
+      "mac": {
+        "asset": "macos-(arm64|x64)\\.zip$"
+      }
+    },
+    {
+      "id": "nocturne",
+      "name": "Nocturne Recomp",
+      "game": "Castlevania: Symphony of the Night",
+      "console": "Xbox 360",
+      "kind": "Recompilation",
+      "repo": "birabittoh/NocturneRecomp",
+      "summary": "Static recompilation of the Xbox Live Arcade release of Symphony of the Night.",
+      "requires": "Your own Symphony of the Night (XBLA) game files.",
+      "mac": {
+        "asset": "mac-(arm64|amd64)\\.dmg$"
+      }
+    },
+    {
+      "id": "medievil",
+      "name": "MediEvil Recomp",
+      "game": "MediEvil",
+      "console": "PlayStation",
+      "kind": "Recompilation",
+      "repo": "BlackLabelHQ/MediEvilRecomp",
+      "summary": "Recompilation of the original MediEvil.",
+      "requires": "Your own MediEvil (PlayStation) disc image.",
+      "mac": {
+        "asset": "macos-(arm64|x64)\\.zip$"
+      }
+    },
+    {
+      "id": "silenthill",
+      "name": "Silent Hill PC",
+      "game": "Silent Hill",
+      "console": "PlayStation",
+      "kind": "Decompilation port",
+      "repo": "SlickAmogus/silent-hill-decomp",
+      "summary": "Feature-rich port based on the Silent Hill decompilation, with mod support.",
+      "requires": "Your own Silent Hill (PlayStation) disc image.",
+      "mac": {
+        "asset": "SHPC-macos-arm64.*\\.zip$"
+      },
+      "ios": {
+        "asset": "^SHiOS_\\d+\\.ipa$"
+      }
+    },
+    {
+      "id": "severedchains",
+      "name": "Severed Chains",
+      "game": "The Legend of Dragoon",
+      "console": "PlayStation",
+      "kind": "Reimplementation",
+      "repo": "Legend-of-Dragoon-Modding/Severed-Chains",
+      "summary": "The Legend of Dragoon reverse engineered and ported, with mod support.",
+      "requires": "Your own Legend of Dragoon disc images.",
+      "mac": {
+        "asset": "MacOS_(M1|Intel)\\.tar\\.gz$"
+      }
+    },
+    {
+      "id": "psydoom",
+      "name": "PsyDoom",
+      "game": "Doom / Final Doom (PlayStation)",
+      "console": "PlayStation",
+      "kind": "Decompilation port",
+      "repo": "BodbDearg/PsyDoom",
+      "summary": "Reverse-engineered port of PlayStation Doom and Final Doom.",
+      "requires": "Your own PlayStation Doom or Final Doom disc image.",
+      "mac": {
+        "asset": "MacOS.*\\.zip$"
+      }
+    },
+    {
+      "id": "tenkaichi3",
+      "name": "Tenkaichi 3 Decomp",
+      "game": "Dragon Ball Z: Budokai Tenkaichi 3",
+      "console": "PlayStation 2",
+      "kind": "Decompilation port",
+      "repo": "z3xox/Tenkaichi3Decomp",
+      "summary": "PC port of Budokai Tenkaichi 3 built on its decompilation.",
+      "requires": "Your own Budokai Tenkaichi 3 (PS2) disc image.",
+      "mac": {
+        "asset": "macos-arm64\\.zip$"
+      }
+    },
+    {
+      "id": "gtavcs",
+      "name": "VCS Recomp",
+      "game": "Grand Theft Auto: Vice City Stories",
+      "console": "PlayStation 2",
+      "kind": "Recompilation",
+      "repo": "gothamor/gta-vcs-recomp",
+      "summary": "Native port of Vice City Stories (PS2, USA) by static recompilation.",
+      "requires": "Your own Vice City Stories (PS2, USA) disc image.",
+      "mac": {
+        "asset": "macos-arm64\\.dmg$"
+      }
+    },
+    {
+      "id": "takedawn",
+      "name": "Takedawn",
+      "game": "Burnout 3: Takedown",
+      "console": "PlayStation 2",
+      "kind": "Recompilation",
+      "repo": "xenophobentx/takedawn",
+      "summary": "Unofficial native port of Burnout 3 by static recompilation.",
+      "requires": "Your own Burnout 3: Takedown disc image.",
+      "mac": {
+        "asset": "macos-arm64\\.dmg$"
+      }
+    },
+    {
+      "id": "pt-pc",
+      "name": "P.T. PC Port",
+      "game": "P.T.",
+      "console": "PlayStation 4",
+      "kind": "Decompilation port",
+      "repo": "LoreanXavier/pt-pc",
+      "summary": "Native port of P.T., running from your own PS4 game files.",
+      "requires": "Your own P.T. (PS4) game files.",
+      "mac": {
+        "asset": "macOS-(arm64|x64)\\.zip$"
+      }
+    },
+    {
+      "id": "speedbreaker",
+      "name": "SpeedBreaker",
+      "game": "Need for Speed: Most Wanted (2005)",
+      "console": "Xbox 360",
+      "kind": "Recompilation",
+      "repo": "SpeedBreakerProject/speedbreaker",
+      "summary": "Static recompilation of the Xbox 360 version of Need for Speed: Most Wanted.",
+      "requires": "Your own Need for Speed: Most Wanted (Xbox 360) game files.",
+      "mac": {
+        "asset": "SpeedBreaker-macos\\.dmg$"
+      },
+      "ios": {
+        "asset": "-ios\\.ipa$"
+      }
+    },
+    {
+      "id": "skate3",
+      "name": "Skate 3 Recomp",
+      "game": "Skate 3",
+      "console": "Xbox 360",
+      "kind": "Recompilation",
+      "repo": "mchughalex/skate3recomp",
+      "summary": "Native recompilation of Skate 3.",
+      "requires": "Your own Skate 3 (Xbox 360) game files.",
+      "mac": {
+        "asset": "macOS\\.zip$"
+      }
+    },
+    {
+      "id": "marathonrecomp",
+      "name": "Marathon Recomp",
+      "game": "Sonic the Hedgehog (2006)",
+      "console": "Xbox 360",
+      "kind": "Recompilation",
+      "repo": "sonicnext-dev/MarathonRecomp",
+      "summary": "Unofficial port of the Xbox 360 Sonic the Hedgehog (2006) by static recompilation.",
+      "requires": "Your own Sonic the Hedgehog (2006) Xbox 360 game files.",
+      "mac": {
+        "asset": "macOS-arm64\\.zip$"
+      }
+    },
+    {
+      "id": "lostodyssey",
+      "name": "Lost Odyssey Recomp",
+      "game": "Lost Odyssey",
+      "console": "Xbox 360",
+      "kind": "Recompilation",
+      "repo": "freefrank/LostOdysseyRecomp",
+      "summary": "Experimental native port of Lost Odyssey by static recompilation.",
+      "requires": "Your own Lost Odyssey (Xbox 360) game files.",
+      "mac": {
+        "asset": "macos-arm64.*\\.dmg$"
+      }
+    },
+    {
+      "id": "reblue",
+      "name": "ReBlue",
+      "game": "Blue Dragon",
+      "console": "Xbox 360",
+      "kind": "Recompilation",
+      "repo": "zolaware/reblue",
+      "summary": "Recompilation of Blue Dragon.",
+      "requires": "Your own Blue Dragon (Xbox 360) game files.",
+      "mac": {
+        "asset": "mac-arm64\\.zip$"
+      }
+    },
+    {
+      "id": "edgeoftime",
+      "name": "Edge of Time Recomp",
+      "game": "Spider-Man: Edge of Time",
+      "console": "Xbox 360",
+      "kind": "Recompilation",
+      "repo": "goliathret/EdgeOfTimeRecomp",
+      "summary": "Unofficial port of the Xbox 360 Spider-Man: Edge of Time by static recompilation.",
+      "requires": "Your own Spider-Man: Edge of Time (Xbox 360) game files.",
+      "mac": {
+        "asset": "mac-arm64\\.zip$"
+      }
+    },
+    {
+      "id": "sonic3air",
+      "name": "Sonic 3 A.I.R.",
+      "game": "Sonic 3 & Knuckles",
+      "console": "Sega Genesis / Mega Drive",
+      "kind": "Reimplementation",
+      "repo": "Eukaryot/sonic3air",
+      "summary": "Angel Island Revisited: a widescreen remaster of Sonic 3 & Knuckles on the Oxygen Engine.",
+      "requires": "Your own Sonic 3 & Knuckles ROM (from the Steam Sega Classics release).",
+      "mac": {
+        "asset": "sonic3air_mac_.*\\.dmg$"
+      }
+    },
+    {
+      "id": "devilutionx",
+      "name": "DevilutionX",
+      "game": "Diablo",
+      "console": "PC",
+      "kind": "Source port",
+      "repo": "diasurgical/devilutionX",
+      "summary": "Diablo and Hellfire for modern systems, with controller support and quality-of-life improvements.",
+      "requires": "Your own DIABDAT.MPQ from Diablo (e.g. the GOG release). The free spawn.mpq shareware also works.",
+      "mac": {
+        "asset": "macOS-universal\\.dmg$"
+      },
+      "ios": {
+        "asset": "iOS\\.ipa$"
+      }
+    },
+    {
+      "id": "vcmi",
+      "name": "VCMI",
+      "game": "Heroes of Might and Magic III",
+      "console": "PC",
+      "kind": "Reimplementation",
+      "repo": "vcmi/vcmi",
+      "summary": "Open-source engine for Heroes of Might and Magic III with mods and multiplayer.",
+      "requires": "Your own Heroes of Might and Magic III game files.",
+      "mac": {
+        "asset": "VCMI-macOS-(arm|intel)\\.dmg$"
+      },
+      "ios": {
+        "asset": "VCMI-iOS\\.ipa$"
+      }
+    },
+    {
+      "id": "fheroes2",
+      "name": "fheroes2",
+      "game": "Heroes of Might and Magic II",
+      "console": "PC",
+      "kind": "Reimplementation",
+      "repo": "ihhub/fheroes2",
+      "summary": "Recreation of the Heroes of Might and Magic II engine.",
+      "requires": "Your own Heroes of Might and Magic II game files.",
+      "mac": {
+        "asset": "_macos_.*\\.zip$"
+      }
+    },
+    {
+      "id": "fallout1ce",
+      "name": "Fallout Community Edition",
+      "game": "Fallout",
+      "console": "PC",
+      "kind": "Reimplementation",
+      "repo": "alexbatalov/fallout1-ce",
+      "summary": "Fully working re-implementation of Fallout with engine improvements.",
+      "requires": "Your own Fallout game files (e.g. the GOG or Steam release).",
+      "mac": {
+        "asset": "fallout-ce-macos\\.dmg$"
+      },
+      "ios": {
+        "asset": "fallout-ce-ios\\.ipa$"
+      }
+    },
+    {
+      "id": "fallout2ce",
+      "name": "Fallout 2 Community Edition",
+      "game": "Fallout 2",
+      "console": "PC",
+      "kind": "Reimplementation",
+      "repo": "alexbatalov/fallout2-ce",
+      "summary": "Fully working re-implementation of Fallout 2 with engine improvements.",
+      "requires": "Your own Fallout 2 game files (e.g. the GOG or Steam release).",
+      "mac": {
+        "asset": "fallout2-ce-macos\\.dmg$"
+      },
+      "ios": {
+        "asset": "fallout2-ce-ios\\.ipa$"
+      }
+    },
+    {
+      "id": "openmw",
+      "name": "OpenMW",
+      "game": "The Elder Scrolls III: Morrowind",
+      "console": "PC",
+      "kind": "Reimplementation",
+      "repo": "OpenMW/openmw",
+      "summary": "Open-source engine reimplementation for playing Morrowind.",
+      "requires": "Your own Morrowind game files.",
+      "mac": {
+        "asset": "OpenMW-.*-macOS-(arm64|x86_64)\\.dmg$"
+      }
+    },
+    {
+      "id": "daggerfallunity",
+      "name": "Daggerfall Unity",
+      "game": "The Elder Scrolls II: Daggerfall",
+      "console": "PC",
+      "kind": "Reimplementation",
+      "repo": "Interkarma/daggerfall-unity",
+      "summary": "Open-source recreation of Daggerfall in the Unity engine.",
+      "requires": "Daggerfall game files (Bethesda released Daggerfall for free).",
+      "mac": {
+        "asset": "dfu_mac_universal.*\\.zip$"
+      }
+    },
+    {
+      "id": "opentesarena",
+      "name": "OpenTESArena",
+      "game": "The Elder Scrolls: Arena",
+      "console": "PC",
+      "kind": "Reimplementation",
+      "repo": "afritz1/OpenTESArena",
+      "summary": "Open-source re-implementation of The Elder Scrolls: Arena.",
+      "requires": "Arena game files (Bethesda released Arena for free).",
+      "mac": {
+        "asset": "macos_arm64\\.dmg$"
+      }
+    },
+    {
+      "id": "openrct2",
+      "name": "OpenRCT2",
+      "game": "RollerCoaster Tycoon 2",
+      "console": "PC",
+      "kind": "Reimplementation",
+      "repo": "OpenRCT2/OpenRCT2",
+      "summary": "Open-source re-implementation of RollerCoaster Tycoon 2.",
+      "requires": "Your own RollerCoaster Tycoon 2 game files.",
+      "mac": {
+        "asset": "macos-universal\\.zip$"
+      }
+    },
+    {
+      "id": "openloco",
+      "name": "OpenLoco",
+      "game": "Chris Sawyer's Locomotion",
+      "console": "PC",
+      "kind": "Reimplementation",
+      "repo": "OpenLoco/OpenLoco",
+      "summary": "Open-source re-implementation of Chris Sawyer's Locomotion.",
+      "requires": "Your own Locomotion game files.",
+      "mac": {
+        "asset": "macos-arm64\\.zip$"
+      }
+    },
+    {
+      "id": "corsixth",
+      "name": "CorsixTH",
+      "game": "Theme Hospital",
+      "console": "PC",
+      "kind": "Reimplementation",
+      "repo": "CorsixTH/CorsixTH",
+      "summary": "Open-source clone of Theme Hospital.",
+      "requires": "Your own Theme Hospital game files.",
+      "mac": {
+        "asset": "CorsixTH-.*\\.dmg$"
+      }
+    },
+    {
+      "id": "julius",
+      "name": "Julius",
+      "game": "Caesar III",
+      "console": "PC",
+      "kind": "Reimplementation",
+      "repo": "bvschaik/julius",
+      "summary": "Faithful open-source re-implementation of Caesar III.",
+      "requires": "Your own Caesar III game files.",
+      "mac": {
+        "asset": "julius-.*-mac\\.dmg$"
+      }
+    },
+    {
+      "id": "augustus",
+      "name": "Augustus",
+      "game": "Caesar III",
+      "console": "PC",
+      "kind": "Reimplementation",
+      "repo": "Keriew/augustus",
+      "summary": "Caesar III re-implementation with gameplay changes, based on Julius.",
+      "requires": "Your own Caesar III game files.",
+      "mac": {
+        "asset": "augustus-.*-mac\\.dmg$"
+      }
+    },
+    {
+      "id": "openra",
+      "name": "OpenRA",
+      "game": "Command & Conquer, Red Alert, Dune 2000",
+      "console": "PC",
+      "kind": "Reimplementation",
+      "repo": "OpenRA/OpenRA",
+      "summary": "Open-source engine for early Westwood RTS games.",
+      "requires": "Game files are downloaded by OpenRA from the freeware releases or copied from your discs.",
+      "mac": {
+        "asset": "OpenRA-release-.*\\.dmg$"
+      }
+    },
+    {
+      "id": "ja2",
+      "name": "JA2 Stracciatella",
+      "game": "Jagged Alliance 2",
+      "console": "PC",
+      "kind": "Source port",
+      "repo": "ja2-stracciatella/ja2-stracciatella",
+      "summary": "Continuation of the Jagged Alliance 2 source port.",
+      "requires": "Your own Jagged Alliance 2 game files.",
+      "mac": {
+        "asset": "_macos\\.dmg$"
+      }
+    },
+    {
+      "id": "openmohaa",
+      "name": "OpenMoHAA",
+      "game": "Medal of Honor: Allied Assault",
+      "console": "PC",
+      "kind": "Reimplementation",
+      "repo": "openmoh/openmohaa",
+      "summary": "Open re-implementation of Medal of Honor: Allied Assault, Spearhead and Breakthrough.",
+      "requires": "Your own Medal of Honor: Allied Assault game files.",
+      "mac": {
+        "asset": "macos.*\\.zip$"
+      }
+    },
+    {
+      "id": "openjk",
+      "name": "OpenJK",
+      "game": "Star Wars Jedi Knight: Jedi Academy",
+      "console": "PC",
+      "kind": "Source port",
+      "repo": "JACoders/OpenJK",
+      "summary": "Community-maintained Jedi Academy engine (single and multiplayer).",
+      "requires": "Your own Jedi Academy game files.",
+      "mac": {
+        "asset": "^OpenJK-macos-(arm64|x86_64)\\.tar\\.gz$"
+      }
+    },
+    {
+      "id": "fs2open",
+      "name": "FreeSpace 2 Open",
+      "game": "FreeSpace 2",
+      "console": "PC",
+      "kind": "Source port",
+      "repo": "scp-fs2open/fs2open.github.com",
+      "summary": "The Source Code Project's enhanced FreeSpace 2 engine.",
+      "requires": "Your own FreeSpace 2 game files.",
+      "mac": {
+        "asset": "builds-Mac-(arm64|x86_64)\\.tar\\.gz$"
+      }
+    },
+    {
+      "id": "dethrace",
+      "name": "Dethrace",
+      "game": "Carmageddon",
+      "console": "PC",
+      "kind": "Reimplementation",
+      "repo": "dethrace-labs/dethrace",
+      "summary": "Reverse-engineered re-implementation of Carmageddon (1997).",
+      "requires": "Your own Carmageddon game files.",
+      "mac": {
+        "asset": "macos.*\\.dmg$"
+      }
+    },
+    {
+      "id": "trx",
+      "name": "TRX",
+      "game": "Tomb Raider I–III",
+      "console": "PC",
+      "kind": "Reimplementation",
+      "repo": "LostArtefacts/TRX",
+      "summary": "Open-source re-implementation of Tomb Raider I, II and III with expansions.",
+      "requires": "Your own Tomb Raider I, II or III game files.",
+      "mac": {
+        "asset": "TRX-.*-Mac\\.dmg$"
+      }
+    },
+    {
+      "id": "gzdoom",
+      "name": "GZDoom",
+      "game": "Doom, Heretic, Hexen",
+      "console": "PC",
+      "kind": "Source port",
+      "repo": "ZDoom/gzdoom",
+      "summary": "Feature-rich source port for Doom-engine games.",
+      "requires": "Your own Doom-engine game files (IWADs). Freedoom is a free alternative.",
+      "mac": {
+        "asset": "macos\\.zip$"
+      }
+    },
+    {
+      "id": "raze",
+      "name": "Raze",
+      "game": "Duke Nukem 3D, Blood, Shadow Warrior",
+      "console": "PC",
+      "kind": "Source port",
+      "repo": "ZDoom/Raze",
+      "summary": "Build-engine source port backed by GZDoom technology.",
+      "requires": "Your own Duke Nukem 3D, Blood, Shadow Warrior or other Build-engine game files.",
+      "mac": {
+        "asset": "raze-macos.*\\.zip$"
+      }
+    },
+    {
+      "id": "chocolatedoom",
+      "name": "Chocolate Doom",
+      "game": "Doom",
+      "console": "PC",
+      "kind": "Source port",
+      "repo": "chocolate-doom/chocolate-doom",
+      "summary": "Minimalist, historically accurate Doom source port.",
+      "requires": "Your own Doom IWAD files.",
+      "mac": {
+        "asset": "chocolate-doom-.*-(arm64|x86)\\.dmg$"
+      }
+    },
+    {
+      "id": "dsdadoom",
+      "name": "dsda-doom",
+      "game": "Doom",
+      "console": "PC",
+      "kind": "Source port",
+      "repo": "dsda-org/dsda-doom",
+      "summary": "Successor to PrBoom+ with demo recording and speedrunning tools.",
+      "requires": "Your own Doom IWAD files.",
+      "mac": {
+        "asset": "mac-uni\\.zip$"
+      }
+    },
+    {
+      "id": "quake3e",
+      "name": "Quake3e",
+      "game": "Quake III Arena",
+      "console": "PC",
+      "kind": "Source port",
+      "repo": "ec-/Quake3e",
+      "summary": "Improved Quake III Arena engine.",
+      "requires": "Your own Quake III Arena game files (pak0.pk3).",
+      "mac": {
+        "asset": "quake3e-macos-(aarch64|x86_64)\\.zip$"
+      }
+    },
+    {
+      "id": "alephone",
+      "name": "Aleph One",
+      "game": "Marathon",
+      "console": "PC",
+      "kind": "Source port",
+      "repo": "Aleph-One-Marathon/alephone",
+      "summary": "Open-source continuation of Bungie's Marathon engine, bundled with the free Marathon data.",
+      "requires": "Nothing extra: Bungie released the Marathon trilogy for free.",
+      "mac": {
+        "asset": "^Marathon-\\d+-Mac\\.dmg$"
+      }
+    },
+    {
+      "id": "jazz2",
+      "name": "Jazz² Resurrection",
+      "game": "Jazz Jackrabbit 2",
+      "console": "PC",
+      "kind": "Reimplementation",
+      "repo": "deathkiller/jazz2",
+      "summary": "Open-source reimplementation of Jazz Jackrabbit 2.",
+      "requires": "Your own Jazz Jackrabbit 2 game files.",
+      "mac": {
+        "asset": "MacOS\\.zip$"
+      }
+    },
+    {
+      "id": "pvzportable",
+      "name": "PvZ-Portable",
+      "game": "Plants vs. Zombies",
+      "console": "PC",
+      "kind": "Reimplementation",
+      "repo": "wszqkzqk/PvZ-Portable",
+      "summary": "Cross-platform community reimplementation of Plants vs. Zombies.",
+      "requires": "Your own Plants vs. Zombies game files.",
+      "mac": {
+        "asset": "macos-aarch64\\.zip$"
+      },
+      "ios": {
+        "asset": "ios-arm64\\.ipa$"
+      }
+    },
+    {
+      "id": "sdlpal",
+      "name": "SDLPAL",
+      "game": "Chinese Paladin (Sword and Fairy)",
+      "console": "PC",
+      "kind": "Reimplementation",
+      "repo": "sdlpal/sdlpal",
+      "summary": "SDL-based reimplementation of the classic Chinese RPG.",
+      "requires": "Your own PAL game files.",
+      "mac": {
+        "asset": "sdlpal-macos\\.dmg$"
+      },
+      "ios": {
+        "asset": "sdlpal-unsigned\\.ipa$"
+      }
+    },
+    {
+      "id": "doukutsurs",
+      "name": "doukutsu-rs",
+      "game": "Cave Story",
+      "console": "PC",
+      "kind": "Reimplementation",
+      "repo": "doukutsu-rs/doukutsu-rs",
+      "summary": "Faithful open-source remake of the Cave Story engine in Rust.",
+      "requires": "Cave Story freeware data, or your own Cave Story+ files.",
+      "mac": {
+        "asset": "macos_.*\\.(arm64|x86_64)\\.zip$"
+      }
+    },
+    {
+      "id": "opentyrian",
+      "name": "OpenTyrian",
+      "game": "Tyrian",
+      "console": "PC",
+      "kind": "Source port",
+      "repo": "opentyrian/opentyrian",
+      "summary": "Open-source port of the scrolling shooter Tyrian.",
+      "requires": "Tyrian 2.1 data (released as freeware).",
+      "mac": {
+        "asset": "macos-universal\\.zip$"
+      }
+    },
+    {
+      "id": "openomf",
+      "name": "OpenOMF",
+      "game": "One Must Fall 2097",
+      "console": "PC",
+      "kind": "Reimplementation",
+      "repo": "omf2097/openomf",
+      "summary": "Open-source remake of One Must Fall 2097.",
+      "requires": "One Must Fall 2097 data (released as freeware).",
+      "mac": {
+        "asset": "macos.*_arm\\.zip$"
+      }
+    },
+    {
+      "id": "ambermoon",
+      "name": "Ambermoon.net",
+      "game": "Ambermoon",
+      "console": "Amiga",
+      "kind": "Reimplementation",
+      "repo": "Pyrdacor/Ambermoon.net",
+      "summary": "Rewrite of the Amiga RPG Ambermoon in C#.",
+      "requires": "Ambermoon data (released as freeware).",
+      "mac": {
+        "asset": "Ambermoon\\.net-Mac(-ARM)?\\.zip$"
+      }
+    },
+    {
+      "id": "spacecadet",
+      "name": "Space Cadet Pinball",
+      "game": "3D Pinball for Windows – Space Cadet",
+      "console": "PC",
+      "kind": "Decompilation port",
+      "repo": "k4zmu2a/SpaceCadetPinball",
+      "summary": "Decompilation of the classic Windows pinball game.",
+      "requires": "The original game's data files.",
+      "mac": {
+        "asset": "Mac\\.zip$"
+      }
+    },
+    {
+      "id": "ico-pc",
+      "name": "ICO PC",
+      "game": "ICO",
+      "console": "PlayStation 2",
+      "kind": "Decompilation port",
+      "repo": "nathanialf/ico-pc",
+      "summary": "Port of the ICO decompilation for PC, Mac and handhelds.",
+      "requires": "Your own ICO (PS2) disc image.",
+      "mac": {
+        "asset": "macos-arm64\\.zip$"
       }
     }
   ],

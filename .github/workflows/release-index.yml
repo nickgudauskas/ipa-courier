@@ -1,0 +1,45 @@
+name: Update release index
+
+# Publishes releases.json (the latest release of every catalog project) to the
+# release-index branch, so IPA Courier needs one download instead of one GitHub
+# API call per project.
+
+on:
+  schedule:
+    - cron: "17 */3 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [Resources/catalog.json, scripts/build-release-index.py]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-index
+  cancel-in-progress: true
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build releases.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p out
+          python3 scripts/build-release-index.py > out/releases.json
+
+      - name: Publish to the release-index branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd out
+          git init -q -b release-index
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git add releases.json
+          git commit -q -m "Update release index"
+          git push -q -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" release-index

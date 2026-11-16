@@ -194,6 +194,41 @@ actor ReleaseService {
     }()
 }
 
+// MARK: - Release index
+
+/// releases.json, built every few hours by .github/workflows/release-index.yml:
+/// the latest release of every catalog project in one download.
+struct ReleaseIndex: Codable {
+    let generatedAt: Date?
+    let releases: [String: Release]
+
+    static let remoteURL = URL(string: "https://raw.githubusercontent.com/nickgudauskas/ipa-courier/release-index/releases.json")!
+    private static var cachedURL: URL { AppPaths.support.appendingPathComponent("releases-index.json") }
+
+    private static let decoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        return decoder
+    }()
+
+    /// The published index, else the last downloaded copy.
+    static func load() async -> ReleaseIndex? {
+        var request = URLRequest(url: remoteURL)
+        request.timeoutInterval = 15
+        request.cachePolicy = .reloadIgnoringLocalCacheData
+        if let (data, response) = try? await URLSession.shared.data(for: request),
+           (response as? HTTPURLResponse)?.statusCode == 200,
+           let index = try? decoder.decode(ReleaseIndex.self, from: data) {
+            try? data.write(to: cachedURL)
+            return index
+        }
+        if let data = try? Data(contentsOf: cachedURL) {
+            return try? decoder.decode(ReleaseIndex.self, from: data)
+        }
+        return nil
+    }
+}
+
 // MARK: - Loading the catalog
 
 enum CatalogLoader {

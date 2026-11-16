@@ -11,6 +11,13 @@ struct DiscoverView: View {
                 Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
                 TextField("Search games, consoles or projects", text: $discover.search)
                     .textFieldStyle(.plain)
+                Picker("Console", selection: $discover.console) {
+                    Text("All consoles").tag(String?.none)
+                    Divider()
+                    ForEach(discover.consoles, id: \.self) { Text($0).tag(Optional($0)) }
+                }
+                .labelsHidden()
+                .frame(width: 190)
                 Picker("Show", selection: $discover.filter) {
                     ForEach(DiscoverFilter.allCases) { Text($0.rawValue).tag($0) }
                 }
@@ -55,7 +62,7 @@ struct DiscoverView: View {
             }
 
             if !discover.catalogSource.isEmpty {
-                Text("\(discover.catalog?.projects.count ?? 0) projects · catalog from \(discover.catalogSource) · releases from GitHub")
+                Text("\(discover.catalog?.projects.count ?? 0) projects · catalog from \(discover.catalogSource) · releases checked \(discover.indexDate.map { $0.formatted(.relative(presentation: .named)) } ?? "on GitHub")")
                     .font(.caption)
                     .foregroundStyle(.tertiary)
             }

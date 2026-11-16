@@ -58,10 +58,14 @@ final class DiscoverModel: ObservableObject {
     @Published private(set) var problem: String?
     @Published var search = ""
     @Published var filter: DiscoverFilter = .all
+    /// nil shows every console.
+    @Published var console: String?
     @Published var selected: CatalogProject?
     @Published private(set) var jobs: [String: GameJob] = [:]
     @Published private(set) var installed: [String: InstalledGame] = InstalledGames.load()
     @Published private(set) var padMintCommand: URL?
+    /// When the published release index was last built.
+    @Published private(set) var indexDate: Date?
 
     private var started = false
 
@@ -85,6 +89,20 @@ final class DiscoverModel: ObservableObject {
 
         var repos = Set(catalog.projects.map(\.repo))
         if let padmint = catalog.padmint { repos.insert(padmint.repo) }
+
+        // One download covers most projects; only ask GitHub's API about the rest,
+        // which keeps a large catalog under the 60-requests-per-hour anonymous limit.
+        if let index = await ReleaseIndex.load() {
+            for repo in repos {
+                if let release = index.releases[repo] {
+                    releases[repo] = release
+                    releaseErrors[repo] = nil
+                }
+            }
+            repos.subtract(index.releases.keys)
+            indexDate = index.generatedAt
+        }
+
         await withTaskGroup(of: (String, Result<Release, Error>).self) { group in
             for repo in repos {
                 group.addTask {
@@ -116,9 +134,15 @@ final class DiscoverModel: ObservableObject {
 
     // MARK: Queries
 
+    /// Consoles in the catalog, most projects first.
+    var consoles: [String] {
+        let counts = Dictionary(grouping: catalog?.projects ?? [], by: \.console).mapValues(\.count)
+        return counts.keys.sorted { (counts[$0]!, $1) > (counts[$1]!, $0) }
+    }
+
     var visibleProjects: [CatalogProject] {
         (catalog?.projects ?? []).filter { project in
-            guard project.matches(search) else { return false }
+            guard project.matches(search), console == nil || project.console == console else { return false }
             switch filter {
             case .all: return true
             case .mac: return project.mac != nil

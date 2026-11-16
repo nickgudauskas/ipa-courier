@@ -61,6 +61,10 @@ Hill PC) to classic PC source ports (DevilutionX, OpenMW, Fallout CE, VCMI,
 GZDoom). Filter by console or platform. Each card shows the project's latest
 GitHub release.
 
+<p align="center">
+  <img src="docs/discover.png" width="720" alt="Discover tab showing a grid of project cards, including Dusklight, Ghostship, LEGO Island and DinoPad, each with its platforms and latest release">
+</p>
+
 - **Mac builds** download, unpack (zip, dmg or tar) and install to
   `~/Applications/Games`. If a build isn't notarized by Apple, IPA Courier asks
   whether to allow it to open or to let macOS ask on first launch.

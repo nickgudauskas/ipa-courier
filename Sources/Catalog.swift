@@ -4,6 +4,8 @@ import Foundation
 
 struct Catalog: Codable {
     let version: Int
+    /// Bumped whenever the catalog changes; the app uses whichever copy has the highest.
+    let revision: Int?
     let notice: String?
     let projects: [CatalogProject]
     let padmint: PadMintInfo?
@@ -246,8 +248,12 @@ enum CatalogLoader {
     static let remoteURL = URL(string: "https://raw.githubusercontent.com/nickgudauskas/ipa-courier/main/Resources/catalog.json")!
     private static var cachedURL: URL { AppPaths.support.appendingPathComponent("catalog.json") }
 
-    /// Remote catalog when reachable, else the last downloaded copy, else the one bundled with the app.
+    /// The newest of: the catalog on GitHub (or the last downloaded copy when offline)
+    /// and the one bundled with the app. Newest means highest revision; GitHub wins ties,
+    /// so catalog edits reach everyone, while an app release that ships a newer catalog
+    /// than GitHub's isn't overridden by the older one.
     static func load() async -> (Catalog?, source: String) {
+        var remote: (Catalog, String)?
         var request = URLRequest(url: remoteURL)
         request.timeoutInterval = 10
         request.cachePolicy = .reloadIgnoringLocalCacheData
@@ -255,17 +261,29 @@ enum CatalogLoader {
            (response as? HTTPURLResponse)?.statusCode == 200,
            let catalog = try? JSONDecoder().decode(Catalog.self, from: data) {
             try? data.write(to: cachedURL)
-            return (catalog, "GitHub")
+            remote = (catalog, "GitHub")
+        } else if let data = try? Data(contentsOf: cachedURL),
+                  let catalog = try? JSONDecoder().decode(Catalog.self, from: data) {
+            remote = (catalog, "saved copy")
         }
-        if let data = try? Data(contentsOf: cachedURL),
-           let catalog = try? JSONDecoder().decode(Catalog.self, from: data) {
-            return (catalog, "saved copy")
-        }
+
+        var bundled: Catalog?
         if let url = Bundle.main.url(forResource: "catalog", withExtension: "json"),
-           let data = try? Data(contentsOf: url),
-           let catalog = try? JSONDecoder().decode(Catalog.self, from: data) {
-            return (catalog, "built-in copy")
+           let data = try? Data(contentsOf: url) {
+            bundled = try? JSONDecoder().decode(Catalog.self, from: data)
         }
-        return (nil, "none")
+
+        switch (remote, bundled) {
+        case let ((remoteCatalog, source)?, bundledCatalog?):
+            return (bundledCatalog.revision ?? 0) > (remoteCatalog.revision ?? 0)
+                ? (bundledCatalog, "built-in copy (newer)")
+                : (remoteCatalog, source)
+        case let ((remoteCatalog, source)?, nil):
+            return (remoteCatalog, source)
+        case let (nil, bundledCatalog?):
+            return (bundledCatalog, "built-in copy")
+        default:
+            return (nil, "none")
+        }
     }
 }

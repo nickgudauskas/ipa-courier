@@ -147,7 +147,7 @@ for profiles.
 
 ## Adding a project to the catalog
 
-The catalog is [`Resources/catalog.json`](Resources/catalog.json). The app
+The catalog is [`Resources/catalog.json`](Resources/catalog.json). Bump its `revision` with every change. The app
 downloads it from this repository's `main` branch on launch, so changes reach
 everyone without a new release. Its bundled copy is used offline. Each project
 names its GitHub repo and, for each platform, a regular expression that picks

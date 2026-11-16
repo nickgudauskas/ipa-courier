@@ -54,6 +54,23 @@ capability and create a profile for it. When updating an app whose current
 profile has these capabilities (for example ones Sideloadly enabled), they're
 turned on automatically so re-signing doesn't drop them.
 
+**Discover tab:** a catalog of community recompilations, decompilation ports
+and source ports with macOS or iOS builds. That includes Ship of Harkinian,
+Zelda 64: Recompiled, Dusk, Ghostship, sm64coopdx, OpenGOAL and more. Each
+card shows the project's latest GitHub release.
+
+- **Mac builds** download, unpack (zip, dmg or tar) and install to
+  `~/Applications/Games`. If a build isn't notarized by Apple, IPA Courier asks
+  whether to allow it to open or to let macOS ask on first launch.
+- **iPhone & iPad builds** download to your IPA folder and go straight into the
+  install queue to be signed with your account.
+- **PadMint projects** publish only a game-free shell, so the card opens
+  [PadMint](https://github.com/chrissotraidis/padmint), which builds the
+  playable app from your own game file. You then install the result here.
+
+IPA Courier never provides game files: every project needs your own copy of
+the original game.
+
 If there isn't enough space, the signed copy is kept. Free up space, then
 click **Re-check & Install** to skip signing. **Export Signed IPA…** saves the
 signed app as an `.ipa`.
@@ -96,6 +113,34 @@ IPA Courier fetches are kept in `~/Library/Application Support/IPA Courier/Profi
 
 `Resources/ProvisioningStub` is the placeholder iOS project used to ask Xcode
 for profiles.
+
+## Adding a project to the catalog
+
+The catalog is [`Resources/catalog.json`](Resources/catalog.json). The app
+downloads it from this repository's `main` branch on launch, so changes reach
+everyone without a new release. Its bundled copy is used offline. Each project
+names its GitHub repo and, for each platform, a regular expression that picks
+the right file from the latest release:
+
+```json
+{
+  "id": "zelda64recomp",
+  "name": "Zelda 64: Recompiled",
+  "game": "The Legend of Zelda: Majora's Mask",
+  "console": "Nintendo 64",
+  "kind": "Recompilation",
+  "repo": "Zelda64Recomp/Zelda64Recomp",
+  "summary": "One or two sentences about the project.",
+  "requires": "What the player has to supply, e.g. their own ROM.",
+  "mac": { "asset": "macOS\\.zip$" },
+  "ios": { "asset": "\\.ipa$" }
+}
+```
+
+When several files match, Apple silicon builds (`arm64`, `aarch64`,
+`universal`) are preferred. Use `"padmint": true` instead of `"ios"` for
+projects that PadMint builds. Only list projects whose releases are meant to be
+redistributed and contain no game files.
 
 ## License
 

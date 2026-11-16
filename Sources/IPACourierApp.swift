@@ -22,12 +22,17 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 struct IPACourierApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var delegate
     @StateObject private var model = CourierModel()
+    @StateObject private var discover = DiscoverModel()
 
     var body: some Scene {
         Window("IPA Courier", id: "main") {
             ContentView()
                 .environmentObject(model)
-                .onAppear { delegate.model = model }
+                .environmentObject(discover)
+                .onAppear {
+                    delegate.model = model
+                    discover.courier = model
+                }
         }
         .windowResizability(.contentMinSize)
     }

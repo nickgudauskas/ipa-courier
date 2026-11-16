@@ -11,13 +11,15 @@ targets:
       - path: Resources/ProvisioningStub
         type: folder
         buildPhase: resources
+      - path: Resources/catalog.json
+        buildPhase: resources
     info:
       path: Sources/Info.plist
       properties:
         CFBundleDisplayName: IPA Courier
         CFBundleName: IPA Courier
-        CFBundleShortVersionString: "1.1.1"
-        CFBundleVersion: "3"
+        CFBundleShortVersionString: "1.2"
+        CFBundleVersion: "4"
         LSApplicationCategoryType: public.app-category.developer-tools
         NSHumanReadableCopyright: ""
         CFBundleDocumentTypes:
@@ -30,7 +32,7 @@ targets:
         PRODUCT_NAME: IPA Courier
         PRODUCT_BUNDLE_IDENTIFIER: local.ipacourier.app
         SWIFT_VERSION: "5.0"
-        MARKETING_VERSION: "1.1.1"
+        MARKETING_VERSION: "1.2"
         ENABLE_APP_SANDBOX: NO
         ENABLE_HARDENED_RUNTIME: NO
         CODE_SIGN_STYLE: Manual

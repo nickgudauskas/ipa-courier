@@ -1,0 +1,289 @@
+{
+  "version": 1,
+  "notice": "IPA Courier doesn't provide game files. Every project here needs your own legally obtained copy of the original game.",
+  "projects": [
+    {
+      "id": "dusk",
+      "name": "Dusk",
+      "game": "The Legend of Zelda: Twilight Princess",
+      "console": "GameCube",
+      "kind": "Decompilation port",
+      "repo": "twilitrealm/dusk",
+      "summary": "Native port of Twilight Princess built from its decompilation, with modern rendering and controls.",
+      "requires": "Your own Twilight Princess (GameCube, USA) disc image.",
+      "mac": {
+        "asset": "macos-(arm64|x86_64)\\.zip$"
+      },
+      "ios": {
+        "asset": "ios-arm64\\.ipa$"
+      }
+    },
+    {
+      "id": "ghostship",
+      "name": "Ghostship",
+      "game": "Super Mario 64",
+      "console": "Nintendo 64",
+      "kind": "Decompilation port",
+      "repo": "HarbourMasters/Ghostship",
+      "summary": "Harbour Masters' Super Mario 64 port with widescreen, high frame rates and mod support.",
+      "requires": "Your own Super Mario 64 (N64) ROM.",
+      "mac": {
+        "asset": "-Mac\\.zip$"
+      },
+      "ios": {
+        "asset": "-iOS\\.zip$"
+      }
+    },
+    {
+      "id": "isle-portable",
+      "name": "isle-portable",
+      "game": "LEGO Island",
+      "console": "PC",
+      "kind": "Decompilation port",
+      "repo": "isledecomp/isle-portable",
+      "summary": "Portable build of the LEGO Island decompilation, running natively on modern systems.",
+      "requires": "Your own LEGO Island game files (original CD).",
+      "mac": {
+        "asset": "Darwin-(arm64|x64)\\.dmg$"
+      },
+      "ios": {
+        "asset": "iOS-arm64\\.ipa$"
+      }
+    },
+    {
+      "id": "dinopad",
+      "name": "DinoPad",
+      "game": "Dinosaur Planet",
+      "console": "Nintendo 64",
+      "kind": "Recompilation",
+      "repo": "chrissotraidis/dinopad",
+      "summary": "Dinosaur Planet running natively on iPhone and iPad with touch controls.",
+      "requires": "Your own Dinosaur Planet ROM. PadMint builds the playable app from it on your Mac.",
+      "padmint": true
+    },
+    {
+      "id": "goldenpad",
+      "name": "GoldenPad",
+      "game": "GoldenEye 007",
+      "console": "Nintendo 64",
+      "kind": "Recompilation",
+      "repo": "chrissotraidis/goldenpad",
+      "summary": "GoldenEye 007 natively on iPhone and iPad, with Metal rendering and touch controls.",
+      "requires": "Your own GoldenEye 007 ROM. PadMint builds the playable app from it on your Mac.",
+      "padmint": true
+    },
+    {
+      "id": "bearbirdpad",
+      "name": "BearBirdPad",
+      "game": "Banjo-Kazooie",
+      "console": "Nintendo 64",
+      "kind": "Recompilation",
+      "repo": "chrissotraidis/bearbirdpad",
+      "summary": "Banjo-Kazooie on iPhone and iPad via BanjoRecomp, with native Metal rendering.",
+      "requires": "Your own Banjo-Kazooie ROM. PadMint builds the playable app from it on your Mac.",
+      "padmint": true
+    },
+    {
+      "id": "bananapad",
+      "name": "BananaPad",
+      "game": "Donkey Kong 64",
+      "console": "Nintendo 64",
+      "kind": "Recompilation",
+      "repo": "chrissotraidis/bananapad",
+      "summary": "Donkey Kong 64 running natively on iPhone and iPad.",
+      "requires": "Your own Donkey Kong 64 ROM. PadMint builds the playable app from it on your Mac.",
+      "padmint": true
+    },
+    {
+      "id": "squirrelpad",
+      "name": "SquirrelPad",
+      "game": "Conker's Bad Fur Day",
+      "console": "Nintendo 64",
+      "kind": "Recompilation",
+      "repo": "chrissotraidis/squirrelpad",
+      "summary": "Conker's Bad Fur Day running natively on iPhone and iPad.",
+      "requires": "Your own Conker's Bad Fur Day ROM. PadMint builds the playable app from it on your Mac.",
+      "padmint": true
+    },
+    {
+      "id": "meleepad",
+      "name": "MeleePad",
+      "game": "Super Smash Bros. Melee",
+      "console": "GameCube",
+      "kind": "Recompilation",
+      "repo": "chrissotraidis/meleepad",
+      "summary": "Super Smash Bros. Melee natively on iPhone and iPad.",
+      "requires": "Your own Super Smash Bros. Melee disc image. PadMint builds the playable app from it on your Mac.",
+      "padmint": true
+    },
+    {
+      "id": "sunpad",
+      "name": "SunPad",
+      "game": "Super Mario Sunshine",
+      "console": "GameCube",
+      "kind": "Recompilation",
+      "repo": "chrissotraidis/sunpad",
+      "summary": "Super Mario Sunshine on iPhone and iPad through static recompilation.",
+      "requires": "Your own Super Mario Sunshine disc image. PadMint builds the playable app from it on your Mac.",
+      "padmint": true
+    },
+    {
+      "id": "kartpad",
+      "name": "KartPad",
+      "game": "Mario Kart Wii",
+      "console": "Wii",
+      "kind": "Recompilation",
+      "repo": "chrissotraidis/kartpad",
+      "summary": "Mario Kart Wii (with optional Retro Rewind) natively on iPhone and iPad.",
+      "requires": "Your own Mario Kart Wii disc image. PadMint builds the playable app from it on your Mac.",
+      "padmint": true
+    },
+    {
+      "id": "shipwright",
+      "name": "Ship of Harkinian",
+      "game": "The Legend of Zelda: Ocarina of Time",
+      "console": "Nintendo 64",
+      "kind": "Decompilation port",
+      "repo": "HarbourMasters/Shipwright",
+      "summary": "The best-known Ocarina of Time PC port, with enhancements, randomizer and mod support.",
+      "requires": "Your own Ocarina of Time ROM (selected on first launch).",
+      "mac": {
+        "asset": "-Mac\\.zip$"
+      }
+    },
+    {
+      "id": "2ship",
+      "name": "2 Ship 2 Harkinian",
+      "game": "The Legend of Zelda: Majora's Mask",
+      "console": "Nintendo 64",
+      "kind": "Decompilation port",
+      "repo": "HarbourMasters/2ship2harkinian",
+      "summary": "Harbour Masters' Majora's Mask port, sibling to Ship of Harkinian.",
+      "requires": "Your own Majora's Mask (USA) ROM.",
+      "mac": {
+        "asset": "-Mac\\.zip$"
+      }
+    },
+    {
+      "id": "spaghettikart",
+      "name": "SpaghettiKart",
+      "game": "Mario Kart 64",
+      "console": "Nintendo 64",
+      "kind": "Decompilation port",
+      "repo": "HarbourMasters/SpaghettiKart",
+      "summary": "Mario Kart 64 port with custom tracks, widescreen and modern controls.",
+      "requires": "Your own Mario Kart 64 (USA) ROM.",
+      "mac": {
+        "asset": "mac-(arm64|intel-x64)\\.zip$"
+      }
+    },
+    {
+      "id": "zelda64recomp",
+      "name": "Zelda 64: Recompiled",
+      "game": "The Legend of Zelda: Majora's Mask",
+      "console": "Nintendo 64",
+      "kind": "Recompilation",
+      "repo": "Zelda64Recomp/Zelda64Recomp",
+      "summary": "Static recompilation of Majora's Mask with the RT64 renderer, widescreen and mod support.",
+      "requires": "Your own Majora's Mask (USA) ROM.",
+      "mac": {
+        "asset": "macOS\\.zip$"
+      }
+    },
+    {
+      "id": "banjorecomp",
+      "name": "Banjo: Recompiled",
+      "game": "Banjo-Kazooie",
+      "console": "Nintendo 64",
+      "kind": "Recompilation",
+      "repo": "BanjoRecomp/BanjoRecomp",
+      "summary": "Static recompilation of Banjo-Kazooie for modern systems.",
+      "requires": "Your own Banjo-Kazooie ROM.",
+      "mac": {
+        "asset": "macOS\\.zip$"
+      }
+    },
+    {
+      "id": "mk64recomp",
+      "name": "Mario Kart 64: Recompiled",
+      "game": "Mario Kart 64",
+      "console": "Nintendo 64",
+      "kind": "Recompilation",
+      "repo": "sonicdcer/MarioKart64Recomp",
+      "summary": "Static recompilation of Mario Kart 64 using N64Recomp and RT64.",
+      "requires": "Your own Mario Kart 64 (USA) ROM.",
+      "mac": {
+        "asset": "macOS-Release\\.zip$"
+      }
+    },
+    {
+      "id": "sf64recomp",
+      "name": "Star Fox 64: Recompiled",
+      "game": "Star Fox 64",
+      "console": "Nintendo 64",
+      "kind": "Recompilation",
+      "repo": "sonicdcer/StarFox64Recomp",
+      "summary": "Static recompilation of Star Fox 64 with high frame rates and widescreen.",
+      "requires": "Your own Star Fox 64 (USA) ROM.",
+      "mac": {
+        "asset": "macOS-Release\\.zip$"
+      }
+    },
+    {
+      "id": "sm64coopdx",
+      "name": "sm64coopdx",
+      "game": "Super Mario 64",
+      "console": "Nintendo 64",
+      "kind": "Decompilation port",
+      "repo": "coop-deluxe/sm64coopdx",
+      "summary": "Online multiplayer Super Mario 64 with Lua mods and dozens of characters.",
+      "requires": "Your own Super Mario 64 (USA) ROM.",
+      "mac": {
+        "asset": "macOS_(ARM|Intel)\\.zip$"
+      }
+    },
+    {
+      "id": "opengoal",
+      "name": "OpenGOAL",
+      "game": "Jak and Daxter series",
+      "console": "PlayStation 2",
+      "kind": "Decompilation port",
+      "repo": "open-goal/launcher",
+      "summary": "Launcher for the OpenGOAL ports of Jak and Daxter, Jak II and Jak 3.",
+      "requires": "Your own Jak game disc images (extracted by the launcher).",
+      "mac": {
+        "asset": "_(aarch64|x64)\\.dmg$"
+      }
+    },
+    {
+      "id": "soniccd",
+      "name": "Sonic CD Decompilation",
+      "game": "Sonic CD",
+      "console": "Sega CD",
+      "kind": "Decompilation port",
+      "repo": "Rubberduckycooly/Sonic-CD-11-Decompilation",
+      "summary": "Decompilation of the 2011 Sonic CD remaster (Retro Engine v3).",
+      "requires": "Your own Data.rsdk from a purchased copy of Sonic CD (2011).",
+      "mac": {
+        "asset": "v3-mac\\.zip$"
+      }
+    },
+    {
+      "id": "openlara",
+      "name": "OpenLara",
+      "game": "Tomb Raider",
+      "console": "PlayStation",
+      "kind": "Source port",
+      "repo": "XProger/OpenLara",
+      "summary": "Open-source engine for the classic Tomb Raider games.",
+      "requires": "Your own Tomb Raider game data (PC or PlayStation).",
+      "mac": {
+        "asset": "OpenLara_osx\\.zip$"
+      }
+    }
+  ],
+  "padmint": {
+    "repo": "chrissotraidis/padmint",
+    "summary": "PadMint builds the playable app from your own game file. Releases here only contain a game-free shell."
+  }
+}

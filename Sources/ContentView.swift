@@ -18,6 +18,7 @@ struct ContentView: View {
                     Text("Install").tag(MainTab.install)
                     Text(model.expiringSoonCount > 0 ? "On Device (\(model.expiringSoonCount) expiring)" : "On Device")
                         .tag(MainTab.onDevice)
+                    Text("Discover").tag(MainTab.discover)
                 }
                 .pickerStyle(.segmented)
                 .labelsHidden()
@@ -25,6 +26,7 @@ struct ContentView: View {
                 switch model.tab {
                 case .install: installTab
                 case .onDevice: OnDeviceView()
+                case .discover: DiscoverView()
                 }
                 logSection
             }

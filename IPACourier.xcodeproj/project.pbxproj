@@ -8,15 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		04319944E17DA65E509262B1 /* Provisioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762C861FA71533645E9FBA35 /* Provisioning.swift */; };
+		10DC11D917C718A8F67D9836 /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8A997BA7C0FAC2351B1509 /* Catalog.swift */; };
+		1B20ACF4C6B30A4021CFE6C7 /* catalog.json in Resources */ = {isa = PBXBuildFile; fileRef = CD1CA5DC6BCDCDB445F80EFA /* catalog.json */; };
 		25A12DF05F42FA0F838AC478 /* QueueItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076FE85DDF2F956FC7127965 /* QueueItem.swift */; };
 		378284BB944ACBBE823D747F /* IPACourierApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52745A00C2DFC44C9A658D19 /* IPACourierApp.swift */; };
+		438CC9FFB2F4B9CB1C40423F /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60F3D3B8AA509FB621131E /* DiscoverView.swift */; };
 		78BA42905E9555341B5C0EA9 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B57583C42F041BEF2F7E9 /* Shell.swift */; };
 		A8398ADA40E832E923C589B1 /* ProvisioningStub in Resources */ = {isa = PBXBuildFile; fileRef = A338798156ECC58E4DDEFDBA /* ProvisioningStub */; };
+		BCC6411F592BFD638B45030A /* GameInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290D661ED804C946EF7C7FE0 /* GameInstaller.swift */; };
 		BFB1C1C90A5DBE5D95A0395A /* Installer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D914BFC9448EF364822FE7A6 /* Installer.swift */; };
 		C1360042C5AD488B31CB98AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE89B219B47C9B95E787B129 /* ContentView.swift */; };
 		C85860A3B0CB82BA2A5739A0 /* Signer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857869B3BE3F7B4EAE87B990 /* Signer.swift */; };
 		CC027423712A4D93B64BAAD2 /* CourierModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55017AB7BDF4F4FFAACDFF93 /* CourierModel.swift */; };
 		E5A8E458E3B4D324E20C1D55 /* MobileDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180204612A16618FC8339050 /* MobileDevice.swift */; };
+		EC868648D155523C93E2852A /* Discover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177B1CAAB8D75953040771C /* Discover.swift */; };
 		F960D2EF45E44D41B541D3F4 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DFD5B62959AF04AA971FB /* Library.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +30,9 @@
 		076FE85DDF2F956FC7127965 /* QueueItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueItem.swift; sourceTree = "<group>"; };
 		0BC1160E438A7327B84BD475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		180204612A16618FC8339050 /* MobileDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDevice.swift; sourceTree = "<group>"; };
+		1D60F3D3B8AA509FB621131E /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
+		290D661ED804C946EF7C7FE0 /* GameInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInstaller.swift; sourceTree = "<group>"; };
+		3177B1CAAB8D75953040771C /* Discover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discover.swift; sourceTree = "<group>"; };
 		524DFD5B62959AF04AA971FB /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		52745A00C2DFC44C9A658D19 /* IPACourierApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPACourierApp.swift; sourceTree = "<group>"; };
 		55017AB7BDF4F4FFAACDFF93 /* CourierModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourierModel.swift; sourceTree = "<group>"; };
@@ -32,6 +40,8 @@
 		7D6B57583C42F041BEF2F7E9 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
 		857869B3BE3F7B4EAE87B990 /* Signer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signer.swift; sourceTree = "<group>"; };
 		A338798156ECC58E4DDEFDBA /* ProvisioningStub */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ProvisioningStub; path = Resources/ProvisioningStub; sourceTree = SOURCE_ROOT; };
+		AA8A997BA7C0FAC2351B1509 /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
+		CD1CA5DC6BCDCDB445F80EFA /* catalog.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = catalog.json; sourceTree = "<group>"; };
 		D914BFC9448EF364822FE7A6 /* Installer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Installer.swift; sourceTree = "<group>"; };
 		FE89B219B47C9B95E787B129 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -49,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				A338798156ECC58E4DDEFDBA /* ProvisioningStub */,
+				E4C434AB9DAD057AFE7FACF5 /* Resources */,
 				DE1264813DC0C8AB81393A11 /* Sources */,
 				A455BF48BDB9B77C928F912E /* Products */,
 			);
@@ -57,8 +68,12 @@
 		DE1264813DC0C8AB81393A11 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				AA8A997BA7C0FAC2351B1509 /* Catalog.swift */,
 				FE89B219B47C9B95E787B129 /* ContentView.swift */,
 				55017AB7BDF4F4FFAACDFF93 /* CourierModel.swift */,
+				3177B1CAAB8D75953040771C /* Discover.swift */,
+				1D60F3D3B8AA509FB621131E /* DiscoverView.swift */,
+				290D661ED804C946EF7C7FE0 /* GameInstaller.swift */,
 				0BC1160E438A7327B84BD475 /* Info.plist */,
 				D914BFC9448EF364822FE7A6 /* Installer.swift */,
 				52745A00C2DFC44C9A658D19 /* IPACourierApp.swift */,
@@ -70,6 +85,14 @@
 				857869B3BE3F7B4EAE87B990 /* Signer.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		E4C434AB9DAD057AFE7FACF5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CD1CA5DC6BCDCDB445F80EFA /* catalog.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8398ADA40E832E923C589B1 /* ProvisioningStub in Resources */,
+				1B20ACF4C6B30A4021CFE6C7 /* catalog.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,8 +167,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10DC11D917C718A8F67D9836 /* Catalog.swift in Sources */,
 				C1360042C5AD488B31CB98AE /* ContentView.swift in Sources */,
 				CC027423712A4D93B64BAAD2 /* CourierModel.swift in Sources */,
+				EC868648D155523C93E2852A /* Discover.swift in Sources */,
+				438CC9FFB2F4B9CB1C40423F /* DiscoverView.swift in Sources */,
+				BCC6411F592BFD638B45030A /* GameInstaller.swift in Sources */,
 				378284BB944ACBBE823D747F /* IPACourierApp.swift in Sources */,
 				BFB1C1C90A5DBE5D95A0395A /* Installer.swift in Sources */,
 				F960D2EF45E44D41B541D3F4 /* Library.swift in Sources */,
@@ -294,7 +322,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = local.ipacourier.app;
 				PRODUCT_NAME = "IPA Courier";
 				SDKROOT = macosx;
@@ -318,7 +346,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = local.ipacourier.app;
 				PRODUCT_NAME = "IPA Courier";
 				SDKROOT = macosx;

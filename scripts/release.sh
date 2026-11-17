@@ -84,8 +84,10 @@ if command -v xcodegen >/dev/null; then xcodegen generate --quiet; fi
 xcodebuild -project IPACourier.xcodeproj -scheme IPACourier -configuration Release \
     -derivedDataPath build/dd build -quiet
 
-rm -rf "$DIST"
+# Replace only this script's own outputs; keep everything else in dist/
+# (older DMGs, release notes). The DMG is overwritten by hdiutil -ov.
 mkdir -p "$DIST"
+rm -rf "$APP" "$DIST/$APP_NAME.zip" "$DIST/notarize.zip"
 ditto "build/dd/Build/Products/Release/$APP_NAME.app" "$APP"
 
 echo "==> Signing (hardened runtime, secure timestamp)"

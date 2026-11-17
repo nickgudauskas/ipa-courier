@@ -1,5 +1,6 @@
 import AppKit
 import Foundation
+import UserNotifications
 
 enum DiscoverFilter: String, CaseIterable, Identifiable {
     case all = "All"
@@ -70,6 +71,11 @@ final class DiscoverModel: ObservableObject {
     @Published private(set) var indexDate: Date?
 
     private var started = false
+    /// Bundle ID → project links, rebuilt when the catalog or the learned IDs change.
+    private var linkCache: (key: String, links: [String: CatalogProject])?
+    /// Original bundle ID → project ID, learned from IPAs downloaded through Discover.
+    @Published private(set) var learnedBundleIDs: [String: String] =
+        UserDefaults.standard.dictionary(forKey: "discoverBundleIDs") as? [String: String] ?? [:]
 
     func loadIfNeeded() {
         guard !started else { return }
@@ -159,6 +165,18 @@ final class DiscoverModel: ObservableObject {
     func macAsset(_ project: CatalogProject) -> ReleaseAsset? { release(project)?.asset(for: project.mac) }
     func iosAsset(_ project: CatalogProject) -> ReleaseAsset? { release(project)?.asset(for: project.ios) }
     func androidAsset(_ project: CatalogProject) -> ReleaseAsset? { release(project)?.asset(for: project.android) }
+
+    /// The card's version: the latest release's tag, plus any platform whose file
+    /// comes from a different release, e.g. "2.9.5 · iOS 2.6.0".
+    func versionText(_ project: CatalogProject) -> String? {
+        guard let release = release(project) else { return nil }
+        let others = [("Mac", macAsset(project)), ("iOS", iosAsset(project)), ("Android", androidAsset(project))]
+            .compactMap { label, asset -> String? in
+                guard let tag = asset?.tag, tag != release.tag else { return nil }
+                return "\(label) \(ReleaseAsset.version(fromTag: tag))"
+            }
+        return ([release.tag] + others).joined(separator: " · ")
+    }
     func installedGame(_ project: CatalogProject) -> InstalledGame? { installed[project.id] }
 
     func hasUpdate(_ project: CatalogProject) -> Bool {
@@ -251,6 +269,7 @@ final class DiscoverModel: ObservableObject {
                 let ipa = try await GameInstaller.downloadIPA(asset, to: folder, work: work) { fraction, text in
                     Task { @MainActor in self.update(key, fraction: fraction, status: "Downloading · \(text)") }
                 }
+                await learnBundleID(of: ipa, for: project)
                 courier?.add([ipa])
                 courier?.tab = .discover
                 jobs[key] = GameJob(status: "Added \(ipa.lastPathComponent) to the install queue.", fraction: 1,
@@ -359,5 +378,148 @@ final class DiscoverModel: ObservableObject {
         if let fraction { job.fraction = fraction }
         job.status = status
         jobs[key] = job
+    }
+}
+
+
+// MARK: - Updates for apps on the device
+
+/// A newer iOS release of a Discover project, for an app installed on the device.
+struct DeviceAppUpdate: Equatable {
+    let project: CatalogProject
+    let asset: ReleaseAsset
+    let version: String
+}
+
+/// Compares dotted versions numerically, treating missing parts as 0 ("1.0" == "1.0.0").
+func compareVersions(_ a: String, _ b: String) -> ComparisonResult {
+    func parts(_ v: String) -> [Int] {
+        v.split(separator: ".").map { Int($0.prefix { $0.isNumber }) ?? 0 }
+    }
+    let x = parts(a), y = parts(b)
+    for i in 0..<max(x.count, y.count) {
+        let l = i < x.count ? x[i] : 0, r = i < y.count ? y[i] : 0
+        if l != r { return l < r ? .orderedAscending : .orderedDescending }
+    }
+    return .orderedSame
+}
+
+extension DiscoverModel {
+    /// Original bundle IDs → projects, from reliable sources only: the catalog's `bundleID`,
+    /// and IPAs downloaded through Discover. (File-name rules aren't unique across projects:
+    /// one project's "-ios-unsigned.ipa" rule also matches another's file.)
+    private func links() -> [String: CatalogProject] {
+        guard let catalog else { return [:] }
+        let key = "\(catalog.revision ?? 0)|\(learnedBundleIDs.count)|\(catalog.projects.count)"
+        if let cache = linkCache, cache.key == key { return cache.links }
+        let byID = Dictionary(catalog.projects.map { ($0.id, $0) }, uniquingKeysWith: { a, _ in a })
+        var links: [String: CatalogProject] = [:]
+        for (bundleID, projectID) in learnedBundleIDs {
+            if let project = byID[projectID], project.ios != nil { links[bundleID] = project }
+        }
+        for project in catalog.projects {
+            if let id = project.ios?.bundleID { links[id] = project }
+        }
+        linkCache = (key, links)
+        return links
+    }
+
+    /// Remembers which project an IPA downloaded through Discover belongs to.
+    func learnBundleID(of ipa: URL, for project: CatalogProject) async {
+        guard let info = try? await Signer.inspect(ipa), !info.bundleID.isEmpty else { return }
+        learnedBundleIDs[info.bundleID] = project.id
+        UserDefaults.standard.set(learnedBundleIDs, forKey: "discoverBundleIDs")
+    }
+
+    /// The newer release for an installed app, if its project has one with a comparable version.
+    func update(for app: InstalledApp) -> DeviceAppUpdate? {
+        guard let project = links().first(where: { Library.isSameApp(installed: app.bundleID, original: $0.key) })?.value,
+              let release = release(project), let asset = iosAsset(project),
+              let latest = ReleaseAsset.numericVersion(fromTag: asset.tag ?? release.tag)
+        else { return nil }
+        return compareVersions(latest, app.version) == .orderedDescending
+            ? DeviceAppUpdate(project: project, asset: asset, version: latest) : nil
+    }
+
+    /// Updates for the connected device's sideloaded apps, keyed by installed bundle ID.
+    var deviceUpdates: [String: DeviceAppUpdate] {
+        guard let courier else { return [:] }
+        var result: [String: DeviceAppUpdate] = [:]
+        for status in courier.deviceApps {
+            if let update = update(for: status.app) { result[status.app.bundleID] = update }
+        }
+        return result
+    }
+
+    func updateJob(_ update: DeviceAppUpdate) -> GameJob? { job(update.project, .ios) }
+
+    /// Re-signs the app from the newer release: uses an IPA already in the folder when it's
+    /// new enough, otherwise downloads it there first. Installs over the app, so data is kept.
+    func installUpdates(_ pairs: [(DeviceAppStatus, DeviceAppUpdate)]) {
+        guard let courier else { return }
+        var ready: [(DeviceAppStatus, URL)] = []
+        var downloads: [(DeviceAppStatus, DeviceAppUpdate)] = []
+        for (status, update) in pairs {
+            if let source = status.source, !source.version.isEmpty,
+               compareVersions(source.version, update.version) != .orderedAscending {
+                ready.append((status, source.url))
+            } else if updateJob(update)?.running != true {
+                downloads.append((status, update))
+            }
+        }
+        if !ready.isEmpty { courier.resign(ready) }
+        guard !downloads.isEmpty else { return }
+        let folder = courier.libraryFolder ?? AppPaths.support.appendingPathComponent("Downloads", isDirectory: true)
+        for (_, update) in downloads {
+            jobs["\(update.project.id)-ios"] = GameJob(status: "Starting download…", fraction: 0)
+        }
+        Task {
+            var downloaded: [(DeviceAppStatus, URL)] = []
+            for (status, update) in downloads {
+                let key = "\(update.project.id)-ios"
+                let work = GameInstaller.workFolder.appendingPathComponent(UUID().uuidString, isDirectory: true)
+                defer { try? FileManager.default.removeItem(at: work) }
+                do {
+                    let ipa = try await GameInstaller.downloadIPA(update.asset, to: folder, work: work) { fraction, text in
+                        Task { @MainActor in self.update(key, fraction: fraction, status: "Downloading \(update.version) · \(text)") }
+                    }
+                    // Never install one app over another: the IPA must be this app.
+                    let info = try await Signer.inspect(ipa)
+                    guard Library.isSameApp(installed: status.app.bundleID, original: info.bundleID) else {
+                        throw GameInstallError.nothingFound(
+                            "\(ipa.lastPathComponent) is \(info.bundleID), not \(status.app.name) (\(status.app.bundleID)). Not installed.")
+                    }
+                    await learnBundleID(of: ipa, for: update.project)
+                    jobs[key] = GameJob(status: "Downloaded \(ipa.lastPathComponent).", fraction: 1, running: false, ipa: ipa)
+                    courier.log("Downloaded \(update.project.name) \(update.version) to update \(status.app.name).")
+                    downloaded.append((status, ipa))
+                } catch {
+                    jobs[key] = GameJob(status: "Couldn't download", error: error.localizedDescription, running: false)
+                    courier.log("\(update.project.name): \(error.localizedDescription)")
+                }
+            }
+            await courier.rescanLibrary()
+            if !downloaded.isEmpty { courier.resign(downloaded) }
+        }
+    }
+
+    /// A notification for updates not mentioned before (once per app and version).
+    func notifyIfNew(_ updates: [String: DeviceAppUpdate], device: String) {
+        let key = "notifiedDeviceUpdates"
+        var seen = Set(UserDefaults.standard.stringArray(forKey: key) ?? [])
+        let fresh = updates.filter { !seen.contains("\($0.key)@\($0.value.version)") }
+        guard !fresh.isEmpty else { return }
+        fresh.forEach { seen.insert("\($0.key)@\($0.value.version)") }
+        UserDefaults.standard.set(Array(seen), forKey: key)
+
+        let names = fresh.values.map { "\($0.project.name) \($0.version)" }.sorted()
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { granted, _ in
+            guard granted else { return }
+            let center = UNUserNotificationCenter.current()
+            let content = UNMutableNotificationContent()
+            content.title = names.count == 1 ? "Update for \(device)" : "\(names.count) updates for \(device)"
+            content.body = names.joined(separator: ", ") + ". Open IPA Courier's On Device tab to install."
+            center.add(UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil))
+        }
     }
 }

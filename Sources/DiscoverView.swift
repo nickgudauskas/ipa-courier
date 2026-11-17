@@ -110,7 +110,7 @@ private struct ProjectCard: View {
                 }
                 HStack {
                     if let release = discover.release(project) {
-                        Text(release.tag).monospacedDigit()
+                        Text(discover.versionText(project) ?? release.tag).monospacedDigit().lineLimit(1)
                         if let date = release.publishedAt {
                             Text(date.formatted(.relative(presentation: .named))).foregroundStyle(.tertiary)
                         }
@@ -178,6 +178,28 @@ private struct ProjectImage: View {
                 loading = false
             }
             .accessibilityHidden(true)
+    }
+}
+
+/// A platform's file in the detail sheet, with its own release when that differs from the latest.
+private struct AssetLine: View {
+    let asset: ReleaseAsset
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 2) {
+            Text("\(asset.name) · \(ByteFormat.string(asset.size))")
+            if let tag = asset.tag {
+                HStack(spacing: 4) {
+                    Text("From release")
+                    if let page = asset.pageURL { Link(tag, destination: page) } else { Text(tag) }
+                    if let date = asset.publishedAt {
+                        Text("· \(date.formatted(date: .abbreviated, time: .omitted))")
+                    }
+                }
+            }
+        }
+        .font(.caption)
+        .foregroundStyle(.secondary)
     }
 }
 
@@ -280,7 +302,7 @@ private struct ProjectDetailView: View {
             let asset = discover.macAsset(project)
             let installed = discover.installedGame(project)
             if let asset {
-                Text("\(asset.name) · \(ByteFormat.string(asset.size))").font(.caption).foregroundStyle(.secondary)
+                AssetLine(asset: asset)
             } else if discover.release(project) != nil {
                 Text("This release has no Mac build.").font(.callout).foregroundStyle(.secondary)
             }
@@ -310,7 +332,7 @@ private struct ProjectDetailView: View {
         ActionSection(title: "iPhone & iPad", systemImage: "iphone") {
             let asset = discover.iosAsset(project)
             if let asset {
-                Text("\(asset.name) · \(ByteFormat.string(asset.size))").font(.caption).foregroundStyle(.secondary)
+                AssetLine(asset: asset)
             }
             Text("Downloads the build to your IPA folder and adds it to the install queue, where it's signed with your developer account.")
                 .font(.callout).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
@@ -334,7 +356,7 @@ private struct ProjectDetailView: View {
         ActionSection(title: "Android", systemImage: "candybarphone") {
             let asset = discover.androidAsset(project)
             if let asset {
-                Text("\(asset.name) · \(ByteFormat.string(asset.size))").font(.caption).foregroundStyle(.secondary)
+                AssetLine(asset: asset)
             } else if discover.release(project) != nil {
                 Text("This release has no Android build.").font(.callout).foregroundStyle(.secondary)
             }

@@ -229,7 +229,9 @@ def main():
     for (repo, _), extra in tagged_releases.items():
         if extra and repo in releases:
             have = {a["name"] for a in releases[repo]["assets"]}
-            releases[repo]["assets"] += [a for a in extra["assets"] if a["name"] not in have]
+            # Each merged file names its own release, so the app can show that version.
+            source = {"tag": extra["tag"], "publishedAt": extra["publishedAt"], "pageURL": extra["pageURL"]}
+            releases[repo]["assets"] += [{**a, **source} for a in extra["assets"] if a["name"] not in have]
     print(f"{len(releases)}/{len(repos)} releases indexed", file=sys.stderr)
     if option("--health"):
         report = health_report(catalog, results, tagged_releases)

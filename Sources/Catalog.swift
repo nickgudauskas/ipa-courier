@@ -19,6 +19,9 @@ struct PadMintInfo: Codable, Hashable {
 struct AssetRule: Codable, Hashable {
     /// Regular expression matched against release asset file names.
     let asset: String
+    /// iOS only: the app's bundle ID, so installed copies can be offered updates.
+    /// Optional: IPAs in the folder that `asset` matches also reveal it.
+    var bundleID: String? = nil
 }
 
 struct CatalogProject: Codable, Identifiable, Hashable {
@@ -63,6 +66,22 @@ struct ReleaseAsset: Codable, Hashable {
     let name: String
     let size: Int64
     let downloadURL: URL
+    /// Set when the file comes from a different release than the project's latest
+    /// (a catalog rule with a "tag", e.g. ARMSX2's separate iOS releases).
+    var tag: String? = nil
+    var publishedAt: Date? = nil
+    var pageURL: URL? = nil
+
+    /// The dotted version in a release tag, or nil when it has none ("continuous", "nightly").
+    static func numericVersion(fromTag tag: String) -> String? {
+        tag.range(of: #"\d+(\.\d+)+"#, options: .regularExpression).map { String(tag[$0]) }
+    }
+
+    /// The version in a release tag: "iOSv2.6.0" → "2.6.0", "v1.2" → "1.2".
+    static func version(fromTag tag: String) -> String {
+        guard let range = tag.range(of: #"\d+(\.\d+)+"#, options: .regularExpression) else { return tag }
+        return String(tag[range])
+    }
 }
 
 struct Release: Codable, Hashable {

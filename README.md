@@ -85,7 +85,7 @@ the original game.
 **Android tab:** sideload Android apps over USB with Google's adb.
 
 <p align="center">
-  <img src="docs/android.png" width="720" alt="Android tab with instructions for connecting a device, Ghostship 3.0.0 waiting in the install queue with its package, size, minimum Android version and CPU types, and the same APK listed under APKs on This Mac">
+  <img src="docs/android.png" width="720" alt="Android tab showing a connected Retroid Pocket Mini V2 with its Android version, CPU type and free storage, Ghostship 3.0.0 ready in the install queue with its package, size, minimum Android version and CPU types, and the same APK listed under APKs on This Mac">
 </p>
 
 - **Device:** shows the connected phone or tablet's model, Android version,

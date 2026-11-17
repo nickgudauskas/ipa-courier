@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": 8,
+  "revision": 9,
   "notice": "IPA Courier doesn't provide game files. Every project here needs your own legally obtained copy of the original game.",
   "projects": [
     {
@@ -1361,6 +1361,19 @@
       },
       "android": {
         "asset": "-a11-armv8\\.2-sdk30\\.apk$"
+      }
+    },
+    {
+      "id": "droiddeck",
+      "name": "DroidDeck",
+      "game": "Steam and PC games",
+      "console": "PC",
+      "kind": "Compatibility layer",
+      "repo": "Droid-Deck/DroidDeck",
+      "summary": "Brings the SteamOS experience to Android: Steam's Gaming Mode, a full Linux desktop, and GOG, Epic and Xbox storefronts, running Windows games through Proton. Needs Android 9 or later on an Adreno 730 or newer (or any 8xx) GPU, and about 3 GB free.",
+      "requires": "Your own Steam (or GOG, Epic) account and games.",
+      "android": {
+        "asset": "^DroidDeck-[\\d.]+\\.apk$"
       }
     }
   ],

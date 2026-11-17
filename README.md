@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/icon.png" width="128" alt="IPA Courier app icon: an orange parcel with a download arrow speeding toward an iPhone, on a blue rounded square">
+</p>
+
 # IPA Courier
 
 A small macOS app that signs an `.ipa` with your Apple Developer account and

@@ -15,11 +15,21 @@ final class UpdateChecker: ObservableObject {
     @Published private(set) var available: AppUpdate?
     @Published private(set) var job: GameJob?
     @Published private(set) var checking = false
-    /// True when the update can replace this copy in place and relaunch (see SelfUpdater).
-    @Published private(set) var canInstallInPlace = false
     /// Set by the app: true while an install is running, which a relaunch would cut off.
     var isBusy: () -> Bool = { false }
-    private var replaceableApp: URL?
+    /// This copy, when it can be replaced in place (see SelfUpdater).
+    @Published private var replaceableApp: URL?
+    /// A version whose in-place install failed; it's offered as a DMG instead.
+    @Published private var failedVersion: String?
+    private var updateTask: Task<Void, Never>?
+    /// Progress callbacks from an earlier stage are ignored once this changes.
+    private var progressToken: UUID?
+
+    /// True when the update can replace this copy in place and relaunch.
+    var canInstallInPlace: Bool {
+        guard let update = available else { return false }
+        return replaceableApp != nil && update.dmg != nil && failedVersion != update.version
+    }
 
     private let lastCheckKey = "lastUpdateCheck"
     private let skippedKey = "skippedUpdateVersion"
@@ -71,7 +81,6 @@ final class UpdateChecker: ObservableObject {
                 let skipped = UserDefaults.standard.string(forKey: skippedKey)
                 if manual || version != skipped {
                     replaceableApp = await SelfUpdater.replaceableApp()
-                    canInstallInPlace = replaceableApp != nil && dmg != nil
                     available = AppUpdate(version: version, pageURL: raw.html_url, dmg: dmg)
                 }
             } else if manual {
@@ -85,6 +94,9 @@ final class UpdateChecker: ObservableObject {
     func skip() {
         guard let update = available else { return }
         UserDefaults.standard.set(update.version, forKey: skippedKey)
+        updateTask?.cancel()  // an in-place update in progress stops before it touches the app
+        updateTask = nil
+        progressToken = nil
         available = nil
         job = nil
     }
@@ -95,7 +107,7 @@ final class UpdateChecker: ObservableObject {
 
     /// Downloads the update, swaps it in for this copy and relaunches. Falls back to `download()`.
     func installUpdate() {
-        guard let update = available, let dmg = update.dmg, let app = replaceableApp, canInstallInPlace else {
+        guard canInstallInPlace, let update = available, let dmg = update.dmg, let app = replaceableApp else {
             download()
             return
         }
@@ -105,23 +117,45 @@ final class UpdateChecker: ObservableObject {
                   "IPA Courier relaunches to update, which would stop them. Try again when they're done.")
             return
         }
+        let token = UUID()
+        progressToken = token
         job = GameJob(status: "Starting download…", fraction: 0)
-        Task {
+        updateTask = Task {
+            var prepared: SelfUpdater.Prepared?
             do {
-                try await SelfUpdater.install(dmg, version: update.version, replacing: app) { fraction, text in
+                prepared = try await SelfUpdater.prepare(dmg, version: update.version, for: app) { fraction, text in
                     Task { @MainActor in
+                        guard self.progressToken == token else { return }
                         self.job?.fraction = fraction
                         self.job?.status = text
                     }
                 }
+                progressToken = nil
+                // An install started during the download: wait for it rather than cut it off.
+                while isBusy() {
+                    job = GameJob(status: "Update ready. Waiting for the current installs to finish…", fraction: nil)
+                    try await Task.sleep(nanoseconds: 1_000_000_000)
+                }
+                try Task.checkCancellation()
+                guard let ready = prepared else { return }
+                try SelfUpdater.swap(ready, into: app)
+                prepared = nil
                 job = GameJob(status: "Updated to \(update.version). Relaunching…", fraction: 1)
                 try? await Task.sleep(nanoseconds: 700_000_000)
-                SelfUpdater.relaunch(app)
+                if !SelfUpdater.relaunch(app) {
+                    job = GameJob(status: "Updated to \(update.version). Quit and reopen IPA Courier to use it.",
+                                  fraction: 1, running: false)
+                }
+            } catch where Task.isCancelled || error is CancellationError {
+                prepared?.discard()  // skipped: the app wasn't touched
             } catch {
-                canInstallInPlace = false  // the button becomes Download: the manual DMG route
+                prepared?.discard()
+                progressToken = nil
+                failedVersion = update.version  // the button becomes Download: the manual DMG route
                 job = GameJob(status: "Couldn't update",
                               error: "\(error.localizedDescription) You can download the DMG instead.", running: false)
             }
+            updateTask = nil
         }
     }
 

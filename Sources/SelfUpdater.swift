@@ -46,86 +46,86 @@ enum SelfUpdater {
         return String(team)
     }
 
-    /// Downloads `dmg`, verifies the app inside, swaps it in for `current` and returns.
-    /// Call `relaunch(_:)` afterwards.
-    static func install(_ dmg: ReleaseAsset, version: String, replacing current: URL,
-                        status: @escaping @Sendable (Double?, String) -> Void) async throws {
+    /// A verified copy of the new version, staged on the same volume as the running app.
+    struct Prepared {
+        let app: URL
+        let folder: URL
+        func discard() { try? FileManager.default.removeItem(at: folder) }
+    }
+
+    /// Downloads `dmg` and stages the verified app inside it next to `current`. Cancellable.
+    /// Nothing about the running app changes until `swap(_:into:)`.
+    static func prepare(_ dmg: ReleaseAsset, version: String, for current: URL,
+                        status: @escaping @Sendable (Double?, String) -> Void) async throws -> Prepared {
         let fm = FileManager.default
-        let work = fm.urls(for: .cachesDirectory, in: .userDomainMask)[0]
-            .appendingPathComponent("IPA Courier/Update", isDirectory: true)
-        try? fm.removeItem(at: work)
-        try fm.createDirectory(at: work, withIntermediateDirectories: true)
-        defer { try? fm.removeItem(at: work) }
-
-        let file = try await GameInstaller.download(dmg, into: work) { fraction, text in
-            status(fraction, "Downloading · \(text)")
-        }
-
-        status(nil, "Checking the download…")
-        let mount = work.appendingPathComponent("mount", isDirectory: true)
-        try fm.createDirectory(at: mount, withIntermediateDirectories: true)
-        try await Shell.run("/usr/bin/hdiutil", ["attach", "-nobrowse", "-readonly", "-noautoopen",
-                                                 "-mountpoint", mount.path, file.path])
-        var mounted = true
-        func eject() async {
-            guard mounted else { return }
-            mounted = false
-            _ = try? await Shell.run("/usr/bin/hdiutil", ["detach", "-force", mount.path], checkStatus: false)
-        }
-
         // A staging folder on the same volume as the app, so the swap is a rename.
-        let staging = try fm.url(for: .itemReplacementDirectory, in: .userDomainMask,
-                                 appropriateFor: current, create: true)
-        defer { try? fm.removeItem(at: staging) }
-        let staged = staging.appendingPathComponent(current.lastPathComponent, isDirectory: true)
-
+        let folder = try fm.url(for: .itemReplacementDirectory, in: .userDomainMask,
+                                appropriateFor: current, create: true)
         do {
-            let apps = (try? fm.contentsOfDirectory(at: mount, includingPropertiesForKeys: nil))?
+            let file = try await GameInstaller.download(dmg, into: folder.appendingPathComponent("download")) { fraction, text in
+                status(fraction, "Downloading · \(text)")
+            }
+            status(nil, "Checking the download…")
+            // extract() mounts at a unique path and always ejects.
+            let unpacked = folder.appendingPathComponent("unpacked", isDirectory: true)
+            try await GameInstaller.extract(file, into: unpacked)
+            try? fm.removeItem(at: file)
+            let apps = (try? fm.contentsOfDirectory(at: unpacked, includingPropertiesForKeys: nil))?
                 .filter { $0.pathExtension == "app" } ?? []
-            guard let candidate = apps.first(where: { Bundle(url: $0)?.bundleIdentifier == Bundle.main.bundleIdentifier })
+            guard let app = apps.first(where: { info($0)?["CFBundleIdentifier"] as? String == Bundle.main.bundleIdentifier })
             else { throw SelfUpdateError.noApp(dmg.name) }
-            try await verify(candidate, version: version, against: current)
-
-            status(nil, "Installing \(version)…")
-            try await Shell.run("/usr/bin/ditto", [candidate.path, staged.path])
-            await eject()
+            try Task.checkCancellation()
+            try await verify(app, version: version, against: current)
+            return Prepared(app: app, folder: folder)
         } catch {
-            await eject()
+            try? fm.removeItem(at: folder)
             throw error
         }
+    }
 
-        // Check the copy too, then swap it in. The running process keeps its already-loaded code.
-        try await verifySignature(staged, against: current)
+    /// Swaps the staged copy in for `current` in one step. The running process keeps its loaded code.
+    static func swap(_ prepared: Prepared, into current: URL) throws {
+        defer { prepared.discard() }
         do {
-            _ = try fm.replaceItemAt(current, withItemAt: staged, backupItemName: nil, options: [])
+            _ = try FileManager.default.replaceItemAt(current, withItemAt: prepared.app, backupItemName: nil, options: [])
         } catch {
             throw SelfUpdateError.replace(error.localizedDescription)
         }
     }
 
-    /// Waits for this process to quit, then opens `app`, and quits.
+    /// Starts a helper that opens `app` once this process exits, then quits.
+    /// Returns false (and doesn't quit) if the helper couldn't start or quitting was cancelled.
     @MainActor
-    static func relaunch(_ app: URL) {
+    static func relaunch(_ app: URL) -> Bool {
         let helper = Process()
         helper.executableURL = URL(fileURLWithPath: "/bin/sh")
-        helper.arguments = ["-c", "while /bin/kill -0 \"$1\" 2>/dev/null; do /bin/sleep 0.2; done; /usr/bin/open \"$2\"",
-                            "relaunch", String(ProcessInfo.processInfo.processIdentifier), app.path]
+        // Wait up to an hour for this process to exit, then open the new copy.
+        helper.arguments = ["-c", """
+            i=0; while /bin/kill -0 "$1" 2>/dev/null; do /bin/sleep 0.2; i=$((i+1)); [ $i -ge 18000 ] && exit 0; done
+            /usr/bin/open "$2"
+            """, "relaunch", String(ProcessInfo.processInfo.processIdentifier), app.path]
         helper.standardInput = FileHandle.nullDevice
         helper.standardOutput = FileHandle.nullDevice
         helper.standardError = FileHandle.nullDevice
         do {
             try helper.run()
         } catch {
-            NSWorkspace.shared.open(app)  // can't wait; macOS will bring the running copy forward instead
+            return false
         }
         NSApp.terminate(nil)
+        return false  // terminate(_:) returns only when quitting was cancelled
+    }
+
+    /// Info.plist read straight from disk. Bundle(url:) caches by path for the process's life.
+    private static func info(_ app: URL) -> [String: Any]? {
+        guard let data = try? Data(contentsOf: app.appendingPathComponent("Contents/Info.plist")) else { return nil }
+        return (try? PropertyListSerialization.propertyList(from: data, format: nil)) as? [String: Any]
     }
 
     // MARK: Checks
 
     private static func verify(_ candidate: URL, version: String, against current: URL) async throws {
-        let info = Bundle(url: candidate)?.infoDictionary
-        let candidateVersion = info?["CFBundleShortVersionString"] as? String ?? "?"
+        let candidateVersion = info(candidate)?["CFBundleShortVersionString"] as? String ?? "?"
         guard candidateVersion == version else {
             throw SelfUpdateError.verification("it's version \(candidateVersion), not \(version).")
         }

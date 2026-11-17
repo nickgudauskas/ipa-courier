@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": 3,
+  "revision": 4,
   "notice": "IPA Courier doesn't provide game files. Every project here needs your own legally obtained copy of the original game.",
   "projects": [
     {
@@ -1278,10 +1278,13 @@
       "console": "PlayStation 2",
       "kind": "Decompilation port",
       "repo": "nathanialf/ico-pc",
-      "summary": "Port of the ICO decompilation for PC, Mac and handhelds.",
+      "summary": "Port of the ICO decompilation for PC, Mac, iPhone and handhelds.",
       "requires": "Your own ICO (PS2) disc image.",
       "mac": {
         "asset": "macos-arm64\\.zip$"
+      },
+      "ios": {
+        "asset": "-ios-unsigned\\.ipa$"
       },
       "android": {
         "asset": "-android\\.apk$"

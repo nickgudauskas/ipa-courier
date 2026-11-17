@@ -121,6 +121,8 @@ final class QueueItem: ObservableObject, Identifiable {
     var userEditedBundleID: Bool {
         guard let ipa = inspection else { return false }
         let current = trimmedBundleID
+        // An empty field hasn't been filled in yet (or was cleared), so it isn't a choice to keep.
+        guard !current.isEmpty else { return false }
         return current != ipa.bundleID && current != autoBundleID
     }
 

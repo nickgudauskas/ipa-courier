@@ -358,6 +358,8 @@ final class CourierModel: ObservableObject {
         }
         item.status = .running
         item.resetSteps()
+        // Never sign with an empty bundle ID: fall back to the app's own.
+        if item.trimmedBundleID.isEmpty { item.bundleID = item.autoBundleID ?? ipa.bundleID }
         let wantedID = item.trimmedBundleID
         let ignoreSpace = item.ignoreSpaceOnce
         item.ignoreSpaceOnce = false

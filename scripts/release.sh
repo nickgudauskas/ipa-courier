@@ -40,11 +40,35 @@ fi
 NAME=$(security find-identity -v -p codesigning | awk -v id="$IDENTITY" '$2 == id { sub(/^[^"]*"/, ""); sub(/"$/, ""); print; exit }')
 echo "==> Signing identity: $NAME"
 
-if [[ "$MODE" != "--local" ]] && ! xcrun notarytool history --keychain-profile "$NOTARY_PROFILE" >/dev/null 2>&1; then
-    echo "error: no notarization credentials saved as \"$NOTARY_PROFILE\"." >&2
-    echo "Run: xcrun notarytool store-credentials $NOTARY_PROFILE --apple-id <apple-id> --team-id <team-id>" >&2
+if [[ "$MODE" != "--local" ]] && ! check=$(xcrun notarytool history --keychain-profile "$NOTARY_PROFILE" 2>&1); then
+    if grep -qiE "no keychain password item|could not find|profile" <<< "$check"; then
+        echo "error: no notarization credentials saved as \"$NOTARY_PROFILE\"." >&2
+        echo "Run: xcrun notarytool store-credentials $NOTARY_PROFILE --apple-id <apple-id> --team-id <team-id>" >&2
+    else
+        echo "error: couldn't reach Apple's notary service; try again later." >&2
+        echo "$check" | tail -3 >&2
+    fi
     exit 1
 fi
+
+# Submits a file for notarization, retrying Apple server errors (they happen).
+notarize() {
+    local file="$1" output
+    for attempt in 1 2 3; do
+        output=$(xcrun notarytool submit "$file" --keychain-profile "$NOTARY_PROFILE" --wait 2>&1) || true
+        echo "$output" | grep -E "status:|Error" >&2 || true
+        if grep -q "status: Accepted" <<< "$output"; then return 0; fi
+        if grep -qE "status: (Invalid|Rejected)" <<< "$output"; then
+            local id
+            id=$(grep -m1 -oE "id: [0-9a-f-]{36}" <<< "$output" | cut -d' ' -f2)
+            echo "error: Apple rejected $file. Details: xcrun notarytool log $id --keychain-profile $NOTARY_PROFILE" >&2
+            return 1
+        fi
+        [[ $attempt -lt 3 ]] && { echo "Notary service error (attempt $attempt of 3); retrying in 60s…" >&2; sleep 60; }
+    done
+    echo "error: Apple's notary service kept failing; try again later." >&2
+    return 1
+}
 
 echo "==> Building"
 if command -v xcodegen >/dev/null; then xcodegen generate --quiet; fi
@@ -62,7 +86,7 @@ codesign --verify --strict --deep "$APP"
 if [[ "$MODE" != "--local" ]]; then
     echo "==> Notarizing (usually a few minutes)"
     ditto -c -k --sequesterRsrc --keepParent "$APP" "$DIST/notarize.zip"
-    xcrun notarytool submit "$DIST/notarize.zip" --keychain-profile "$NOTARY_PROFILE" --wait
+    notarize "$DIST/notarize.zip"
     rm "$DIST/notarize.zip"
     echo "==> Stapling ticket"
     xcrun stapler staple "$APP"
@@ -81,7 +105,7 @@ hdiutil create -quiet -volname "$APP_NAME" -srcfolder "$STAGE" -fs HFS+ -format 
 rm -rf "$STAGE"
 codesign --force --sign "$IDENTITY" --timestamp "$DMG"
 if [[ "$MODE" != "--local" ]]; then
-    xcrun notarytool submit "$DMG" --keychain-profile "$NOTARY_PROFILE" --wait
+    notarize "$DMG"
     xcrun stapler staple "$DMG"
 fi
 

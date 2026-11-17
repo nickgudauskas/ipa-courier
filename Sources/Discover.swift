@@ -71,6 +71,9 @@ final class DiscoverModel: ObservableObject {
     @Published private(set) var indexDate: Date?
 
     private var started = false
+    /// The PadMint scan reads Downloads, which can raise a macOS privacy prompt, so it
+    /// only runs once Discover is shown, not at launch.
+    private var padMintScanWanted = false
     /// Bundle ID → project links, rebuilt when the catalog or the learned IDs change.
     private var linkCache: (key: String, links: [String: CatalogProject])?
     /// Original bundle ID → project ID, learned from IPAs downloaded through Discover.
@@ -136,7 +139,7 @@ final class DiscoverModel: ObservableObject {
             installed = present
             InstalledGames.save(present)
         }
-        findPadMint()
+        if padMintScanWanted { findPadMint() }
         loading = false
     }
 
@@ -346,19 +349,32 @@ final class DiscoverModel: ObservableObject {
     }
 
     /// Finds the newest PadMint.command in the IPA folder or ~/Downloads.
+    /// Called when Discover appears: loads it if needed and looks for a local PadMint.
+    func discoverShown() {
+        loadIfNeeded()
+        guard !padMintScanWanted else { return }
+        padMintScanWanted = true
+        if catalog != nil { findPadMint() }
+    }
+
+    /// Looks for PadMint.command in the IPA folder and Downloads, off the main thread:
+    /// the first read of Downloads can wait on a macOS privacy prompt.
     private func findPadMint() {
-        var candidates: [URL] = []
         let roots = [courier?.libraryFolder, AppPaths.home.appendingPathComponent("Downloads")].compactMap { $0 }
-        for root in roots {
-            for folder in (try? FileManager.default.contentsOfDirectory(at: root, includingPropertiesForKeys: nil)) ?? []
-            where folder.lastPathComponent.lowercased().hasPrefix("padmint") {
-                let command = folder.appendingPathComponent("PadMint.command")
-                if FileManager.default.fileExists(atPath: command.path) { candidates.append(command) }
+        Task.detached(priority: .utility) {
+            var candidates: [URL] = []
+            for root in roots {
+                for folder in (try? FileManager.default.contentsOfDirectory(at: root, includingPropertiesForKeys: nil)) ?? []
+                where folder.lastPathComponent.lowercased().hasPrefix("padmint") {
+                    let command = folder.appendingPathComponent("PadMint.command")
+                    if FileManager.default.fileExists(atPath: command.path) { candidates.append(command) }
+                }
             }
-        }
-        padMintCommand = candidates.max {
-            $0.deletingLastPathComponent().lastPathComponent
-                .compare($1.deletingLastPathComponent().lastPathComponent, options: .numeric) == .orderedAscending
+            let newest = candidates.max {
+                $0.deletingLastPathComponent().lastPathComponent
+                    .compare($1.deletingLastPathComponent().lastPathComponent, options: .numeric) == .orderedAscending
+            }
+            await MainActor.run { self.padMintCommand = newest }
         }
     }
 

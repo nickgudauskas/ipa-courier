@@ -67,7 +67,7 @@ struct DiscoverView: View {
                     .foregroundStyle(.tertiary)
             }
         }
-        .onAppear { discover.loadIfNeeded() }
+        .onAppear { discover.discoverShown() }
         .sheet(item: $discover.selected) { project in
             ProjectDetailView(project: project)
                 .environmentObject(discover)

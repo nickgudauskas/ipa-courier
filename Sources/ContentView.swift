@@ -37,7 +37,8 @@ struct ContentView: View {
             }
             .padding(20)
         }
-        .frame(minWidth: 700, minHeight: 720)
+        // Everything scrolls, so the window can be short; it opens at defaultSize (IPACourierApp).
+        .frame(minWidth: 700, minHeight: 440)
         .fileImporter(isPresented: $importing, allowedContentTypes: [ipaType, .folder],
                       allowsMultipleSelection: true) { result in
             if case .success(let urls) = result { model.add(urls) }

@@ -46,6 +46,7 @@ struct IPACourierApp: App {
                     android.courier = model
                 }
         }
+        .defaultSize(width: 900, height: 760)
         .windowResizability(.contentMinSize)
         .commands {
             CommandGroup(after: .appInfo) {

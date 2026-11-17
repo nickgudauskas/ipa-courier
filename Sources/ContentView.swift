@@ -547,7 +547,7 @@ private struct OnDeviceView: View {
                 HStack {
                     let missing = apps.count - resignable.count
                     if missing > 0 {
-                        Text("\(missing) app\(missing == 1 ? "" : "s") have no matching IPA in the folder.")
+                        Text(missing == 1 ? "1 app has no matching IPA in the folder." : "\(missing) apps have no matching IPA in the folder.")
                             .font(.caption).foregroundStyle(.secondary)
                     }
                     Spacer()

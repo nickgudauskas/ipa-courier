@@ -40,7 +40,16 @@ fi
 NAME=$(security find-identity -v -p codesigning | awk -v id="$IDENTITY" '$2 == id { sub(/^[^"]*"/, ""); sub(/"$/, ""); print; exit }')
 echo "==> Signing identity: $NAME"
 
-if [[ "$MODE" != "--local" ]] && ! check=$(xcrun notarytool history --keychain-profile "$NOTARY_PROFILE" 2>&1); then
+# Check the saved credentials, retrying because Apple's service has flaky spells.
+credentials_ok() {
+    for attempt in 1 2 3; do
+        if check=$(xcrun notarytool history --keychain-profile "$NOTARY_PROFILE" 2>&1); then return 0; fi
+        grep -qiE "no keychain password item|could not find" <<< "$check" && return 1
+        [[ $attempt -lt 3 ]] && sleep 20
+    done
+    return 1
+}
+if [[ "$MODE" != "--local" ]] && ! credentials_ok; then
     if grep -qiE "no keychain password item|could not find|profile" <<< "$check"; then
         echo "error: no notarization credentials saved as \"$NOTARY_PROFILE\"." >&2
         echo "Run: xcrun notarytool store-credentials $NOTARY_PROFILE --apple-id <apple-id> --team-id <team-id>" >&2

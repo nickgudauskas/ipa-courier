@@ -82,6 +82,16 @@ private struct ProjectCard: View {
     let project: CatalogProject
     @State private var hovering = false
 
+    private func platformBadges(_ style: BadgeStyle) -> some View {
+        HStack(spacing: 5) {
+            if project.mac != nil { PlatformBadge("Mac", systemImage: "laptopcomputer", style: style) }
+            if project.ios != nil { PlatformBadge("iPhone & iPad", short: "iOS", systemImage: "iphone", style: style) }
+            if project.android != nil { PlatformBadge("Android", systemImage: "candybarphone", style: style) }
+            if project.usesPadMint { PlatformBadge("PadMint", systemImage: "hammer", style: style) }
+            Spacer(minLength: 0)
+        }
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             ProjectImage(project: project, height: 110)
@@ -91,12 +101,12 @@ private struct ProjectCard: View {
                     .font(.caption)
                     .foregroundStyle(.secondary)
                     .lineLimit(2, reservesSpace: true)
-                HStack(spacing: 5) {
-                    if project.mac != nil { PlatformBadge("Mac", systemImage: "laptopcomputer") }
-                    if project.ios != nil { PlatformBadge("iPhone & iPad", systemImage: "iphone") }
-                    if project.android != nil { PlatformBadge("Android", systemImage: "candybarphone") }
-                    if project.usesPadMint { PlatformBadge("PadMint", systemImage: "hammer") }
-                    Spacer(minLength: 0)
+                // Full labels when they fit, then short ones, then short text alone, then icons only; never wrap mid-word.
+                ViewThatFits(in: .horizontal) {
+                    platformBadges(.full)
+                    platformBadges(.short)
+                    platformBadges(.textOnly)
+                    platformBadges(.iconOnly)
                 }
                 HStack {
                     if let release = discover.release(project) {
@@ -171,13 +181,29 @@ private struct ProjectImage: View {
     }
 }
 
+private enum BadgeStyle { case full, short, textOnly, iconOnly }
+
 private struct PlatformBadge: View {
     let text: String
+    let shortText: String
     let systemImage: String
-    init(_ text: String, systemImage: String) { self.text = text; self.systemImage = systemImage }
+    let style: BadgeStyle
+    init(_ text: String, short: String? = nil, systemImage: String, style: BadgeStyle) {
+        self.text = text; self.shortText = short ?? text; self.systemImage = systemImage; self.style = style
+    }
 
     var body: some View {
-        Label(text, systemImage: systemImage)
+        Group {
+            switch style {
+            case .full: Label(text, systemImage: systemImage)
+            case .short: Label(shortText, systemImage: systemImage)
+            case .textOnly: Text(shortText)
+            case .iconOnly: Image(systemName: systemImage).accessibilityLabel(text)
+            }
+        }
+            .lineLimit(1)
+            .fixedSize()
+            .help(text)
             .font(.caption2.weight(.semibold))
             .padding(.horizontal, 6)
             .padding(.vertical, 2)

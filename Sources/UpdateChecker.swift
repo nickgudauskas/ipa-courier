@@ -98,10 +98,10 @@ final class UpdateChecker: ObservableObject {
         Task {
             do {
                 let downloads = AppPaths.home.appendingPathComponent("Downloads", isDirectory: true)
-                let file = try await GameInstaller.download(dmg, into: downloads) { [weak self] fraction, text in
+                let file = try await GameInstaller.download(dmg, into: downloads) { fraction, text in
                     Task { @MainActor in
-                        self?.job?.fraction = fraction
-                        self?.job?.status = "Downloading · \(text)"
+                        self.job?.fraction = fraction
+                        self.job?.status = "Downloading · \(text)"
                     }
                 }
                 NSWorkspace.shared.open(file)

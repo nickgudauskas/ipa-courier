@@ -339,8 +339,8 @@ final class AndroidModel: ObservableObject {
         courier?.log("Downloading Android Platform Tools from Google.")
         Task {
             do {
-                let adb = try await AndroidTools.downloadPlatformTools { [weak self] fraction, text in
-                    Task { @MainActor in self?.toolsJob?.fraction = fraction; self?.toolsJob?.status = "Downloading · \(text)" }
+                let adb = try await AndroidTools.downloadPlatformTools { fraction, text in
+                    Task { @MainActor in self.toolsJob?.fraction = fraction; self.toolsJob?.status = "Downloading · \(text)" }
                 }
                 self.adb = adb
                 adbVersion = await AndroidTools.version(adb)

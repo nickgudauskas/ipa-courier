@@ -181,11 +181,11 @@ final class DiscoverModel: ObservableObject {
             let work = GameInstaller.workFolder.appendingPathComponent(UUID().uuidString, isDirectory: true)
             defer { try? FileManager.default.removeItem(at: work) }
             do {
-                let file = try await GameInstaller.download(asset, into: work) { [weak self] fraction, text in
-                    Task { @MainActor in self?.update(key, fraction: fraction, status: "Downloading · \(text)") }
+                let file = try await GameInstaller.download(asset, into: work) { fraction, text in
+                    Task { @MainActor in self.update(key, fraction: fraction, status: "Downloading · \(text)") }
                 }
-                let result = try await GameInstaller.installMac(file, project: project) { [weak self] status in
-                    Task { @MainActor in self?.update(key, fraction: nil, status: status) }
+                let result = try await GameInstaller.installMac(file, project: project) { status in
+                    Task { @MainActor in self.update(key, fraction: nil, status: status) }
                 }
                 installed[project.id] = InstalledGame(tag: release.tag, path: result.url.path, installedAt: Date())
                 InstalledGames.save(installed)
@@ -248,8 +248,8 @@ final class DiscoverModel: ObservableObject {
             let work = GameInstaller.workFolder.appendingPathComponent(UUID().uuidString, isDirectory: true)
             defer { try? FileManager.default.removeItem(at: work) }
             do {
-                let ipa = try await GameInstaller.downloadIPA(asset, to: folder, work: work) { [weak self] fraction, text in
-                    Task { @MainActor in self?.update(key, fraction: fraction, status: "Downloading · \(text)") }
+                let ipa = try await GameInstaller.downloadIPA(asset, to: folder, work: work) { fraction, text in
+                    Task { @MainActor in self.update(key, fraction: fraction, status: "Downloading · \(text)") }
                 }
                 courier?.add([ipa])
                 courier?.tab = .discover
@@ -274,8 +274,8 @@ final class DiscoverModel: ObservableObject {
             let work = GameInstaller.workFolder.appendingPathComponent(UUID().uuidString, isDirectory: true)
             defer { try? FileManager.default.removeItem(at: work) }
             do {
-                let file = try await GameInstaller.download(asset, into: work) { [weak self] fraction, text in
-                    Task { @MainActor in self?.update(key, fraction: fraction, status: "Downloading · \(text)") }
+                let file = try await GameInstaller.download(asset, into: work) { fraction, text in
+                    Task { @MainActor in self.update(key, fraction: fraction, status: "Downloading · \(text)") }
                 }
                 var apk = file
                 if APKKind(url: file) == nil {

@@ -15,6 +15,11 @@ final class UpdateChecker: ObservableObject {
     @Published private(set) var available: AppUpdate?
     @Published private(set) var job: GameJob?
     @Published private(set) var checking = false
+    /// True when the update can replace this copy in place and relaunch (see SelfUpdater).
+    @Published private(set) var canInstallInPlace = false
+    /// Set by the app: true while an install is running, which a relaunch would cut off.
+    var isBusy: () -> Bool = { false }
+    private var replaceableApp: URL?
 
     private let lastCheckKey = "lastUpdateCheck"
     private let skippedKey = "skippedUpdateVersion"
@@ -65,6 +70,8 @@ final class UpdateChecker: ObservableObject {
             if Self.isNewer(version, than: currentVersion) {
                 let skipped = UserDefaults.standard.string(forKey: skippedKey)
                 if manual || version != skipped {
+                    replaceableApp = await SelfUpdater.replaceableApp()
+                    canInstallInPlace = replaceableApp != nil && dmg != nil
                     available = AppUpdate(version: version, pageURL: raw.html_url, dmg: dmg)
                 }
             } else if manual {
@@ -84,6 +91,38 @@ final class UpdateChecker: ObservableObject {
 
     func showReleaseNotes() {
         if let update = available { NSWorkspace.shared.open(update.pageURL) }
+    }
+
+    /// Downloads the update, swaps it in for this copy and relaunches. Falls back to `download()`.
+    func installUpdate() {
+        guard let update = available, let dmg = update.dmg, let app = replaceableApp, canInstallInPlace else {
+            download()
+            return
+        }
+        guard job?.running != true else { return }
+        if isBusy() {
+            alert("Finish the current installs first",
+                  "IPA Courier relaunches to update, which would stop them. Try again when they're done.")
+            return
+        }
+        job = GameJob(status: "Starting download…", fraction: 0)
+        Task {
+            do {
+                try await SelfUpdater.install(dmg, version: update.version, replacing: app) { fraction, text in
+                    Task { @MainActor in
+                        self.job?.fraction = fraction
+                        self.job?.status = text
+                    }
+                }
+                job = GameJob(status: "Updated to \(update.version). Relaunching…", fraction: 1)
+                try? await Task.sleep(nanoseconds: 700_000_000)
+                SelfUpdater.relaunch(app)
+            } catch {
+                canInstallInPlace = false  // the button becomes Download: the manual DMG route
+                job = GameJob(status: "Couldn't update",
+                              error: "\(error.localizedDescription) You can download the DMG instead.", running: false)
+            }
+        }
     }
 
     /// Downloads the new DMG into ~/Downloads and opens it, ready to drag into Applications.

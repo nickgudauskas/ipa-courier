@@ -109,8 +109,13 @@ offers to download Google's official Platform Tools (about 16 MB) into IPA
 Courier's own folder.
 
 **Updates:** IPA Courier checks this repository's releases once a day. When a
-newer version is out, a banner offers to download its DMG (or skip that
-version). **IPA Courier → Check for Updates…** checks right away.
+newer version is out, a banner offers **Install & Relaunch** (or to skip that
+version). IPA Courier downloads the new version and checks that it's signed by
+the same developer, has the same bundle ID and is notarized by Apple. Then it
+replaces itself and relaunches. If it can't replace itself (for example, it's
+running from the DMG or from a folder you can't write to), the banner offers
+the DMG to install by hand instead. **IPA Courier → Check for Updates…** checks
+right away.
 
 If there isn't enough space, the signed copy is kept. Free up space, then
 click **Re-check & Install** to skip signing. **Export Signed IPA…** saves the

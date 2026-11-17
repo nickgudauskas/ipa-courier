@@ -44,6 +44,9 @@ struct IPACourierApp: App {
                     discover.courier = model
                     discover.android = android
                     android.courier = model
+                    updater.isBusy = { [model, android, discover] in
+                        model.isRunning || android.isRunning || discover.jobs.values.contains { $0.running }
+                    }
                 }
         }
         .defaultSize(width: 900, height: 760)

@@ -74,9 +74,15 @@ struct ContentView: View {
                 Spacer()
                 Button("Skip This Version") { updater.skip() }
                 Button("What's New") { updater.showReleaseNotes() }
-                Button(update.dmg != nil ? "Download" : "Open Release Page") { updater.download() }
-                    .buttonStyle(.borderedProminent)
-                    .disabled(updater.job?.running == true)
+                if updater.canInstallInPlace {
+                    Button("Install & Relaunch") { updater.installUpdate() }
+                        .buttonStyle(.borderedProminent)
+                        .disabled(updater.job?.running == true)
+                } else {
+                    Button(update.dmg != nil ? "Download" : "Open Release Page") { updater.download() }
+                        .buttonStyle(.borderedProminent)
+                        .disabled(updater.job?.running == true)
+                }
             }
             if let job = updater.job {
                 if job.running {

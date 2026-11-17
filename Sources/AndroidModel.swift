@@ -573,7 +573,7 @@ final class AndroidModel: ObservableObject {
         }
     }
 
-    /// adb push under a pseudo-terminal, so adb prints live percentages.
+    /// adb push with live progress, measured from the file's size on the device.
     func push(_ item: APKItem, file: URL, to remote: String, serial: String, label: String) async throws {
         guard let adb else { throw AndroidToolsError.adbMissing }
         item.detail = "\(label)…"

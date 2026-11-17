@@ -208,7 +208,7 @@ actor ReleaseService {
 
 // MARK: - Release index
 
-/// releases.json, built every few hours by .github/workflows/release-index.yml:
+/// releases.json, rebuilt hourly by .github/workflows/release-index.yml:
 /// the latest release of every catalog project in one download.
 struct ReleaseIndex: Codable {
     let generatedAt: Date?

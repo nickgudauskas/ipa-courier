@@ -8,7 +8,10 @@ name: Update release index
 
 on:
   schedule:
-    - cron: "17 */3 * * *"
+    # Hourly, off the top of the hour. GitHub drops many scheduled runs when it's
+    # busy (every 3 hours ran only about twice a day), so ask often. A run takes
+    # about 20 seconds and replaces the branch with a single commit.
+    - cron: "17 * * * *"
   workflow_dispatch:
   push:
     branches: [main]

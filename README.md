@@ -189,7 +189,8 @@ game files.
 
 Release details and card images come from the `release-index` branch. The
 [Update release index](.github/workflows/release-index.yml) workflow rebuilds it
-every 3 hours and whenever the catalog changes. It publishes `releases.json`
+every hour (GitHub skips some scheduled runs when busy) and whenever the
+catalog changes. It publishes `releases.json`
 and a copy of each project's GitHub preview image. The app then makes a few CDN
 downloads instead of one rate-limited API call and one image request per
 project. GitHub's image service allows only about 100 images per IP at a time.

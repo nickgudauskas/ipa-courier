@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": 4,
+  "revision": 5,
   "notice": "IPA Courier doesn't provide game files. Every project here needs your own legally obtained copy of the original game.",
   "projects": [
     {
@@ -1288,6 +1288,38 @@
       },
       "android": {
         "asset": "-android\\.apk$"
+      }
+    },
+    {
+      "id": "xenios",
+      "name": "XeniOS",
+      "game": "Xbox 360 games",
+      "console": "Xbox 360",
+      "kind": "Emulator",
+      "repo": "xenios-jp/XeniOS",
+      "summary": "Port of Xenia, the Xbox 360 emulator research project, to iPhone, iPad and Apple-silicon Macs.",
+      "requires": "Your own Xbox 360 game dumps.",
+      "mac": {
+        "asset": "macos_apple_silicon\\.dmg$"
+      },
+      "ios": {
+        "asset": "ios_iphone_ipad\\.ipa$"
+      }
+    },
+    {
+      "id": "dukex",
+      "name": "DukeX",
+      "game": "Xbox games",
+      "console": "Xbox",
+      "kind": "Emulator",
+      "repo": "MaftyManicEMU/DukeX",
+      "summary": "Original Xbox emulator for iPhone, iPad and Mac, built from xemu with a native interface.",
+      "requires": "Your own Xbox flash BIOS, MCPX ROM, hard drive image and game dumps.",
+      "mac": {
+        "asset": "macOS\\.v[\\d.]+\\.dmg$"
+      },
+      "ios": {
+        "asset": "^DukeX\\.v[\\d.]+\\.ipa$"
       }
     }
   ],

@@ -59,11 +59,12 @@ capability and create a profile for it. When updating an app whose current
 profile has these capabilities (for example ones Sideloadly enabled), they're
 turned on automatically so re-signing doesn't drop them.
 
-**Discover tab:** a catalog of 90 community recompilations, decompilation
-ports and source ports with macOS or iOS builds. It ranges from N64, GameCube
-and PlayStation recomps (Zelda 64: Recompiled, Melee PC, Symphony Recomp, Silent
-Hill PC) to classic PC source ports (DevilutionX, OpenMW, Fallout CE, VCMI,
-GZDoom). Filter by console or platform. Each card shows the project's latest
+**Discover tab:** a catalog of 92 community recompilations, decompilation
+ports, source ports and emulators with macOS or iOS builds. It ranges from N64,
+GameCube and PlayStation recomps (Zelda 64: Recompiled, Melee PC, Symphony
+Recomp, Silent Hill PC) to classic PC source ports (DevilutionX, OpenMW, Fallout
+CE, VCMI, GZDoom) and Xbox emulators (XeniOS, DukeX). Filter by console or
+platform. Each card shows the project's latest
 GitHub release.
 
 <p align="center">

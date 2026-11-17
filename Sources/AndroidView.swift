@@ -37,6 +37,16 @@ struct AndroidView: View {
                             .disabled(android.toolsJob?.running == true)
                     }
                 }
+            } else if android.devices.isEmpty, let hidden = android.devicesWithoutDebugging.first {
+                HStack(alignment: .top, spacing: 12) {
+                    Image(systemName: "exclamationmark.triangle.fill").font(.system(size: 24)).foregroundStyle(.orange)
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("“\(hidden)” is connected, but USB debugging is off").font(.headline)
+                        Text("Without USB debugging the device only offers file transfer, so apps can't be installed. On the device, open Settings → About phone (or About device) and tap Build number 7 times. Then turn on USB debugging in Settings → System → Developer options, unplug and replug the cable, and tap Allow.")
+                            .font(.callout).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
+                    }
+                }
+                .padding(.vertical, 4)
             } else if android.devices.isEmpty {
                 HStack(alignment: .top, spacing: 12) {
                     Image(systemName: "cable.connector").font(.system(size: 26)).foregroundStyle(.secondary)

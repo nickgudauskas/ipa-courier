@@ -117,6 +117,8 @@ final class AndroidModel: ObservableObject {
     @Published private(set) var adbVersion: String?
     @Published private(set) var toolsJob: GameJob?
     @Published private(set) var devices: [AndroidDevice] = []
+    /// Android devices macOS sees on USB that adb can't (USB debugging is off).
+    @Published private(set) var devicesWithoutDebugging: [String] = []
     @Published var selectedSerial: String?
     @Published private(set) var items: [APKItem] = []
     @Published private(set) var isRunning = false
@@ -213,9 +215,47 @@ final class AndroidModel: ObservableObject {
             if becameReady { Task { await loadDetails(serial) } }
         }
         if listed != devices { devices = listed }
+        let hidden = listed.isEmpty ? await Self.androidDevicesOnUSB() : []
+        if hidden != devicesWithoutDebugging { devicesWithoutDebugging = hidden }
         if selectedSerial == nil || !devices.contains(where: { $0.serial == selectedSerial }) {
             selectedSerial = devices.first(where: \.ready)?.serial ?? devices.first?.serial
         }
+    }
+
+    /// Names of USB devices from Android makers, read from macOS's USB registry. Used only
+    /// when adb lists nothing, to tell "USB debugging is off" apart from "nothing plugged in".
+    static func androidDevicesOnUSB() async -> [String] {
+        guard let result = try? await Shell.run("/usr/sbin/ioreg", ["-p", "IOUSB", "-l", "-w0"]) else { return [] }
+        // Vendors that make Android phones, tablets and handhelds (many OEMs use Google's ID).
+        let androidVendors: Set<Int> = [0x18D1, 0x2717, 0x2A70, 0x22B8, 0x0BB4, 0x22D9, 0x2D95, 0x1004, 0x0FCE, 0x12D1, 0x05C6, 0x1EBF, 0x2AE5]
+        var names: [String] = []
+        var name: String?, vendorName: String?, vendor: Int?, product: Int?
+        func flush() {
+            defer { name = nil; vendorName = nil; vendor = nil; product = nil }
+            guard let vendor else { return }
+            let samsungPhone = vendor == 0x04E8 && [0x6860, 0x6861, 0x6866].contains(product ?? 0)
+            guard androidVendors.contains(vendor) || samsungPhone else { return }
+            var label = (name ?? "Android device").replacingOccurrences(of: #"\s*_SN:\S+"#, with: "", options: .regularExpression)
+            if let vendorName, !vendorName.isEmpty, !label.localizedCaseInsensitiveContains(vendorName) { label += " (\(vendorName))" }
+            names.append(label)
+        }
+        func quoted(_ line: Substring, _ key: String) -> String? {
+            guard let range = line.range(of: "\"\(key)\" = \"") else { return nil }
+            return String(line[range.upperBound...].dropLast())
+        }
+        func number(_ line: Substring, _ key: String) -> Int? {
+            guard let range = line.range(of: "\"\(key)\" = ") else { return nil }
+            return Int(line[range.upperBound...].trimmingCharacters(in: .whitespaces))
+        }
+        for line in result.text.split(whereSeparator: \.isNewline) {
+            if line.contains("+-o ") { flush() }
+            name = quoted(line, "USB Product Name") ?? name
+            vendorName = quoted(line, "USB Vendor Name") ?? vendorName
+            vendor = number(line, "idVendor") ?? vendor
+            product = number(line, "idProduct") ?? product
+        }
+        flush()
+        return names
     }
 
     /// Reads model, Android version, CPU types, free space and installed app versions.
@@ -534,10 +574,28 @@ final class AndroidModel: ObservableObject {
     }
 
     /// adb push under a pseudo-terminal, so adb prints live percentages.
-    private func push(_ item: APKItem, file: URL, to remote: String, serial: String, label: String) async throws {
+    func push(_ item: APKItem, file: URL, to remote: String, serial: String, label: String) async throws {
         guard let adb else { throw AndroidToolsError.adbMissing }
         item.detail = "\(label)…"
         item.fraction = 0
+        let total = Int64((try? file.resourceValues(forKeys: [.fileSizeKey]))?.fileSize ?? 0)
+
+        // Current adb versions don't print copy progress, so measure it: poll the size
+        // of the file growing on the device and compare it with the original's.
+        let poller = Task { [weak self, weak item] in
+            while !Task.isCancelled {
+                try? await Task.sleep(nanoseconds: 400_000_000)
+                guard let self, total > 0, !Task.isCancelled,
+                      let result = try? await self.adbRun(["-s", serial, "shell", "stat", "-c", "%s", remote]),
+                      let copied = Int64(result.text.trimmingCharacters(in: .whitespacesAndNewlines)) else { continue }
+                guard !Task.isCancelled else { break }
+                item?.fraction = min(Double(copied) / Double(total), 0.99)
+                item?.detail = "\(label) · \(ByteFormat.string(copied)) of \(ByteFormat.string(total))"
+            }
+        }
+        defer { poller.cancel() }
+
+        // Older adb versions print "[ 42%]" under a terminal; use that too when it appears.
         let parser = ProgressParser()
         let result = try await Shell.run("/usr/bin/script", ["-q", "/dev/null", adb.path, "-s", serial, "push", file.path, remote],
                                          checkStatus: false, onOutput: { [weak item] chunk in
@@ -548,6 +606,8 @@ final class AndroidModel: ObservableObject {
                 }
             }
         })
+        poller.cancel()
+        item.fraction = 1
         let text = ProgressParser.clean(result.text)
         if result.status != 0 || text.contains("adb: error") || text.contains("error:") {
             let line = text.split(whereSeparator: \.isNewline).last { $0.contains("error") }.map(String.init) ?? text

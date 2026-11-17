@@ -5,6 +5,7 @@ private let ipaType = UTType(filenameExtension: "ipa") ?? .data
 
 struct ContentView: View {
     @EnvironmentObject private var model: CourierModel
+    @EnvironmentObject private var discover: DiscoverModel
     @EnvironmentObject private var android: AndroidModel
     @EnvironmentObject private var updater: UpdateChecker
     @ObservedObject private var monitor = DeviceMonitor.shared
@@ -19,8 +20,7 @@ struct ContentView: View {
                 if model.tab != .android { deviceSection }
                 Picker("", selection: $model.tab) {
                     Text("Install").tag(MainTab.install)
-                    Text(model.expiringSoonCount > 0 ? "On Device (\(model.expiringSoonCount) expiring)" : "On Device")
-                        .tag(MainTab.onDevice)
+                    Text(onDeviceLabel).tag(MainTab.onDevice)
                     Text("Discover").tag(MainTab.discover)
                     Text("Android").tag(MainTab.android)
                 }
@@ -39,6 +39,11 @@ struct ContentView: View {
         }
         // Everything scrolls, so the window can be short; it opens at defaultSize (IPACourierApp).
         .frame(minWidth: 700, minHeight: 440)
+        .onChange(of: updateSignature) { _, _ in
+            if let device = model.selectedDevice, !discover.deviceUpdates.isEmpty {
+                discover.notifyIfNew(discover.deviceUpdates, device: device.name)
+            }
+        }
         .fileImporter(isPresented: $importing, allowedContentTypes: [ipaType, .folder],
                       allowsMultipleSelection: true) { result in
             if case .success(let urls) = result { model.add(urls) }
@@ -59,6 +64,19 @@ struct ContentView: View {
             }
             return !providers.isEmpty
         }
+    }
+
+    private var onDeviceLabel: String {
+        var notes: [String] = []
+        let updates = discover.deviceUpdates.count
+        if updates > 0 { notes.append("\(updates) update\(updates == 1 ? "" : "s")") }
+        if model.expiringSoonCount > 0 { notes.append("\(model.expiringSoonCount) expiring") }
+        return notes.isEmpty ? "On Device" : "On Device (\(notes.joined(separator: ", ")))"
+    }
+
+    /// Changes when the set of available updates does; used to notify about new ones.
+    private var updateSignature: String {
+        discover.deviceUpdates.map { "\($0.key)@\($0.value.version)" }.sorted().joined(separator: ",")
     }
 
     // MARK: Update banner
@@ -500,11 +518,15 @@ private struct ItemDetailView: View {
 
 private struct OnDeviceView: View {
     @EnvironmentObject private var model: CourierModel
+    @EnvironmentObject private var discover: DiscoverModel
 
     var body: some View {
         let apps = model.deviceApps
         let expiring = apps.filter { $0.expires(within: 30) && $0.source != nil }
         let resignable = apps.filter { $0.source != nil }
+        let updates = discover.deviceUpdates
+        let updatable = apps.compactMap { status in updates[status.app.bundleID].map { (status, $0) } }
+        let canInstall = !model.isRunning && model.selectedDevice?.trusted == true
 
         Card(title: "Sideloaded Apps", systemImage: "clock.arrow.circlepath") {
             HStack {
@@ -537,7 +559,11 @@ private struct OnDeviceView: View {
             } else {
                 VStack(spacing: 0) {
                     ForEach(apps) { status in
-                        DeviceAppRow(status: status, disabled: model.isRunning) { model.resign([status]) }
+                        let update = updates[status.app.bundleID]
+                        DeviceAppRow(status: status, update: update, updateJob: update.flatMap(discover.updateJob),
+                                     disabled: model.isRunning,
+                                     resign: { model.resign([status]) },
+                                     install: { if let update { discover.installUpdates([(status, update)]) } })
                         if status.id != apps.last?.id { Divider() }
                     }
                 }
@@ -551,6 +577,10 @@ private struct OnDeviceView: View {
                             .font(.caption).foregroundStyle(.secondary)
                     }
                     Spacer()
+                    if !updatable.isEmpty {
+                        Button("Update All (\(updatable.count))") { discover.installUpdates(updatable) }
+                            .disabled(!canInstall)
+                    }
                     Button("Re-sign Expiring (\(expiring.count))") { model.resign(expiring) }
                         .disabled(expiring.isEmpty || model.isRunning || model.selectedDevice?.trusted != true)
                     Button("Re-sign All (\(resignable.count))") { model.resign(resignable) }
@@ -563,8 +593,11 @@ private struct OnDeviceView: View {
 
 private struct DeviceAppRow: View {
     let status: DeviceAppStatus
+    let update: DeviceAppUpdate?
+    let updateJob: GameJob?
     let disabled: Bool
     let resign: () -> Void
+    let install: () -> Void
 
     var body: some View {
         HStack(spacing: 10) {
@@ -583,6 +616,13 @@ private struct DeviceAppRow: View {
                     .font(.caption)
                     .foregroundStyle(status.source == nil ? .orange : .secondary)
                     .lineLimit(1).truncationMode(.middle)
+                if let job = updateJob, job.running || job.error != nil {
+                    Text(job.error ?? job.status).font(.caption)
+                        .foregroundStyle(job.error != nil ? Color.red : Color.secondary).lineLimit(1)
+                } else if let update {
+                    Label("Update to \(update.version) available from \(update.project.name)", systemImage: "arrow.down.circle.fill")
+                        .font(.caption).foregroundStyle(Color.accentColor).lineLimit(1)
+                }
             }
             Spacer()
             VStack(alignment: .trailing, spacing: 2) {
@@ -590,6 +630,11 @@ private struct DeviceAppRow: View {
                 if let date = status.expiration {
                     Text(date.formatted(date: .abbreviated, time: .omitted)).font(.caption).foregroundStyle(.secondary)
                 }
+            }
+            if update != nil {
+                Button("Update", action: install)
+                    .buttonStyle(.borderedProminent)
+                    .disabled(disabled || updateJob?.running == true)
             }
             Button("Re-sign", action: resign)
                 .disabled(status.source == nil || disabled)

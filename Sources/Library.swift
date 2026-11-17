@@ -86,6 +86,14 @@ enum Library {
     /// The IPA an installed bundle ID came from: IPA Courier's own record
     /// first, else a library IPA whose ID matches exactly or with a
     /// sideloader's `.TEAMID` suffix.
+    /// True when `installed` is `original`, or `original` with a team ID appended (Sideloadly style).
+    static func isSameApp(installed: String, original: String) -> Bool {
+        if installed == original { return true }
+        guard installed.hasPrefix(original + ".") else { return false }
+        let suffix = installed.dropFirst(original.count + 1)
+        return suffix.range(of: "^[A-Z0-9]{10}$", options: .regularExpression) != nil
+    }
+
     static func source(for installedID: String, entries: [LibraryEntry], ledger: [String: String]) -> LibraryEntry? {
         if let path = ledger[installedID], FileManager.default.fileExists(atPath: path) {
             return entries.first { $0.path == path }
@@ -93,12 +101,7 @@ enum Library {
                                 name: URL(fileURLWithPath: path).deletingPathExtension().lastPathComponent,
                                 version: "", modified: .distantPast)
         }
-        let candidates = entries.filter { entry in
-            if entry.bundleID == installedID { return true }
-            guard installedID.hasPrefix(entry.bundleID + ".") else { return false }
-            let suffix = installedID.dropFirst(entry.bundleID.count + 1)
-            return suffix.range(of: "^[A-Z0-9]{10}$", options: .regularExpression) != nil
-        }
+        let candidates = entries.filter { isSameApp(installed: installedID, original: $0.bundleID) }
         // Newest file wins when several versions of the same app are present.
         return candidates.max { $0.modified < $1.modified }
     }

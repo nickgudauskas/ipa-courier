@@ -44,6 +44,7 @@ struct IPACourierApp: App {
                     discover.courier = model
                     discover.android = android
                     android.courier = model
+                    discover.loadIfNeeded()  // releases for On Device's update check
                     updater.isBusy = { [model, android, discover] in
                         model.isRunning || android.isRunning || discover.jobs.values.contains { $0.running }
                     }

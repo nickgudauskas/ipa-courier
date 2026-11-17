@@ -289,11 +289,15 @@ final class CourierModel: ObservableObject {
     // MARK: Re-signing from the device list
 
     func resign(_ apps: [DeviceAppStatus]) {
+        resign(apps.compactMap { status in status.source.map { (status, $0.url) } })
+    }
+
+    /// Re-signs each app from the given IPA (e.g. a newer release), installing over it.
+    func resign(_ pairs: [(DeviceAppStatus, URL)]) {
         var first: QueueItem?
-        for status in apps {
-            guard let source = status.source else { continue }
+        for (status, ipa) in pairs {
             if items.contains(where: { $0.pinnedBundleID == status.app.bundleID && !$0.status.isFinished }) { continue }
-            let item = QueueItem(url: source.url)
+            let item = QueueItem(url: ipa)
             item.pinnedBundleID = status.app.bundleID
             item.bundleID = status.app.bundleID
             item.autoBundleID = status.app.bundleID

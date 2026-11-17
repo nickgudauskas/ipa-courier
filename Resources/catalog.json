@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": 7,
+  "revision": 8,
   "notice": "IPA Courier doesn't provide game files. Every project here needs your own legally obtained copy of the original game.",
   "projects": [
     {
@@ -16,7 +16,8 @@
         "asset": "macos-(arm64|x86_64)\\.zip$"
       },
       "ios": {
-        "asset": "ios-arm64\\.ipa$"
+        "asset": "ios-arm64\\.ipa$",
+        "bundleID": "dev.twilitrealm.dusk"
       },
       "android": {
         "asset": "android-arm64\\.apk$"
@@ -1284,7 +1285,8 @@
         "asset": "macos-arm64\\.zip$"
       },
       "ios": {
-        "asset": "-ios-unsigned\\.ipa$"
+        "asset": "-ios-unsigned\\.ipa$",
+        "bundleID": "com.defnf.icopc"
       },
       "android": {
         "asset": "-android\\.apk$"
@@ -1303,7 +1305,8 @@
         "asset": "macos_apple_silicon\\.dmg$"
       },
       "ios": {
-        "asset": "ios_iphone_ipad\\.ipa$"
+        "asset": "ios_iphone_ipad\\.ipa$",
+        "bundleID": "com.xenios.jp"
       }
     },
     {
@@ -1319,7 +1322,8 @@
         "asset": "macOS\\.v[\\d.]+\\.dmg$"
       },
       "ios": {
-        "asset": "^DukeX\\.v[\\d.]+\\.ipa$"
+        "asset": "^DukeX\\.v[\\d.]+\\.ipa$",
+        "bundleID": "com.mafty.dukex"
       }
     },
     {
@@ -1352,7 +1356,8 @@
       "requires": "Your own PlayStation 2 BIOS and game dumps.",
       "ios": {
         "asset": "^ARMSX2-iOS-[\\d.]+\\.ipa$",
-        "tag": "^iOSv"
+        "tag": "^iOSv",
+        "bundleID": "com.armsx2.ios"
       },
       "android": {
         "asset": "-a11-armv8\\.2-sdk30\\.apk$"

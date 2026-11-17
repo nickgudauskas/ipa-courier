@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": 5,
+  "revision": 7,
   "notice": "IPA Courier doesn't provide game files. Every project here needs your own legally obtained copy of the original game.",
   "projects": [
     {
@@ -1320,6 +1320,42 @@
       },
       "ios": {
         "asset": "^DukeX\\.v[\\d.]+\\.ipa$"
+      }
+    },
+    {
+      "id": "paper-cut",
+      "name": "Paper Cut",
+      "game": "Paper Mario: The Thousand-Year Door",
+      "console": "GameCube",
+      "kind": "Decompilation port",
+      "repo": "LLCOOLT/paper-cut",
+      "summary": "Native port of The Thousand-Year Door rebuilt from its decompilation, with co-op for up to four players and online play. The iPhone and Android buttons get the US edition; JP and EU builds are on the Releases page.",
+      "requires": "Your own Paper Mario: The Thousand-Year Door disc image (US, JP or EU).",
+      "mac": {
+        "asset": "-macos-arm64\\.zip$"
+      },
+      "ios": {
+        "asset": "-us-ios-unsigned\\.ipa$"
+      },
+      "android": {
+        "asset": "-us-android-arm64\\.apk$"
+      }
+    },
+    {
+      "id": "armsx2",
+      "name": "ARMSX2",
+      "game": "PlayStation 2 games",
+      "console": "PlayStation 2",
+      "kind": "Emulator",
+      "repo": "ARMSX2/ARMSX2",
+      "summary": "PlayStation 2 emulator for ARM devices, based on PCSX2. The Android button gets the build for Android 11 and later; builds for other Android versions are on the Releases page.",
+      "requires": "Your own PlayStation 2 BIOS and game dumps.",
+      "ios": {
+        "asset": "^ARMSX2-iOS-[\\d.]+\\.ipa$",
+        "tag": "^iOSv"
+      },
+      "android": {
+        "asset": "-a11-armv8\\.2-sdk30\\.apk$"
       }
     }
   ],

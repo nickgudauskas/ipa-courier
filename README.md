@@ -59,13 +59,12 @@ capability and create a profile for it. When updating an app whose current
 profile has these capabilities (for example ones Sideloadly enabled), they're
 turned on automatically so re-signing doesn't drop them.
 
-**Discover tab:** a catalog of 92 community recompilations, decompilation
+**Discover tab:** a catalog of 94 community recompilations, decompilation
 ports, source ports and emulators with macOS or iOS builds. It ranges from N64,
 GameCube and PlayStation recomps (Zelda 64: Recompiled, Melee PC, Symphony
 Recomp, Silent Hill PC) to classic PC source ports (DevilutionX, OpenMW, Fallout
-CE, VCMI, GZDoom) and Xbox emulators (XeniOS, DukeX). Filter by console or
-platform. Each card shows the project's latest
-GitHub release.
+CE, VCMI, GZDoom) and emulators (XeniOS, DukeX, ARMSX2). Filter by console or
+platform. Each card shows the project's latest GitHub release.
 
 <p align="center">
   <img src="docs/discover.png" width="720" alt="Discover tab showing a grid of project cards, including Dusklight, Ghostship, LEGO Island and DinoPad, each with its platforms and latest release">
@@ -102,7 +101,7 @@ the original game.
   failures get a specific fix. Examples: a copy signed by someone else
   (Uninstall & Install, after a data-loss warning), a newer version installed
   (Install Older Version), or USB installs blocked by the phone's settings.
-- **Discover:** 31 catalog projects have Android builds and an **Install on
+- **Discover:** 33 catalog projects have Android builds and an **Install on
   Android** button.
 
 If adb isn't already installed (Android Studio or Homebrew), the Android tab
@@ -190,6 +189,10 @@ When several files match, Apple silicon builds (`arm64`, `aarch64`,
 `universal`) are preferred. Check a new rule with
 `GITHUB_TOKEN=$(gh auth token) python3 scripts/build-release-index.py --health report.md`.
 Use `"padmint": true` instead of `"ios"` for projects that PadMint builds.
+For projects that publish a platform in its own releases, add a `"tag"`
+regular expression to that platform's rule, e.g.
+`"ios": { "asset": "\\.ipa$", "tag": "^iOSv" }`: the file then comes from the
+newest published release whose tag matches.
 Only list projects whose releases are meant to be redistributed and contain no
 game files.
 

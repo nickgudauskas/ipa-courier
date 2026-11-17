@@ -16,6 +16,11 @@ With --health, it also checks every project and writes a Markdown report of
 problems to FILE (empty when everything resolves): repos that moved or
 disappeared, repos with no releases, and asset rules that no longer match.
 The workflow turns a non-empty report into a GitHub issue.
+
+A platform rule can also have "tag", a regular expression: that platform's file
+then comes from the newest published release whose tag matches (for projects
+that release each platform separately, e.g. "^iOSv"). Its files are merged into
+the project's entry, so every app version finds them with the same asset rule.
 """
 import json
 import os
@@ -69,7 +74,11 @@ def latest(repo):
         time.sleep(2 * (attempt + 1))
     else:
         return repo, None, None
-    return repo, {
+    return repo, record(raw), None
+
+
+def record(raw):
+    return {
         "tag": raw["tag_name"],
         "name": raw.get("name"),
         "publishedAt": raw.get("published_at"),
@@ -78,7 +87,25 @@ def latest(repo):
             {"name": a["name"], "size": a["size"], "downloadURL": a["browser_download_url"]}
             for a in raw.get("assets", [])
         ],
-    }, None
+    }
+
+
+def tagged(repo, pattern):
+    """The newest published (not draft or pre-release) release whose tag matches, or None."""
+    for attempt in range(3):
+        try:
+            for page in range(1, 4):
+                items = api(f"repos/{repo}/releases?per_page=100&page={page}")
+                for raw in items:  # newest first
+                    if not raw.get("draft") and not raw.get("prerelease") and re.search(pattern, raw["tag_name"]):
+                        return record(raw)
+                if len(items) < 100:
+                    return None
+            return None
+        except Exception as error:
+            print(f"{repo} (tag {pattern}): {error}", file=sys.stderr)
+            time.sleep(2 * (attempt + 1))
+    return None
 
 
 def image_name(repo):
@@ -127,8 +154,9 @@ def option(name):
 PLATFORMS = {"mac": "Mac", "ios": "iPhone & iPad", "android": "Android"}
 
 
-def health_report(catalog, results):
+def health_report(catalog, results, tagged_releases=None):
     """Markdown list of catalog problems, or "" when every project resolves."""
+    tagged_releases = tagged_releases or {}
     problems = []
     for project in catalog["projects"]:
         repo = project["repo"]
@@ -147,6 +175,16 @@ def health_report(catalog, results):
             rule = project.get(key)
             if not rule:
                 continue
+            checked = release
+            if rule.get("tag"):
+                checked = tagged_releases.get((repo, rule["tag"]))
+                if not checked:
+                    problems.append(f"- {label}: no published release has a tag matching `{rule['tag']}` "
+                                    f"(the {platform} rule's `tag`).")
+                    continue
+                names = [asset["name"] for asset in checked["assets"]]
+            else:
+                names = [asset["name"] for asset in release["assets"]]
             try:
                 matched = any(re.search(rule["asset"], name, re.IGNORECASE) for name in names)
             except re.error as error:
@@ -156,7 +194,7 @@ def health_report(catalog, results):
                 shown = ", ".join(f"`{n}`" for n in names[:12]) or "no files"
                 more = f" and {len(names) - 12} more" if len(names) > 12 else ""
                 problems.append(
-                    f"- {label}: no {platform} file in [{release['tag']}]({release['pageURL']}) matches "
+                    f"- {label}: no {platform} file in [{checked['tag']}]({checked['pageURL']}) matches "
                     f"`{rule['asset']}`. The release has {shown}{more}.")
     if not problems:
         return ""
@@ -185,9 +223,16 @@ def main():
     with ThreadPoolExecutor(8) as pool:
         results = {repo: (release, problem) for repo, release, problem in pool.map(latest, sorted(repos))}
     releases = {repo: release for repo, (release, _) in results.items() if release}
+    wanted = {(p["repo"], p[key]["tag"]) for p in catalog["projects"] for key in PLATFORMS
+              if isinstance(p.get(key), dict) and p[key].get("tag")}
+    tagged_releases = {pair: tagged(*pair) for pair in sorted(wanted)}
+    for (repo, _), extra in tagged_releases.items():
+        if extra and repo in releases:
+            have = {a["name"] for a in releases[repo]["assets"]}
+            releases[repo]["assets"] += [a for a in extra["assets"] if a["name"] not in have]
     print(f"{len(releases)}/{len(repos)} releases indexed", file=sys.stderr)
     if option("--health"):
-        report = health_report(catalog, results)
+        report = health_report(catalog, results, tagged_releases)
         Path(option("--health")).write_text(report)
         count = sum(line.startswith("- ") for line in report.splitlines())
         print(f"health: {count} problem(s)" if count else "health: all projects resolve", file=sys.stderr)

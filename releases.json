@@ -1,0 +1,4241 @@
+{
+ "generatedAt": "2026-11-21T13:17:46Z",
+ "releases": {
+  "2ship2harkinian/2ship2harkinian": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/2ship2harkinian/2ship2harkinian/releases/download/5.0.1/2Ship-Battler-Bravo-Linux.zip",
+     "name": "2Ship-Battler-Bravo-Linux.zip",
+     "size": 16262941
+    },
+    {
+     "downloadURL": "https://github.com/2ship2harkinian/2ship2harkinian/releases/download/5.0.1/2Ship-Battler-Bravo-Mac.zip",
+     "name": "2Ship-Battler-Bravo-Mac.zip",
+     "size": 26742222
+    },
+    {
+     "downloadURL": "https://github.com/2ship2harkinian/2ship2harkinian/releases/download/5.0.1/2Ship-Battler-Bravo-Win64.zip",
+     "name": "2Ship-Battler-Bravo-Win64.zip",
+     "size": 44976935
+    }
+   ],
+   "name": "Battler Bravo 5.0.1",
+   "pageURL": "https://github.com/2ship2harkinian/2ship2harkinian/releases/tag/5.0.1",
+   "publishedAt": "2026-08-25T17:54:43Z",
+   "tag": "5.0.1"
+  },
+  "999sian/melee-pc": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/999sian/melee-pc/releases/download/v0.4.2/Melee-aarch64.AppImage",
+     "name": "Melee-aarch64.AppImage",
+     "size": 19974664
+    },
+    {
+     "downloadURL": "https://github.com/999sian/melee-pc/releases/download/v0.4.2/Melee-Android-arm64.apk",
+     "name": "Melee-Android-arm64.apk",
+     "size": 38522201
+    },
+    {
+     "downloadURL": "https://github.com/999sian/melee-pc/releases/download/v0.4.2/Melee-iOS-arm64.ipa",
+     "name": "Melee-iOS-arm64.ipa",
+     "size": 10181174
+    },
+    {
+     "downloadURL": "https://github.com/999sian/melee-pc/releases/download/v0.4.2/melee-linux-aarch64.tar.gz",
+     "name": "melee-linux-aarch64.tar.gz",
+     "size": 21254730
+    },
+    {
+     "downloadURL": "https://github.com/999sian/melee-pc/releases/download/v0.4.2/melee-linux-x86_64.tar.gz",
+     "name": "melee-linux-x86_64.tar.gz",
+     "size": 21894608
+    },
+    {
+     "downloadURL": "https://github.com/999sian/melee-pc/releases/download/v0.4.2/Melee-macOS-arm64.zip",
+     "name": "Melee-macOS-arm64.zip",
+     "size": 12706671
+    },
+    {
+     "downloadURL": "https://github.com/999sian/melee-pc/releases/download/v0.4.2/Melee-macOS-x86_64.zip",
+     "name": "Melee-macOS-x86_64.zip",
+     "size": 13845341
+    },
+    {
+     "downloadURL": "https://github.com/999sian/melee-pc/releases/download/v0.4.2/Melee-Windows-arm64.zip",
+     "name": "Melee-Windows-arm64.zip",
+     "size": 26010379
+    },
+    {
+     "downloadURL": "https://github.com/999sian/melee-pc/releases/download/v0.4.2/Melee-Windows-x86_64.zip",
+     "name": "Melee-Windows-x86_64.zip",
+     "size": 26605743
+    },
+    {
+     "downloadURL": "https://github.com/999sian/melee-pc/releases/download/v0.4.2/Melee-x86_64.AppImage",
+     "name": "Melee-x86_64.AppImage",
+     "size": 20797944
+    }
+   ],
+   "name": "v0.4.2",
+   "pageURL": "https://github.com/999sian/melee-pc/releases/tag/v0.4.2",
+   "publishedAt": "2026-10-21T00:08:51Z",
+   "tag": "v0.4.2"
+  },
+  "999sian/tmc": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/999sian/tmc/releases/download/v0.9.6/tmc-multi-android-v0.9.6.apk",
+     "name": "tmc-multi-android-v0.9.6.apk",
+     "size": 107530603
+    },
+    {
+     "downloadURL": "https://github.com/999sian/tmc/releases/download/v0.9.6/tmc-multi-linux-arm64-v0.9.6.tar.gz",
+     "name": "tmc-multi-linux-arm64-v0.9.6.tar.gz",
+     "size": 23303028
+    },
+    {
+     "downloadURL": "https://github.com/999sian/tmc/releases/download/v0.9.6/tmc-multi-linux-x86_64-v0.9.6.tar.gz",
+     "name": "tmc-multi-linux-x86_64-v0.9.6.tar.gz",
+     "size": 24018817
+    },
+    {
+     "downloadURL": "https://github.com/999sian/tmc/releases/download/v0.9.6/tmc-multi-macos-arm64-v0.9.6.tar.gz",
+     "name": "tmc-multi-macos-arm64-v0.9.6.tar.gz",
+     "size": 4229053
+    },
+    {
+     "downloadURL": "https://github.com/999sian/tmc/releases/download/v0.9.6/tmc-multi-macos-x86_64-v0.9.6.tar.gz",
+     "name": "tmc-multi-macos-x86_64-v0.9.6.tar.gz",
+     "size": 4513697
+    },
+    {
+     "downloadURL": "https://github.com/999sian/tmc/releases/download/v0.9.6/tmc-multi-windows-arm64-v0.9.6.tar.gz",
+     "name": "tmc-multi-windows-arm64-v0.9.6.tar.gz",
+     "size": 16907273
+    },
+    {
+     "downloadURL": "https://github.com/999sian/tmc/releases/download/v0.9.6/tmc-multi-windows-x86_64-v0.9.6.tar.gz",
+     "name": "tmc-multi-windows-x86_64-v0.9.6.tar.gz",
+     "size": 26500874
+    }
+   ],
+   "name": "Project Picori v0.9.6",
+   "pageURL": "https://github.com/999sian/tmc/releases/tag/v0.9.6",
+   "publishedAt": "2026-10-20T00:39:05Z",
+   "tag": "v0.9.6"
+  },
+  "ARMSX2/ARMSX2": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/2.9.5/ARMSX2-2.9.5-a11-armv8.2-sdk30.apk",
+     "name": "ARMSX2-2.9.5-a11-armv8.2-sdk30.apk",
+     "size": 78611214
+    },
+    {
+     "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/2.9.5/ARMSX2-2.9.5-a13-armv8.2-sdk33.apk",
+     "name": "ARMSX2-2.9.5-a13-armv8.2-sdk33.apk",
+     "size": 78463758
+    },
+    {
+     "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/2.9.5/ARMSX2-2.9.5-a15-armv8.2-sdk35.apk",
+     "name": "ARMSX2-2.9.5-a15-armv8.2-sdk35.apk",
+     "size": 78426894
+    },
+    {
+     "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/2.9.5/ARMSX2-2.9.5-legacy-armv8.0-sdk26.apk",
+     "name": "ARMSX2-2.9.5-legacy-armv8.0-sdk26.apk",
+     "size": 75232014
+    },
+    {
+     "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/2.9.5/ARMSX2-2.9.5-Linux-arm64-16K-pages.AppImage",
+     "name": "ARMSX2-2.9.5-Linux-arm64-16K-pages.AppImage",
+     "size": 63597064
+    },
+    {
+     "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/2.9.5/ARMSX2-2.9.5-Linux-arm64-4K-pages.AppImage",
+     "name": "ARMSX2-2.9.5-Linux-arm64-4K-pages.AppImage",
+     "size": 63601160
+    },
+    {
+     "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/iOSv2.6.0/ARMSX2-iOS-2.6.0.ipa",
+     "name": "ARMSX2-iOS-2.6.0.ipa",
+     "pageURL": "https://github.com/ARMSX2/ARMSX2/releases/tag/iOSv2.6.0",
+     "publishedAt": "2026-10-02T16:14:50Z",
+     "size": 39142823,
+     "tag": "iOSv2.6.0"
+    }
+   ],
+   "name": "ARMSX2 2.9.5 ",
+   "pageURL": "https://github.com/ARMSX2/ARMSX2/releases/tag/2.9.5",
+   "publishedAt": "2026-11-16T21:49:02Z",
+   "tag": "2.9.5"
+  },
+  "Aleph-One-Marathon/alephone": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20260930/AlephOne-20260930-Mac.dmg",
+     "name": "AlephOne-20260930-Mac.dmg",
+     "size": 14285064
+    },
+    {
+     "downloadURL": "https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20260930/AlephOne-20260930-Win.zip",
+     "name": "AlephOne-20260930-Win.zip",
+     "size": 7039964
+    },
+    {
+     "downloadURL": "https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20260930/AlephOne-20260930-Win32.zip",
+     "name": "AlephOne-20260930-Win32.zip",
+     "size": 6202917
+    },
+    {
+     "downloadURL": "https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20260930/AlephOne-20260930.flatpak",
+     "name": "AlephOne-20260930.flatpak",
+     "size": 3167824
+    },
+    {
+     "downloadURL": "https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20260930/AlephOne-20260930.tar.bz2",
+     "name": "AlephOne-20260930.tar.bz2",
+     "size": 6085783
+    },
+    {
+     "downloadURL": "https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20260930/alephone-windows-symbols-x64.zip",
+     "name": "alephone-windows-symbols-x64.zip",
+     "size": 148038070
+    },
+    {
+     "downloadURL": "https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20260930/alephone-windows-symbols-x86.zip",
+     "name": "alephone-windows-symbols-x86.zip",
+     "size": 63087203
+    },
+    {
+     "downloadURL": "https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20260930/Marathon-20260930-Data.zip",
+     "name": "Marathon-20260930-Data.zip",
+     "size": 26408514
+    },
+    {
+     "downloadURL": "https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20260930/Marathon-20260930-Exe-Win.zip",
+     "name": "Marathon-20260930-Exe-Win.zip",
+     "size": 7046390
+    },
+    {
+     "downloadURL": "https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20260930/Marathon-20260930-Mac.dmg",
+     "name": "Marathon-20260930-Mac.dmg",
+     "size": 39743816
+    },
+    {
+     "downloadURL": "https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20260930/Marathon-20260930-Win.zip",
+     "name": "Marathon-20260930-Win.zip",
+     "size": 33591851
+    },
+    {
+     "downloadURL": "https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20260930/Marathon-20260930.flatpak",
+     "name": "Marathon-20260930.flatpak",
+     "size": 26632288
+    },
+    {
+     "downloadURL": "https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20260930/Marathon2-20260930-Data.zip",
+     "name": "Marathon2-20260930-Data.zip",
+     "size": 28902408
+    },
+    {
+     "downloadURL": "https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20260930/Marathon2-20260930-Exe-Win.zip",
+     "name": "Marathon2-20260930-Exe-Win.zip",
+     "size": 7036262
+    },
+    {
+     "downloadURL": "https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20260930/Marathon2-20260930-Mac.dmg",
+     "name": "Marathon2-20260930-Mac.dmg",
+     "size": 42384851
+    },
+    {
+     "downloadURL": "https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20260930/Marathon2-20260930-Win.zip",
+     "name": "Marathon2-20260930-Win.zip",
+     "size": 36214686
+    },
+    {
+     "downloadURL": "https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20260930/Marathon2-20260930.flatpak",
+     "name": "Marathon2-20260930.flatpak",
+     "size": 26557608
+    },
+    {
+     "downloadURL": "https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20260930/MarathonInfinity-20260930-Data.zip",
+     "name": "MarathonInfinity-20260930-Data.zip",
+     "size": 31852152
+    },
+    {
+     "downloadURL": "https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20260930/MarathonInfinity-20260930-Exe-Win.zip",
+     "name": "MarathonInfinity-20260930-Exe-Win.zip",
+     "size": 7032430
+    },
+    {
+     "downloadURL": "https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20260930/MarathonInfinity-20260930-Mac.dmg",
+     "name": "MarathonInfinity-20260930-Mac.dmg",
+     "size": 45562048
+    },
+    {
+     "downloadURL": "https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20260930/MarathonInfinity-20260930-Win.zip",
+     "name": "MarathonInfinity-20260930-Win.zip",
+     "size": 39183079
+    },
+    {
+     "downloadURL": "https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20260930/MarathonInfinity-20260930.flatpak",
+     "name": "MarathonInfinity-20260930.flatpak",
+     "size": 27350256
+    }
+   ],
+   "name": "Aleph One 1.11.1",
+   "pageURL": "https://github.com/Aleph-One-Marathon/alephone/releases/tag/release-20260930",
+   "publishedAt": "2026-10-01T01:46:14Z",
+   "tag": "release-20260930"
+  },
+  "AlonsoTlol/DS-Kart-Recompiled": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/AlonsoTlol/DS-Kart-Recompiled/releases/download/v1.0.6/DS-Kart-Recompiled-Launcher-Windows-v1.0.6.zip",
+     "name": "DS-Kart-Recompiled-Launcher-Windows-v1.0.6.zip",
+     "size": 52988109
+    },
+    {
+     "downloadURL": "https://github.com/AlonsoTlol/DS-Kart-Recompiled/releases/download/v1.0.6/DS-Kart-Recompiled-Linux-v1.0.6.zip",
+     "name": "DS-Kart-Recompiled-Linux-v1.0.6.zip",
+     "size": 15384274
+    },
+    {
+     "downloadURL": "https://github.com/AlonsoTlol/DS-Kart-Recompiled/releases/download/v1.0.6/DS-Kart-Recompiled-Mac-v1.0.6.zip",
+     "name": "DS-Kart-Recompiled-Mac-v1.0.6.zip",
+     "size": 15384358
+    }
+   ],
+   "name": "DS Kart Recompiled 1.0.6: fix for black pixels in 3D",
+   "pageURL": "https://github.com/AlonsoTlol/DS-Kart-Recompiled/releases/tag/v1.0.6",
+   "publishedAt": "2026-11-17T14:49:54Z",
+   "tag": "v1.0.6"
+  },
+  "BanjoRecomp/BanjoRecomp": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/BanjoRecomp/BanjoRecomp/releases/download/v1.0.2/BanjoRecompiled-v1.0.2-Linux-ARM64.tar.gz",
+     "name": "BanjoRecompiled-v1.0.2-Linux-ARM64.tar.gz",
+     "size": 8414426
+    },
+    {
+     "downloadURL": "https://github.com/BanjoRecomp/BanjoRecomp/releases/download/v1.0.2/BanjoRecompiled-v1.0.2-Linux-Flatpak-X64.zip",
+     "name": "BanjoRecompiled-v1.0.2-Linux-Flatpak-X64.zip",
+     "size": 5480802
+    },
+    {
+     "downloadURL": "https://github.com/BanjoRecomp/BanjoRecomp/releases/download/v1.0.2/BanjoRecompiled-v1.0.2-Linux-X64.tar.gz",
+     "name": "BanjoRecompiled-v1.0.2-Linux-X64.tar.gz",
+     "size": 8380240
+    },
+    {
+     "downloadURL": "https://github.com/BanjoRecomp/BanjoRecomp/releases/download/v1.0.2/BanjoRecompiled-v1.0.2-macOS.zip",
+     "name": "BanjoRecompiled-v1.0.2-macOS.zip",
+     "size": 17704672
+    },
+    {
+     "downloadURL": "https://github.com/BanjoRecomp/BanjoRecomp/releases/download/v1.0.2/BanjoRecompiled-v1.0.2-Windows.zip",
+     "name": "BanjoRecompiled-v1.0.2-Windows.zip",
+     "size": 18669475
+    }
+   ],
+   "name": "v1.0.2",
+   "pageURL": "https://github.com/BanjoRecomp/BanjoRecomp/releases/tag/v1.0.2",
+   "publishedAt": "2026-07-31T19:43:17Z",
+   "tag": "v1.0.2"
+  },
+  "BlackLabelHQ/MediEvilRecomp": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/BlackLabelHQ/MediEvilRecomp/releases/download/v1.0.4/MediEvilRecomp-v1.0.4-linux-x64.tar.gz",
+     "name": "MediEvilRecomp-v1.0.4-linux-x64.tar.gz",
+     "size": 52004538
+    },
+    {
+     "downloadURL": "https://github.com/BlackLabelHQ/MediEvilRecomp/releases/download/v1.0.4/MediEvilRecomp-v1.0.4-macos-arm64.zip",
+     "name": "MediEvilRecomp-v1.0.4-macos-arm64.zip",
+     "size": 47846364
+    },
+    {
+     "downloadURL": "https://github.com/BlackLabelHQ/MediEvilRecomp/releases/download/v1.0.4/MediEvilRecomp-v1.0.4-macos-x64.zip",
+     "name": "MediEvilRecomp-v1.0.4-macos-x64.zip",
+     "size": 51110311
+    },
+    {
+     "downloadURL": "https://github.com/BlackLabelHQ/MediEvilRecomp/releases/download/v1.0.4/MediEvilRecomp-v1.0.4-windows-arm64.zip",
+     "name": "MediEvilRecomp-v1.0.4-windows-arm64.zip",
+     "size": 46299870
+    },
+    {
+     "downloadURL": "https://github.com/BlackLabelHQ/MediEvilRecomp/releases/download/v1.0.4/MediEvilRecomp-v1.0.4-windows-x64.zip",
+     "name": "MediEvilRecomp-v1.0.4-windows-x64.zip",
+     "size": 48933609
+    }
+   ],
+   "name": "v1.0.4",
+   "pageURL": "https://github.com/BlackLabelHQ/MediEvilRecomp/releases/tag/v1.0.4",
+   "publishedAt": "2026-11-14T20:03:16Z",
+   "tag": "v1.0.4"
+  },
+  "BlackLabelHQ/SymphonyRecomp": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/BlackLabelHQ/SymphonyRecomp/releases/download/v1.2.0p/SymphonyRecomp-v1.2.0p-linux-x64.tar.gz",
+     "name": "SymphonyRecomp-v1.2.0p-linux-x64.tar.gz",
+     "size": 67154158
+    },
+    {
+     "downloadURL": "https://github.com/BlackLabelHQ/SymphonyRecomp/releases/download/v1.2.0p/SymphonyRecomp-v1.2.0p-macos-arm64.zip",
+     "name": "SymphonyRecomp-v1.2.0p-macos-arm64.zip",
+     "size": 62684315
+    },
+    {
+     "downloadURL": "https://github.com/BlackLabelHQ/SymphonyRecomp/releases/download/v1.2.0p/SymphonyRecomp-v1.2.0p-macos-x64.zip",
+     "name": "SymphonyRecomp-v1.2.0p-macos-x64.zip",
+     "size": 66255041
+    },
+    {
+     "downloadURL": "https://github.com/BlackLabelHQ/SymphonyRecomp/releases/download/v1.2.0p/SymphonyRecomp-v1.2.0p-windows-arm64.zip",
+     "name": "SymphonyRecomp-v1.2.0p-windows-arm64.zip",
+     "size": 61050861
+    },
+    {
+     "downloadURL": "https://github.com/BlackLabelHQ/SymphonyRecomp/releases/download/v1.2.0p/SymphonyRecomp-v1.2.0p-windows-x64.zip",
+     "name": "SymphonyRecomp-v1.2.0p-windows-x64.zip",
+     "size": 63884901
+    }
+   ],
+   "name": "v1.2.0p",
+   "pageURL": "https://github.com/BlackLabelHQ/SymphonyRecomp/releases/tag/v1.2.0p",
+   "publishedAt": "2026-11-14T20:02:34Z",
+   "tag": "v1.2.0p"
+  },
+  "BodbDearg/PsyDoom": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/BodbDearg/PsyDoom/releases/download/releases/1.1.1/PsyDoom_1.1.1_Linux_AArch64.AppImage",
+     "name": "PsyDoom_1.1.1_Linux_AArch64.AppImage",
+     "size": 5256328
+    },
+    {
+     "downloadURL": "https://github.com/BodbDearg/PsyDoom/releases/download/releases/1.1.1/PsyDoom_1.1.1_Linux_ArmHF.AppImage",
+     "name": "PsyDoom_1.1.1_Linux_ArmHF.AppImage",
+     "size": 4583584
+    },
+    {
+     "downloadURL": "https://github.com/BodbDearg/PsyDoom/releases/download/releases/1.1.1/PsyDoom_1.1.1_Linux_x86_64.AppImage",
+     "name": "PsyDoom_1.1.1_Linux_x86_64.AppImage",
+     "size": 5498024
+    },
+    {
+     "downloadURL": "https://github.com/BodbDearg/PsyDoom/releases/download/releases/1.1.1/PsyDoom_1.1.1_MacOS_x86_64_Arm64.zip",
+     "name": "PsyDoom_1.1.1_MacOS_x86_64_Arm64.zip",
+     "size": 8962145
+    },
+    {
+     "downloadURL": "https://github.com/BodbDearg/PsyDoom/releases/download/releases/1.1.1/PsyDoom_1.1.1_Windows_x86_64.zip",
+     "name": "PsyDoom_1.1.1_Windows_x86_64.zip",
+     "size": 1540884
+    }
+   ],
+   "name": "1.1.1",
+   "pageURL": "https://github.com/BodbDearg/PsyDoom/releases/tag/releases/1.1.1",
+   "publishedAt": "2023-06-13T06:50:01Z",
+   "tag": "releases/1.1.1"
+  },
+  "Cacodemontube/DoomSNESRecomp": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/Cacodemontube/DoomSNESRecomp/releases/download/v0.04/DoomSNESRecomp-v0.04-Linux-x64.zip",
+     "name": "DoomSNESRecomp-v0.04-Linux-x64.zip",
+     "size": 4776035
+    },
+    {
+     "downloadURL": "https://github.com/Cacodemontube/DoomSNESRecomp/releases/download/v0.04/DoomSNESRecomp-v0.04-macOS-arm64.zip",
+     "name": "DoomSNESRecomp-v0.04-macOS-arm64.zip",
+     "size": 4078036
+    },
+    {
+     "downloadURL": "https://github.com/Cacodemontube/DoomSNESRecomp/releases/download/v0.04/DoomSNESRecomp-v0.04-macOS-x64.zip",
+     "name": "DoomSNESRecomp-v0.04-macOS-x64.zip",
+     "size": 4378163
+    },
+    {
+     "downloadURL": "https://github.com/Cacodemontube/DoomSNESRecomp/releases/download/v0.04/DoomSNESRecomp-v0.04-Windows-x64.zip",
+     "name": "DoomSNESRecomp-v0.04-Windows-x64.zip",
+     "size": 6056260
+    },
+    {
+     "downloadURL": "https://github.com/Cacodemontube/DoomSNESRecomp/releases/download/v0.04/DoomSNESRecomp-v0.04-Windows-x86.zip",
+     "name": "DoomSNESRecomp-v0.04-Windows-x86.zip",
+     "size": 6108245
+    },
+    {
+     "downloadURL": "https://github.com/Cacodemontube/DoomSNESRecomp/releases/download/v0.04/SHA256SUMS.txt",
+     "name": "SHA256SUMS.txt",
+     "size": 516
+    }
+   ],
+   "name": "DoomSNESRecomp v0.04",
+   "pageURL": "https://github.com/Cacodemontube/DoomSNESRecomp/releases/tag/v0.04",
+   "publishedAt": "2026-10-22T20:56:39Z",
+   "tag": "v0.04"
+  },
+  "CorsixTH/CorsixTH": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/CorsixTH/CorsixTH/releases/download/v0.70.2/CorsixTH-0.70.2.dmg",
+     "name": "CorsixTH-0.70.2.dmg",
+     "size": 99645786
+    },
+    {
+     "downloadURL": "https://github.com/CorsixTH/CorsixTH/releases/download/v0.70.2/CorsixTH-v0.70.2-Windows-x64.zip",
+     "name": "CorsixTH-v0.70.2-Windows-x64.zip",
+     "size": 32838541
+    },
+    {
+     "downloadURL": "https://github.com/CorsixTH/CorsixTH/releases/download/v0.70.2/CorsixTH-v0.70.2-x86_64.AppImage",
+     "name": "CorsixTH-v0.70.2-x86_64.AppImage",
+     "size": 82872824
+    },
+    {
+     "downloadURL": "https://github.com/CorsixTH/CorsixTH/releases/download/v0.70.2/CorsixTHInstaller.exe",
+     "name": "CorsixTHInstaller.exe",
+     "size": 35836841
+    }
+   ],
+   "name": "CorsixTH 0.70.2",
+   "pageURL": "https://github.com/CorsixTH/CorsixTH/releases/tag/v0.70.2",
+   "publishedAt": "2026-11-08T13:00:17Z",
+   "tag": "v0.70.2"
+  },
+  "Droid-Deck/DroidDeck": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/Droid-Deck/DroidDeck/releases/download/0.7.1/DroidDeck-0.7.1-antutu.apk",
+     "name": "DroidDeck-0.7.1-antutu.apk",
+     "size": 96604504
+    },
+    {
+     "downloadURL": "https://github.com/Droid-Deck/DroidDeck/releases/download/0.7.1/DroidDeck-0.7.1-ludashi.apk",
+     "name": "DroidDeck-0.7.1-ludashi.apk",
+     "size": 96604504
+    },
+    {
+     "downloadURL": "https://github.com/Droid-Deck/DroidDeck/releases/download/0.7.1/DroidDeck-0.7.1-pubg.apk",
+     "name": "DroidDeck-0.7.1-pubg.apk",
+     "size": 96604504
+    },
+    {
+     "downloadURL": "https://github.com/Droid-Deck/DroidDeck/releases/download/0.7.1/DroidDeck-0.7.1.apk",
+     "name": "DroidDeck-0.7.1.apk",
+     "size": 96604504
+    },
+    {
+     "downloadURL": "https://github.com/Droid-Deck/DroidDeck/releases/download/0.7.1/SHA256SUMS.txt",
+     "name": "SHA256SUMS.txt",
+     "size": 364
+    }
+   ],
+   "name": "DroidDeck 0.7.1",
+   "pageURL": "https://github.com/Droid-Deck/DroidDeck/releases/tag/0.7.1",
+   "publishedAt": "2026-11-10T12:35:34Z",
+   "tag": "0.7.1"
+  },
+  "Eukaryot/sonic3air": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/Eukaryot/sonic3air/releases/download/v26.03.28.0-stable/artifacts.7z",
+     "name": "artifacts.7z",
+     "size": 15483422
+    },
+    {
+     "downloadURL": "https://github.com/Eukaryot/sonic3air/releases/download/v26.03.28.0-stable/sonic3air_game.apk",
+     "name": "sonic3air_game.apk",
+     "size": 43770194
+    },
+    {
+     "downloadURL": "https://github.com/Eukaryot/sonic3air/releases/download/v26.03.28.0-stable/sonic3air_game.tar.gz",
+     "name": "sonic3air_game.tar.gz",
+     "size": 19877172
+    },
+    {
+     "downloadURL": "https://github.com/Eukaryot/sonic3air/releases/download/v26.03.28.0-stable/sonic3air_game.zip",
+     "name": "sonic3air_game.zip",
+     "size": 16318469
+    },
+    {
+     "downloadURL": "https://github.com/Eukaryot/sonic3air/releases/download/v26.03.28.0-stable/sonic3air_game_64bit.zip",
+     "name": "sonic3air_game_64bit.zip",
+     "size": 17100662
+    },
+    {
+     "downloadURL": "https://github.com/Eukaryot/sonic3air/releases/download/v26.03.28.0-stable/sonic3air_mac_260328.dmg",
+     "name": "sonic3air_mac_260328.dmg",
+     "size": 24326656
+    },
+    {
+     "downloadURL": "https://github.com/Eukaryot/sonic3air/releases/download/v26.03.28.0-stable/sonic3air_web_data.zip",
+     "name": "sonic3air_web_data.zip",
+     "size": 136705815
+    }
+   ],
+   "name": "Stable Update v26.03.28.0",
+   "pageURL": "https://github.com/Eukaryot/sonic3air/releases/tag/v26.03.28.0-stable",
+   "publishedAt": "2026-03-28T15:37:07Z",
+   "tag": "v26.03.28.0-stable"
+  },
+  "HarbourMasters/Ghostship": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/HarbourMasters/Ghostship/releases/download/3.0.0/Nautilus-Alfa-Android.zip",
+     "name": "Nautilus-Alfa-Android.zip",
+     "size": 14133158
+    },
+    {
+     "downloadURL": "https://github.com/HarbourMasters/Ghostship/releases/download/3.0.0/Nautilus-Alfa-iOS.zip",
+     "name": "Nautilus-Alfa-iOS.zip",
+     "size": 5121258
+    },
+    {
+     "downloadURL": "https://github.com/HarbourMasters/Ghostship/releases/download/3.0.0/Nautilus-Alfa-Linux.zip",
+     "name": "Nautilus-Alfa-Linux.zip",
+     "size": 18060413
+    },
+    {
+     "downloadURL": "https://github.com/HarbourMasters/Ghostship/releases/download/3.0.0/Nautilus-Alfa-Mac.zip",
+     "name": "Nautilus-Alfa-Mac.zip",
+     "size": 23231438
+    },
+    {
+     "downloadURL": "https://github.com/HarbourMasters/Ghostship/releases/download/3.0.0/Nautilus-Alfa-Win64.zip",
+     "name": "Nautilus-Alfa-Win64.zip",
+     "size": 20379303
+    }
+   ],
+   "name": "Nautilus - Alfa 3.0.0",
+   "pageURL": "https://github.com/HarbourMasters/Ghostship/releases/tag/3.0.0",
+   "publishedAt": "2026-09-07T04:57:17Z",
+   "tag": "3.0.0"
+  },
+  "HarbourMasters/Lighthouse": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/HarbourMasters/Lighthouse/releases/download/1.2.2/Lighthouse-Montauk-Charlie-Mac.zip",
+     "name": "Lighthouse-Montauk-Charlie-Mac.zip",
+     "size": 15144800
+    },
+    {
+     "downloadURL": "https://github.com/HarbourMasters/Lighthouse/releases/download/1.2.2/Lighthouse-Montauk-Charlie-Win64.zip",
+     "name": "Lighthouse-Montauk-Charlie-Win64.zip",
+     "size": 36631216
+    },
+    {
+     "downloadURL": "https://github.com/HarbourMasters/Lighthouse/releases/download/1.2.2/lighthouse.appimage",
+     "name": "lighthouse.appimage",
+     "size": 13669568
+    }
+   ],
+   "name": "Montauk Charlie 1.2.2",
+   "pageURL": "https://github.com/HarbourMasters/Lighthouse/releases/tag/1.2.2",
+   "publishedAt": "2026-10-30T01:30:47Z",
+   "tag": "1.2.2"
+  },
+  "HarbourMasters/PaperBoat": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/HarbourMasters/PaperBoat/releases/download/1.0.3/Paperboat-Mulberry-Delta-Linux.zip",
+     "name": "Paperboat-Mulberry-Delta-Linux.zip",
+     "size": 21437464
+    },
+    {
+     "downloadURL": "https://github.com/HarbourMasters/PaperBoat/releases/download/1.0.3/Paperboat-Mulberry-Delta-Mac.zip",
+     "name": "Paperboat-Mulberry-Delta-Mac.zip",
+     "size": 16347455
+    },
+    {
+     "downloadURL": "https://github.com/HarbourMasters/PaperBoat/releases/download/1.0.3/Paperboat-Mulberry-Delta-Win64.zip",
+     "name": "Paperboat-Mulberry-Delta-Win64.zip",
+     "size": 27512774
+    }
+   ],
+   "name": "Mulberry Delta 1.0.3",
+   "pageURL": "https://github.com/HarbourMasters/PaperBoat/releases/tag/1.0.3",
+   "publishedAt": "2026-10-11T17:56:48Z",
+   "tag": "1.0.3"
+  },
+  "HarbourMasters/Shipwright": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/HarbourMasters/Shipwright/releases/download/9.3.1/SoH-Dewey-Bravo-Mac.zip",
+     "name": "SoH-Dewey-Bravo-Mac.zip",
+     "size": 49516403
+    },
+    {
+     "downloadURL": "https://github.com/HarbourMasters/Shipwright/releases/download/9.3.1/SoH-Dewey-Bravo-Win64.zip",
+     "name": "SoH-Dewey-Bravo-Win64.zip",
+     "size": 72980600
+    },
+    {
+     "downloadURL": "https://github.com/HarbourMasters/Shipwright/releases/download/9.3.1/SoH-Dewey-Bravo.appimage",
+     "name": "SoH-Dewey-Bravo.appimage",
+     "size": 32113856
+    }
+   ],
+   "name": "Dewey Bravo 9.3.1",
+   "pageURL": "https://github.com/HarbourMasters/Shipwright/releases/tag/9.3.1",
+   "publishedAt": "2026-10-18T21:06:27Z",
+   "tag": "9.3.1"
+  },
+  "HarbourMasters/SpaghettiKart": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/HarbourMasters/SpaghettiKart/releases/download/1.0.0/spaghetti-linux.zip",
+     "name": "spaghetti-linux.zip",
+     "size": 12395451
+    },
+    {
+     "downloadURL": "https://github.com/HarbourMasters/SpaghettiKart/releases/download/1.0.0/spaghetti-mac-arm64.zip",
+     "name": "spaghetti-mac-arm64.zip",
+     "size": 7542558
+    },
+    {
+     "downloadURL": "https://github.com/HarbourMasters/SpaghettiKart/releases/download/1.0.0/spaghetti-mac-intel-x64.zip",
+     "name": "spaghetti-mac-intel-x64.zip",
+     "size": 7858520
+    },
+    {
+     "downloadURL": "https://github.com/HarbourMasters/SpaghettiKart/releases/download/1.0.0/spaghetti-windows.zip",
+     "name": "spaghetti-windows.zip",
+     "size": 7806456
+    }
+   ],
+   "name": "Bolognese Alfa 1.0.0",
+   "pageURL": "https://github.com/HarbourMasters/SpaghettiKart/releases/tag/1.0.0",
+   "publishedAt": "2026-02-25T02:26:04Z",
+   "tag": "1.0.0"
+  },
+  "Interkarma/daggerfall-unity": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/Interkarma/daggerfall-unity/releases/download/v1.1.1-cve-2025/dfu_linux_64bit-v1.1.1.zip",
+     "name": "dfu_linux_64bit-v1.1.1.zip",
+     "size": 58809717
+    },
+    {
+     "downloadURL": "https://github.com/Interkarma/daggerfall-unity/releases/download/v1.1.1-cve-2025/dfu_mac_universal-v1.1.1.zip",
+     "name": "dfu_mac_universal-v1.1.1.zip",
+     "size": 52313190
+    },
+    {
+     "downloadURL": "https://github.com/Interkarma/daggerfall-unity/releases/download/v1.1.1-cve-2025/dfu_windows_32bit-v1.1.1.zip",
+     "name": "dfu_windows_32bit-v1.1.1.zip",
+     "size": 47364196
+    },
+    {
+     "downloadURL": "https://github.com/Interkarma/daggerfall-unity/releases/download/v1.1.1-cve-2025/dfu_windows_64bit-v1.1.1.zip",
+     "name": "dfu_windows_64bit-v1.1.1.zip",
+     "size": 50240819
+    }
+   ],
+   "name": "DFU 1.1.1 - Security Update",
+   "pageURL": "https://github.com/Interkarma/daggerfall-unity/releases/tag/v1.1.1-cve-2025",
+   "publishedAt": "2025-10-05T01:34:39Z",
+   "tag": "v1.1.1-cve-2025"
+  },
+  "JACoders/OpenJK": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/JACoders/OpenJK/releases/download/latest/OpenJK-linux-x86.tar.gz",
+     "name": "OpenJK-linux-x86.tar.gz",
+     "size": 8322171
+    },
+    {
+     "downloadURL": "https://github.com/JACoders/OpenJK/releases/download/latest/OpenJK-linux-x86_64.tar.gz",
+     "name": "OpenJK-linux-x86_64.tar.gz",
+     "size": 7911522
+    },
+    {
+     "downloadURL": "https://github.com/JACoders/OpenJK/releases/download/latest/OpenJK-macos-arm64.tar.gz",
+     "name": "OpenJK-macos-arm64.tar.gz",
+     "size": 7882022
+    },
+    {
+     "downloadURL": "https://github.com/JACoders/OpenJK/releases/download/latest/OpenJK-macos-x86_64.tar.gz",
+     "name": "OpenJK-macos-x86_64.tar.gz",
+     "size": 8363775
+    },
+    {
+     "downloadURL": "https://github.com/JACoders/OpenJK/releases/download/latest/OpenJK-windows-x86.zip",
+     "name": "OpenJK-windows-x86.zip",
+     "size": 6070474
+    },
+    {
+     "downloadURL": "https://github.com/JACoders/OpenJK/releases/download/latest/OpenJK-windows-x86_64.zip",
+     "name": "OpenJK-windows-x86_64.zip",
+     "size": 7064516
+    },
+    {
+     "downloadURL": "https://github.com/JACoders/OpenJK/releases/download/latest/OpenJO-linux-x86.tar.gz",
+     "name": "OpenJO-linux-x86.tar.gz",
+     "size": 1928063
+    },
+    {
+     "downloadURL": "https://github.com/JACoders/OpenJK/releases/download/latest/OpenJO-linux-x86_64.tar.gz",
+     "name": "OpenJO-linux-x86_64.tar.gz",
+     "size": 1814038
+    },
+    {
+     "downloadURL": "https://github.com/JACoders/OpenJK/releases/download/latest/OpenJO-macos-arm64.tar.gz",
+     "name": "OpenJO-macos-arm64.tar.gz",
+     "size": 2286685
+    },
+    {
+     "downloadURL": "https://github.com/JACoders/OpenJK/releases/download/latest/OpenJO-macos-x86_64.tar.gz",
+     "name": "OpenJO-macos-x86_64.tar.gz",
+     "size": 2385118
+    },
+    {
+     "downloadURL": "https://github.com/JACoders/OpenJK/releases/download/latest/OpenJO-windows-x86.zip",
+     "name": "OpenJO-windows-x86.zip",
+     "size": 1991285
+    },
+    {
+     "downloadURL": "https://github.com/JACoders/OpenJK/releases/download/latest/OpenJO-windows-x86_64.zip",
+     "name": "OpenJO-windows-x86_64.zip",
+     "size": 2282795
+    }
+   ],
+   "name": "Latest Build",
+   "pageURL": "https://github.com/JACoders/OpenJK/releases/tag/latest",
+   "publishedAt": "2026-09-29T09:22:50Z",
+   "tag": "latest"
+  },
+  "JRickey/BattleShip": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/JRickey/BattleShip/releases/download/v1.6/BattleShip-android-armeabi-v7a.apk",
+     "name": "BattleShip-android-armeabi-v7a.apk",
+     "size": 112302311
+    },
+    {
+     "downloadURL": "https://github.com/JRickey/BattleShip/releases/download/v1.6/BattleShip-android.apk",
+     "name": "BattleShip-android.apk",
+     "size": 129968791
+    },
+    {
+     "downloadURL": "https://github.com/JRickey/BattleShip/releases/download/v1.6/BattleShip-JP-windows.zip",
+     "name": "BattleShip-JP-windows.zip",
+     "size": 6522841
+    },
+    {
+     "downloadURL": "https://github.com/JRickey/BattleShip/releases/download/v1.6/BattleShip-JP-x86_64.AppImage",
+     "name": "BattleShip-JP-x86_64.AppImage",
+     "size": 16513528
+    },
+    {
+     "downloadURL": "https://github.com/JRickey/BattleShip/releases/download/v1.6/BattleShip-JP.dmg",
+     "name": "BattleShip-JP.dmg",
+     "size": 13825952
+    },
+    {
+     "downloadURL": "https://github.com/JRickey/BattleShip/releases/download/v1.6/BattleShip-windows.zip",
+     "name": "BattleShip-windows.zip",
+     "size": 8818427
+    },
+    {
+     "downloadURL": "https://github.com/JRickey/BattleShip/releases/download/v1.6/BattleShip-x86_64.AppImage",
+     "name": "BattleShip-x86_64.AppImage",
+     "size": 15120888
+    },
+    {
+     "downloadURL": "https://github.com/JRickey/BattleShip/releases/download/v1.6/BattleShip.dmg",
+     "name": "BattleShip.dmg",
+     "size": 13140489
+    },
+    {
+     "downloadURL": "https://github.com/JRickey/BattleShip/releases/download/v1.6/SHA256SUMS.txt",
+     "name": "SHA256SUMS.txt",
+     "size": 725
+    }
+   ],
+   "name": "v1.6",
+   "pageURL": "https://github.com/JRickey/BattleShip/releases/tag/v1.6",
+   "publishedAt": "2026-08-12T03:19:33Z",
+   "tag": "v1.6"
+  },
+  "Keriew/augustus": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/Keriew/augustus/releases/download/v4.0.0/augustus-4.0.0-android.apk",
+     "name": "augustus-4.0.0-android.apk",
+     "size": 23630654
+    },
+    {
+     "downloadURL": "https://github.com/Keriew/augustus/releases/download/v4.0.0/augustus-4.0.0-linux.AppImage",
+     "name": "augustus-4.0.0-linux.AppImage",
+     "size": 21001408
+    },
+    {
+     "downloadURL": "https://github.com/Keriew/augustus/releases/download/v4.0.0/augustus-4.0.0-mac.dmg",
+     "name": "augustus-4.0.0-mac.dmg",
+     "size": 17260006
+    },
+    {
+     "downloadURL": "https://github.com/Keriew/augustus/releases/download/v4.0.0/augustus-4.0.0-switch.nro",
+     "name": "augustus-4.0.0-switch.nro",
+     "size": 23216095
+    },
+    {
+     "downloadURL": "https://github.com/Keriew/augustus/releases/download/v4.0.0/augustus-4.0.0-vita.vpk",
+     "name": "augustus-4.0.0-vita.vpk",
+     "size": 15627999
+    },
+    {
+     "downloadURL": "https://github.com/Keriew/augustus/releases/download/v4.0.0/augustus-4.0.0-windows.zip",
+     "name": "augustus-4.0.0-windows.zip",
+     "size": 25743052
+    }
+   ],
+   "name": "4.0.0",
+   "pageURL": "https://github.com/Keriew/augustus/releases/tag/v4.0.0",
+   "publishedAt": "2023-12-28T13:18:10Z",
+   "tag": "v4.0.0"
+  },
+  "LLCOOLT/paper-cut": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/LLCOOLT/paper-cut/releases/download/v0.5.1/altstore-source.json",
+     "name": "altstore-source.json",
+     "size": 8718
+    },
+    {
+     "downloadURL": "https://github.com/LLCOOLT/paper-cut/releases/download/v0.5.1/papercut-0.5.1-eu-android-arm64.apk",
+     "name": "papercut-0.5.1-eu-android-arm64.apk",
+     "size": 84005892
+    },
+    {
+     "downloadURL": "https://github.com/LLCOOLT/paper-cut/releases/download/v0.5.1/papercut-0.5.1-eu-ios-unsigned.ipa",
+     "name": "papercut-0.5.1-eu-ios-unsigned.ipa",
+     "size": 16329265
+    },
+    {
+     "downloadURL": "https://github.com/LLCOOLT/paper-cut/releases/download/v0.5.1/papercut-0.5.1-jp-android-arm64.apk",
+     "name": "papercut-0.5.1-jp-android-arm64.apk",
+     "size": 81131836
+    },
+    {
+     "downloadURL": "https://github.com/LLCOOLT/paper-cut/releases/download/v0.5.1/papercut-0.5.1-jp-ios-unsigned.ipa",
+     "name": "papercut-0.5.1-jp-ios-unsigned.ipa",
+     "size": 15960425
+    },
+    {
+     "downloadURL": "https://github.com/LLCOOLT/paper-cut/releases/download/v0.5.1/papercut-0.5.1-linux-x64.AppImage",
+     "name": "papercut-0.5.1-linux-x64.AppImage",
+     "size": 71731704
+    },
+    {
+     "downloadURL": "https://github.com/LLCOOLT/paper-cut/releases/download/v0.5.1/papercut-0.5.1-linux-x64.flatpak",
+     "name": "papercut-0.5.1-linux-x64.flatpak",
+     "size": 53921272
+    },
+    {
+     "downloadURL": "https://github.com/LLCOOLT/paper-cut/releases/download/v0.5.1/papercut-0.5.1-linux-x64.zip",
+     "name": "papercut-0.5.1-linux-x64.zip",
+     "size": 78191145
+    },
+    {
+     "downloadURL": "https://github.com/LLCOOLT/paper-cut/releases/download/v0.5.1/papercut-0.5.1-macos-arm64.zip",
+     "name": "papercut-0.5.1-macos-arm64.zip",
+     "size": 48753987
+    },
+    {
+     "downloadURL": "https://github.com/LLCOOLT/paper-cut/releases/download/v0.5.1/papercut-0.5.1-portmaster.zip",
+     "name": "papercut-0.5.1-portmaster.zip",
+     "size": 69440777
+    },
+    {
+     "downloadURL": "https://github.com/LLCOOLT/paper-cut/releases/download/v0.5.1/papercut-0.5.1-us-android-arm64.apk",
+     "name": "papercut-0.5.1-us-android-arm64.apk",
+     "size": 81302028
+    },
+    {
+     "downloadURL": "https://github.com/LLCOOLT/paper-cut/releases/download/v0.5.1/papercut-0.5.1-us-ios-unsigned.ipa",
+     "name": "papercut-0.5.1-us-ios-unsigned.ipa",
+     "size": 15999192
+    },
+    {
+     "downloadURL": "https://github.com/LLCOOLT/paper-cut/releases/download/v0.5.1/papercut-0.5.1-windows-x64.zip",
+     "name": "papercut-0.5.1-windows-x64.zip",
+     "size": 56386015
+    },
+    {
+     "downloadURL": "https://github.com/LLCOOLT/paper-cut/releases/download/v0.5.1/Paper_Cut-0.5.1-x86_64.AppImage",
+     "name": "Paper_Cut-0.5.1-x86_64.AppImage",
+     "size": 71731704
+    },
+    {
+     "downloadURL": "https://github.com/LLCOOLT/paper-cut/releases/download/v0.5.1/Paper_Cut-0.5.1-x86_64.AppImage.zsync",
+     "name": "Paper_Cut-0.5.1-x86_64.AppImage.zsync",
+     "size": 245415
+    },
+    {
+     "downloadURL": "https://github.com/LLCOOLT/paper-cut/releases/download/v0.5.1/SHA256SUMS.txt",
+     "name": "SHA256SUMS.txt",
+     "size": 1482
+    }
+   ],
+   "name": "Paper Cut 0.5.1",
+   "pageURL": "https://github.com/LLCOOLT/paper-cut/releases/tag/v0.5.1",
+   "publishedAt": "2026-11-15T13:51:06Z",
+   "tag": "v0.5.1"
+  },
+  "Legend-of-Dragoon-Modding/Severed-Chains": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/Legend-of-Dragoon-Modding/Severed-Chains/releases/download/release-3.0.0/Severed_Chains_Linux.tar.gz",
+     "name": "Severed_Chains_Linux.tar.gz",
+     "size": 128766328
+    },
+    {
+     "downloadURL": "https://github.com/Legend-of-Dragoon-Modding/Severed-Chains/releases/download/release-3.0.0/Severed_Chains_Linux_ARM64.tar.gz",
+     "name": "Severed_Chains_Linux_ARM64.tar.gz",
+     "size": 127055848
+    },
+    {
+     "downloadURL": "https://github.com/Legend-of-Dragoon-Modding/Severed-Chains/releases/download/release-3.0.0/Severed_Chains_MacOS_Intel.tar.gz",
+     "name": "Severed_Chains_MacOS_Intel.tar.gz",
+     "size": 122401050
+    },
+    {
+     "downloadURL": "https://github.com/Legend-of-Dragoon-Modding/Severed-Chains/releases/download/release-3.0.0/Severed_Chains_MacOS_M1.tar.gz",
+     "name": "Severed_Chains_MacOS_M1.tar.gz",
+     "size": 117987816
+    },
+    {
+     "downloadURL": "https://github.com/Legend-of-Dragoon-Modding/Severed-Chains/releases/download/release-3.0.0/Severed_Chains_Steam_Deck.tar.gz",
+     "name": "Severed_Chains_Steam_Deck.tar.gz",
+     "size": 128765207
+    },
+    {
+     "downloadURL": "https://github.com/Legend-of-Dragoon-Modding/Severed-Chains/releases/download/release-3.0.0/Severed_Chains_Windows.zip",
+     "name": "Severed_Chains_Windows.zip",
+     "size": 131446655
+    }
+   ],
+   "name": "Release 3.0.0",
+   "pageURL": "https://github.com/Legend-of-Dragoon-Modding/Severed-Chains/releases/tag/release-3.0.0",
+   "publishedAt": "2026-10-17T01:16:33Z",
+   "tag": "release-3.0.0"
+  },
+  "LoreanXavier/pt-pc": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/LoreanXavier/pt-pc/releases/download/v1.0.8/P.T.PC.Port-macOS-arm64.dmg",
+     "name": "P.T.PC.Port-macOS-arm64.dmg",
+     "size": 319317104
+    },
+    {
+     "downloadURL": "https://github.com/LoreanXavier/pt-pc/releases/download/v1.0.8/P.T.PC.Port-macOS-arm64.zip",
+     "name": "P.T.PC.Port-macOS-arm64.zip",
+     "size": 310463482
+    },
+    {
+     "downloadURL": "https://github.com/LoreanXavier/pt-pc/releases/download/v1.0.8/P.T.PC.Port-macOS-x64.dmg",
+     "name": "P.T.PC.Port-macOS-x64.dmg",
+     "size": 327478343
+    },
+    {
+     "downloadURL": "https://github.com/LoreanXavier/pt-pc/releases/download/v1.0.8/P.T.PC.Port-macOS-x64.zip",
+     "name": "P.T.PC.Port-macOS-x64.zip",
+     "size": 318221164
+    },
+    {
+     "downloadURL": "https://github.com/LoreanXavier/pt-pc/releases/download/v1.0.8/P.T.PC.Port-portable-linux.zip",
+     "name": "P.T.PC.Port-portable-linux.zip",
+     "size": 452587975
+    },
+    {
+     "downloadURL": "https://github.com/LoreanXavier/pt-pc/releases/download/v1.0.8/P.T.PC.Port-portable-windows.zip",
+     "name": "P.T.PC.Port-portable-windows.zip",
+     "size": 492274173
+    },
+    {
+     "downloadURL": "https://github.com/LoreanXavier/pt-pc/releases/download/v1.0.8/P.T.PC.Port.Setup-linux",
+     "name": "P.T.PC.Port.Setup-linux",
+     "size": 463421781
+    },
+    {
+     "downloadURL": "https://github.com/LoreanXavier/pt-pc/releases/download/v1.0.8/P.T.PC.Port.Setup.exe",
+     "name": "P.T.PC.Port.Setup.exe",
+     "size": 495043194
+    }
+   ],
+   "name": "1.0.8",
+   "pageURL": "https://github.com/LoreanXavier/pt-pc/releases/tag/v1.0.8",
+   "publishedAt": "2026-10-22T23:04:05Z",
+   "tag": "v1.0.8"
+  },
+  "LostArtefacts/TRX": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/LostArtefacts/TRX/releases/download/trx-1.12/TRX-1.12-Linux.zip",
+     "name": "TRX-1.12-Linux.zip",
+     "size": 361413192
+    },
+    {
+     "downloadURL": "https://github.com/LostArtefacts/TRX/releases/download/trx-1.12/TRX-1.12-Mac.dmg",
+     "name": "TRX-1.12-Mac.dmg",
+     "size": 356049200
+    },
+    {
+     "downloadURL": "https://github.com/LostArtefacts/TRX/releases/download/trx-1.12/TRX-1.12-TombEditor.zip",
+     "name": "TRX-1.12-TombEditor.zip",
+     "size": 37533463
+    },
+    {
+     "downloadURL": "https://github.com/LostArtefacts/TRX/releases/download/trx-1.12/TRX-1.12-Windows.zip",
+     "name": "TRX-1.12-Windows.zip",
+     "size": 361171822
+    },
+    {
+     "downloadURL": "https://github.com/LostArtefacts/TRX/releases/download/trx-1.12/TRX-1.12-Windows_Installer.exe",
+     "name": "TRX-1.12-Windows_Installer.exe",
+     "size": 362889582
+    }
+   ],
+   "name": "TRX 1.12",
+   "pageURL": "https://github.com/LostArtefacts/TRX/releases/tag/trx-1.12",
+   "publishedAt": "2026-11-02T22:13:18Z",
+   "tag": "trx-1.12"
+  },
+  "MaftyManicEMU/DukeX": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/MaftyManicEMU/DukeX/releases/download/v1.0.2/DukeX.macOS.v1.0.2.dmg",
+     "name": "DukeX.macOS.v1.0.2.dmg",
+     "size": 16382131
+    },
+    {
+     "downloadURL": "https://github.com/MaftyManicEMU/DukeX/releases/download/v1.0.2/DukeX.v1.0.2.ipa",
+     "name": "DukeX.v1.0.2.ipa",
+     "size": 20345841
+    }
+   ],
+   "name": "DukeX v1.0.2",
+   "pageURL": "https://github.com/MaftyManicEMU/DukeX/releases/tag/v1.0.2",
+   "publishedAt": "2026-06-30T12:21:27Z",
+   "tag": "v1.0.2"
+  },
+  "MegaMan64Recomp/MegaMan64Recompiled": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/MegaMan64Recomp/MegaMan64Recompiled/releases/download/v0.9.1/MegaMan64Recompiled-v0.9.1-Flatpak-X64.zip",
+     "name": "MegaMan64Recompiled-v0.9.1-Flatpak-X64.zip",
+     "size": 9460173
+    },
+    {
+     "downloadURL": "https://github.com/MegaMan64Recomp/MegaMan64Recompiled/releases/download/v0.9.1/MegaMan64Recompiled-v0.9.1-Linux-ARM64.zip",
+     "name": "MegaMan64Recompiled-v0.9.1-Linux-ARM64.zip",
+     "size": 14236040
+    },
+    {
+     "downloadURL": "https://github.com/MegaMan64Recomp/MegaMan64Recompiled/releases/download/v0.9.1/MegaMan64Recompiled-v0.9.1-Linux-X64.zip",
+     "name": "MegaMan64Recompiled-v0.9.1-Linux-X64.zip",
+     "size": 14065858
+    },
+    {
+     "downloadURL": "https://github.com/MegaMan64Recomp/MegaMan64Recompiled/releases/download/v0.9.1/MegaMan64Recompiled-v0.9.1-macOS.zip",
+     "name": "MegaMan64Recompiled-v0.9.1-macOS.zip",
+     "size": 23688207
+    },
+    {
+     "downloadURL": "https://github.com/MegaMan64Recomp/MegaMan64Recompiled/releases/download/v0.9.1/MegaMan64Recompiled-v0.9.1-Windows.zip",
+     "name": "MegaMan64Recompiled-v0.9.1-Windows.zip",
+     "size": 24721093
+    }
+   ],
+   "name": "Mega Man 64: Recompiled 0.9.1",
+   "pageURL": "https://github.com/MegaMan64Recomp/MegaMan64Recompiled/releases/tag/v0.9.1",
+   "publishedAt": "2026-04-30T20:35:04Z",
+   "tag": "v0.9.1"
+  },
+  "OpenLoco/OpenLoco": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/OpenLoco/OpenLoco/releases/download/v26.09/OpenLoco-v26.09-linux-x64.AppImage",
+     "name": "OpenLoco-v26.09-linux-x64.AppImage",
+     "size": 17680888
+    },
+    {
+     "downloadURL": "https://github.com/OpenLoco/OpenLoco/releases/download/v26.09/OpenLoco-v26.09-macos-arm64.zip",
+     "name": "OpenLoco-v26.09-macos-arm64.zip",
+     "size": 17557193
+    },
+    {
+     "downloadURL": "https://github.com/OpenLoco/OpenLoco/releases/download/v26.09/OpenLoco-v26.09-windows-portable-win32.zip",
+     "name": "OpenLoco-v26.09-windows-portable-win32.zip",
+     "size": 15534507
+    },
+    {
+     "downloadURL": "https://github.com/OpenLoco/OpenLoco/releases/download/v26.09/OpenLoco-v26.09-windows-portable-x64.zip",
+     "name": "OpenLoco-v26.09-windows-portable-x64.zip",
+     "size": 16015478
+    },
+    {
+     "downloadURL": "https://github.com/OpenLoco/OpenLoco/releases/download/v26.09/OpenLoco-v26.09-windows-win32-symbols.zip",
+     "name": "OpenLoco-v26.09-windows-win32-symbols.zip",
+     "size": 19461874
+    },
+    {
+     "downloadURL": "https://github.com/OpenLoco/OpenLoco/releases/download/v26.09/OpenLoco-v26.09-windows-x64-symbols.zip",
+     "name": "OpenLoco-v26.09-windows-x64-symbols.zip",
+     "size": 19495451
+    }
+   ],
+   "name": "v26.09",
+   "pageURL": "https://github.com/OpenLoco/OpenLoco/releases/tag/v26.09",
+   "publishedAt": "2026-09-18T19:13:09Z",
+   "tag": "v26.09"
+  },
+  "OpenMW/openmw": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/OpenMW/openmw/releases/download/openmw-0.51.0/openmw-0.51.0-Linux-64Bit-debug.tar.gz",
+     "name": "openmw-0.51.0-Linux-64Bit-debug.tar.gz",
+     "size": 629363279
+    },
+    {
+     "downloadURL": "https://github.com/OpenMW/openmw/releases/download/openmw-0.51.0/openmw-0.51.0-Linux-64Bit.tar.gz",
+     "name": "openmw-0.51.0-Linux-64Bit.tar.gz",
+     "size": 94444356
+    },
+    {
+     "downloadURL": "https://github.com/OpenMW/openmw/releases/download/openmw-0.51.0/OpenMW-0.51.0-macOS-arm64.dmg",
+     "name": "OpenMW-0.51.0-macOS-arm64.dmg",
+     "size": 137461865
+    },
+    {
+     "downloadURL": "https://github.com/OpenMW/openmw/releases/download/openmw-0.51.0/OpenMW-0.51.0-macOS-x86_64.dmg",
+     "name": "OpenMW-0.51.0-macOS-x86_64.dmg",
+     "size": 145801559
+    },
+    {
+     "downloadURL": "https://github.com/OpenMW/openmw/releases/download/openmw-0.51.0/OpenMW-0.51.0-Windows-x64.exe",
+     "name": "OpenMW-0.51.0-Windows-x64.exe",
+     "size": 73331347
+    }
+   ],
+   "name": "OpenMW 0.51.0 Released!",
+   "pageURL": "https://github.com/OpenMW/openmw/releases/tag/openmw-0.51.0",
+   "publishedAt": "2026-06-19T19:58:46Z",
+   "tag": "openmw-0.51.0"
+  },
+  "OpenRA/OpenRA": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/OpenRA/OpenRA/releases/download/release-20250330/OpenRA-Dune-2000-x86_64.AppImage",
+     "name": "OpenRA-Dune-2000-x86_64.AppImage",
+     "size": 47892984
+    },
+    {
+     "downloadURL": "https://github.com/OpenRA/OpenRA/releases/download/release-20250330/OpenRA-Dune-2000-x86_64.AppImage.zsync",
+     "name": "OpenRA-Dune-2000-x86_64.AppImage.zsync",
+     "size": 164005
+    },
+    {
+     "downloadURL": "https://github.com/OpenRA/OpenRA/releases/download/release-20250330/OpenRA-Red-Alert-x86_64.AppImage",
+     "name": "OpenRA-Red-Alert-x86_64.AppImage",
+     "size": 44026360
+    },
+    {
+     "downloadURL": "https://github.com/OpenRA/OpenRA/releases/download/release-20250330/OpenRA-Red-Alert-x86_64.AppImage.zsync",
+     "name": "OpenRA-Red-Alert-x86_64.AppImage.zsync",
+     "size": 150789
+    },
+    {
+     "downloadURL": "https://github.com/OpenRA/OpenRA/releases/download/release-20250330/OpenRA-release-20250330-source.tar.bz2",
+     "name": "OpenRA-release-20250330-source.tar.bz2",
+     "size": 32489806
+    },
+    {
+     "downloadURL": "https://github.com/OpenRA/OpenRA/releases/download/release-20250330/OpenRA-release-20250330-x64-winportable.zip",
+     "name": "OpenRA-release-20250330-x64-winportable.zip",
+     "size": 73079233
+    },
+    {
+     "downloadURL": "https://github.com/OpenRA/OpenRA/releases/download/release-20250330/OpenRA-release-20250330-x64.exe",
+     "name": "OpenRA-release-20250330-x64.exe",
+     "size": 61266292
+    },
+    {
+     "downloadURL": "https://github.com/OpenRA/OpenRA/releases/download/release-20250330/OpenRA-release-20250330-x86-winportable.zip",
+     "name": "OpenRA-release-20250330-x86-winportable.zip",
+     "size": 69848515
+    },
+    {
+     "downloadURL": "https://github.com/OpenRA/OpenRA/releases/download/release-20250330/OpenRA-release-20250330-x86.exe",
+     "name": "OpenRA-release-20250330-x86.exe",
+     "size": 58528821
+    },
+    {
+     "downloadURL": "https://github.com/OpenRA/OpenRA/releases/download/release-20250330/OpenRA-release-20250330.dmg",
+     "name": "OpenRA-release-20250330.dmg",
+     "size": 159559841
+    },
+    {
+     "downloadURL": "https://github.com/OpenRA/OpenRA/releases/download/release-20250330/OpenRA-Tiberian-Dawn-x86_64.AppImage",
+     "name": "OpenRA-Tiberian-Dawn-x86_64.AppImage",
+     "size": 55323128
+    },
+    {
+     "downloadURL": "https://github.com/OpenRA/OpenRA/releases/download/release-20250330/OpenRA-Tiberian-Dawn-x86_64.AppImage.zsync",
+     "name": "OpenRA-Tiberian-Dawn-x86_64.AppImage.zsync",
+     "size": 189409
+    }
+   ],
+   "name": "",
+   "pageURL": "https://github.com/OpenRA/OpenRA/releases/tag/release-20250330",
+   "publishedAt": "2025-03-30T17:36:43Z",
+   "tag": "release-20250330"
+  },
+  "OpenRCT2/OpenRCT2": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/OpenRCT2/OpenRCT2/releases/download/v0.5.7/OpenRCT2-v0.5.7-android.apk",
+     "name": "OpenRCT2-v0.5.7-android.apk",
+     "size": 217172013
+    },
+    {
+     "downloadURL": "https://github.com/OpenRCT2/OpenRCT2/releases/download/v0.5.7/OpenRCT2-v0.5.7-Linux-bookworm-x86_64.tar.gz",
+     "name": "OpenRCT2-v0.5.7-Linux-bookworm-x86_64.tar.gz",
+     "size": 87427232
+    },
+    {
+     "downloadURL": "https://github.com/OpenRCT2/OpenRCT2/releases/download/v0.5.7/OpenRCT2-v0.5.7-Linux-noble-x86_64.tar.gz",
+     "name": "OpenRCT2-v0.5.7-Linux-noble-x86_64.tar.gz",
+     "size": 87524211
+    },
+    {
+     "downloadURL": "https://github.com/OpenRCT2/OpenRCT2/releases/download/v0.5.7/OpenRCT2-v0.5.7-Linux-resolute-x86_64.tar.gz",
+     "name": "OpenRCT2-v0.5.7-Linux-resolute-x86_64.tar.gz",
+     "size": 87956072
+    },
+    {
+     "downloadURL": "https://github.com/OpenRCT2/OpenRCT2/releases/download/v0.5.7/OpenRCT2-v0.5.7-Linux-trixie-x86_64.tar.gz",
+     "name": "OpenRCT2-v0.5.7-Linux-trixie-x86_64.tar.gz",
+     "size": 87202584
+    },
+    {
+     "downloadURL": "https://github.com/OpenRCT2/OpenRCT2/releases/download/v0.5.7/OpenRCT2-v0.5.7-linux-x86_64.AppImage",
+     "name": "OpenRCT2-v0.5.7-linux-x86_64.AppImage",
+     "size": 103332344
+    },
+    {
+     "downloadURL": "https://github.com/OpenRCT2/OpenRCT2/releases/download/v0.5.7/OpenRCT2-v0.5.7-macos-universal.zip",
+     "name": "OpenRCT2-v0.5.7-macos-universal.zip",
+     "size": 115868444
+    },
+    {
+     "downloadURL": "https://github.com/OpenRCT2/OpenRCT2/releases/download/v0.5.7/OpenRCT2-v0.5.7-sha256sums.txt",
+     "name": "OpenRCT2-v0.5.7-sha256sums.txt",
+     "size": 1845
+    },
+    {
+     "downloadURL": "https://github.com/OpenRCT2/OpenRCT2/releases/download/v0.5.7/OpenRCT2-v0.5.7-windows-installer-arm64.exe",
+     "name": "OpenRCT2-v0.5.7-windows-installer-arm64.exe",
+     "size": 76562864
+    },
+    {
+     "downloadURL": "https://github.com/OpenRCT2/OpenRCT2/releases/download/v0.5.7/OpenRCT2-v0.5.7-windows-installer-win32.exe",
+     "name": "OpenRCT2-v0.5.7-windows-installer-win32.exe",
+     "size": 76526456
+    },
+    {
+     "downloadURL": "https://github.com/OpenRCT2/OpenRCT2/releases/download/v0.5.7/OpenRCT2-v0.5.7-windows-installer-x64.exe",
+     "name": "OpenRCT2-v0.5.7-windows-installer-x64.exe",
+     "size": 77665184
+    },
+    {
+     "downloadURL": "https://github.com/OpenRCT2/OpenRCT2/releases/download/v0.5.7/OpenRCT2-v0.5.7-windows-portable-arm64.zip",
+     "name": "OpenRCT2-v0.5.7-windows-portable-arm64.zip",
+     "size": 81719489
+    },
+    {
+     "downloadURL": "https://github.com/OpenRCT2/OpenRCT2/releases/download/v0.5.7/OpenRCT2-v0.5.7-windows-portable-win32.zip",
+     "name": "OpenRCT2-v0.5.7-windows-portable-win32.zip",
+     "size": 80548295
+    },
+    {
+     "downloadURL": "https://github.com/OpenRCT2/OpenRCT2/releases/download/v0.5.7/OpenRCT2-v0.5.7-windows-portable-x64.zip",
+     "name": "OpenRCT2-v0.5.7-windows-portable-x64.zip",
+     "size": 82158608
+    },
+    {
+     "downloadURL": "https://github.com/OpenRCT2/OpenRCT2/releases/download/v0.5.7/OpenRCT2-v0.5.7-windows-symbols-arm64.zip",
+     "name": "OpenRCT2-v0.5.7-windows-symbols-arm64.zip",
+     "size": 36167222
+    },
+    {
+     "downloadURL": "https://github.com/OpenRCT2/OpenRCT2/releases/download/v0.5.7/OpenRCT2-v0.5.7-windows-symbols-win32.zip",
+     "name": "OpenRCT2-v0.5.7-windows-symbols-win32.zip",
+     "size": 35216901
+    },
+    {
+     "downloadURL": "https://github.com/OpenRCT2/OpenRCT2/releases/download/v0.5.7/OpenRCT2-v0.5.7-windows-symbols-x64.zip",
+     "name": "OpenRCT2-v0.5.7-windows-symbols-x64.zip",
+     "size": 37973853
+    }
+   ],
+   "name": "v0.5.7 - \u201cGet on with it!\u201d",
+   "pageURL": "https://github.com/OpenRCT2/OpenRCT2/releases/tag/v0.5.7",
+   "publishedAt": "2026-11-01T10:57:49Z",
+   "tag": "v0.5.7"
+  },
+  "Pyrdacor/Ambermoon.net": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/Pyrdacor/Ambermoon.net/releases/download/v1.16.0/Ambermoon.net-Linux.tar.gz",
+     "name": "Ambermoon.net-Linux.tar.gz",
+     "size": 90555567
+    },
+    {
+     "downloadURL": "https://github.com/Pyrdacor/Ambermoon.net/releases/download/v1.16.0/Ambermoon.net-Mac-ARM.zip",
+     "name": "Ambermoon.net-Mac-ARM.zip",
+     "size": 85735414
+    },
+    {
+     "downloadURL": "https://github.com/Pyrdacor/Ambermoon.net/releases/download/v1.16.0/Ambermoon.net-Mac.zip",
+     "name": "Ambermoon.net-Mac.zip",
+     "size": 87342612
+    },
+    {
+     "downloadURL": "https://github.com/Pyrdacor/Ambermoon.net/releases/download/v1.16.0/Ambermoon.net-Windows.zip",
+     "name": "Ambermoon.net-Windows.zip",
+     "size": 89977852
+    },
+    {
+     "downloadURL": "https://github.com/Pyrdacor/Ambermoon.net/releases/download/v1.16.0/Ambermoon.net-Windows32Bit.zip",
+     "name": "Ambermoon.net-Windows32Bit.zip",
+     "size": 86831792
+    },
+    {
+     "downloadURL": "https://github.com/Pyrdacor/Ambermoon.net/releases/download/v1.16.0/AmbermoonInstall.exe",
+     "name": "AmbermoonInstall.exe",
+     "size": 80074576
+    },
+    {
+     "downloadURL": "https://github.com/Pyrdacor/Ambermoon.net/releases/download/v1.16.0/com.pyrdacor.AmbermoonAndroid-Signed.apk",
+     "name": "com.pyrdacor.AmbermoonAndroid-Signed.apk",
+     "size": 244683735
+    }
+   ],
+   "name": "v1.16.0",
+   "pageURL": "https://github.com/Pyrdacor/Ambermoon.net/releases/tag/v1.16.0",
+   "publishedAt": "2026-11-17T15:00:06Z",
+   "tag": "v1.16.0"
+  },
+  "RSDKModding/RSDKv3-Decompilation": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/RSDKModding/RSDKv3-Decompilation/releases/download/1.3.3/v3-android.zip",
+     "name": "v3-android.zip",
+     "size": 2548133
+    },
+    {
+     "downloadURL": "https://github.com/RSDKModding/RSDKv3-Decompilation/releases/download/1.3.3/v3-linux.zip",
+     "name": "v3-linux.zip",
+     "size": 332321
+    },
+    {
+     "downloadURL": "https://github.com/RSDKModding/RSDKv3-Decompilation/releases/download/1.3.3/v3-mac.zip",
+     "name": "v3-mac.zip",
+     "size": 6505748
+    },
+    {
+     "downloadURL": "https://github.com/RSDKModding/RSDKv3-Decompilation/releases/download/1.3.3/v3-windows-x64.zip",
+     "name": "v3-windows-x64.zip",
+     "size": 1269201
+    },
+    {
+     "downloadURL": "https://github.com/RSDKModding/RSDKv3-Decompilation/releases/download/1.3.3/v3-windows.zip",
+     "name": "v3-windows.zip",
+     "size": 1135650
+    }
+   ],
+   "name": "1.3.3",
+   "pageURL": "https://github.com/RSDKModding/RSDKv3-Decompilation/releases/tag/1.3.3",
+   "publishedAt": "2025-11-02T00:12:09Z",
+   "tag": "1.3.3"
+  },
+  "Rainchus/Donkey-Kong-64-Recompiled": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/releases/download/v1.0.3/DK64Recompiled-Flatpak-X64-Release-1-0-3.zip",
+     "name": "DK64Recompiled-Flatpak-X64-Release-1-0-3.zip",
+     "size": 6370008
+    },
+    {
+     "downloadURL": "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/releases/download/v1.0.3/DK64Recompiled-Linux-ARM64-Release-1-0-3.zip",
+     "name": "DK64Recompiled-Linux-ARM64-Release-1-0-3.zip",
+     "size": 9489336
+    },
+    {
+     "downloadURL": "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/releases/download/v1.0.3/DK64Recompiled-Linux-X64-Release-1-0-3.zip",
+     "name": "DK64Recompiled-Linux-X64-Release-1-0-3.zip",
+     "size": 9321970
+    },
+    {
+     "downloadURL": "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/releases/download/v1.0.3/DK64Recompiled-macOS-ARM64-Release-1-0-3.zip",
+     "name": "DK64Recompiled-macOS-ARM64-Release-1-0-3.zip",
+     "size": 11352069
+    },
+    {
+     "downloadURL": "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/releases/download/v1.0.3/DK64Recompiled-Windows-Release-1-0-3.zip",
+     "name": "DK64Recompiled-Windows-Release-1-0-3.zip",
+     "size": 19986113
+    }
+   ],
+   "name": "DK64 Rekongpiled 1.0.3",
+   "pageURL": "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/releases/tag/v1.0.3",
+   "publishedAt": "2026-09-30T00:21:10Z",
+   "tag": "v1.0.3"
+  },
+  "SlickAmogus/silent-hill-decomp": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/SlickAmogus/silent-hill-decomp/releases/download/crossplatform-beta/SHAndroid_100926_OLD.apk",
+     "name": "SHAndroid_100926_OLD.apk",
+     "size": 13884195
+    },
+    {
+     "downloadURL": "https://github.com/SlickAmogus/silent-hill-decomp/releases/download/crossplatform-beta/SHAndroid_101226b.apk",
+     "name": "SHAndroid_101226b.apk",
+     "size": 10788315
+    },
+    {
+     "downloadURL": "https://github.com/SlickAmogus/silent-hill-decomp/releases/download/crossplatform-beta/SHiOS_100726b_OLD.ipa",
+     "name": "SHiOS_100726b_OLD.ipa",
+     "size": 4313344
+    },
+    {
+     "downloadURL": "https://github.com/SlickAmogus/silent-hill-decomp/releases/download/crossplatform-beta/SHiOS_100926.ipa",
+     "name": "SHiOS_100926.ipa",
+     "size": 4316774
+    },
+    {
+     "downloadURL": "https://github.com/SlickAmogus/silent-hill-decomp/releases/download/crossplatform-beta/SHPC-linux-x64_2026.09.27.1.tar.gz",
+     "name": "SHPC-linux-x64_2026.09.27.1.tar.gz",
+     "size": 18268647
+    },
+    {
+     "downloadURL": "https://github.com/SlickAmogus/silent-hill-decomp/releases/download/crossplatform-beta/SHPC-macos-arm64_2026.09.27.1.zip",
+     "name": "SHPC-macos-arm64_2026.09.27.1.zip",
+     "size": 15942205
+    },
+    {
+     "downloadURL": "https://github.com/SlickAmogus/silent-hill-decomp/releases/download/crossplatform-beta/SHPC_beta-2026.10.02.1_OLD.zip",
+     "name": "SHPC_beta-2026.10.02.1_OLD.zip",
+     "size": 82495737
+    },
+    {
+     "downloadURL": "https://github.com/SlickAmogus/silent-hill-decomp/releases/download/crossplatform-beta/SHPC_beta-2026.10.12.1.zip",
+     "name": "SHPC_beta-2026.10.12.1.zip",
+     "size": 83061493
+    },
+    {
+     "downloadURL": "https://github.com/SlickAmogus/silent-hill-decomp/releases/download/crossplatform-beta/SilentHill_Xbox_Beta_081226_3.zip",
+     "name": "SilentHill_Xbox_Beta_081226_3.zip",
+     "size": 2340380
+    }
+   ],
+   "name": "Cross-platform Beta Release (PC/Mac/Linux/Android/iOS/Xbox)",
+   "pageURL": "https://github.com/SlickAmogus/silent-hill-decomp/releases/tag/crossplatform-beta",
+   "publishedAt": "2026-09-04T08:39:34Z",
+   "tag": "crossplatform-beta"
+  },
+  "SpeedBreakerProject/speedbreaker": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/SpeedBreakerProject/speedbreaker/releases/download/v0.2.6/SpeedBreaker-0.2.6-ios.ipa",
+     "name": "SpeedBreaker-0.2.6-ios.ipa",
+     "size": 27557909
+    },
+    {
+     "downloadURL": "https://github.com/SpeedBreakerProject/speedbreaker/releases/download/v0.2.6/SpeedBreaker-0.2.6-ios.ipa.sha256",
+     "name": "SpeedBreaker-0.2.6-ios.ipa.sha256",
+     "size": 93
+    },
+    {
+     "downloadURL": "https://github.com/SpeedBreakerProject/speedbreaker/releases/download/v0.2.6/SpeedBreaker-0.2.6-third-party-source.tar.xz",
+     "name": "SpeedBreaker-0.2.6-third-party-source.tar.xz",
+     "size": 213558060
+    },
+    {
+     "downloadURL": "https://github.com/SpeedBreakerProject/speedbreaker/releases/download/v0.2.6/SpeedBreaker-0.2.6-third-party-source.tar.xz.sha256",
+     "name": "SpeedBreaker-0.2.6-third-party-source.tar.xz.sha256",
+     "size": 111
+    },
+    {
+     "downloadURL": "https://github.com/SpeedBreakerProject/speedbreaker/releases/download/v0.2.6/SpeedBreaker-macos.dmg",
+     "name": "SpeedBreaker-macos.dmg",
+     "size": 32204679
+    },
+    {
+     "downloadURL": "https://github.com/SpeedBreakerProject/speedbreaker/releases/download/v0.2.6/SpeedBreaker-macos.dmg.sha256",
+     "name": "SpeedBreaker-macos.dmg.sha256",
+     "size": 89
+    },
+    {
+     "downloadURL": "https://github.com/SpeedBreakerProject/speedbreaker/releases/download/v0.2.6/SpeedBreaker-steamos-arm64.tar.xz",
+     "name": "SpeedBreaker-steamos-arm64.tar.xz",
+     "size": 16786032
+    },
+    {
+     "downloadURL": "https://github.com/SpeedBreakerProject/speedbreaker/releases/download/v0.2.6/SpeedBreaker-steamos-arm64.tar.xz.sha256",
+     "name": "SpeedBreaker-steamos-arm64.tar.xz.sha256",
+     "size": 100
+    },
+    {
+     "downloadURL": "https://github.com/SpeedBreakerProject/speedbreaker/releases/download/v0.2.6/SpeedBreaker-steamos-x86_64.tar.xz",
+     "name": "SpeedBreaker-steamos-x86_64.tar.xz",
+     "size": 19837800
+    },
+    {
+     "downloadURL": "https://github.com/SpeedBreakerProject/speedbreaker/releases/download/v0.2.6/SpeedBreaker-steamos-x86_64.tar.xz.sha256",
+     "name": "SpeedBreaker-steamos-x86_64.tar.xz.sha256",
+     "size": 101
+    }
+   ],
+   "name": "SpeedBreaker v0.2.6",
+   "pageURL": "https://github.com/SpeedBreakerProject/speedbreaker/releases/tag/v0.2.6",
+   "publishedAt": "2026-11-18T19:11:10Z",
+   "tag": "v0.2.6"
+  },
+  "TwilitRealm/dusklight": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/TwilitRealm/dusklight/releases/download/v2.0.3/Dusklight-v2.0.3-android-arm64.apk",
+     "name": "Dusklight-v2.0.3-android-arm64.apk",
+     "size": 58700704
+    },
+    {
+     "downloadURL": "https://github.com/TwilitRealm/dusklight/releases/download/v2.0.3/Dusklight-v2.0.3-ios-arm64.ipa",
+     "name": "Dusklight-v2.0.3-ios-arm64.ipa",
+     "size": 37056541
+    },
+    {
+     "downloadURL": "https://github.com/TwilitRealm/dusklight/releases/download/v2.0.3/Dusklight-v2.0.3-linux-arm64.AppImage",
+     "name": "Dusklight-v2.0.3-linux-arm64.AppImage",
+     "size": 42076680
+    },
+    {
+     "downloadURL": "https://github.com/TwilitRealm/dusklight/releases/download/v2.0.3/Dusklight-v2.0.3-linux-x86_64.AppImage",
+     "name": "Dusklight-v2.0.3-linux-x86_64.AppImage",
+     "size": 43837944
+    },
+    {
+     "downloadURL": "https://github.com/TwilitRealm/dusklight/releases/download/v2.0.3/Dusklight-v2.0.3-macos-arm64.zip",
+     "name": "Dusklight-v2.0.3-macos-arm64.zip",
+     "size": 38440850
+    },
+    {
+     "downloadURL": "https://github.com/TwilitRealm/dusklight/releases/download/v2.0.3/Dusklight-v2.0.3-macos-x86_64.zip",
+     "name": "Dusklight-v2.0.3-macos-x86_64.zip",
+     "size": 40164595
+    },
+    {
+     "downloadURL": "https://github.com/TwilitRealm/dusklight/releases/download/v2.0.3/Dusklight-v2.0.3-win32-arm64.zip",
+     "name": "Dusklight-v2.0.3-win32-arm64.zip",
+     "size": 53433665
+    },
+    {
+     "downloadURL": "https://github.com/TwilitRealm/dusklight/releases/download/v2.0.3/Dusklight-v2.0.3-win32-x86_64.zip",
+     "name": "Dusklight-v2.0.3-win32-x86_64.zip",
+     "size": 56037777
+    }
+   ],
+   "name": "v2.0.3",
+   "pageURL": "https://github.com/TwilitRealm/dusklight/releases/tag/v2.0.3",
+   "publishedAt": "2026-09-30T07:06:44Z",
+   "tag": "v2.0.3"
+  },
+  "XProger/OpenLara": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/XProger/OpenLara/releases/download/latest/OpenLara_32x.zip",
+     "name": "OpenLara_32x.zip",
+     "size": 564316
+    },
+    {
+     "downloadURL": "https://github.com/XProger/OpenLara/releases/download/latest/OpenLara_3do.zip",
+     "name": "OpenLara_3do.zip",
+     "size": 11800879
+    },
+    {
+     "downloadURL": "https://github.com/XProger/OpenLara/releases/download/latest/OpenLara_3ds.zip",
+     "name": "OpenLara_3ds.zip",
+     "size": 599718
+    },
+    {
+     "downloadURL": "https://github.com/XProger/OpenLara/releases/download/latest/OpenLara_android.zip",
+     "name": "OpenLara_android.zip",
+     "size": 3460799
+    },
+    {
+     "downloadURL": "https://github.com/XProger/OpenLara/releases/download/latest/OpenLara_e2k.zip",
+     "name": "OpenLara_e2k.zip",
+     "size": 1471780
+    },
+    {
+     "downloadURL": "https://github.com/XProger/OpenLara/releases/download/latest/OpenLara_gba.zip",
+     "name": "OpenLara_gba.zip",
+     "size": 5266728
+    },
+    {
+     "downloadURL": "https://github.com/XProger/OpenLara/releases/download/latest/OpenLara_gcw0.zip",
+     "name": "OpenLara_gcw0.zip",
+     "size": 392927
+    },
+    {
+     "downloadURL": "https://github.com/XProger/OpenLara/releases/download/latest/OpenLara_ios.zip",
+     "name": "OpenLara_ios.zip",
+     "size": 3294747
+    },
+    {
+     "downloadURL": "https://github.com/XProger/OpenLara/releases/download/latest/OpenLara_nix.zip",
+     "name": "OpenLara_nix.zip",
+     "size": 446341
+    },
+    {
+     "downloadURL": "https://github.com/XProger/OpenLara/releases/download/latest/OpenLara_osx.zip",
+     "name": "OpenLara_osx.zip",
+     "size": 1211898
+    },
+    {
+     "downloadURL": "https://github.com/XProger/OpenLara/releases/download/latest/OpenLara_psv.zip",
+     "name": "OpenLara_psv.zip",
+     "size": 673848
+    },
+    {
+     "downloadURL": "https://github.com/XProger/OpenLara/releases/download/latest/OpenLara_rpi.zip",
+     "name": "OpenLara_rpi.zip",
+     "size": 385146
+    },
+    {
+     "downloadURL": "https://github.com/XProger/OpenLara/releases/download/latest/OpenLara_switch.zip",
+     "name": "OpenLara_switch.zip",
+     "size": 2874740
+    },
+    {
+     "downloadURL": "https://github.com/XProger/OpenLara/releases/download/latest/OpenLara_win.zip",
+     "name": "OpenLara_win.zip",
+     "size": 359739
+    },
+    {
+     "downloadURL": "https://github.com/XProger/OpenLara/releases/download/latest/OpenLara_wp8.zip",
+     "name": "OpenLara_wp8.zip",
+     "size": 461861
+    },
+    {
+     "downloadURL": "https://github.com/XProger/OpenLara/releases/download/latest/OpenLara_xb1.zip",
+     "name": "OpenLara_xb1.zip",
+     "size": 555796
+    },
+    {
+     "downloadURL": "https://github.com/XProger/OpenLara/releases/download/latest/OpenLara_xbox.zip",
+     "name": "OpenLara_xbox.zip",
+     "size": 487375
+    }
+   ],
+   "name": "OpenLara",
+   "pageURL": "https://github.com/XProger/OpenLara/releases/tag/latest",
+   "publishedAt": "2019-01-11T07:42:30Z",
+   "tag": "latest"
+  },
+  "ZDoom/Raze": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/ZDoom/Raze/releases/download/1.11.0/Raze-1.11.0-windows-pdb.7z",
+     "name": "Raze-1.11.0-windows-pdb.7z",
+     "size": 11764197
+    },
+    {
+     "downloadURL": "https://github.com/ZDoom/Raze/releases/download/1.11.0/Raze-1.11.0b-windows.zip",
+     "name": "Raze-1.11.0b-windows.zip",
+     "size": 18364194
+    },
+    {
+     "downloadURL": "https://github.com/ZDoom/Raze/releases/download/1.11.0/raze-macos-1.11.0.zip",
+     "name": "raze-macos-1.11.0.zip",
+     "size": 31930373
+    }
+   ],
+   "name": "1.11.0",
+   "pageURL": "https://github.com/ZDoom/Raze/releases/tag/1.11.0",
+   "publishedAt": "2025-02-22T17:47:27Z",
+   "tag": "1.11.0"
+  },
+  "ZDoom/gzdoom": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/ZDoom/gzdoom/releases/download/g4.14.2/gzdoom-4-14-2-macos.zip",
+     "name": "gzdoom-4-14-2-macos.zip",
+     "size": 36442242
+    },
+    {
+     "downloadURL": "https://github.com/ZDoom/gzdoom/releases/download/g4.14.2/gzdoom-4-14-2-windows-pdb.7z",
+     "name": "gzdoom-4-14-2-windows-pdb.7z",
+     "size": 12830776
+    },
+    {
+     "downloadURL": "https://github.com/ZDoom/gzdoom/releases/download/g4.14.2/gzdoom-4-14-2-windows.zip",
+     "name": "gzdoom-4-14-2-windows.zip",
+     "size": 21879627
+    },
+    {
+     "downloadURL": "https://github.com/ZDoom/gzdoom/releases/download/g4.14.2/gzdoom_4.14.2_amd64.deb",
+     "name": "gzdoom_4.14.2_amd64.deb",
+     "size": 19836908
+    },
+    {
+     "downloadURL": "https://github.com/ZDoom/gzdoom/releases/download/g4.14.2/gzdoom_4.14.2_arm64.deb",
+     "name": "gzdoom_4.14.2_arm64.deb",
+     "size": 18394048
+    }
+   ],
+   "name": "GZDoom g4.14.2",
+   "pageURL": "https://github.com/ZDoom/gzdoom/releases/tag/g4.14.2",
+   "publishedAt": "2025-05-03T10:10:18Z",
+   "tag": "g4.14.2"
+  },
+  "Zelda64Recomp/Zelda64Recomp": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/Zelda64Recomp/Zelda64Recomp/releases/download/v1.2.2/Zelda64Recompiled-v1.2.2-Linux-ARM64.zip",
+     "name": "Zelda64Recompiled-v1.2.2-Linux-ARM64.zip",
+     "size": 19228944
+    },
+    {
+     "downloadURL": "https://github.com/Zelda64Recomp/Zelda64Recomp/releases/download/v1.2.2/Zelda64Recompiled-v1.2.2-Linux-Flatpak-X64.zip",
+     "name": "Zelda64Recompiled-v1.2.2-Linux-Flatpak-X64.zip",
+     "size": 13024507
+    },
+    {
+     "downloadURL": "https://github.com/Zelda64Recomp/Zelda64Recomp/releases/download/v1.2.2/Zelda64Recompiled-v1.2.2-Linux-X64.zip",
+     "name": "Zelda64Recompiled-v1.2.2-Linux-X64.zip",
+     "size": 18638525
+    },
+    {
+     "downloadURL": "https://github.com/Zelda64Recomp/Zelda64Recomp/releases/download/v1.2.2/Zelda64Recompiled-v1.2.2-macOS.zip",
+     "name": "Zelda64Recompiled-v1.2.2-macOS.zip",
+     "size": 32315959
+    },
+    {
+     "downloadURL": "https://github.com/Zelda64Recomp/Zelda64Recomp/releases/download/v1.2.2/Zelda64Recompiled-v1.2.2-Windows.zip",
+     "name": "Zelda64Recompiled-v1.2.2-Windows.zip",
+     "size": 28940501
+    }
+   ],
+   "name": "v1.2.2",
+   "pageURL": "https://github.com/Zelda64Recomp/Zelda64Recomp/releases/tag/v1.2.2",
+   "publishedAt": "2025-08-27T00:58:35Z",
+   "tag": "v1.2.2"
+  },
+  "ZeldaWWHDRecomp/ZeldaWWHDRecomp": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/releases/download/v0.5.1/SHA256SUMS.txt",
+     "name": "SHA256SUMS.txt",
+     "size": 935
+    },
+    {
+     "downloadURL": "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/releases/download/v0.5.1/vt-report.json",
+     "name": "vt-report.json",
+     "size": 7157
+    },
+    {
+     "downloadURL": "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/releases/download/v0.5.1/WindWakerHD-v0.5.1-android-arm64.apk",
+     "name": "WindWakerHD-v0.5.1-android-arm64.apk",
+     "size": 155487121
+    },
+    {
+     "downloadURL": "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/releases/download/v0.5.1/WindWakerHD-v0.5.1-android-x86_64.apk",
+     "name": "WindWakerHD-v0.5.1-android-x86_64.apk",
+     "size": 158598877
+    },
+    {
+     "downloadURL": "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/releases/download/v0.5.1/WindWakerHD-v0.5.1-linux-aarch64.AppImage",
+     "name": "WindWakerHD-v0.5.1-linux-aarch64.AppImage",
+     "size": 126343688
+    },
+    {
+     "downloadURL": "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/releases/download/v0.5.1/WindWakerHD-v0.5.1-linux-aarch64.zip",
+     "name": "WindWakerHD-v0.5.1-linux-aarch64.zip",
+     "size": 148768008
+    },
+    {
+     "downloadURL": "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/releases/download/v0.5.1/WindWakerHD-v0.5.1-linux-x86_64.AppImage",
+     "name": "WindWakerHD-v0.5.1-linux-x86_64.AppImage",
+     "size": 124991992
+    },
+    {
+     "downloadURL": "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/releases/download/v0.5.1/WindWakerHD-v0.5.1-linux-x86_64.zip",
+     "name": "WindWakerHD-v0.5.1-linux-x86_64.zip",
+     "size": 145841808
+    },
+    {
+     "downloadURL": "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/releases/download/v0.5.1/WindWakerHD-v0.5.1-macos-arm64.zip",
+     "name": "WindWakerHD-v0.5.1-macos-arm64.zip",
+     "size": 26719203
+    },
+    {
+     "downloadURL": "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/releases/download/v0.5.1/WindWakerHD-v0.5.1-windows-arm64.zip",
+     "name": "WindWakerHD-v0.5.1-windows-arm64.zip",
+     "size": 39578426
+    },
+    {
+     "downloadURL": "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/releases/download/v0.5.1/WindWakerHD-v0.5.1-windows-x86_64.zip",
+     "name": "WindWakerHD-v0.5.1-windows-x86_64.zip",
+     "size": 41201612
+    }
+   ],
+   "name": "v0.5.1",
+   "pageURL": "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/releases/tag/v0.5.1",
+   "publishedAt": "2026-11-06T14:33:31Z",
+   "tag": "v0.5.1"
+  },
+  "afritz1/OpenTESArena": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/afritz1/OpenTESArena/releases/download/opentesarena-0.18.0/opentesarena-0.18.0-linux_rpi5.tar.gz",
+     "name": "opentesarena-0.18.0-linux_rpi5.tar.gz",
+     "size": 71834784
+    },
+    {
+     "downloadURL": "https://github.com/afritz1/OpenTESArena/releases/download/opentesarena-0.18.0/opentesarena-0.18.0-linux_x86-64.tar.gz",
+     "name": "opentesarena-0.18.0-linux_x86-64.tar.gz",
+     "size": 74489012
+    },
+    {
+     "downloadURL": "https://github.com/afritz1/OpenTESArena/releases/download/opentesarena-0.18.0/opentesarena-0.18.0-macos_arm64.dmg",
+     "name": "opentesarena-0.18.0-macos_arm64.dmg",
+     "size": 9383002
+    },
+    {
+     "downloadURL": "https://github.com/afritz1/OpenTESArena/releases/download/opentesarena-0.18.0/opentesarena-0.18.0-windows_x86-64.zip",
+     "name": "opentesarena-0.18.0-windows_x86-64.zip",
+     "size": 5169920
+    }
+   ],
+   "name": "OpenTESArena 0.18.0",
+   "pageURL": "https://github.com/afritz1/OpenTESArena/releases/tag/opentesarena-0.18.0",
+   "publishedAt": "2026-08-13T03:56:58Z",
+   "tag": "opentesarena-0.18.0"
+  },
+  "alexbatalov/fallout1-ce": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/alexbatalov/fallout1-ce/releases/download/v1.1.0/fallout-ce-android.apk",
+     "name": "fallout-ce-android.apk",
+     "size": 5251181
+    },
+    {
+     "downloadURL": "https://github.com/alexbatalov/fallout1-ce/releases/download/v1.1.0/fallout-ce-ios.ipa",
+     "name": "fallout-ce-ios.ipa",
+     "size": 7352921
+    },
+    {
+     "downloadURL": "https://github.com/alexbatalov/fallout1-ce/releases/download/v1.1.0/fallout-ce-linux-x64.tar.gz",
+     "name": "fallout-ce-linux-x64.tar.gz",
+     "size": 3645253
+    },
+    {
+     "downloadURL": "https://github.com/alexbatalov/fallout1-ce/releases/download/v1.1.0/fallout-ce-linux-x86.tar.gz",
+     "name": "fallout-ce-linux-x86.tar.gz",
+     "size": 3486492
+    },
+    {
+     "downloadURL": "https://github.com/alexbatalov/fallout1-ce/releases/download/v1.1.0/fallout-ce-macos.dmg",
+     "name": "fallout-ce-macos.dmg",
+     "size": 5049524
+    },
+    {
+     "downloadURL": "https://github.com/alexbatalov/fallout1-ce/releases/download/v1.1.0/fallout-ce-windows-x64.zip",
+     "name": "fallout-ce-windows-x64.zip",
+     "size": 1285574
+    },
+    {
+     "downloadURL": "https://github.com/alexbatalov/fallout1-ce/releases/download/v1.1.0/fallout-ce-windows-x86.zip",
+     "name": "fallout-ce-windows-x86.zip",
+     "size": 1107679
+    }
+   ],
+   "name": "March 2024 (version 1.1)",
+   "pageURL": "https://github.com/alexbatalov/fallout1-ce/releases/tag/v1.1.0",
+   "publishedAt": "2024-03-03T19:08:06Z",
+   "tag": "v1.1.0"
+  },
+  "alexbatalov/fallout2-ce": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/alexbatalov/fallout2-ce/releases/download/v1.3.0/fallout2-ce-android.apk",
+     "name": "fallout2-ce-android.apk",
+     "size": 6486987
+    },
+    {
+     "downloadURL": "https://github.com/alexbatalov/fallout2-ce/releases/download/v1.3.0/fallout2-ce-ios.ipa",
+     "name": "fallout2-ce-ios.ipa",
+     "size": 6668563
+    },
+    {
+     "downloadURL": "https://github.com/alexbatalov/fallout2-ce/releases/download/v1.3.0/fallout2-ce-linux-x64.tar.gz",
+     "name": "fallout2-ce-linux-x64.tar.gz",
+     "size": 5360178
+    },
+    {
+     "downloadURL": "https://github.com/alexbatalov/fallout2-ce/releases/download/v1.3.0/fallout2-ce-linux-x86.tar.gz",
+     "name": "fallout2-ce-linux-x86.tar.gz",
+     "size": 5181378
+    },
+    {
+     "downloadURL": "https://github.com/alexbatalov/fallout2-ce/releases/download/v1.3.0/fallout2-ce-macos.dmg",
+     "name": "fallout2-ce-macos.dmg",
+     "size": 4910819
+    },
+    {
+     "downloadURL": "https://github.com/alexbatalov/fallout2-ce/releases/download/v1.3.0/fallout2-ce-windows-x64.zip",
+     "name": "fallout2-ce-windows-x64.zip",
+     "size": 1407974
+    },
+    {
+     "downloadURL": "https://github.com/alexbatalov/fallout2-ce/releases/download/v1.3.0/fallout2-ce-windows-x86.zip",
+     "name": "fallout2-ce-windows-x86.zip",
+     "size": 1212442
+    }
+   ],
+   "name": "April 2024 (version 1.3)",
+   "pageURL": "https://github.com/alexbatalov/fallout2-ce/releases/tag/v1.3.0",
+   "publishedAt": "2024-04-21T10:16:02Z",
+   "tag": "v1.3.0"
+  },
+  "birabittoh/NocturneRecomp": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/birabittoh/NocturneRecomp/releases/download/v1.5.2/nocturnerecomp-v1.5.2-android-arm64.apk",
+     "name": "nocturnerecomp-v1.5.2-android-arm64.apk",
+     "size": 36964156
+    },
+    {
+     "downloadURL": "https://github.com/birabittoh/NocturneRecomp/releases/download/v1.5.2/nocturnerecomp-v1.5.2-linux-amd64.tar.gz",
+     "name": "nocturnerecomp-v1.5.2-linux-amd64.tar.gz",
+     "size": 30929178
+    },
+    {
+     "downloadURL": "https://github.com/birabittoh/NocturneRecomp/releases/download/v1.5.2/nocturnerecomp-v1.5.2-linux-arm64.tar.gz",
+     "name": "nocturnerecomp-v1.5.2-linux-arm64.tar.gz",
+     "size": 32295458
+    },
+    {
+     "downloadURL": "https://github.com/birabittoh/NocturneRecomp/releases/download/v1.5.2/nocturnerecomp-v1.5.2-mac-amd64.dmg",
+     "name": "nocturnerecomp-v1.5.2-mac-amd64.dmg",
+     "size": 27169589
+    },
+    {
+     "downloadURL": "https://github.com/birabittoh/NocturneRecomp/releases/download/v1.5.2/nocturnerecomp-v1.5.2-mac-arm64.dmg",
+     "name": "nocturnerecomp-v1.5.2-mac-arm64.dmg",
+     "size": 27214168
+    },
+    {
+     "downloadURL": "https://github.com/birabittoh/NocturneRecomp/releases/download/v1.5.2/nocturnerecomp-v1.5.2-win-amd64.zip",
+     "name": "nocturnerecomp-v1.5.2-win-amd64.zip",
+     "size": 20317813
+    }
+   ],
+   "name": "NocturneRecomp v1.5.2",
+   "pageURL": "https://github.com/birabittoh/NocturneRecomp/releases/tag/v1.5.2",
+   "publishedAt": "2026-11-05T17:38:39Z",
+   "tag": "v1.5.2"
+  },
+  "bvschaik/julius": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/bvschaik/julius/releases/download/v1.8.0/julius-1.8.0-android.apk",
+     "name": "julius-1.8.0-android.apk",
+     "size": 9323591
+    },
+    {
+     "downloadURL": "https://github.com/bvschaik/julius/releases/download/v1.8.0/julius-1.8.0-emscripten.zip",
+     "name": "julius-1.8.0-emscripten.zip",
+     "size": 1149217
+    },
+    {
+     "downloadURL": "https://github.com/bvschaik/julius/releases/download/v1.8.0/julius-1.8.0-linux-x86_64.zip",
+     "name": "julius-1.8.0-linux-x86_64.zip",
+     "size": 743465
+    },
+    {
+     "downloadURL": "https://github.com/bvschaik/julius/releases/download/v1.8.0/julius-1.8.0-linux.AppImage",
+     "name": "julius-1.8.0-linux.AppImage",
+     "size": 8104440
+    },
+    {
+     "downloadURL": "https://github.com/bvschaik/julius/releases/download/v1.8.0/julius-1.8.0-linux.flatpak",
+     "name": "julius-1.8.0-linux.flatpak",
+     "size": 2815648
+    },
+    {
+     "downloadURL": "https://github.com/bvschaik/julius/releases/download/v1.8.0/julius-1.8.0-mac.dmg",
+     "name": "julius-1.8.0-mac.dmg",
+     "size": 5340503
+    },
+    {
+     "downloadURL": "https://github.com/bvschaik/julius/releases/download/v1.8.0/julius-1.8.0-source.tar.gz",
+     "name": "julius-1.8.0-source.tar.gz",
+     "size": 8159940
+    },
+    {
+     "downloadURL": "https://github.com/bvschaik/julius/releases/download/v1.8.0/julius-1.8.0-source.zip",
+     "name": "julius-1.8.0-source.zip",
+     "size": 8457487
+    },
+    {
+     "downloadURL": "https://github.com/bvschaik/julius/releases/download/v1.8.0/julius-1.8.0-switch.zip",
+     "name": "julius-1.8.0-switch.zip",
+     "size": 3851976
+    },
+    {
+     "downloadURL": "https://github.com/bvschaik/julius/releases/download/v1.8.0/julius-1.8.0-vita.vpk",
+     "name": "julius-1.8.0-vita.vpk",
+     "size": 2838611
+    },
+    {
+     "downloadURL": "https://github.com/bvschaik/julius/releases/download/v1.8.0/julius-1.8.0-windows.zip",
+     "name": "julius-1.8.0-windows.zip",
+     "size": 1738805
+    }
+   ],
+   "name": "Julius 1.8.0",
+   "pageURL": "https://github.com/bvschaik/julius/releases/tag/v1.8.0",
+   "publishedAt": "2025-07-31T17:46:57Z",
+   "tag": "v1.8.0"
+  },
+  "chocolate-doom/chocolate-doom": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/chocolate-doom/chocolate-doom/releases/download/chocolate-doom-3.1.1/chocolate-doom-3.1.1-arm64.dmg",
+     "name": "chocolate-doom-3.1.1-arm64.dmg",
+     "size": 6610011
+    },
+    {
+     "downloadURL": "https://github.com/chocolate-doom/chocolate-doom/releases/download/chocolate-doom-3.1.1/chocolate-doom-3.1.1-win64.zip",
+     "name": "chocolate-doom-3.1.1-win64.zip",
+     "size": 9798661
+    },
+    {
+     "downloadURL": "https://github.com/chocolate-doom/chocolate-doom/releases/download/chocolate-doom-3.1.1/chocolate-doom-3.1.1-x86.dmg",
+     "name": "chocolate-doom-3.1.1-x86.dmg",
+     "size": 6914612
+    },
+    {
+     "downloadURL": "https://github.com/chocolate-doom/chocolate-doom/releases/download/chocolate-doom-3.1.1/chocolate-heretic-3.1.1-win64.zip",
+     "name": "chocolate-heretic-3.1.1-win64.zip",
+     "size": 9791782
+    },
+    {
+     "downloadURL": "https://github.com/chocolate-doom/chocolate-doom/releases/download/chocolate-doom-3.1.1/chocolate-hexen-3.1.1-win64.zip",
+     "name": "chocolate-hexen-3.1.1-win64.zip",
+     "size": 9850766
+    },
+    {
+     "downloadURL": "https://github.com/chocolate-doom/chocolate-doom/releases/download/chocolate-doom-3.1.1/chocolate-strife-3.1.1-win64.zip",
+     "name": "chocolate-strife-3.1.1-win64.zip",
+     "size": 9808771
+    }
+   ],
+   "name": "Chocolate Doom 3.1.1",
+   "pageURL": "https://github.com/chocolate-doom/chocolate-doom/releases/tag/chocolate-doom-3.1.1",
+   "publishedAt": "2025-08-16T17:23:36Z",
+   "tag": "chocolate-doom-3.1.1"
+  },
+  "chrissotraidis/bananapad": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/chrissotraidis/bananapad/releases/download/v0.3.1/BananaPad-v0.3.1-ios-shell.ipa",
+     "name": "BananaPad-v0.3.1-ios-shell.ipa",
+     "size": 5489863
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/bananapad/releases/download/v0.3.1/BananaPad-v0.3.1-padmint.json",
+     "name": "BananaPad-v0.3.1-padmint.json",
+     "size": 6388
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/bananapad/releases/download/v0.3.1/SHA256SUMS",
+     "name": "SHA256SUMS",
+     "size": 193
+    }
+   ],
+   "name": "BananaPad 0.3.1",
+   "pageURL": "https://github.com/chrissotraidis/bananapad/releases/tag/v0.3.1",
+   "publishedAt": "2026-11-15T10:47:58Z",
+   "tag": "v0.3.1"
+  },
+  "chrissotraidis/bearbirdpad": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/chrissotraidis/bearbirdpad/releases/download/v0.3.1/BearBirdPad-v0.3.1-ios-shell.ipa",
+     "name": "BearBirdPad-v0.3.1-ios-shell.ipa",
+     "size": 8527220
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/bearbirdpad/releases/download/v0.3.1/BearBirdPad-v0.3.1-padmint.json",
+     "name": "BearBirdPad-v0.3.1-padmint.json",
+     "size": 6383
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/bearbirdpad/releases/download/v0.3.1/SHA256SUMS",
+     "name": "SHA256SUMS",
+     "size": 197
+    }
+   ],
+   "name": "BearBirdPad 0.3.1",
+   "pageURL": "https://github.com/chrissotraidis/bearbirdpad/releases/tag/v0.3.1",
+   "publishedAt": "2026-11-15T10:48:04Z",
+   "tag": "v0.3.1"
+  },
+  "chrissotraidis/bluewake": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/chrissotraidis/bluewake/releases/download/v0.12.0/BlueWake-v0.12.0-ios-unsigned.ipa",
+     "name": "BlueWake-v0.12.0-ios-unsigned.ipa",
+     "size": 6091331
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/bluewake/releases/download/v0.12.0/BlueWake-v0.12.0-linux-x86_64.AppImage",
+     "name": "BlueWake-v0.12.0-linux-x86_64.AppImage",
+     "size": 243190264
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/bluewake/releases/download/v0.12.0/BlueWake-v0.12.0-padmint.json",
+     "name": "BlueWake-v0.12.0-padmint.json",
+     "size": 5531
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/bluewake/releases/download/v0.12.0/BlueWake-v0.12.0-source.zip",
+     "name": "BlueWake-v0.12.0-source.zip",
+     "size": 9958550
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/bluewake/releases/download/v0.12.0/BlueWake-v0.12.0-windows-x64.zip",
+     "name": "BlueWake-v0.12.0-windows-x64.zip",
+     "size": 212667573
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/bluewake/releases/download/v0.12.0/SHA256SUMS",
+     "name": "SHA256SUMS",
+     "size": 494
+    }
+   ],
+   "name": "BlueWake 0.12.0",
+   "pageURL": "https://github.com/chrissotraidis/bluewake/releases/tag/v0.12.0",
+   "publishedAt": "2026-11-15T23:20:16Z",
+   "tag": "v0.12.0"
+  },
+  "chrissotraidis/dinopad": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/chrissotraidis/dinopad/releases/download/v0.3.2/DinoPad-v0.3.2-ios-shell.ipa",
+     "name": "DinoPad-v0.3.2-ios-shell.ipa",
+     "size": 10113180
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/dinopad/releases/download/v0.3.2/DinoPad-v0.3.2-padmint.json",
+     "name": "DinoPad-v0.3.2-padmint.json",
+     "size": 7470
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/dinopad/releases/download/v0.3.2/SHA256SUMS",
+     "name": "SHA256SUMS",
+     "size": 189
+    }
+   ],
+   "name": "DinoPad 0.3.2",
+   "pageURL": "https://github.com/chrissotraidis/dinopad/releases/tag/v0.3.2",
+   "publishedAt": "2026-11-15T10:48:29Z",
+   "tag": "v0.3.2"
+  },
+  "chrissotraidis/goldenpad": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/chrissotraidis/goldenpad/releases/download/v0.3.2/GoldenPad-v0.3.2-ios-shell.ipa",
+     "name": "GoldenPad-v0.3.2-ios-shell.ipa",
+     "size": 5996621
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/goldenpad/releases/download/v0.3.2/GoldenPad-v0.3.2-padmint.json",
+     "name": "GoldenPad-v0.3.2-padmint.json",
+     "size": 7388
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/goldenpad/releases/download/v0.3.2/SHA256SUMS",
+     "name": "SHA256SUMS",
+     "size": 193
+    }
+   ],
+   "name": "GoldenPad 0.3.2",
+   "pageURL": "https://github.com/chrissotraidis/goldenpad/releases/tag/v0.3.2",
+   "publishedAt": "2026-11-15T23:49:36Z",
+   "tag": "v0.3.2"
+  },
+  "chrissotraidis/kartpad": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/chrissotraidis/kartpad/releases/download/v0.8.12/KartPad-v0.8.12-android.apk",
+     "name": "KartPad-v0.8.12-android.apk",
+     "size": 70621924
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/kartpad/releases/download/v0.8.12/KartPad-v0.8.12-ios-for-padmint.ipa",
+     "name": "KartPad-v0.8.12-ios-for-padmint.ipa",
+     "size": 9451630
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/kartpad/releases/download/v0.8.12/KartPad-v0.8.12-notices.zip",
+     "name": "KartPad-v0.8.12-notices.zip",
+     "size": 31388
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/kartpad/releases/download/v0.8.12/KartPad-v0.8.12-padmint.json",
+     "name": "KartPad-v0.8.12-padmint.json",
+     "size": 6168
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/kartpad/releases/download/v0.8.12/KartPad-v0.8.12-source.tar.gz",
+     "name": "KartPad-v0.8.12-source.tar.gz",
+     "size": 35988413
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/kartpad/releases/download/v0.8.12/SHA256SUMS",
+     "name": "SHA256SUMS",
+     "size": 481
+    }
+   ],
+   "name": "KartPad 0.8.12: Driver Advice, Experimental 120 FPS and Mac Fixes",
+   "pageURL": "https://github.com/chrissotraidis/kartpad/releases/tag/v0.8.12",
+   "publishedAt": "2026-11-20T07:08:42Z",
+   "tag": "v0.8.12"
+  },
+  "chrissotraidis/meleepad": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/chrissotraidis/meleepad/releases/download/v0.3.1/MeleePad-v0.3.1-ios-unsigned.ipa",
+     "name": "MeleePad-v0.3.1-ios-unsigned.ipa",
+     "size": 15776450
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/meleepad/releases/download/v0.3.1/MeleePad-v0.3.1-padmint.json",
+     "name": "MeleePad-v0.3.1-padmint.json",
+     "size": 8691
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/meleepad/releases/download/v0.3.1/SHA256SUMS",
+     "name": "SHA256SUMS",
+     "size": 194
+    }
+   ],
+   "name": "MeleePad 0.3.1 \u2014 touch controls with a controller",
+   "pageURL": "https://github.com/chrissotraidis/meleepad/releases/tag/v0.3.1",
+   "publishedAt": "2026-11-15T23:49:39Z",
+   "tag": "v0.3.1"
+  },
+  "chrissotraidis/padmint": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/chrissotraidis/padmint/releases/download/v0.6.10/PadMint-ios-unsigned.ipa",
+     "name": "PadMint-ios-unsigned.ipa",
+     "size": 1106276
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/padmint/releases/download/v0.6.10/PadMint-linux.zip",
+     "name": "PadMint-linux.zip",
+     "size": 4479805
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/padmint/releases/download/v0.6.10/PadMint-macos.zip",
+     "name": "PadMint-macos.zip",
+     "size": 4480349
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/padmint/releases/download/v0.6.10/PadMint-windows.zip",
+     "name": "PadMint-windows.zip",
+     "size": 15491527
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/padmint/releases/download/v0.6.10/SHA256SUMS",
+     "name": "SHA256SUMS",
+     "size": 345
+    }
+   ],
+   "name": "PadMint 0.6.10 \u2014 ETPad",
+   "pageURL": "https://github.com/chrissotraidis/padmint/releases/tag/v0.6.10",
+   "publishedAt": "2026-11-18T12:56:45Z",
+   "tag": "v0.6.10"
+  },
+  "chrissotraidis/squirrelpad": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/chrissotraidis/squirrelpad/releases/download/v0.2.1/SHA256SUMS",
+     "name": "SHA256SUMS",
+     "size": 197
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/squirrelpad/releases/download/v0.2.1/SquirrelPad-v0.2.1-ios-shell.ipa",
+     "name": "SquirrelPad-v0.2.1-ios-shell.ipa",
+     "size": 6812428
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/squirrelpad/releases/download/v0.2.1/SquirrelPad-v0.2.1-padmint.json",
+     "name": "SquirrelPad-v0.2.1-padmint.json",
+     "size": 6165
+    }
+   ],
+   "name": "SquirrelPad 0.2.1",
+   "pageURL": "https://github.com/chrissotraidis/squirrelpad/releases/tag/v0.2.1",
+   "publishedAt": "2026-11-15T23:49:46Z",
+   "tag": "v0.2.1"
+  },
+  "chrissotraidis/sunpad": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/chrissotraidis/sunpad/releases/download/v0.3.2/SHA256SUMS",
+     "name": "SHA256SUMS",
+     "size": 190
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/sunpad/releases/download/v0.3.2/SunPad-v0.3.2-ios-unsigned.ipa",
+     "name": "SunPad-v0.3.2-ios-unsigned.ipa",
+     "size": 12893285
+    },
+    {
+     "downloadURL": "https://github.com/chrissotraidis/sunpad/releases/download/v0.3.2/SunPad-v0.3.2-padmint.json",
+     "name": "SunPad-v0.3.2-padmint.json",
+     "size": 8872
+    }
+   ],
+   "name": "SunPad 0.3.2 \u2014 get touch controls back with a controller connected",
+   "pageURL": "https://github.com/chrissotraidis/sunpad/releases/tag/v0.3.2",
+   "publishedAt": "2026-11-15T23:49:43Z",
+   "tag": "v0.3.2"
+  },
+  "coop-deluxe/sm64coopdx": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/coop-deluxe/sm64coopdx/releases/download/v1.5.1/sm64coopdx_Linux.zip",
+     "name": "sm64coopdx_Linux.zip",
+     "size": 55414437
+    },
+    {
+     "downloadURL": "https://github.com/coop-deluxe/sm64coopdx/releases/download/v1.5.1/sm64coopdx_macOS_ARM.zip",
+     "name": "sm64coopdx_macOS_ARM.zip",
+     "size": 45322557
+    },
+    {
+     "downloadURL": "https://github.com/coop-deluxe/sm64coopdx/releases/download/v1.5.1/sm64coopdx_macOS_Intel.zip",
+     "name": "sm64coopdx_macOS_Intel.zip",
+     "size": 44493092
+    },
+    {
+     "downloadURL": "https://github.com/coop-deluxe/sm64coopdx/releases/download/v1.5.1/sm64coopdx_SteamOS.zip",
+     "name": "sm64coopdx_SteamOS.zip",
+     "size": 55414933
+    },
+    {
+     "downloadURL": "https://github.com/coop-deluxe/sm64coopdx/releases/download/v1.5.1/sm64coopdx_Windows.zip",
+     "name": "sm64coopdx_Windows.zip",
+     "size": 41801915
+    }
+   ],
+   "name": "Super Mario 64 Coop Deluxe v1.5.1",
+   "pageURL": "https://github.com/coop-deluxe/sm64coopdx/releases/tag/v1.5.1",
+   "publishedAt": "2026-06-01T02:00:11Z",
+   "tag": "v1.5.1"
+  },
+  "deathkiller/jazz2": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/deathkiller/jazz2/releases/download/3.9.0/Jazz2_3.9.0_Android.zip",
+     "name": "Jazz2_3.9.0_Android.zip",
+     "size": 29585345
+    },
+    {
+     "downloadURL": "https://github.com/deathkiller/jazz2/releases/download/3.9.0/Jazz2_3.9.0_Linux.zip",
+     "name": "Jazz2_3.9.0_Linux.zip",
+     "size": 306570199
+    },
+    {
+     "downloadURL": "https://github.com/deathkiller/jazz2/releases/download/3.9.0/Jazz2_3.9.0_MacOS.zip",
+     "name": "Jazz2_3.9.0_MacOS.zip",
+     "size": 25347357
+    },
+    {
+     "downloadURL": "https://github.com/deathkiller/jazz2/releases/download/3.9.0/Jazz2_3.9.0_PSP.zip",
+     "name": "Jazz2_3.9.0_PSP.zip",
+     "size": 3366939
+    },
+    {
+     "downloadURL": "https://github.com/deathkiller/jazz2/releases/download/3.9.0/Jazz2_3.9.0_Switch.zip",
+     "name": "Jazz2_3.9.0_Switch.zip",
+     "size": 5798937
+    },
+    {
+     "downloadURL": "https://github.com/deathkiller/jazz2/releases/download/3.9.0/Jazz2_3.9.0_UWP.zip",
+     "name": "Jazz2_3.9.0_UWP.zip",
+     "size": 4407315
+    },
+    {
+     "downloadURL": "https://github.com/deathkiller/jazz2/releases/download/3.9.0/Jazz2_3.9.0_Vita.zip",
+     "name": "Jazz2_3.9.0_Vita.zip",
+     "size": 5044215
+    },
+    {
+     "downloadURL": "https://github.com/deathkiller/jazz2/releases/download/3.9.0/Jazz2_3.9.0_Windows.zip",
+     "name": "Jazz2_3.9.0_Windows.zip",
+     "size": 25506420
+    }
+   ],
+   "name": "3.9.0: Reworked physics",
+   "pageURL": "https://github.com/deathkiller/jazz2/releases/tag/3.9.0",
+   "publishedAt": "2026-10-17T10:14:54Z",
+   "tag": "3.9.0"
+  },
+  "dethrace-labs/dethrace": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/dethrace-labs/dethrace/releases/download/v0.10.1/dethrace-v0.10.1-linux-arm64.tar.gz",
+     "name": "dethrace-v0.10.1-linux-arm64.tar.gz",
+     "size": 5546651
+    },
+    {
+     "downloadURL": "https://github.com/dethrace-labs/dethrace/releases/download/v0.10.1/dethrace-v0.10.1-linux-x64.tar.gz",
+     "name": "dethrace-v0.10.1-linux-x64.tar.gz",
+     "size": 5497771
+    },
+    {
+     "downloadURL": "https://github.com/dethrace-labs/dethrace/releases/download/v0.10.1/dethrace-v0.10.1-macos-arm64-x64.dmg",
+     "name": "dethrace-v0.10.1-macos-arm64-x64.dmg",
+     "size": 3127589
+    },
+    {
+     "downloadURL": "https://github.com/dethrace-labs/dethrace/releases/download/v0.10.1/dethrace-v0.10.1-windows-x64.zip",
+     "name": "dethrace-v0.10.1-windows-x64.zip",
+     "size": 8569430
+    },
+    {
+     "downloadURL": "https://github.com/dethrace-labs/dethrace/releases/download/v0.10.1/dethrace-v0.10.1-windows-x86.zip",
+     "name": "dethrace-v0.10.1-windows-x86.zip",
+     "size": 8173618
+    },
+    {
+     "downloadURL": "https://github.com/dethrace-labs/dethrace/releases/download/v0.10.1/reccmp-output.txt",
+     "name": "reccmp-output.txt",
+     "size": 415
+    }
+   ],
+   "name": "Dethrace 0.10.1",
+   "pageURL": "https://github.com/dethrace-labs/dethrace/releases/tag/v0.10.1",
+   "publishedAt": "2026-02-22T21:40:00Z",
+   "tag": "v0.10.1"
+  },
+  "diasurgical/devilutionX": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-3ds.3dsx",
+     "name": "devilutionx-3ds.3dsx",
+     "size": 13942660
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-3ds.cia",
+     "name": "devilutionx-3ds.cia",
+     "size": 13210560
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-amiga-m68k",
+     "name": "devilutionx-amiga-m68k",
+     "size": 3183704
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-android.apk",
+     "name": "devilutionx-android.apk",
+     "size": 18840504
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-iOS.ipa",
+     "name": "devilutionx-iOS.ipa",
+     "size": 8603944
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-lepus.opk",
+     "name": "devilutionx-lepus.opk",
+     "size": 6844416
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-linux-aarch64.tar.xz",
+     "name": "devilutionx-linux-aarch64.tar.xz",
+     "size": 21826732
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-linux-i386.tar.xz",
+     "name": "devilutionx-linux-i386.tar.xz",
+     "size": 22506424
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-linux-x86_64.appimage",
+     "name": "devilutionx-linux-x86_64.appimage",
+     "size": 14158328
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-linux-x86_64.tar.xz",
+     "name": "devilutionx-linux-x86_64.tar.xz",
+     "size": 28549676
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-macOS-10.4-tiger-ppc.dmg",
+     "name": "devilutionx-macOS-10.4-tiger-ppc.dmg",
+     "size": 6745467
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-macOS-intel-x86.dmg",
+     "name": "devilutionx-macOS-intel-x86.dmg",
+     "size": 6682539
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-macOS-universal.dmg",
+     "name": "devilutionx-macOS-universal.dmg",
+     "size": 26642310
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-miyoo-mini-miniui.zip",
+     "name": "devilutionx-miyoo-mini-miniui.zip",
+     "size": 5980172
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-miyoo-mini-onion-os.zip",
+     "name": "devilutionx-miyoo-mini-onion-os.zip",
+     "size": 6587896
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-ps4.pkg",
+     "name": "devilutionx-ps4.pkg",
+     "size": 14614528
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-retrofw.opk",
+     "name": "devilutionx-retrofw.opk",
+     "size": 6086656
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-rg350.opk",
+     "name": "devilutionx-rg350.opk",
+     "size": 6897664
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-src-fully-vendored.tar.xz",
+     "name": "devilutionx-src-fully-vendored.tar.xz",
+     "size": 34660480
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-src.tar.xz",
+     "name": "devilutionx-src.tar.xz",
+     "size": 22561696
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-switch.nro",
+     "name": "devilutionx-switch.nro",
+     "size": 20887823
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-vita.vpk",
+     "name": "devilutionx-vita.vpk",
+     "size": 7599439
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-windows-i386.zip",
+     "name": "devilutionx-windows-i386.zip",
+     "size": 10442606
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-windows-x86_64.zip",
+     "name": "devilutionx-windows-x86_64.zip",
+     "size": 10482049
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-windows-xp-32bit.zip",
+     "name": "devilutionx-windows-xp-32bit.zip",
+     "size": 8523155
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-xbox-one-series.zip",
+     "name": "devilutionx-xbox-one-series.zip",
+     "size": 8430484
+    },
+    {
+     "downloadURL": "https://github.com/diasurgical/DevilutionX/releases/download/1.5.5/devilutionx-xbox.zip",
+     "name": "devilutionx-xbox.zip",
+     "size": 6635056
+    }
+   ],
+   "name": "1.5.5",
+   "pageURL": "https://github.com/diasurgical/DevilutionX/releases/tag/1.5.5",
+   "publishedAt": "2025-10-30T17:00:17Z",
+   "tag": "1.5.5"
+  },
+  "doukutsu-rs/doukutsu-rs": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/doukutsu-rs/doukutsu-rs/releases/download/1.0.0/doukutsu-rs_android_1.0.0.universal.apk",
+     "name": "doukutsu-rs_android_1.0.0.universal.apk",
+     "size": 25464237
+    },
+    {
+     "downloadURL": "https://github.com/doukutsu-rs/doukutsu-rs/releases/download/1.0.0/doukutsu-rs_linux_1.0.0.x86_64.elf",
+     "name": "doukutsu-rs_linux_1.0.0.x86_64.elf",
+     "size": 10167544
+    },
+    {
+     "downloadURL": "https://github.com/doukutsu-rs/doukutsu-rs/releases/download/1.0.0/doukutsu-rs_macos_1.0.0.arm64.zip",
+     "name": "doukutsu-rs_macos_1.0.0.arm64.zip",
+     "size": 3958896
+    },
+    {
+     "downloadURL": "https://github.com/doukutsu-rs/doukutsu-rs/releases/download/1.0.0/doukutsu-rs_macos_1.0.0.x86_64.zip",
+     "name": "doukutsu-rs_macos_1.0.0.x86_64.zip",
+     "size": 4249938
+    },
+    {
+     "downloadURL": "https://github.com/doukutsu-rs/doukutsu-rs/releases/download/1.0.0/doukutsu-rs_switch_1.0.0.arm64.nro",
+     "name": "doukutsu-rs_switch_1.0.0.arm64.nro",
+     "size": 6683797
+    },
+    {
+     "downloadURL": "https://github.com/doukutsu-rs/doukutsu-rs/releases/download/1.0.0/doukutsu-rs_windows_1.0.0.i686.exe",
+     "name": "doukutsu-rs_windows_1.0.0.i686.exe",
+     "size": 7437824
+    },
+    {
+     "downloadURL": "https://github.com/doukutsu-rs/doukutsu-rs/releases/download/1.0.0/doukutsu-rs_windows_1.0.0.x86_64.exe",
+     "name": "doukutsu-rs_windows_1.0.0.x86_64.exe",
+     "size": 8534016
+    }
+   ],
+   "name": "",
+   "pageURL": "https://github.com/doukutsu-rs/doukutsu-rs/releases/tag/1.0.0",
+   "publishedAt": "2026-06-03T21:48:02Z",
+   "tag": "1.0.0"
+  },
+  "dsda-org/dsda-doom": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/dsda-org/dsda-doom/releases/download/v0.30.1/dsda-doom-0.30.1-linux-x86_64.appimage",
+     "name": "dsda-doom-0.30.1-linux-x86_64.appimage",
+     "size": 14608888
+    },
+    {
+     "downloadURL": "https://github.com/dsda-org/dsda-doom/releases/download/v0.30.1/dsda-doom-0.30.1-mac-uni.zip",
+     "name": "dsda-doom-0.30.1-mac-uni.zip",
+     "size": 11490973
+    },
+    {
+     "downloadURL": "https://github.com/dsda-org/dsda-doom/releases/download/v0.30.1/dsda-doom-0.30.1-win-x64.zip",
+     "name": "dsda-doom-0.30.1-win-x64.zip",
+     "size": 7201902
+    }
+   ],
+   "name": "v0.30.1",
+   "pageURL": "https://github.com/dsda-org/dsda-doom/releases/tag/v0.30.1",
+   "publishedAt": "2026-10-09T19:16:04Z",
+   "tag": "v0.30.1"
+  },
+  "ec-/Quake3e": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/ec-/Quake3e/releases/download/latest/quake3e-linux-arm64.zip",
+     "name": "quake3e-linux-arm64.zip",
+     "size": 2131503
+    },
+    {
+     "downloadURL": "https://github.com/ec-/Quake3e/releases/download/latest/quake3e-linux-x86.zip",
+     "name": "quake3e-linux-x86.zip",
+     "size": 2228295
+    },
+    {
+     "downloadURL": "https://github.com/ec-/Quake3e/releases/download/latest/quake3e-linux-x86_64.zip",
+     "name": "quake3e-linux-x86_64.zip",
+     "size": 2176873
+    },
+    {
+     "downloadURL": "https://github.com/ec-/Quake3e/releases/download/latest/quake3e-macos-aarch64.zip",
+     "name": "quake3e-macos-aarch64.zip",
+     "size": 3223239
+    },
+    {
+     "downloadURL": "https://github.com/ec-/Quake3e/releases/download/latest/quake3e-macos-x86_64.zip",
+     "name": "quake3e-macos-x86_64.zip",
+     "size": 3391257
+    },
+    {
+     "downloadURL": "https://github.com/ec-/Quake3e/releases/download/latest/quake3e-windows-mingw-x86.zip",
+     "name": "quake3e-windows-mingw-x86.zip",
+     "size": 2357728
+    },
+    {
+     "downloadURL": "https://github.com/ec-/Quake3e/releases/download/latest/quake3e-windows-mingw-x86_64.zip",
+     "name": "quake3e-windows-mingw-x86_64.zip",
+     "size": 2378604
+    },
+    {
+     "downloadURL": "https://github.com/ec-/Quake3e/releases/download/latest/quake3e-windows-msvc-arm64.zip",
+     "name": "quake3e-windows-msvc-arm64.zip",
+     "size": 2237549
+    }
+   ],
+   "name": "Latest Build",
+   "pageURL": "https://github.com/ec-/Quake3e/releases/tag/latest",
+   "publishedAt": "2026-11-15T21:14:05Z",
+   "tag": "latest"
+  },
+  "flyngmt/Nookery": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/flyngmt/Nookery/releases/download/v1.0.0/Nookery-v1.0.0-android-arm64.apk",
+     "name": "Nookery-v1.0.0-android-arm64.apk",
+     "size": 45723324
+    },
+    {
+     "downloadURL": "https://github.com/flyngmt/Nookery/releases/download/v1.0.0/Nookery-v1.0.0-ios-arm64.ipa",
+     "name": "Nookery-v1.0.0-ios-arm64.ipa",
+     "size": 17474473
+    },
+    {
+     "downloadURL": "https://github.com/flyngmt/Nookery/releases/download/v1.0.0/Nookery-v1.0.0-linux-arm64.AppImage",
+     "name": "Nookery-v1.0.0-linux-arm64.AppImage",
+     "size": 23448072
+    },
+    {
+     "downloadURL": "https://github.com/flyngmt/Nookery/releases/download/v1.0.0/Nookery-v1.0.0-linux-x86_64.AppImage",
+     "name": "Nookery-v1.0.0-linux-x86_64.AppImage",
+     "size": 24492536
+    },
+    {
+     "downloadURL": "https://github.com/flyngmt/Nookery/releases/download/v1.0.0/Nookery-v1.0.0-macos-arm64.zip",
+     "name": "Nookery-v1.0.0-macos-arm64.zip",
+     "size": 17612839
+    },
+    {
+     "downloadURL": "https://github.com/flyngmt/Nookery/releases/download/v1.0.0/Nookery-v1.0.0-macos-x86_64.zip",
+     "name": "Nookery-v1.0.0-macos-x86_64.zip",
+     "size": 18824087
+    },
+    {
+     "downloadURL": "https://github.com/flyngmt/Nookery/releases/download/v1.0.0/Nookery-v1.0.0-windows-arm64.zip",
+     "name": "Nookery-v1.0.0-windows-arm64.zip",
+     "size": 29849669
+    },
+    {
+     "downloadURL": "https://github.com/flyngmt/Nookery/releases/download/v1.0.0/Nookery-v1.0.0-windows-x86_64.zip",
+     "name": "Nookery-v1.0.0-windows-x86_64.zip",
+     "size": 32404132
+    }
+   ],
+   "name": "v1.0.0",
+   "pageURL": "https://github.com/flyngmt/Nookery/releases/tag/v1.0.0",
+   "publishedAt": "2026-11-02T19:31:17Z",
+   "tag": "v1.0.0"
+  },
+  "freefrank/LostOdysseyRecomp": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/freefrank/LostOdysseyRecomp/releases/download/v1.1.0/LostOdysseyRecomp-android-arm64-v1.1.0.apk",
+     "name": "LostOdysseyRecomp-android-arm64-v1.1.0.apk",
+     "size": 47583951
+    },
+    {
+     "downloadURL": "https://github.com/freefrank/LostOdysseyRecomp/releases/download/v1.1.0/LostOdysseyRecomp-linux-x64-v1.1.0.AppImage",
+     "name": "LostOdysseyRecomp-linux-x64-v1.1.0.AppImage",
+     "size": 89672184
+    },
+    {
+     "downloadURL": "https://github.com/freefrank/LostOdysseyRecomp/releases/download/v1.1.0/LostOdysseyRecomp-linux-x64-v1.1.0.flatpak",
+     "name": "LostOdysseyRecomp-linux-x64-v1.1.0.flatpak",
+     "size": 56953896
+    },
+    {
+     "downloadURL": "https://github.com/freefrank/LostOdysseyRecomp/releases/download/v1.1.0/LostOdysseyRecomp-macos-arm64-v1.1.0.dmg",
+     "name": "LostOdysseyRecomp-macos-arm64-v1.1.0.dmg",
+     "size": 65651556
+    },
+    {
+     "downloadURL": "https://github.com/freefrank/LostOdysseyRecomp/releases/download/v1.1.0/LostOdysseyRecomp-windows-x64-v1.1.0.zip",
+     "name": "LostOdysseyRecomp-windows-x64-v1.1.0.zip",
+     "size": 154696631
+    }
+   ],
+   "name": null,
+   "pageURL": "https://github.com/freefrank/LostOdysseyRecomp/releases/tag/v1.1.0",
+   "publishedAt": "2026-10-26T01:12:52Z",
+   "tag": "v1.1.0"
+  },
+  "goliathret/EdgeOfTimeRecomp": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/goliathret/EdgeOfTimeRecomp/releases/download/v1.1/EdgeOfTimeRecomp-v1.0.0-20261030_1818-x86_64.AppImage",
+     "name": "EdgeOfTimeRecomp-v1.0.0-20261030_1818-x86_64.AppImage",
+     "size": 146901496
+    },
+    {
+     "downloadURL": "https://github.com/goliathret/EdgeOfTimeRecomp/releases/download/v1.1/EdgeOfTimeRecomp-v1.0.0-20261030_1828-mac-arm64.dmg",
+     "name": "EdgeOfTimeRecomp-v1.0.0-20261030_1828-mac-arm64.dmg",
+     "size": 145769680
+    },
+    {
+     "downloadURL": "https://github.com/goliathret/EdgeOfTimeRecomp/releases/download/v1.1/EdgeOfTimeRecomp-v1.0.0-20261030_1828-mac-arm64.zip",
+     "name": "EdgeOfTimeRecomp-v1.0.0-20261030_1828-mac-arm64.zip",
+     "size": 144464030
+    },
+    {
+     "downloadURL": "https://github.com/goliathret/EdgeOfTimeRecomp/releases/download/v1.1/EdgeOfTimeRecomp-v1.0.0-20261030_1906-win-amd64.zip",
+     "name": "EdgeOfTimeRecomp-v1.0.0-20261030_1906-win-amd64.zip",
+     "size": 192213315
+    }
+   ],
+   "name": "v1.1.0",
+   "pageURL": "https://github.com/goliathret/EdgeOfTimeRecomp/releases/tag/v1.1",
+   "publishedAt": "2026-10-30T19:18:20Z",
+   "tag": "v1.1"
+  },
+  "gothamor/gta-vcs-recomp": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/gothamor/gta-vcs-recomp/releases/download/v0.3.0/VCS-Recomp-0.3.0-macos-arm64.dmg",
+     "name": "VCS-Recomp-0.3.0-macos-arm64.dmg",
+     "size": 46833918
+    },
+    {
+     "downloadURL": "https://github.com/gothamor/gta-vcs-recomp/releases/download/v0.3.0/VCS-Recomp-0.3.0-macos-arm64.dmg.sha256",
+     "name": "VCS-Recomp-0.3.0-macos-arm64.dmg.sha256",
+     "size": 99
+    },
+    {
+     "downloadURL": "https://github.com/gothamor/gta-vcs-recomp/releases/download/v0.3.0/VCS-Recomp-0.3.0-windows.zip",
+     "name": "VCS-Recomp-0.3.0-windows.zip",
+     "size": 84818996
+    },
+    {
+     "downloadURL": "https://github.com/gothamor/gta-vcs-recomp/releases/download/v0.3.0/VCS-Recomp-0.3.0-windows.zip.sha256",
+     "name": "VCS-Recomp-0.3.0-windows.zip.sha256",
+     "size": 96
+    },
+    {
+     "downloadURL": "https://github.com/gothamor/gta-vcs-recomp/releases/download/v0.3.0/VCS-Recomp-0.3.0-x86_64.AppImage",
+     "name": "VCS-Recomp-0.3.0-x86_64.AppImage",
+     "size": 38275576
+    },
+    {
+     "downloadURL": "https://github.com/gothamor/gta-vcs-recomp/releases/download/v0.3.0/VCS-Recomp-0.3.0-x86_64.AppImage.sha256",
+     "name": "VCS-Recomp-0.3.0-x86_64.AppImage.sha256",
+     "size": 99
+    }
+   ],
+   "name": "GTA Vice City Stories Launcher v0.3.0",
+   "pageURL": "https://github.com/gothamor/gta-vcs-recomp/releases/tag/v0.3.0",
+   "publishedAt": "2026-11-14T13:15:02Z",
+   "tag": "v0.3.0"
+  },
+  "ihhub/fheroes2": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/ihhub/fheroes2/releases/download/1.1.18/fheroes2_android.zip",
+     "name": "fheroes2_android.zip",
+     "size": 27630101
+    },
+    {
+     "downloadURL": "https://github.com/ihhub/fheroes2/releases/download/1.1.18/fheroes2_macos_x86-64_SDL2.zip",
+     "name": "fheroes2_macos_x86-64_SDL2.zip",
+     "size": 5379945
+    },
+    {
+     "downloadURL": "https://github.com/ihhub/fheroes2/releases/download/1.1.18/fheroes2_psv.zip",
+     "name": "fheroes2_psv.zip",
+     "size": 14982748
+    },
+    {
+     "downloadURL": "https://github.com/ihhub/fheroes2/releases/download/1.1.18/fheroes2_switch.zip",
+     "name": "fheroes2_switch.zip",
+     "size": 8882064
+    },
+    {
+     "downloadURL": "https://github.com/ihhub/fheroes2/releases/download/1.1.18/fheroes2_ubuntu_arm64_SDL2.zip",
+     "name": "fheroes2_ubuntu_arm64_SDL2.zip",
+     "size": 5681093
+    },
+    {
+     "downloadURL": "https://github.com/ihhub/fheroes2/releases/download/1.1.18/fheroes2_ubuntu_x86-64_SDL2.zip",
+     "name": "fheroes2_ubuntu_x86-64_SDL2.zip",
+     "size": 5923454
+    },
+    {
+     "downloadURL": "https://github.com/ihhub/fheroes2/releases/download/1.1.18/fheroes2_windows_x64_SDL2.zip",
+     "name": "fheroes2_windows_x64_SDL2.zip",
+     "size": 12887302
+    },
+    {
+     "downloadURL": "https://github.com/ihhub/fheroes2/releases/download/1.1.18/fheroes2_windows_x64_SDL2_installer.exe",
+     "name": "fheroes2_windows_x64_SDL2_installer.exe",
+     "size": 36477257
+    },
+    {
+     "downloadURL": "https://github.com/ihhub/fheroes2/releases/download/1.1.18/fheroes2_windows_x86_SDL2.zip",
+     "name": "fheroes2_windows_x86_SDL2.zip",
+     "size": 12277249
+    },
+    {
+     "downloadURL": "https://github.com/ihhub/fheroes2/releases/download/1.1.18/fheroes2_windows_x86_SDL2_installer.exe",
+     "name": "fheroes2_windows_x86_SDL2_installer.exe",
+     "size": 24363934
+    }
+   ],
+   "name": "version 1.1.18",
+   "pageURL": "https://github.com/ihhub/fheroes2/releases/tag/1.1.18",
+   "publishedAt": "2026-11-08T20:45:36Z",
+   "tag": "1.1.18"
+  },
+  "isledecomp/isle-portable": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/isledecomp/isle-portable/releases/download/continuous/app-debug.apk",
+     "name": "app-debug.apk",
+     "size": 13636858
+    },
+    {
+     "downloadURL": "https://github.com/isledecomp/isle-portable/releases/download/continuous/app-release.apk",
+     "name": "app-release.apk",
+     "size": 12568628
+    },
+    {
+     "downloadURL": "https://github.com/isledecomp/isle-portable/releases/download/continuous/isle-0.1-Darwin-arm64.dmg",
+     "name": "isle-0.1-Darwin-arm64.dmg",
+     "size": 23596747
+    },
+    {
+     "downloadURL": "https://github.com/isledecomp/isle-portable/releases/download/continuous/isle-0.1-Darwin-x64.dmg",
+     "name": "isle-0.1-Darwin-x64.dmg",
+     "size": 24098789
+    },
+    {
+     "downloadURL": "https://github.com/isledecomp/isle-portable/releases/download/continuous/isle-0.1-DOS-x86.tar.gz",
+     "name": "isle-0.1-DOS-x86.tar.gz",
+     "size": 2385377
+    },
+    {
+     "downloadURL": "https://github.com/isledecomp/isle-portable/releases/download/continuous/isle-0.1-Emscripten-emscripten.tar.gz",
+     "name": "isle-0.1-Emscripten-emscripten.tar.gz",
+     "size": 1030130
+    },
+    {
+     "downloadURL": "https://github.com/isledecomp/isle-portable/releases/download/continuous/isle-0.1-FreeBSD-x64.tar.gz",
+     "name": "isle-0.1-FreeBSD-x64.tar.gz",
+     "size": 3463823
+    },
+    {
+     "downloadURL": "https://github.com/isledecomp/isle-portable/releases/download/continuous/isle-0.1-iOS-arm64.ipa",
+     "name": "isle-0.1-iOS-arm64.ipa",
+     "size": 2406835
+    },
+    {
+     "downloadURL": "https://github.com/isledecomp/isle-portable/releases/download/continuous/isle-0.1-Linux-x64.tar.gz",
+     "name": "isle-0.1-Linux-x64.tar.gz",
+     "size": 4187804
+    },
+    {
+     "downloadURL": "https://github.com/isledecomp/isle-portable/releases/download/continuous/isle-0.1-Windows-arm64.zip",
+     "name": "isle-0.1-Windows-arm64.zip",
+     "size": 2233813
+    },
+    {
+     "downloadURL": "https://github.com/isledecomp/isle-portable/releases/download/continuous/isle-0.1-Windows-x64.tar.gz",
+     "name": "isle-0.1-Windows-x64.tar.gz",
+     "size": 17936714
+    },
+    {
+     "downloadURL": "https://github.com/isledecomp/isle-portable/releases/download/continuous/isle-0.1-Windows-x64.zip",
+     "name": "isle-0.1-Windows-x64.zip",
+     "size": 21400979
+    },
+    {
+     "downloadURL": "https://github.com/isledecomp/isle-portable/releases/download/continuous/isle-0.1-Windows-x86.zip",
+     "name": "isle-0.1-Windows-x86.zip",
+     "size": 1446859
+    },
+    {
+     "downloadURL": "https://github.com/isledecomp/isle-portable/releases/download/continuous/isle-0.1-Xbox_One_Series_XS-x64.zip",
+     "name": "isle-0.1-Xbox_One_Series_XS-x64.zip",
+     "size": 2316301
+    },
+    {
+     "downloadURL": "https://github.com/isledecomp/isle-portable/releases/download/continuous/isle-assets.zip",
+     "name": "isle-assets.zip",
+     "size": 457393244
+    },
+    {
+     "downloadURL": "https://github.com/isledecomp/isle-portable/releases/download/continuous/isle-hdaudio.zip",
+     "name": "isle-hdaudio.zip",
+     "size": 298041650
+    },
+    {
+     "downloadURL": "https://github.com/isledecomp/isle-portable/releases/download/continuous/isle.3dsx",
+     "name": "isle.3dsx",
+     "size": 3056596
+    },
+    {
+     "downloadURL": "https://github.com/isledecomp/isle-portable/releases/download/continuous/isle.cia",
+     "name": "isle.cia",
+     "size": 2197952
+    },
+    {
+     "downloadURL": "https://github.com/isledecomp/isle-portable/releases/download/continuous/isle.nro",
+     "name": "isle.nro",
+     "size": 8837851
+    },
+    {
+     "downloadURL": "https://github.com/isledecomp/isle-portable/releases/download/continuous/isle.vpk",
+     "name": "isle.vpk",
+     "size": 7199047
+    },
+    {
+     "downloadURL": "https://github.com/isledecomp/isle-portable/releases/download/continuous/Isle_Portable-x86_64.AppImage",
+     "name": "Isle_Portable-x86_64.AppImage",
+     "size": 31148536
+    },
+    {
+     "downloadURL": "https://github.com/isledecomp/isle-portable/releases/download/continuous/org.legoisland.Isle.aarch64.flatpak",
+     "name": "org.legoisland.Isle.aarch64.flatpak",
+     "size": 2456328
+    },
+    {
+     "downloadURL": "https://github.com/isledecomp/isle-portable/releases/download/continuous/org.legoisland.Isle.x86_64.flatpak",
+     "name": "org.legoisland.Isle.x86_64.flatpak",
+     "size": 2674464
+    }
+   ],
+   "name": "Continuous build",
+   "pageURL": "https://github.com/isledecomp/isle-portable/releases/tag/continuous",
+   "publishedAt": "2026-11-17T00:16:33Z",
+   "tag": "continuous"
+  },
+  "ja2-stracciatella/ja2-stracciatella": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/ja2-stracciatella/ja2-stracciatella/releases/download/v0.22.1/ja2-stracciatella_0.22.1-git%2B11e9430_aarch64.AppImage",
+     "name": "ja2-stracciatella_0.22.1-git+11e9430_aarch64.AppImage",
+     "size": 22243848
+    },
+    {
+     "downloadURL": "https://github.com/ja2-stracciatella/ja2-stracciatella/releases/download/v0.22.1/ja2-stracciatella_0.22.1-git%2B11e9430_android.apk",
+     "name": "ja2-stracciatella_0.22.1-git+11e9430_android.apk",
+     "size": 43817006
+    },
+    {
+     "downloadURL": "https://github.com/ja2-stracciatella/ja2-stracciatella/releases/download/v0.22.1/ja2-stracciatella_0.22.1-git%2B11e9430_armhf.AppImage",
+     "name": "ja2-stracciatella_0.22.1-git+11e9430_armhf.AppImage",
+     "size": 24387808
+    },
+    {
+     "downloadURL": "https://github.com/ja2-stracciatella/ja2-stracciatella/releases/download/v0.22.1/ja2-stracciatella_0.22.1-git%2B11e9430_macos.dmg",
+     "name": "ja2-stracciatella_0.22.1-git+11e9430_macos.dmg",
+     "size": 25020060
+    },
+    {
+     "downloadURL": "https://github.com/ja2-stracciatella/ja2-stracciatella/releases/download/v0.22.1/ja2-stracciatella_0.22.1-git%2B11e9430_win-mingw64-cross.zip",
+     "name": "ja2-stracciatella_0.22.1-git+11e9430_win-mingw64-cross.zip",
+     "size": 41420888
+    },
+    {
+     "downloadURL": "https://github.com/ja2-stracciatella/ja2-stracciatella/releases/download/v0.22.1/ja2-stracciatella_0.22.1-git%2B11e9430_win-msvc32-142.exe",
+     "name": "ja2-stracciatella_0.22.1-git+11e9430_win-msvc32-142.exe",
+     "size": 14423696
+    },
+    {
+     "downloadURL": "https://github.com/ja2-stracciatella/ja2-stracciatella/releases/download/v0.22.1/ja2-stracciatella_0.22.1-git%2B11e9430_win-msvc32-142.zip",
+     "name": "ja2-stracciatella_0.22.1-git+11e9430_win-msvc32-142.zip",
+     "size": 18969216
+    },
+    {
+     "downloadURL": "https://github.com/ja2-stracciatella/ja2-stracciatella/releases/download/v0.22.1/ja2-stracciatella_0.22.1-git%2B11e9430_win-msvc64-142.exe",
+     "name": "ja2-stracciatella_0.22.1-git+11e9430_win-msvc64-142.exe",
+     "size": 14854950
+    },
+    {
+     "downloadURL": "https://github.com/ja2-stracciatella/ja2-stracciatella/releases/download/v0.22.1/ja2-stracciatella_0.22.1-git%2B11e9430_win-msvc64-142.zip",
+     "name": "ja2-stracciatella_0.22.1-git+11e9430_win-msvc64-142.zip",
+     "size": 19629518
+    },
+    {
+     "downloadURL": "https://github.com/ja2-stracciatella/ja2-stracciatella/releases/download/v0.22.1/ja2-stracciatella_0.22.1-git%2B11e9430_x86-64.AppImage",
+     "name": "ja2-stracciatella_0.22.1-git+11e9430_x86-64.AppImage",
+     "size": 29759992
+    }
+   ],
+   "name": "v0.22.1",
+   "pageURL": "https://github.com/ja2-stracciatella/ja2-stracciatella/releases/tag/v0.22.1",
+   "publishedAt": "2025-10-05T09:26:01Z",
+   "tag": "v0.22.1"
+  },
+  "k4zmu2a/SpaceCadetPinball": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/k4zmu2a/SpaceCadetPinball/releases/download/Release_2.1.0/SpaceCadetPinballMac.zip",
+     "name": "SpaceCadetPinballMac.zip",
+     "size": 5392736
+    },
+    {
+     "downloadURL": "https://github.com/k4zmu2a/SpaceCadetPinball/releases/download/Release_2.1.0/SpaceCadetPinballx64Win.zip",
+     "name": "SpaceCadetPinballx64Win.zip",
+     "size": 1495776
+    },
+    {
+     "downloadURL": "https://github.com/k4zmu2a/SpaceCadetPinball/releases/download/Release_2.1.0/SpaceCadetPinballx86Win.zip",
+     "name": "SpaceCadetPinballx86Win.zip",
+     "size": 1346928
+    },
+    {
+     "downloadURL": "https://github.com/k4zmu2a/SpaceCadetPinball/releases/download/Release_2.1.0/SpaceCadetPinballx86WinXP.zip",
+     "name": "SpaceCadetPinballx86WinXP.zip",
+     "size": 1346931
+    }
+   ],
+   "name": "V2.1.0",
+   "pageURL": "https://github.com/k4zmu2a/SpaceCadetPinball/releases/tag/Release_2.1.0",
+   "publishedAt": "2023-10-16T06:31:47Z",
+   "tag": "Release_2.1.0"
+  },
+  "mchughalex/skate3recomp": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/mchughalex/skate3recomp/releases/download/v2.0.2/Skate3Recomp-Linux.zip",
+     "name": "Skate3Recomp-Linux.zip",
+     "size": 32647483
+    },
+    {
+     "downloadURL": "https://github.com/mchughalex/skate3recomp/releases/download/v2.0.2/Skate3Recomp-macOS.zip",
+     "name": "Skate3Recomp-macOS.zip",
+     "size": 36614228
+    },
+    {
+     "downloadURL": "https://github.com/mchughalex/skate3recomp/releases/download/v2.0.2/Skate3Recomp-Windows.zip",
+     "name": "Skate3Recomp-Windows.zip",
+     "size": 30292532
+    }
+   ],
+   "name": "v2.0.2",
+   "pageURL": "https://github.com/mchughalex/skate3recomp/releases/tag/v2.0.2",
+   "publishedAt": "2026-07-24T21:21:06Z",
+   "tag": "v2.0.2"
+  },
+  "nathanialf/ico-pc": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/nathanialf/ico-pc/releases/download/v0.11.13/ico-pc-v0.11.13-android.apk",
+     "name": "ico-pc-v0.11.13-android.apk",
+     "size": 12724561
+    },
+    {
+     "downloadURL": "https://github.com/nathanialf/ico-pc/releases/download/v0.11.13/ico-pc-v0.11.13-ios-unsigned.ipa",
+     "name": "ico-pc-v0.11.13-ios-unsigned.ipa",
+     "size": 9620034
+    },
+    {
+     "downloadURL": "https://github.com/nathanialf/ico-pc/releases/download/v0.11.13/ico-pc-v0.11.13-linux-aarch64.AppImage",
+     "name": "ico-pc-v0.11.13-linux-aarch64.AppImage",
+     "size": 22727176
+    },
+    {
+     "downloadURL": "https://github.com/nathanialf/ico-pc/releases/download/v0.11.13/ico-pc-v0.11.13-linux-aarch64.AppImage.sha256",
+     "name": "ico-pc-v0.11.13-linux-aarch64.AppImage.sha256",
+     "size": 105
+    },
+    {
+     "downloadURL": "https://github.com/nathanialf/ico-pc/releases/download/v0.11.13/ico-pc-v0.11.13-linux-arm64-portable.tar.gz",
+     "name": "ico-pc-v0.11.13-linux-arm64-portable.tar.gz",
+     "size": 24729232
+    },
+    {
+     "downloadURL": "https://github.com/nathanialf/ico-pc/releases/download/v0.11.13/ico-pc-v0.11.13-linux-arm64-portable.tar.gz.sha256",
+     "name": "ico-pc-v0.11.13-linux-arm64-portable.tar.gz.sha256",
+     "size": 110
+    },
+    {
+     "downloadURL": "https://github.com/nathanialf/ico-pc/releases/download/v0.11.13/ico-pc-v0.11.13-linux-arm64.tar.gz",
+     "name": "ico-pc-v0.11.13-linux-arm64.tar.gz",
+     "size": 24729886
+    },
+    {
+     "downloadURL": "https://github.com/nathanialf/ico-pc/releases/download/v0.11.13/ico-pc-v0.11.13-linux-arm64.tar.gz.sha256",
+     "name": "ico-pc-v0.11.13-linux-arm64.tar.gz.sha256",
+     "size": 101
+    },
+    {
+     "downloadURL": "https://github.com/nathanialf/ico-pc/releases/download/v0.11.13/ico-pc-v0.11.13-linux-portable.tar.gz",
+     "name": "ico-pc-v0.11.13-linux-portable.tar.gz",
+     "size": 28234992
+    },
+    {
+     "downloadURL": "https://github.com/nathanialf/ico-pc/releases/download/v0.11.13/ico-pc-v0.11.13-linux-x86_64.AppImage",
+     "name": "ico-pc-v0.11.13-linux-x86_64.AppImage",
+     "size": 25844216
+    },
+    {
+     "downloadURL": "https://github.com/nathanialf/ico-pc/releases/download/v0.11.13/ico-pc-v0.11.13-linux-x86_64.AppImage.sha256",
+     "name": "ico-pc-v0.11.13-linux-x86_64.AppImage.sha256",
+     "size": 104
+    },
+    {
+     "downloadURL": "https://github.com/nathanialf/ico-pc/releases/download/v0.11.13/ico-pc-v0.11.13-linux.tar.gz",
+     "name": "ico-pc-v0.11.13-linux.tar.gz",
+     "size": 28234945
+    },
+    {
+     "downloadURL": "https://github.com/nathanialf/ico-pc/releases/download/v0.11.13/ico-pc-v0.11.13-macos-arm64.dmg",
+     "name": "ico-pc-v0.11.13-macos-arm64.dmg",
+     "size": 11027065
+    },
+    {
+     "downloadURL": "https://github.com/nathanialf/ico-pc/releases/download/v0.11.13/ico-pc-v0.11.13-macos-arm64.zip",
+     "name": "ico-pc-v0.11.13-macos-arm64.zip",
+     "size": 10018159
+    },
+    {
+     "downloadURL": "https://github.com/nathanialf/ico-pc/releases/download/v0.11.13/ico-pc-v0.11.13-win-portable.zip",
+     "name": "ico-pc-v0.11.13-win-portable.zip",
+     "size": 33752052
+    },
+    {
+     "downloadURL": "https://github.com/nathanialf/ico-pc/releases/download/v0.11.13/ico-pc-v0.11.13-win.zip",
+     "name": "ico-pc-v0.11.13-win.zip",
+     "size": 33753195
+    }
+   ],
+   "name": "v0.11.13",
+   "pageURL": "https://github.com/nathanialf/ico-pc/releases/tag/v0.11.13",
+   "publishedAt": "2026-11-21T04:18:58Z",
+   "tag": "v0.11.13"
+  },
+  "new-coke/strikers": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/new-coke/strikers/releases/download/v2.0.0/SHA256SUMS",
+     "name": "SHA256SUMS",
+     "size": 656
+    },
+    {
+     "downloadURL": "https://github.com/new-coke/strikers/releases/download/v2.0.0/strikers-linux-arm64.AppImage",
+     "name": "strikers-linux-arm64.AppImage",
+     "size": 44538376
+    },
+    {
+     "downloadURL": "https://github.com/new-coke/strikers/releases/download/v2.0.0/strikers-linux-arm64.tar.gz",
+     "name": "strikers-linux-arm64.tar.gz",
+     "size": 11690246
+    },
+    {
+     "downloadURL": "https://github.com/new-coke/strikers/releases/download/v2.0.0/strikers-linux-x86_64.AppImage",
+     "name": "strikers-linux-x86_64.AppImage",
+     "size": 45574648
+    },
+    {
+     "downloadURL": "https://github.com/new-coke/strikers/releases/download/v2.0.0/strikers-linux-x86_64.tar.gz",
+     "name": "strikers-linux-x86_64.tar.gz",
+     "size": 12044859
+    },
+    {
+     "downloadURL": "https://github.com/new-coke/strikers/releases/download/v2.0.0/strikers-macos-arm64.tar.gz",
+     "name": "strikers-macos-arm64.tar.gz",
+     "size": 28020956
+    },
+    {
+     "downloadURL": "https://github.com/new-coke/strikers/releases/download/v2.0.0/strikers-windows-x86_64.zip",
+     "name": "strikers-windows-x86_64.zip",
+     "size": 30176733
+    }
+   ],
+   "name": "v2.0.0 - The Online Multiplayer Update + bunch of QoL changes",
+   "pageURL": "https://github.com/new-coke/strikers/releases/tag/v2.0.0",
+   "publishedAt": "2026-11-09T14:12:54Z",
+   "tag": "v2.0.0"
+  },
+  "omf2097/openomf": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/omf2097/openomf/releases/download/0.8.6/OpenOMF-0.8.6-x86_64.AppImage",
+     "name": "OpenOMF-0.8.6-x86_64.AppImage",
+     "size": 29170168
+    },
+    {
+     "downloadURL": "https://github.com/omf2097/openomf/releases/download/0.8.6/openomf_0.8.6_amd64.deb",
+     "name": "openomf_0.8.6_amd64.deb",
+     "size": 19742760
+    },
+    {
+     "downloadURL": "https://github.com/omf2097/openomf/releases/download/0.8.6/openomf_0.8.6_linux_amd64.tar.gz",
+     "name": "openomf_0.8.6_linux_amd64.tar.gz",
+     "size": 19768763
+    },
+    {
+     "downloadURL": "https://github.com/omf2097/openomf/releases/download/0.8.6/openomf_0.8.6_macos14_arm.zip",
+     "name": "openomf_0.8.6_macos14_arm.zip",
+     "size": 19731314
+    },
+    {
+     "downloadURL": "https://github.com/omf2097/openomf/releases/download/0.8.6/openomf_0.8.6_windows.zip",
+     "name": "openomf_0.8.6_windows.zip",
+     "size": 23093230
+    }
+   ],
+   "name": "Release 0.8.6",
+   "pageURL": "https://github.com/omf2097/openomf/releases/tag/0.8.6",
+   "publishedAt": "2026-07-05T19:33:20Z",
+   "tag": "0.8.6"
+  },
+  "open-goal/launcher": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/open-goal/launcher/releases/download/v2.11.2/latest.json",
+     "name": "latest.json",
+     "size": 5379
+    },
+    {
+     "downloadURL": "https://github.com/open-goal/launcher/releases/download/v2.11.2/OpenGOAL-Launcher_2.11.2_aarch64.app.tar.gz",
+     "name": "OpenGOAL-Launcher_2.11.2_aarch64.app.tar.gz",
+     "size": 16080390
+    },
+    {
+     "downloadURL": "https://github.com/open-goal/launcher/releases/download/v2.11.2/OpenGOAL-Launcher_2.11.2_aarch64.app.tar.gz.sig",
+     "name": "OpenGOAL-Launcher_2.11.2_aarch64.app.tar.gz.sig",
+     "size": 440
+    },
+    {
+     "downloadURL": "https://github.com/open-goal/launcher/releases/download/v2.11.2/OpenGOAL-Launcher_2.11.2_aarch64.dmg",
+     "name": "OpenGOAL-Launcher_2.11.2_aarch64.dmg",
+     "size": 16132078
+    },
+    {
+     "downloadURL": "https://github.com/open-goal/launcher/releases/download/v2.11.2/OpenGOAL-Launcher_2.11.2_amd64.AppImage",
+     "name": "OpenGOAL-Launcher_2.11.2_amd64.AppImage",
+     "size": 135206618
+    },
+    {
+     "downloadURL": "https://github.com/open-goal/launcher/releases/download/v2.11.2/OpenGOAL-Launcher_2.11.2_amd64.AppImage.sig",
+     "name": "OpenGOAL-Launcher_2.11.2_amd64.AppImage.sig",
+     "size": 432
+    },
+    {
+     "downloadURL": "https://github.com/open-goal/launcher/releases/download/v2.11.2/OpenGOAL-Launcher_2.11.2_amd64.AppImage.tar.gz",
+     "name": "OpenGOAL-Launcher_2.11.2_amd64.AppImage.tar.gz",
+     "size": 134571229
+    },
+    {
+     "downloadURL": "https://github.com/open-goal/launcher/releases/download/v2.11.2/OpenGOAL-Launcher_2.11.2_amd64.AppImage.tar.gz.sig",
+     "name": "OpenGOAL-Launcher_2.11.2_amd64.AppImage.tar.gz.sig",
+     "size": 444
+    },
+    {
+     "downloadURL": "https://github.com/open-goal/launcher/releases/download/v2.11.2/OpenGOAL-Launcher_2.11.2_amd64.deb",
+     "name": "OpenGOAL-Launcher_2.11.2_amd64.deb",
+     "size": 17874612
+    },
+    {
+     "downloadURL": "https://github.com/open-goal/launcher/releases/download/v2.11.2/OpenGOAL-Launcher_2.11.2_amd64.deb.sig",
+     "name": "OpenGOAL-Launcher_2.11.2_amd64.deb.sig",
+     "size": 428
+    },
+    {
+     "downloadURL": "https://github.com/open-goal/launcher/releases/download/v2.11.2/OpenGOAL-Launcher_2.11.2_x64.app.tar.gz",
+     "name": "OpenGOAL-Launcher_2.11.2_x64.app.tar.gz",
+     "size": 16731032
+    },
+    {
+     "downloadURL": "https://github.com/open-goal/launcher/releases/download/v2.11.2/OpenGOAL-Launcher_2.11.2_x64.app.tar.gz.sig",
+     "name": "OpenGOAL-Launcher_2.11.2_x64.app.tar.gz.sig",
+     "size": 440
+    },
+    {
+     "downloadURL": "https://github.com/open-goal/launcher/releases/download/v2.11.2/OpenGOAL-Launcher_2.11.2_x64.dmg",
+     "name": "OpenGOAL-Launcher_2.11.2_x64.dmg",
+     "size": 16889304
+    },
+    {
+     "downloadURL": "https://github.com/open-goal/launcher/releases/download/v2.11.2/OpenGOAL-Launcher_2.11.2_x64_en-US.msi",
+     "name": "OpenGOAL-Launcher_2.11.2_x64_en-US.msi",
+     "size": 16228352
+    },
+    {
+     "downloadURL": "https://github.com/open-goal/launcher/releases/download/v2.11.2/OpenGOAL-Launcher_2.11.2_x64_en-US.msi.sig",
+     "name": "OpenGOAL-Launcher_2.11.2_x64_en-US.msi.sig",
+     "size": 452
+    },
+    {
+     "downloadURL": "https://github.com/open-goal/launcher/releases/download/v2.11.2/OpenGOAL-Launcher_2.11.2_x64_en-US.msi.zip",
+     "name": "OpenGOAL-Launcher_2.11.2_x64_en-US.msi.zip",
+     "size": 16228526
+    },
+    {
+     "downloadURL": "https://github.com/open-goal/launcher/releases/download/v2.11.2/OpenGOAL-Launcher_2.11.2_x64_en-US.msi.zip.sig",
+     "name": "OpenGOAL-Launcher_2.11.2_x64_en-US.msi.zip.sig",
+     "size": 456
+    }
+   ],
+   "name": "v2.11.2",
+   "pageURL": "https://github.com/open-goal/launcher/releases/tag/v2.11.2",
+   "publishedAt": "2026-10-09T18:23:28Z",
+   "tag": "v2.11.2"
+  },
+  "openmoh/openmohaa": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/openmoh/openmohaa/releases/download/v0.82.1/openmohaa-v0.82.1-linux-amd64.zip",
+     "name": "openmohaa-v0.82.1-linux-amd64.zip",
+     "size": 16999314
+    },
+    {
+     "downloadURL": "https://github.com/openmoh/openmohaa/releases/download/v0.82.1/openmohaa-v0.82.1-linux-arm64.zip",
+     "name": "openmohaa-v0.82.1-linux-arm64.zip",
+     "size": 16582558
+    },
+    {
+     "downloadURL": "https://github.com/openmoh/openmohaa/releases/download/v0.82.1/openmohaa-v0.82.1-linux-armhf.zip",
+     "name": "openmohaa-v0.82.1-linux-armhf.zip",
+     "size": 16355364
+    },
+    {
+     "downloadURL": "https://github.com/openmoh/openmohaa/releases/download/v0.82.1/openmohaa-v0.82.1-linux-i686.zip",
+     "name": "openmohaa-v0.82.1-linux-i686.zip",
+     "size": 16563248
+    },
+    {
+     "downloadURL": "https://github.com/openmoh/openmohaa/releases/download/v0.82.1/openmohaa-v0.82.1-linux-powerpc.zip",
+     "name": "openmohaa-v0.82.1-linux-powerpc.zip",
+     "size": 17250820
+    },
+    {
+     "downloadURL": "https://github.com/openmoh/openmohaa/releases/download/v0.82.1/openmohaa-v0.82.1-linux-ppc64.zip",
+     "name": "openmohaa-v0.82.1-linux-ppc64.zip",
+     "size": 18040277
+    },
+    {
+     "downloadURL": "https://github.com/openmoh/openmohaa/releases/download/v0.82.1/openmohaa-v0.82.1-linux-ppc64el.zip",
+     "name": "openmohaa-v0.82.1-linux-ppc64el.zip",
+     "size": 17438588
+    },
+    {
+     "downloadURL": "https://github.com/openmoh/openmohaa/releases/download/v0.82.1/openmohaa-v0.82.1-macos-multiarch-arm64-x86_64.zip",
+     "name": "openmohaa-v0.82.1-macos-multiarch-arm64-x86_64.zip",
+     "size": 10588420
+    },
+    {
+     "downloadURL": "https://github.com/openmoh/openmohaa/releases/download/v0.82.1/openmohaa-v0.82.1-windows-arm64-pdb.zip",
+     "name": "openmohaa-v0.82.1-windows-arm64-pdb.zip",
+     "size": 16957637
+    },
+    {
+     "downloadURL": "https://github.com/openmoh/openmohaa/releases/download/v0.82.1/openmohaa-v0.82.1-windows-arm64.msi",
+     "name": "openmohaa-v0.82.1-windows-arm64.msi",
+     "size": 7438336
+    },
+    {
+     "downloadURL": "https://github.com/openmoh/openmohaa/releases/download/v0.82.1/openmohaa-v0.82.1-windows-arm64.zip",
+     "name": "openmohaa-v0.82.1-windows-arm64.zip",
+     "size": 4941693
+    },
+    {
+     "downloadURL": "https://github.com/openmoh/openmohaa/releases/download/v0.82.1/openmohaa-v0.82.1-windows-x64-pdb.zip",
+     "name": "openmohaa-v0.82.1-windows-x64-pdb.zip",
+     "size": 17599289
+    },
+    {
+     "downloadURL": "https://github.com/openmoh/openmohaa/releases/download/v0.82.1/openmohaa-v0.82.1-windows-x64.msi",
+     "name": "openmohaa-v0.82.1-windows-x64.msi",
+     "size": 7733248
+    },
+    {
+     "downloadURL": "https://github.com/openmoh/openmohaa/releases/download/v0.82.1/openmohaa-v0.82.1-windows-x64.zip",
+     "name": "openmohaa-v0.82.1-windows-x64.zip",
+     "size": 5424647
+    },
+    {
+     "downloadURL": "https://github.com/openmoh/openmohaa/releases/download/v0.82.1/openmohaa-v0.82.1-windows-x86-pdb.zip",
+     "name": "openmohaa-v0.82.1-windows-x86-pdb.zip",
+     "size": 17090133
+    },
+    {
+     "downloadURL": "https://github.com/openmoh/openmohaa/releases/download/v0.82.1/openmohaa-v0.82.1-windows-x86.msi",
+     "name": "openmohaa-v0.82.1-windows-x86.msi",
+     "size": 6561792
+    },
+    {
+     "downloadURL": "https://github.com/openmoh/openmohaa/releases/download/v0.82.1/openmohaa-v0.82.1-windows-x86.zip",
+     "name": "openmohaa-v0.82.1-windows-x86.zip",
+     "size": 4657170
+    }
+   ],
+   "name": "v0.82.1-beta",
+   "pageURL": "https://github.com/openmoh/openmohaa/releases/tag/v0.82.1",
+   "publishedAt": "2025-08-05T17:01:23Z",
+   "tag": "v0.82.1"
+  },
+  "opentyrian/opentyrian": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/opentyrian/opentyrian/releases/download/v2.1.20260913/opentyrian-v2.1.20260913-linux-arm64.tar.gz",
+     "name": "opentyrian-v2.1.20260913-linux-arm64.tar.gz",
+     "size": 5969724
+    },
+    {
+     "downloadURL": "https://github.com/opentyrian/opentyrian/releases/download/v2.1.20260913/opentyrian-v2.1.20260913-linux-x86_64.tar.gz",
+     "name": "opentyrian-v2.1.20260913-linux-x86_64.tar.gz",
+     "size": 6004739
+    },
+    {
+     "downloadURL": "https://github.com/opentyrian/opentyrian/releases/download/v2.1.20260913/opentyrian-v2.1.20260913-macos-universal.zip",
+     "name": "opentyrian-v2.1.20260913-macos-universal.zip",
+     "size": 7218197
+    },
+    {
+     "downloadURL": "https://github.com/opentyrian/opentyrian/releases/download/v2.1.20260913/opentyrian-v2.1.20260913-windows-arm64.zip",
+     "name": "opentyrian-v2.1.20260913-windows-arm64.zip",
+     "size": 5754291
+    },
+    {
+     "downloadURL": "https://github.com/opentyrian/opentyrian/releases/download/v2.1.20260913/opentyrian-v2.1.20260913-windows-x86_64.zip",
+     "name": "opentyrian-v2.1.20260913-windows-x86_64.zip",
+     "size": 6092537
+    }
+   ],
+   "name": "",
+   "pageURL": "https://github.com/opentyrian/opentyrian/releases/tag/v2.1.20260913",
+   "publishedAt": "2026-09-14T00:00:40Z",
+   "tag": "v2.1.20260913"
+  },
+  "perfect-dark-pc-port/perfect_dark": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/perfect-dark-pc-port/perfect_dark/releases/download/ci-dev-build/io.github.fgsfdsfgs.perfect_dark.flatpak",
+     "name": "io.github.fgsfdsfgs.perfect_dark.flatpak",
+     "size": 1519088
+    },
+    {
+     "downloadURL": "https://github.com/perfect-dark-pc-port/perfect_dark/releases/download/ci-dev-build/io.github.perfect_dark_pc_port.perfect_dark.flatpak",
+     "name": "io.github.perfect_dark_pc_port.perfect_dark.flatpak",
+     "size": 1520216
+    },
+    {
+     "downloadURL": "https://github.com/perfect-dark-pc-port/perfect_dark/releases/download/ci-dev-build/pd-arm64-nswitch.zip",
+     "name": "pd-arm64-nswitch.zip",
+     "size": 10815625
+    },
+    {
+     "downloadURL": "https://github.com/perfect-dark-pc-port/perfect_dark/releases/download/ci-dev-build/pd-arm64-osx.tar.xz",
+     "name": "pd-arm64-osx.tar.xz",
+     "size": 3500000
+    },
+    {
+     "downloadURL": "https://github.com/perfect-dark-pc-port/perfect_dark/releases/download/ci-dev-build/pd-i686-linux.tar.gz",
+     "name": "pd-i686-linux.tar.gz",
+     "size": 21419437
+    },
+    {
+     "downloadURL": "https://github.com/perfect-dark-pc-port/perfect_dark/releases/download/ci-dev-build/pd-i686-windows.zip",
+     "name": "pd-i686-windows.zip",
+     "size": 25147137
+    },
+    {
+     "downloadURL": "https://github.com/perfect-dark-pc-port/perfect_dark/releases/download/ci-dev-build/pd-x86_64-linux.tar.gz",
+     "name": "pd-x86_64-linux.tar.gz",
+     "size": 22213594
+    },
+    {
+     "downloadURL": "https://github.com/perfect-dark-pc-port/perfect_dark/releases/download/ci-dev-build/pd-x86_64-osx.tar.xz",
+     "name": "pd-x86_64-osx.tar.xz",
+     "size": 2905352
+    },
+    {
+     "downloadURL": "https://github.com/perfect-dark-pc-port/perfect_dark/releases/download/ci-dev-build/pd-x86_64-windows.zip",
+     "name": "pd-x86_64-windows.zip",
+     "size": 25739820
+    }
+   ],
+   "name": "Latest automatic build (port branch)",
+   "pageURL": "https://github.com/perfect-dark-pc-port/perfect_dark/releases/tag/ci-dev-build",
+   "publishedAt": "2024-05-14T09:41:23Z",
+   "tag": "ci-dev-build"
+  },
+  "rob646464/luigis-mansion-recompiled": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/rob646464/luigis-mansion-recompiled/releases/download/v1.1.6/LuigisMansionRecompiled-1.1.6-linux-x86_64.tar.gz",
+     "name": "LuigisMansionRecompiled-1.1.6-linux-x86_64.tar.gz",
+     "size": 151116985
+    },
+    {
+     "downloadURL": "https://github.com/rob646464/luigis-mansion-recompiled/releases/download/v1.1.6/LuigisMansionRecompiled-1.1.6-macos-arm64.tar.gz",
+     "name": "LuigisMansionRecompiled-1.1.6-macos-arm64.tar.gz",
+     "size": 116362016
+    },
+    {
+     "downloadURL": "https://github.com/rob646464/luigis-mansion-recompiled/releases/download/v1.1.6/LuigisMansionRecompiled-1.1.6-windows-x64.zip",
+     "name": "LuigisMansionRecompiled-1.1.6-windows-x64.zip",
+     "size": 88489431
+    }
+   ],
+   "name": "Luigi's Mansion Recompiled 1.1.6",
+   "pageURL": "https://github.com/rob646464/luigis-mansion-recompiled/releases/tag/v1.1.6",
+   "publishedAt": "2026-11-03T06:58:33Z",
+   "tag": "v1.1.6"
+  },
+  "sciaschi/CBFD-Recompiled": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/sciaschi/CBFD-Recompiled/releases/download/V0.1.7/ConkerRecompiled-V0.1.7-Linux.tar.gz",
+     "name": "ConkerRecompiled-V0.1.7-Linux.tar.gz",
+     "size": 9746087
+    },
+    {
+     "downloadURL": "https://github.com/sciaschi/CBFD-Recompiled/releases/download/V0.1.7/ConkerRecompiled-V0.1.7-macOS.zip",
+     "name": "ConkerRecompiled-V0.1.7-macOS.zip",
+     "size": 11050524
+    },
+    {
+     "downloadURL": "https://github.com/sciaschi/CBFD-Recompiled/releases/download/V0.1.7/ConkerRecompiled-V0.1.7-Mods.zip",
+     "name": "ConkerRecompiled-V0.1.7-Mods.zip",
+     "size": 155753
+    },
+    {
+     "downloadURL": "https://github.com/sciaschi/CBFD-Recompiled/releases/download/V0.1.7/ConkerRecompiled-V0.1.7-Windows.zip",
+     "name": "ConkerRecompiled-V0.1.7-Windows.zip",
+     "size": 22301282
+    }
+   ],
+   "name": "V0.1.7",
+   "pageURL": "https://github.com/sciaschi/CBFD-Recompiled/releases/tag/V0.1.7",
+   "publishedAt": "2026-11-19T02:38:18Z",
+   "tag": "V0.1.7"
+  },
+  "scp-fs2open/fs2open.github.com": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/scp-fs2open/fs2open.github.com/releases/download/release_26_2_0/fs2_open_26_2_0-builds-ARM64.zip",
+     "name": "fs2_open_26_2_0-builds-ARM64.zip",
+     "size": 74225956
+    },
+    {
+     "downloadURL": "https://github.com/scp-fs2open/fs2open.github.com/releases/download/release_26_2_0/fs2_open_26_2_0-builds-Linux-arm64.tar.gz",
+     "name": "fs2_open_26_2_0-builds-Linux-arm64.tar.gz",
+     "size": 106037166
+    },
+    {
+     "downloadURL": "https://github.com/scp-fs2open/fs2open.github.com/releases/download/release_26_2_0/fs2_open_26_2_0-builds-Linux-x86_64.tar.gz",
+     "name": "fs2_open_26_2_0-builds-Linux-x86_64.tar.gz",
+     "size": 111023549
+    },
+    {
+     "downloadURL": "https://github.com/scp-fs2open/fs2open.github.com/releases/download/release_26_2_0/fs2_open_26_2_0-builds-Mac-arm64.tar.gz",
+     "name": "fs2_open_26_2_0-builds-Mac-arm64.tar.gz",
+     "size": 180772386
+    },
+    {
+     "downloadURL": "https://github.com/scp-fs2open/fs2open.github.com/releases/download/release_26_2_0/fs2_open_26_2_0-builds-Mac-x86_64.tar.gz",
+     "name": "fs2_open_26_2_0-builds-Mac-x86_64.tar.gz",
+     "size": 184594372
+    },
+    {
+     "downloadURL": "https://github.com/scp-fs2open/fs2open.github.com/releases/download/release_26_2_0/fs2_open_26_2_0-builds-Win32-AVX.zip",
+     "name": "fs2_open_26_2_0-builds-Win32-AVX.zip",
+     "size": 37145992
+    },
+    {
+     "downloadURL": "https://github.com/scp-fs2open/fs2open.github.com/releases/download/release_26_2_0/fs2_open_26_2_0-builds-Win32-SSE2.zip",
+     "name": "fs2_open_26_2_0-builds-Win32-SSE2.zip",
+     "size": 37180399
+    },
+    {
+     "downloadURL": "https://github.com/scp-fs2open/fs2open.github.com/releases/download/release_26_2_0/fs2_open_26_2_0-builds-x64-AVX.zip",
+     "name": "fs2_open_26_2_0-builds-x64-AVX.zip",
+     "size": 78329979
+    },
+    {
+     "downloadURL": "https://github.com/scp-fs2open/fs2open.github.com/releases/download/release_26_2_0/fs2_open_26_2_0-builds-x64-SSE2.zip",
+     "name": "fs2_open_26_2_0-builds-x64-SSE2.zip",
+     "size": 78450899
+    },
+    {
+     "downloadURL": "https://github.com/scp-fs2open/fs2open.github.com/releases/download/release_26_2_0/fs2_open_26_2_0-debug-ARM64.7z",
+     "name": "fs2_open_26_2_0-debug-ARM64.7z",
+     "size": 110230380
+    },
+    {
+     "downloadURL": "https://github.com/scp-fs2open/fs2open.github.com/releases/download/release_26_2_0/fs2_open_26_2_0-debug-Win32-AVX.7z",
+     "name": "fs2_open_26_2_0-debug-Win32-AVX.7z",
+     "size": 105617533
+    },
+    {
+     "downloadURL": "https://github.com/scp-fs2open/fs2open.github.com/releases/download/release_26_2_0/fs2_open_26_2_0-debug-Win32-SSE2.7z",
+     "name": "fs2_open_26_2_0-debug-Win32-SSE2.7z",
+     "size": 105697779
+    },
+    {
+     "downloadURL": "https://github.com/scp-fs2open/fs2open.github.com/releases/download/release_26_2_0/fs2_open_26_2_0-debug-x64-AVX.7z",
+     "name": "fs2_open_26_2_0-debug-x64-AVX.7z",
+     "size": 109870132
+    },
+    {
+     "downloadURL": "https://github.com/scp-fs2open/fs2open.github.com/releases/download/release_26_2_0/fs2_open_26_2_0-debug-x64-SSE2.7z",
+     "name": "fs2_open_26_2_0-debug-x64-SSE2.7z",
+     "size": 109990467
+    }
+   ],
+   "name": "Release release_26_2_0",
+   "pageURL": "https://github.com/scp-fs2open/fs2open.github.com/releases/tag/release_26_2_0",
+   "publishedAt": "2026-11-03T01:27:56Z",
+   "tag": "release_26_2_0"
+  },
+  "sdlpal/sdlpal": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/sdlpal/sdlpal/releases/download/v3.0.2025.0616/SDLPal-366bc36-x86_64.AppImage",
+     "name": "SDLPal-366bc36-x86_64.AppImage",
+     "size": 10900672
+    },
+    {
+     "downloadURL": "https://github.com/sdlpal/sdlpal/releases/download/v3.0.2025.0616/sdlpal-emscripten.zip",
+     "name": "sdlpal-emscripten.zip",
+     "size": 2958395
+    },
+    {
+     "downloadURL": "https://github.com/sdlpal/sdlpal/releases/download/v3.0.2025.0616/sdlpal-macos.dmg",
+     "name": "sdlpal-macos.dmg",
+     "size": 7842359
+    },
+    {
+     "downloadURL": "https://github.com/sdlpal/sdlpal/releases/download/v3.0.2025.0616/sdlpal-unsigned.ipa",
+     "name": "sdlpal-unsigned.ipa",
+     "size": 5288977
+    },
+    {
+     "downloadURL": "https://github.com/sdlpal/sdlpal/releases/download/v3.0.2025.0616/sdlpal-win32-mingw.zip",
+     "name": "sdlpal-win32-mingw.zip",
+     "size": 2683645
+    },
+    {
+     "downloadURL": "https://github.com/sdlpal/sdlpal/releases/download/v3.0.2025.0616/sdlpal-win32-msvc.zip",
+     "name": "sdlpal-win32-msvc.zip",
+     "size": 2913960
+    },
+    {
+     "downloadURL": "https://github.com/sdlpal/sdlpal/releases/download/v3.0.2025.0616/sdlpal.apk",
+     "name": "sdlpal.apk",
+     "size": 10974245
+    }
+   ],
+   "name": "v3.0.2025.0616",
+   "pageURL": "https://github.com/sdlpal/sdlpal/releases/tag/v3.0.2025.0616",
+   "publishedAt": "2025-06-15T20:16:16Z",
+   "tag": "v3.0.2025.0616"
+  },
+  "sonicdcer/MarioKart64Recomp": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/sonicdcer/MarioKart64Recomp/releases/download/v0.9.2/MarioKart64Recompiled-v0.9.2-Flatpak-X64-Release.zip",
+     "name": "MarioKart64Recompiled-v0.9.2-Flatpak-X64-Release.zip",
+     "size": 9492638
+    },
+    {
+     "downloadURL": "https://github.com/sonicdcer/MarioKart64Recomp/releases/download/v0.9.2/MarioKart64Recompiled-v0.9.2-Linux-ARM64-Release.zip",
+     "name": "MarioKart64Recompiled-v0.9.2-Linux-ARM64-Release.zip",
+     "size": 13173429
+    },
+    {
+     "downloadURL": "https://github.com/sonicdcer/MarioKart64Recomp/releases/download/v0.9.2/MarioKart64Recompiled-v0.9.2-Linux-X64-Release.zip",
+     "name": "MarioKart64Recompiled-v0.9.2-Linux-X64-Release.zip",
+     "size": 13126507
+    },
+    {
+     "downloadURL": "https://github.com/sonicdcer/MarioKart64Recomp/releases/download/v0.9.2/MarioKart64Recompiled-v0.9.2-macOS-Release.zip",
+     "name": "MarioKart64Recompiled-v0.9.2-macOS-Release.zip",
+     "size": 21382363
+    },
+    {
+     "downloadURL": "https://github.com/sonicdcer/MarioKart64Recomp/releases/download/v0.9.2/MarioKart64Recompiled-v0.9.2-Windows-RelWithDebInfo.zip",
+     "name": "MarioKart64Recompiled-v0.9.2-Windows-RelWithDebInfo.zip",
+     "size": 23847630
+    }
+   ],
+   "name": "MarioKart 64: Recompiled 0.9.2",
+   "pageURL": "https://github.com/sonicdcer/MarioKart64Recomp/releases/tag/v0.9.2",
+   "publishedAt": "2026-02-13T17:30:04Z",
+   "tag": "v0.9.2"
+  },
+  "sonicdcer/StarFox64Recomp": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/sonicdcer/Starfox64Recomp/releases/download/1.0.3/SF64Recomp-Dev-Cheats.zip",
+     "name": "SF64Recomp-Dev-Cheats.zip",
+     "size": 74119
+    },
+    {
+     "downloadURL": "https://github.com/sonicdcer/Starfox64Recomp/releases/download/1.0.3/Starfox64Recompiled-v1.0.3-Flatpak-X64-Release.zip",
+     "name": "Starfox64Recompiled-v1.0.3-Flatpak-X64-Release.zip",
+     "size": 9912130
+    },
+    {
+     "downloadURL": "https://github.com/sonicdcer/Starfox64Recomp/releases/download/1.0.3/Starfox64Recompiled-v1.0.3-Linux-ARM64-Release.zip",
+     "name": "Starfox64Recompiled-v1.0.3-Linux-ARM64-Release.zip",
+     "size": 14074262
+    },
+    {
+     "downloadURL": "https://github.com/sonicdcer/Starfox64Recomp/releases/download/1.0.3/Starfox64Recompiled-v1.0.3-Linux-X64-Release.zip",
+     "name": "Starfox64Recompiled-v1.0.3-Linux-X64-Release.zip",
+     "size": 13806756
+    },
+    {
+     "downloadURL": "https://github.com/sonicdcer/Starfox64Recomp/releases/download/1.0.3/Starfox64Recompiled-v1.0.3-macOS-Release.zip",
+     "name": "Starfox64Recompiled-v1.0.3-macOS-Release.zip",
+     "size": 22848885
+    },
+    {
+     "downloadURL": "https://github.com/sonicdcer/Starfox64Recomp/releases/download/1.0.3/Starfox64Recompiled-v1.0.3-Windows-RelWithDebInfo.zip",
+     "name": "Starfox64Recompiled-v1.0.3-Windows-RelWithDebInfo.zip",
+     "size": 24382268
+    }
+   ],
+   "name": "Starfox 64: Recompiled 1.0.3",
+   "pageURL": "https://github.com/sonicdcer/Starfox64Recomp/releases/tag/1.0.3",
+   "publishedAt": "2025-12-30T04:13:00Z",
+   "tag": "1.0.3"
+  },
+  "sonicnext-dev/MarathonRecomp": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/sonicnext-dev/MarathonRecomp/releases/download/v1.0.0/MarathonRecomp-Flatpak-arm64.zip",
+     "name": "MarathonRecomp-Flatpak-arm64.zip",
+     "size": 23835755
+    },
+    {
+     "downloadURL": "https://github.com/sonicnext-dev/MarathonRecomp/releases/download/v1.0.0/MarathonRecomp-Flatpak-x86_64.zip",
+     "name": "MarathonRecomp-Flatpak-x86_64.zip",
+     "size": 24046046
+    },
+    {
+     "downloadURL": "https://github.com/sonicnext-dev/MarathonRecomp/releases/download/v1.0.0/MarathonRecomp-macOS-arm64.zip",
+     "name": "MarathonRecomp-macOS-arm64.zip",
+     "size": 39092009
+    },
+    {
+     "downloadURL": "https://github.com/sonicnext-dev/MarathonRecomp/releases/download/v1.0.0/MarathonRecomp-Windows-arm64.zip",
+     "name": "MarathonRecomp-Windows-arm64.zip",
+     "size": 41381095
+    },
+    {
+     "downloadURL": "https://github.com/sonicnext-dev/MarathonRecomp/releases/download/v1.0.0/MarathonRecomp-Windows-x64.zip",
+     "name": "MarathonRecomp-Windows-x64.zip",
+     "size": 37884609
+    }
+   ],
+   "name": "v1.0.0",
+   "pageURL": "https://github.com/sonicnext-dev/MarathonRecomp/releases/tag/v1.0.0",
+   "publishedAt": "2026-11-14T16:18:12Z",
+   "tag": "v1.0.0"
+  },
+  "vcmi/vcmi": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/vcmi/vcmi/releases/download/1.7.5/pdb-arm64.zip",
+     "name": "pdb-arm64.zip",
+     "size": 340218247
+    },
+    {
+     "downloadURL": "https://github.com/vcmi/vcmi/releases/download/1.7.5/pdb-x64.zip",
+     "name": "pdb-x64.zip",
+     "size": 299229022
+    },
+    {
+     "downloadURL": "https://github.com/vcmi/vcmi/releases/download/1.7.5/pdb-x86.zip",
+     "name": "pdb-x86.zip",
+     "size": 296044441
+    },
+    {
+     "downloadURL": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-Android-arm64-v8a.apk",
+     "name": "VCMI-Android-arm64-v8a.apk",
+     "size": 37320788
+    },
+    {
+     "downloadURL": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-Android-armeabi-v7a.apk",
+     "name": "VCMI-Android-armeabi-v7a.apk",
+     "size": 33618657
+    },
+    {
+     "downloadURL": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-Android-x86_64.apk",
+     "name": "VCMI-Android-x86_64.apk",
+     "size": 39265370
+    },
+    {
+     "downloadURL": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-iOS.ipa",
+     "name": "VCMI-iOS.ipa",
+     "size": 28187923
+    },
+    {
+     "downloadURL": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-Linux-arm64.AppImage",
+     "name": "VCMI-Linux-arm64.AppImage",
+     "size": 51034632
+    },
+    {
+     "downloadURL": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-Linux-x64.AppImage",
+     "name": "VCMI-Linux-x64.AppImage",
+     "size": 53463544
+    },
+    {
+     "downloadURL": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-macOS-arm.dmg",
+     "name": "VCMI-macOS-arm.dmg",
+     "size": 35462171
+    },
+    {
+     "downloadURL": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-macOS-intel.dmg",
+     "name": "VCMI-macOS-intel.dmg",
+     "size": 38897972
+    },
+    {
+     "downloadURL": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-Sources.tar.gz",
+     "name": "VCMI-Sources.tar.gz",
+     "size": 19251683
+    },
+    {
+     "downloadURL": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-Windows-arm64.exe",
+     "name": "VCMI-Windows-arm64.exe",
+     "size": 36348093
+    },
+    {
+     "downloadURL": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-Windows-x64.exe",
+     "name": "VCMI-Windows-x64.exe",
+     "size": 34381177
+    },
+    {
+     "downloadURL": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-Windows-x86.exe",
+     "name": "VCMI-Windows-x86.exe",
+     "size": 29912672
+    },
+    {
+     "downloadURL": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-Windows.zip",
+     "name": "VCMI-Windows.zip",
+     "size": 48727777
+    }
+   ],
+   "name": "VCMI 1.7.5",
+   "pageURL": "https://github.com/vcmi/vcmi/releases/tag/1.7.5",
+   "publishedAt": "2026-08-15T12:02:44Z",
+   "tag": "1.7.5"
+  },
+  "wszqkzqk/PvZ-Portable": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/wszqkzqk/PvZ-Portable/releases/download/0.3.0/pvz-portable-android-arm64-v8a.apk",
+     "name": "pvz-portable-android-arm64-v8a.apk",
+     "size": 14127628
+    },
+    {
+     "downloadURL": "https://github.com/wszqkzqk/PvZ-Portable/releases/download/0.3.0/pvz-portable-archlinux-x86_64",
+     "name": "pvz-portable-archlinux-x86_64",
+     "size": 3302712
+    },
+    {
+     "downloadURL": "https://github.com/wszqkzqk/PvZ-Portable/releases/download/0.3.0/pvz-portable-ios-arm64.ipa",
+     "name": "pvz-portable-ios-arm64.ipa",
+     "size": 4329117
+    },
+    {
+     "downloadURL": "https://github.com/wszqkzqk/PvZ-Portable/releases/download/0.3.0/pvz-portable-linux-static-x86_64",
+     "name": "pvz-portable-linux-static-x86_64",
+     "size": 11222792
+    },
+    {
+     "downloadURL": "https://github.com/wszqkzqk/PvZ-Portable/releases/download/0.3.0/pvz-portable-macos-aarch64.zip",
+     "name": "pvz-portable-macos-aarch64.zip",
+     "size": 4921049
+    },
+    {
+     "downloadURL": "https://github.com/wszqkzqk/PvZ-Portable/releases/download/0.3.0/pvz-portable-wasm.zip",
+     "name": "pvz-portable-wasm.zip",
+     "size": 2397382
+    },
+    {
+     "downloadURL": "https://github.com/wszqkzqk/PvZ-Portable/releases/download/0.3.0/pvz-portable-windows-msvc-x64-static.exe",
+     "name": "pvz-portable-windows-msvc-x64-static.exe",
+     "size": 9014272
+    },
+    {
+     "downloadURL": "https://github.com/wszqkzqk/PvZ-Portable/releases/download/0.3.0/pvz-portable-windows-msvc-x86-static.exe",
+     "name": "pvz-portable-windows-msvc-x86-static.exe",
+     "size": 7633408
+    },
+    {
+     "downloadURL": "https://github.com/wszqkzqk/PvZ-Portable/releases/download/0.3.0/pvz-portable-windows-ucrt64-static.exe",
+     "name": "pvz-portable-windows-ucrt64-static.exe",
+     "size": 14641152
+    }
+   ],
+   "name": "0.3.0",
+   "pageURL": "https://github.com/wszqkzqk/PvZ-Portable/releases/tag/0.3.0",
+   "publishedAt": "2026-11-21T05:35:47Z",
+   "tag": "0.3.0"
+  },
+  "xenios-jp/XeniOS": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/xenios-jp/XeniOS/releases/download/release-v2.3.3-build-11940/symbols-B039438C-3B50-3971-9C77-BC9D81B903D8.bin",
+     "name": "symbols-B039438C-3B50-3971-9C77-BC9D81B903D8.bin",
+     "size": 16196695
+    },
+    {
+     "downloadURL": "https://github.com/xenios-jp/XeniOS/releases/download/release-v2.3.3-build-11940/xenios_ios_iphone_ipad.ipa",
+     "name": "xenios_ios_iphone_ipad.ipa",
+     "size": 49667563
+    },
+    {
+     "downloadURL": "https://github.com/xenios-jp/XeniOS/releases/download/release-v2.3.3-build-11940/xenios_macos_apple_silicon.dmg",
+     "name": "xenios_macos_apple_silicon.dmg",
+     "size": 44887216
+    }
+   ],
+   "name": "2.3.3-11940",
+   "pageURL": "https://github.com/xenios-jp/XeniOS/releases/tag/release-v2.3.3-build-11940",
+   "publishedAt": "2026-11-15T10:21:49Z",
+   "tag": "release-v2.3.3-build-11940"
+  },
+  "xenophobentx/takedawn": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/xenophobentx/takedawn/releases/download/v0.3.1/BUILDINFO",
+     "name": "BUILDINFO",
+     "size": 5980
+    },
+    {
+     "downloadURL": "https://github.com/xenophobentx/takedawn/releases/download/v0.3.1/SHA256SUMS",
+     "name": "SHA256SUMS",
+     "size": 679
+    },
+    {
+     "downloadURL": "https://github.com/xenophobentx/takedawn/releases/download/v0.3.1/Takedawn-0.3.1-android-arm64.apk",
+     "name": "Takedawn-0.3.1-android-arm64.apk",
+     "size": 41964646
+    },
+    {
+     "downloadURL": "https://github.com/xenophobentx/takedawn/releases/download/v0.3.1/Takedawn-0.3.1-linux-x86_64.AppImage",
+     "name": "Takedawn-0.3.1-linux-x86_64.AppImage",
+     "size": 81750520
+    },
+    {
+     "downloadURL": "https://github.com/xenophobentx/takedawn/releases/download/v0.3.1/Takedawn-0.3.1-macos-arm64.dmg",
+     "name": "Takedawn-0.3.1-macos-arm64.dmg",
+     "size": 75516215
+    },
+    {
+     "downloadURL": "https://github.com/xenophobentx/takedawn/releases/download/v0.3.1/takedawn-0.3.1-source.tar.gz",
+     "name": "takedawn-0.3.1-source.tar.gz",
+     "size": 16862133
+    },
+    {
+     "downloadURL": "https://github.com/xenophobentx/takedawn/releases/download/v0.3.1/Takedawn-0.3.1-windows-x64-setup.exe",
+     "name": "Takedawn-0.3.1-windows-x64-setup.exe",
+     "size": 67575160
+    },
+    {
+     "downloadURL": "https://github.com/xenophobentx/takedawn/releases/download/v0.3.1/xboxrecomp-takedawn-0.3.1-source.tar.gz",
+     "name": "xboxrecomp-takedawn-0.3.1-source.tar.gz",
+     "size": 5255500
+    }
+   ],
+   "name": "Takedawn 0.3.1 \"Sing Along Forever\"",
+   "pageURL": "https://github.com/xenophobentx/takedawn/releases/tag/v0.3.1",
+   "publishedAt": "2026-11-06T06:16:59Z",
+   "tag": "v0.3.1"
+  },
+  "z3xox/Tenkaichi3Decomp": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/z3xox/Tenkaichi3Decomp/releases/download/v0.1.39.6/Tenkaichi3Decomp-linux-x64.zip",
+     "name": "Tenkaichi3Decomp-linux-x64.zip",
+     "size": 12633394
+    },
+    {
+     "downloadURL": "https://github.com/z3xox/Tenkaichi3Decomp/releases/download/v0.1.39.6/Tenkaichi3Decomp-linux-x64.zip.sig",
+     "name": "Tenkaichi3Decomp-linux-x64.zip.sig",
+     "size": 129
+    },
+    {
+     "downloadURL": "https://github.com/z3xox/Tenkaichi3Decomp/releases/download/v0.1.39.6/Tenkaichi3Decomp-macos-arm64.zip",
+     "name": "Tenkaichi3Decomp-macos-arm64.zip",
+     "size": 11753165
+    },
+    {
+     "downloadURL": "https://github.com/z3xox/Tenkaichi3Decomp/releases/download/v0.1.39.6/Tenkaichi3Decomp-macos-arm64.zip.sig",
+     "name": "Tenkaichi3Decomp-macos-arm64.zip.sig",
+     "size": 129
+    },
+    {
+     "downloadURL": "https://github.com/z3xox/Tenkaichi3Decomp/releases/download/v0.1.39.6/Tenkaichi3Decomp-windows-x64.zip",
+     "name": "Tenkaichi3Decomp-windows-x64.zip",
+     "size": 12652743
+    },
+    {
+     "downloadURL": "https://github.com/z3xox/Tenkaichi3Decomp/releases/download/v0.1.39.6/Tenkaichi3Decomp-windows-x64.zip.sig",
+     "name": "Tenkaichi3Decomp-windows-x64.zip.sig",
+     "size": 129
+    }
+   ],
+   "name": "v0.1.39.6",
+   "pageURL": "https://github.com/z3xox/Tenkaichi3Decomp/releases/tag/v0.1.39.6",
+   "publishedAt": "2026-11-03T07:24:59Z",
+   "tag": "v0.1.39.6"
+  },
+  "zolaware/reblue": {
+   "assets": [
+    {
+     "downloadURL": "https://github.com/zolaware/reblue/releases/download/v1.3.1/reblue-1.3.1-aarch64.AppImage",
+     "name": "reblue-1.3.1-aarch64.AppImage",
+     "size": 39709192
+    },
+    {
+     "downloadURL": "https://github.com/zolaware/reblue/releases/download/v1.3.1/reblue-1.3.1-mac-arm64.zip",
+     "name": "reblue-1.3.1-mac-arm64.zip",
+     "size": 21356080
+    },
+    {
+     "downloadURL": "https://github.com/zolaware/reblue/releases/download/v1.3.1/reblue-1.3.1-win-amd64-symbols.zip",
+     "name": "reblue-1.3.1-win-amd64-symbols.zip",
+     "size": 45183988
+    },
+    {
+     "downloadURL": "https://github.com/zolaware/reblue/releases/download/v1.3.1/reblue-1.3.1-win-amd64.zip",
+     "name": "reblue-1.3.1-win-amd64.zip",
+     "size": 45468067
+    },
+    {
+     "downloadURL": "https://github.com/zolaware/reblue/releases/download/v1.3.1/reblue-1.3.1-x86_64.AppImage",
+     "name": "reblue-1.3.1-x86_64.AppImage",
+     "size": 41835000
+    }
+   ],
+   "name": "reblue v1.3.1",
+   "pageURL": "https://github.com/zolaware/reblue/releases/tag/v1.3.1",
+   "publishedAt": "2026-10-05T14:07:04Z",
+   "tag": "v1.3.1"
+  }
+ }
+}
